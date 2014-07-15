@@ -52,7 +52,7 @@ class Oficinas
     /**
      * @var string
      *
-     * @ORM\Column(name="lugar", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Proces\OficinasBundle\Entity\Lugar")
      */
     private $lugar;
 
@@ -165,7 +165,7 @@ class Oficinas
      * @param string $lugar
      * @return Oficinas
      */
-    public function setLugar($lugar)
+    public function setLugar(\Proces\OficinasBundle\Entity\Lugar $lugar)
     {
         $this->lugar = $lugar;
 
