@@ -1,0 +1,30 @@
+convocatorias:
+    path:     /
+    defaults: { _controller: "ConvocatoriasBundle:Convocatorias:index" }
+
+convocatorias_show:
+    path:     /{id}/show
+    defaults: { _controller: "ConvocatoriasBundle:Convocatorias:show" }
+
+convocatorias_new:
+    path:     /new
+    defaults: { _controller: "ConvocatoriasBundle:Convocatorias:new" }
+
+convocatorias_create:
+    path:     /create
+    defaults: { _controller: "ConvocatoriasBundle:Convocatorias:create" }
+    requirements: { _method: post }
+
+convocatorias_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ConvocatoriasBundle:Convocatorias:edit" }
+
+convocatorias_update:
+    path:     /{id}/update
+    defaults: { _controller: "ConvocatoriasBundle:Convocatorias:update" }
+    requirements: { _method: post|put }
+
+convocatorias_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ConvocatoriasBundle:Convocatorias:delete" }
+    requirements: { _method: post|delete }

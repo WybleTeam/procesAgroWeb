@@ -4,3 +4,8 @@ convocatorias_logout:
 convocatorias_homepage:
     path:     /
     defaults: { _controller: ConvocatoriasBundle:Default:index }
+
+ConvocatoriasBundle_convocatorias:
+    resource: "@ConvocatoriasBundle/Resources/config/routing/convocatorias.yml"
+    prefix:   /convocatorias
+
