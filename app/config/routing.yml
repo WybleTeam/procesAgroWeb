@@ -1,0 +1,27 @@
+ica_tramite:
+    resource: "@ICATramiteBundle/Resources/config/routing.yml"
+    prefix:   /icatramite
+
+oficinas:
+    resource: "@OficinasBundle/Resources/config/routing.yml"
+    prefix:   /oficinas
+
+servicios:
+    resource: "@ServiciosBundle/Resources/config/routing.yml"
+    prefix:   /servicios
+
+oferta:
+    resource: "@OfertaBundle/Resources/config/routing.yml"
+    prefix:   /oferta
+
+convocatorias:
+    resource: "@ConvocatoriasBundle/Resources/config/routing.yml"
+    prefix:   /convocatorias
+
+web:
+    resource: "@WebBundle/Resources/config/routing.yml"
+    prefix:   /
+
+usuarios:
+    resource: "@UsuariosBundle/Resources/config/routing.yml"
+    prefix:   /usuarios

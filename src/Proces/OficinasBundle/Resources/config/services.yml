@@ -1,0 +1,7 @@
+parameters:
+#    oficinas.example.class: Proces\OficinasBundle\Example
+
+services:
+#    oficinas.example:
+#        class: %oficinas.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,3 @@
+oficinas_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: OficinasBundle:Default:index }

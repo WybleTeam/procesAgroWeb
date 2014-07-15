@@ -1,39 +1,57 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+        FOS\UserBundle\Model\UserInterface: sha512
 
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_USER:        ROLE_USER
+        ROLE_OFICINA:     [ROLE_USER]
+        ROLE_SOLICITUDES: [ROLE_USER]
+        ROLE_SERVICIOS:   [ROLE_USER]
+        ROLE_CONVOCATOR:  [ROLE_USER]  
+        ROLE_TRAMITES:    [ROLE_USER]  
+        ROLE_ADMIN:       [ROLE_USER, ROLE_OFICINA, ROLE_SOLICITUDES, ROLE_CONVOCATOR, ROLE_SERVICIOS, ROLE_TRAMITES]
+        ROLE_SUPER_ADMIN: [ROLE_USER,ROLE_OFICINA, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
         in_memory:
             memory:
                 users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    user:  { password: user, roles: [ 'ROLE_USER' ] }
+                    admin: { password: admin, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
-        dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-        login:
-            pattern:  ^/demo/secured/login$
-            security: false
-
-        secured_area:
-            pattern:    ^/demo/secured/
+        main:
+            pattern: ^/usuarios
             form_login:
-                check_path: _security_check
-                login_path: _demo_login
+                login_path: /usuarios/login
+                check_path: /usuarios/login_check
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
             logout:
-                path:   _demo_logout
-                target: _demo
-            #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
+              path:       usuarios_logout
+              target:     /
+              invalidate_session: false
+            anonymous:    true
+
+        convocatorias:
+            pattern: ^/convocatorias
+            form_login:
+                login_path: /convocatorias/login
+                check_path: /convocatorias/login_check
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+            logout:
+              path:       convocatorias_logout
+              target:     /
+              invalidate_session: false
+            anonymous:    true
+
 
     access_control:
-        - { path: ^/demo/secured/hello/admin/, roles: ROLE_ADMIN }
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        #- { path: ^/convocatorias, role: ROLE_CONVOCATOR }
+        - { path: ^/usuarios/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/usuarios/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/usuarios/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/usuarios/admin, role: ROLE_SUPER_ADMIN }
