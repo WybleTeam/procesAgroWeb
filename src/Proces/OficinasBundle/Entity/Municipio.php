@@ -38,7 +38,7 @@ class Municipio
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Proces\OficinaBundle\Entity\Departamento")
+     * @ORM\ManyToOne(targetEntity="Proces\OficinasBundle\Entity\Departamento")
      */
     private $departamento;
 
@@ -104,7 +104,7 @@ class Municipio
      * @param string $departamento
      * @return Municipio
      */
-    public function setDepartamento($departamento)
+    public function setDepartamento(\Proces\OficinasBundle\Entity\Departamento $departamento)
     {
         $this->departamento = $departamento;
 
