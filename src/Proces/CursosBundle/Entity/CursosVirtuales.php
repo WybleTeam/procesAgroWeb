@@ -24,7 +24,7 @@ class CursosVirtuales
     /**
      * @var string
      *
-     * @ORM\Column(name="usuario", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Twinpeaks\UserBundle\Entity\User")
      */
     private $usuario;
 
@@ -80,7 +80,7 @@ class CursosVirtuales
      * @param string $usuario
      * @return CursosVirtuales
      */
-    public function setUsuario($usuario)
+    public function setUsuario(\Twinpeaks\UserBundle\Entity\User $usuario)
     {
         $this->usuario = $usuario;
 

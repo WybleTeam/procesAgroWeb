@@ -31,9 +31,9 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Proces\OficinasBundle\Entity\Lugar")
+     * @ORM\ManyToOne(targetEntity="Proces\OficinasBundle\Entity\Municipio")
      */
-    private $lugar;
+    private $municipio;
 
     /**
      * @var string
@@ -189,26 +189,26 @@ class SolMantenimientoIdentificacion
     }
 
     /**
-     * Set lugar
+     * Set municipio
      *
-     * @param string $lugar
+     * @param string $municipio
      * @return SolMantenimientoIdentificacion
      */
-    public function setLugar(\Proces\OficinasBundle\Entity\Lugar $lugar)
+    public function setMunicipio(\Proces\OficinasBundle\Entity\Municipio $municipio)
     {
-        $this->lugar = $lugar;
+        $this->municipio = $municipio;
 
         return $this;
     }
 
     /**
-     * Get lugar
+     * Get municipio
      *
      * @return string 
      */
-    public function getLugar()
+    public function getMunicipio()
     {
-        return $this->lugar;
+        return $this->municipio;
     }
 
     /**
