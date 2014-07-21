@@ -1,0 +1,3 @@
+proces_cursos_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: ProcesCursosBundle:Default:index }

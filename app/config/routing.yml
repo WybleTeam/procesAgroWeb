@@ -1,3 +1,7 @@
+proces_cursos:
+    resource: "@ProcesCursosBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ica_tramite:
     resource: "@ICATramiteBundle/Resources/config/routing.yml"
     prefix:   /icatramite

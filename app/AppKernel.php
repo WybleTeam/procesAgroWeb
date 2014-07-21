@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Proces\ServiciosBundle\ServiciosBundle(),
             new Proces\OficinasBundle\OficinasBundle(),
             new ICA\TramiteBundle\ICATramiteBundle(),
+            new Proces\CursosBundle\ProcesCursosBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
