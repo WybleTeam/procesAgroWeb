@@ -1,3 +1,3 @@
 ica_tramite_homepage:
-    path:     /hello/{name}
+    path:     /
     defaults: { _controller: ICATramiteBundle:Default:index }
