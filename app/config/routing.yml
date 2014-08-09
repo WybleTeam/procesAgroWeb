@@ -1,3 +1,11 @@
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+themes:
+    resource: "@ThemesBundle/Resources/config/routing.yml"
+    prefix:   /
+
 proces_cursos:
     resource: "@ProcesCursosBundle/Resources/config/routing.yml"
     prefix:   /

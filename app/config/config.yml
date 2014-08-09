@@ -30,7 +30,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ "TPUserBundle" ]
+    bundles:        [ "TPUserBundle","ThemesBundle" ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -38,7 +38,10 @@ assetic:
         #    jar: "%kernel.root_dir%/Resources/java/compiler.jar"
         #yui_css:
         #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
-
+        yui_css:
+            jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.2.jar"
+        yui_js:
+            jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.2.jar"
 # Doctrine Configuration
 doctrine:
     dbal:

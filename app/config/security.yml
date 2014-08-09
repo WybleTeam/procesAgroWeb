@@ -36,14 +36,14 @@ security:
             anonymous:    true
 
         convocatorias:
-            pattern: ^/convocatorias
+            pattern: ^/admin
             form_login:
-                login_path: /convocatorias/login
-                check_path: /convocatorias/login_check
+                login_path: /admin/login
+                check_path: /admin/login_check
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
             logout:
-              path:       convocatorias_logout
+              path:       admin_logout
               target:     /
               invalidate_session: false
             anonymous:    true

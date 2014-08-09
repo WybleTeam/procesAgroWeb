@@ -1,6 +1,3 @@
-convocatorias_logout:
-    pattern:  /logout
-
 convocatorias_homepage:
     path:     /
     defaults: { _controller: ConvocatoriasBundle:Default:index }
