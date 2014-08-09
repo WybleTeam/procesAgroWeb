@@ -1,0 +1,41 @@
+{# subplantilla que hereda de app/Resources/views/login #}        
+{% extends '::login.html.twig' %}
+{% block content %}
+   <div class="form-box" id="login-box">
+            <div class="header">Acceder</div>
+            {% if error %}
+                                <div class="alert-danger"><strong>Es probable, que tu usuario o contraseña estén mal " {{ error.message }}"</strong></div>
+                                {% endif %}
+                                
+ <form action="{{ path("admin_login_check") }}" method="post">
+     <div class="body bg-gray">
+     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" class="form-control" />
+
+    <label for="username">Usuario</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" class="form-control" />
+
+    <label for="password">Contraseña</label>
+    <input type="password" id="password" name="_password" required="required" class="form-control" />
+
+  
+    <input type="checkbox" id="remember_me" name="_remember_me" value="on" class="left inline rememberme" />
+
+    <label for="remember_me">Recuérdame</label>
+
+    <input type="submit" id="_submit" name="_submit" value="Entrar"  class="btn bg-olive btn-block" />
+   
+     </div>
+</form>
+      <div class="footer">
+            <div class="margin text-center">
+                <span>Siguenos en nuestras redes sociales</span>
+                <br/>
+                <button class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></button>
+                <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
+                <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
+
+            </div>
+     </div>
+     
+   </div>
+{% endblock %}

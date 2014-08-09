@@ -35,7 +35,7 @@ security:
               invalidate_session: false
             anonymous:    true
 
-        convocatorias:
+        administrador:
             pattern: ^/admin
             form_login:
                 login_path: /admin/login
@@ -50,7 +50,8 @@ security:
 
 
     access_control:
-        #- { path: ^/convocatorias, role: ROLE_CONVOCATOR }
+        - { path: ^/admin/login$,  role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, role: ROLE_ADMIN }
         - { path: ^/usuarios/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/usuarios/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/usuarios/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
