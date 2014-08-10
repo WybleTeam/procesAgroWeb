@@ -1,31 +1,31 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 {% block body -%}
-    <h1>Convocatorias list</h1>
+    <h1>Oficinas list</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Descripcion</th>
-                <th>Urlconvocatoria</th>
-                <th>Descripcionlarga</th>
+                <th>Nombreoficina</th>
+                <th>Direccionoficina</th>
+                <th>Descripcionoficina</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.descripcion }}</td>
-                <td>{{ entity.urlConvocatoria }}</td>
-                <td>{{ entity.descripcionLarga }}</td>
+                <td><a href="{{ path('oficinas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nombreOficina }}</td>
+                <td>{{ entity.direccionOficina }}</td>
+                <td>{{ entity.descripcionOficina }}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('oficinas_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('oficinas_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>
@@ -36,7 +36,7 @@
 
         <ul>
         <li>
-            <a href="{{ path('convocatorias_new') }}">
+            <a href="{{ path('oficinas_new') }}">
                 Create a new entry
             </a>
         </li>

@@ -1,6 +1,37 @@
-{% extends '::base.html.twig' %}
+{% extends 'ThemesBundle::frontened.html.twig' %}
 {% block body %}
-Hello convocatorias
 
-<a href="{{ path('convocatorias') }}">Listado</a>
+
+  <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Descripcion</th>
+                <th>Urlconvocatoria</th>
+                <th>Descripcionlarga</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.descripcion }}</td>
+                <td>{{ entity.urlConvocatoria }}</td>
+                <td>{{ entity.descripcionLarga }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}

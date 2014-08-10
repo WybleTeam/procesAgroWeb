@@ -11,3 +11,11 @@ admin_logout:
 admin_homepage:
     path:     /
     defaults: { _controller: AdminBundle:Admin:index }
+
+Admin_OficinasBundle_oficinas:
+        resource: "@OficinasBundle/Resources/config/routing/oficinas.yml"
+        prefix:   /oficinas
+
+convocatorias:
+    resource: "@ConvocatoriasBundle/Resources/config/routing.yml"
+    prefix:   /convocatorias

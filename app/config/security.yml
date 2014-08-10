@@ -51,7 +51,7 @@ security:
 
     access_control:
         - { path: ^/admin/login$,  role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, role: ROLE_ADMIN }
+        - { path: ^/admin, roles: [ROLE_OFICINA,  ROLE_SOLICITUDES,  ROLE_SERVICIOS,  ROLE_CONVOCATOR,  ROLE_TRAMITES,  ROLE_ADMIN]  }
         - { path: ^/usuarios/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/usuarios/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/usuarios/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }

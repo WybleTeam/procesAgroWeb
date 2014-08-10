@@ -1,0 +1,30 @@
+oficinas_admin:
+    path:     /
+    defaults: { _controller: "OficinasBundle:Oficinas:index" }
+
+oficinas_show:
+    path:     /{id}/show
+    defaults: { _controller: "OficinasBundle:Oficinas:show" }
+
+oficinas_new:
+    path:     /new
+    defaults: { _controller: "OficinasBundle:Oficinas:new" }
+
+oficinas_create:
+    path:     /create
+    defaults: { _controller: "OficinasBundle:Oficinas:create" }
+    requirements: { _method: post }
+
+oficinas_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "OficinasBundle:Oficinas:edit" }
+
+oficinas_update:
+    path:     /{id}/update
+    defaults: { _controller: "OficinasBundle:Oficinas:update" }
+    requirements: { _method: post|put }
+
+oficinas_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "OficinasBundle:Oficinas:delete" }
+    requirements: { _method: post|delete }

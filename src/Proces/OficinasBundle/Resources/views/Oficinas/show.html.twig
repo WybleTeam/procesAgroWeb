@@ -1,37 +1,37 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Convocatorias</h1>
+    <h1>Oficinas</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>No.</th>
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Descripcion</th>
-                <td>{{ entity.descripcion }}</td>
+                <th>Nombreoficina</th>
+                <td>{{ entity.nombreOficina }}</td>
             </tr>
             <tr>
-                <th>Urlconvocatoria</th>
-                <td>{{ entity.urlConvocatoria }}</td>
+                <th>Direccionoficina</th>
+                <td>{{ entity.direccionOficina }}</td>
             </tr>
             <tr>
-                <th>Descripcionlarga</th>
-                <td>{{ entity.descripcionLarga }}</td>
+                <th>Descripcionoficina</th>
+                <td>{{ entity.descripcionOficina }}</td>
             </tr>
         </tbody>
     </table>
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('convocatorias') }}">
+        <a href="{{ path('oficinas_admin') }}">
             Back to the list
         </a>
     </li>
     <li>
-        <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('oficinas_edit', { 'id': entity.id }) }}">
             Edit
         </a>
     </li>

@@ -1,15 +1,15 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
-
 {% block body -%}
-    <h1>Convocatorias creation</h1>
+    <h1>Oficinas edit</h1>
 
-    {{ form(form) }}
+    {{ form(edit_form) }}
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('convocatorias') }}">
+        <a href="{{ path('oficinas_admin') }}">
             Back to the list
         </a>
     </li>
+    <li>{{ form(delete_form) }}</li>
 </ul>
 {% endblock %}

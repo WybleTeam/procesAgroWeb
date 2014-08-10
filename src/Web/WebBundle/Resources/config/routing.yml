@@ -1,3 +1,19 @@
 web_homepage:
     path:     /
     defaults: { _controller: WebBundle:Default:index }
+
+convocatorias_homepage:
+    path:     /convocatorias
+    defaults: { _controller: ConvocatoriasBundle:Default:index }
+    
+proces_cursos_homepage:
+    path:     /cursos
+    defaults: { _controller: ProcesCursosBundle:Default:index }
+    
+oferta_homepage:
+    path:     /ofertas
+    defaults: { _controller: OfertaBundle:Default:index }
+    
+servicios_homepage:
+    path:     /servicios
+    defaults: { _controller: ServiciosBundle:Default:index }

@@ -1,13 +1,5 @@
-{% extends '::base.html.twig' %}
-
+{% extends 'ThemesBundle::frontened.html.twig' %}
 {% block body %}
 <h2>Bienvenidos a Nuestra Web</h2>
-<ul>
-	
-	<li><a href="{{ path('tp_user') }}">Super Admin</a></li>
-	<li><a href="{{ path('convocatorias_homepage') }}">Convocatorias</a></li>
-	<li><a href="{{ path('servicios_homepage') }}">Servicios</a></li>
-	<li><a href="{{ path('oferta_homepage') }}">Ofertas Institucionales</a></li>
-	<li><a href="{{ path('oficinas_homepage') }}">oficinas</a></li>
-</ul>
+
 {% endblock %}

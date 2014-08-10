@@ -179,6 +179,6 @@ class Oficinas
      */
     public function getMunicipio()
     {
-        return $this->lugar;
+        return $this->municipio;
     }
 }

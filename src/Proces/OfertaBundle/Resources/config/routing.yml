@@ -1,3 +1,1 @@
-oferta_homepage:
-    path:     /
-    defaults: { _controller: OfertaBundle:Default:index }
+

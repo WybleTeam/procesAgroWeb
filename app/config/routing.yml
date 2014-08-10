@@ -1,20 +1,24 @@
+web:
+    resource: "@WebBundle/Resources/config/routing.yml"
+    prefix:   /
+
 admin:
     resource: "@AdminBundle/Resources/config/routing.yml"
     prefix:   /admin
 
 themes:
     resource: "@ThemesBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /themes
 
 proces_cursos:
     resource: "@ProcesCursosBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /cursos
 
 ica_tramite:
     resource: "@ICATramiteBundle/Resources/config/routing.yml"
     prefix:   /icatramite
 
-oficinas:
+oficinas_prueba:
     resource: "@OficinasBundle/Resources/config/routing.yml"
     prefix:   /oficinas
 
@@ -25,14 +29,8 @@ servicios:
 oferta:
     resource: "@OfertaBundle/Resources/config/routing.yml"
     prefix:   /oferta
+    
 
-convocatorias:
-    resource: "@ConvocatoriasBundle/Resources/config/routing.yml"
-    prefix:   /convocatorias
-
-web:
-    resource: "@WebBundle/Resources/config/routing.yml"
-    prefix:   /
 
 usuarios:
     resource: "@UsuariosBundle/Resources/config/routing.yml"
