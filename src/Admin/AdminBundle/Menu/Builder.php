@@ -16,10 +16,10 @@ class Builder extends ContainerAware
        
         //$menu->setLabelAttribute('class', 'span');
         $menu->addChild('Inicio', array('route' => 'web_homepage'))->setLabel('Inicio')->setAttribute('icon','icon-user');                     
-        $menu->addChild('Convocatorias', array('route' => 'convocatorias_homepage'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Servicios', array('route' => 'servicios_homepage'))->setLabel('Servicios')->setAttribute('icon','fa fa-dashboard');              
+        $menu->addChild('Convocatorias', array('route' => 'convocatorias_homepage'))->setAttribute('icon','icon-trophy');
+        $menu->addChild('Servicios', array('route' => 'servicios_homepage'))->setLabel('Servicios')->setAttribute('icon','icon-picture');              
         $menu->addChild('Ofertas', array('route' => 'oferta_homepage'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Oficinas', array('route' => 'oficinas_homepage'))->setLabel('Oficinas')->setAttribute('icon','fa fa-dashboard');              
+        $menu->addChild('Oficinas', array('route' => 'oficinas_homepage'))->setLabel('Oficinas')->setAttribute('icon','icon-doc-text');              
         $menu->addChild('Admin', array('route' => 'admin_homepage'))->setLabel('Administrador')->setAttribute('icon','fa fa-dashboard');   
         $menu->addChild('Super Admin', array('route' => 'tp_user'))->setLabel('Super Admin')->setAttribute('icon','fa fa-dashboard');   
         
