@@ -28,3 +28,11 @@ WebBundle_solmantenimientoidentificacion:
 servicios_servicios:
     resource: "@ServiciosBundle/Resources/config/routing/servicios.yml"
     prefix:   /servicios
+    
+oferta_ofertasinstitucionales:
+    resource: "@OfertaBundle/Resources/config/routing/ofertasinstitucionales.yml"
+    prefix:   /ofertas-institucionales
+    
+proces_cursos_cursosvirtuales:
+    resource: "@ProcesCursosBundle/Resources/config/routing/cursosvirtuales.yml"
+    prefix:   /cursosvirtuales

@@ -1,0 +1,48 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <h1>Cursos Virtuales</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombrecurso</th>
+                <td>{{ entity.nombreCurso }}</td>
+            </tr>
+            <tr>
+                <th>Descripcioncurso</th>
+                <td>{{ entity.descripcionCurso }}</td>
+            </tr>
+            <tr>
+                <th>Urlaudio</th>
+                <td>{{ entity.urlAudio }}</td>
+            </tr>
+            <tr>
+                <th>Urlcurso</th>
+                <td>{{ entity.urlCurso }}</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>{{ entity.estado }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('cursosvirtuales') }}">
+            Volver al listado
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('cursosvirtuales_edit', { 'id': entity.id }) }}">
+            Editar
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

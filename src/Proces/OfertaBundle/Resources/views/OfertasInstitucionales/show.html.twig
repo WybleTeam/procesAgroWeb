@@ -1,0 +1,44 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <h1>Ofertas Institucionales</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Titulooferta</th>
+                <td>{{ entity.tituloOferta }}</td>
+            </tr>
+            <tr>
+                <th>Descripcionoferta</th>
+                <td>{{ entity.descripcionOferta }}</td>
+            </tr>
+            <tr>
+                <th>Urlaudiooferta</th>
+                <td>{{ entity.urlAudioOferta }}</td>
+            </tr>
+            <tr>
+                <th>Urloferta</th>
+                <td>{{ entity.urlOferta }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('ofertasinstitucionales') }}">
+            Volver al listado
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('ofertasinstitucionales_edit', { 'id': entity.id }) }}">
+            Editar
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -26,9 +26,9 @@ servicios:
     resource: "@ServiciosBundle/Resources/config/routing.yml"
     prefix:   /servicios
 
-oferta:
+ofertas:
     resource: "@OfertaBundle/Resources/config/routing.yml"
-    prefix:   /oferta
+    prefix:   /ofertas
     
 
 

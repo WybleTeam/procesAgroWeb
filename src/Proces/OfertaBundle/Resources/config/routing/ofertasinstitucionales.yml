@@ -1,0 +1,30 @@
+ofertasinstitucionales:
+    path:     /
+    defaults: { _controller: "OfertaBundle:OfertasInstitucionales:index" }
+
+ofertasinstitucionales_show:
+    path:     /{id}/show
+    defaults: { _controller: "OfertaBundle:OfertasInstitucionales:show" }
+
+ofertasinstitucionales_new:
+    path:     /new
+    defaults: { _controller: "OfertaBundle:OfertasInstitucionales:new" }
+
+ofertasinstitucionales_create:
+    path:     /create
+    defaults: { _controller: "OfertaBundle:OfertasInstitucionales:create" }
+    requirements: { _method: post }
+
+ofertasinstitucionales_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "OfertaBundle:OfertasInstitucionales:edit" }
+
+ofertasinstitucionales_update:
+    path:     /{id}/update
+    defaults: { _controller: "OfertaBundle:OfertasInstitucionales:update" }
+    requirements: { _method: post|put }
+
+ofertasinstitucionales_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "OfertaBundle:OfertasInstitucionales:delete" }
+    requirements: { _method: post|delete }

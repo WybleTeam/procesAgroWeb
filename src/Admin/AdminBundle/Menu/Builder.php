@@ -176,6 +176,8 @@ class Builder extends ContainerAware
         $menu->addChild('Oficinas', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
         $menu->addChild('Solicitudes', array('route' => 'solmantenimientoidentificacion'))->setAttribute('icon','fa fa-th');
         $menu->addChild('Servicios', array('route' => 'servicios'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Oferta Institucional', array('route' => 'ofertasinstitucionales'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Cursos Virtuales', array('route' => 'cursosvirtuales'))->setAttribute('icon','fa fa-th');
         $menu->addChild('Otros', array('uri' => '#'))->setAttribute('icon','fa fa-th');  
        
         return $menu;

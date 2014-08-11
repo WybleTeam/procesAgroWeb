@@ -1,0 +1,30 @@
+cursosvirtuales:
+    path:     /
+    defaults: { _controller: "ProcesCursosBundle:CursosVirtuales:index" }
+
+cursosvirtuales_show:
+    path:     /{id}/show
+    defaults: { _controller: "ProcesCursosBundle:CursosVirtuales:show" }
+
+cursosvirtuales_new:
+    path:     /new
+    defaults: { _controller: "ProcesCursosBundle:CursosVirtuales:new" }
+
+cursosvirtuales_create:
+    path:     /create
+    defaults: { _controller: "ProcesCursosBundle:CursosVirtuales:create" }
+    requirements: { _method: post }
+
+cursosvirtuales_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ProcesCursosBundle:CursosVirtuales:edit" }
+
+cursosvirtuales_update:
+    path:     /{id}/update
+    defaults: { _controller: "ProcesCursosBundle:CursosVirtuales:update" }
+    requirements: { _method: post|put }
+
+cursosvirtuales_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ProcesCursosBundle:CursosVirtuales:delete" }
+    requirements: { _method: post|delete }

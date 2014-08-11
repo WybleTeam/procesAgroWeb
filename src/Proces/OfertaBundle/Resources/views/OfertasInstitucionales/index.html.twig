@@ -1,0 +1,47 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <h1>Listado de Ofertas Institucionales</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Título oferta</th>
+                <th>Descripción oferta</th>
+                <th>Url audio oferta</th>
+                <th>Url oferta</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('ofertasinstitucionales_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ entity.tituloOferta }}</td>
+                <td>{{ entity.descripcionOferta }}</td>
+                <td>{{ entity.urlAudioOferta }}</td>
+                <td>{{ entity.urlOferta }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('ofertasinstitucionales_show', { 'id': entity.id }) }}">Ver</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('ofertasinstitucionales_edit', { 'id': entity.id }) }}">Editar</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('ofertasinstitucionales_new') }}">
+                Crear nueva
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
