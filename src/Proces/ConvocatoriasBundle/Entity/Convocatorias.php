@@ -73,7 +73,7 @@ class Convocatorias
      * @param string $tituloConvocatoria
      * @return Convocatorias
      */
-    public function setTituloConvocatorian($tituloConvocatoria)
+    public function setTituloConvocatoria($tituloConvocatoria)
     {
         $this->tituloConvocatoria = $tituloConvocatoria;
 
