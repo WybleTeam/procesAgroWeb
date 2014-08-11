@@ -173,8 +173,10 @@ class Builder extends ContainerAware
         ->setAttribute('icon','fa fa-dashboard');
             
         $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');       
-        $menu->addChild('Administrador', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Otros', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');  
+        $menu->addChild('Oficinas', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Solicitudes', array('route' => 'solmantenimientoidentificacion'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Servicios', array('route' => 'servicios'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Otros', array('uri' => '#'))->setAttribute('icon','fa fa-th');  
        
         return $menu;
     }

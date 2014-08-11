@@ -24,3 +24,7 @@ convocatorias:
 WebBundle_solmantenimientoidentificacion:
     resource: "@WebBundle/Resources/config/routing/solmantenimientoidentificacion.yml"
     prefix:   /solmantenimiento
+    
+servicios_servicios:
+    resource: "@ServiciosBundle/Resources/config/routing/servicios.yml"
+    prefix:   /servicios

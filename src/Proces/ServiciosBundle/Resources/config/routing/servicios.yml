@@ -1,0 +1,30 @@
+servicios:
+    path:     /
+    defaults: { _controller: "ServiciosBundle:Servicios:index" }
+
+servicios_show:
+    path:     /{id}/show
+    defaults: { _controller: "ServiciosBundle:Servicios:show" }
+
+servicios_new:
+    path:     /new
+    defaults: { _controller: "ServiciosBundle:Servicios:new" }
+
+servicios_create:
+    path:     /create
+    defaults: { _controller: "ServiciosBundle:Servicios:create" }
+    requirements: { _method: post }
+
+servicios_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ServiciosBundle:Servicios:edit" }
+
+servicios_update:
+    path:     /{id}/update
+    defaults: { _controller: "ServiciosBundle:Servicios:update" }
+    requirements: { _method: post|put }
+
+servicios_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ServiciosBundle:Servicios:delete" }
+    requirements: { _method: post|delete }

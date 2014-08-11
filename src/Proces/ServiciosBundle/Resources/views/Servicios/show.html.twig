@@ -1,0 +1,43 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+{% block body -%}
+    <h1>Servicios</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Tituloservicio</th>
+                <td>{{ entity.tituloServicio }}</td>
+            </tr>
+            <tr>
+                <th>Descripcionservicio</th>
+                <td>{{ entity.descripcionServicio }}</td>
+            </tr>
+            <tr>
+                <th>Urlaudioservicio</th>
+                <td>{{ entity.urlAudioServicio }}</td>
+            </tr>
+            <tr>
+                <th>Urlservicio</th>
+                <td>{{ entity.urlServicio }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('servicios') }}">
+            Volver al Listado
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('servicios_edit', { 'id': entity.id }) }}">
+            Editar
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

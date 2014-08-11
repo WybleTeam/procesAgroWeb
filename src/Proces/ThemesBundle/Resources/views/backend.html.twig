@@ -21,7 +21,7 @@
         <header class="header">
             <a href="{{ path("admin_homepage") }}" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                {{  app.user.username  }}
+                ProcesAgro
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -226,15 +226,15 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>{{  app.user.username  }} <i class="caret"></i></span>
+                                <span>{{  app.user.firstname  }} <i class="caret"></i></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
                                     <img src="{{ asset('bundles/themes/img/avatar3.png') }}" class="img-circle" alt="User Image" />
                                     <p>
-                                        {{  app.user.username  }} - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        {{  app.user.firstname }} {{  app.user.lastname }} - Usuario de {% for rol in app.user.groups %} {{ rol|capitalize }} {% endfor %}    
+                                        <small>Miembro desde {{ app.user.created|date('d, M-Y') }}</small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -275,15 +275,15 @@
                             <img src="{{ asset('bundles/themes/img/avatar3.png') }}" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
-                            <p>Hello, {{ app.user.username  }}</p>
+                            <p>Hola, {{ app.user.firstname  }}</p>
 
-                            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                            <a href="#"><i class="fa fa-circle text-success"></i> Conectado</a>
                         </div>
                     </div>
                     <!-- search form -->
                     <form action="#" method="get" class="sidebar-form">
                         <div class="input-group">
-                            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+                            <input type="text" name="q" class="form-control" placeholder="Buscar..."/>
                             <span class="input-group-btn">
                                 <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
                             </span>
@@ -405,13 +405,13 @@
                 <section class="content-header">
                     <h1>
                         {% for rol in app.user.groups %}
-                            {{ rol }}
+                            {{ rol|capitalize }}
                         {% endfor %}    
-                        <small>Control panel</small>
+                        <small>ProcesAgro</small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                        <li class="active">Dashboard</li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
+                        <li class="active">Panel</li>
                     </ol>
                 </section>
                 
@@ -755,7 +755,7 @@
                                         </div><!-- ./col -->
                                         <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                                            <div id="sparkline-2"></div>
-                                            <div class="knob-label">Online</div>
+                                            <div class="knob-label">Conectado</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-4 text-center">
                                             <div id="sparkline-3"></div>
@@ -787,7 +787,7 @@
                                         </div><!-- ./col -->
                                         <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                                             <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#39CCCC"/>
-                                            <div class="knob-label">Online</div>
+                                            <div class="knob-label">Conectado</div>
                                         </div><!-- ./col -->
                                         <div class="col-xs-4 text-center">
                                             <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#39CCCC"/>
