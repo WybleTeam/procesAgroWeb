@@ -21,6 +21,13 @@ class Convocatorias
      */
     private $id;
 
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="tituloConvocatoria", type="string", length=45)
+     */
+    private $tituloConvocatoria;
+    
     /**
      * @var string
      *
@@ -61,6 +68,29 @@ class Convocatorias
     }
 
     /**
+     * Set tituloConvocatoria
+     *
+     * @param string $tituloConvocatoria
+     * @return Convocatorias
+     */
+    public function setTituloConvocatorian($tituloConvocatoria)
+    {
+        $this->tituloConvocatoria = $tituloConvocatoria;
+
+        return $this;
+    }
+
+    /**
+     * Get tituloConvocatoria
+     *
+     * @return string 
+     */
+    public function getTituloConvocatoria()
+    {
+        return $this->tituloConvocatoria;
+    }
+
+    /**
      * Set descripcion
      *
      * @param string $descripcion
@@ -82,7 +112,7 @@ class Convocatorias
     {
         return $this->descripcion;
     }
-
+    
     /**
      * Set urlConvocatoria
      *

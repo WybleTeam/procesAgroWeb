@@ -15,6 +15,11 @@ class ConvocatoriasType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('tituloConvocatoria','text',array(
+                    'attr'=>array('class'=>'form-control'),
+                    'label'=>'Título de Convocatoria'
+                
+            ))
             ->add('descripcion','textarea',array(
                     'attr'=>array('class'=>'form-control'),
                     'label'=>'Descripción'

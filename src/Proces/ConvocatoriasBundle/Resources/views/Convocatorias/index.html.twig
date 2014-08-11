@@ -6,6 +6,7 @@
         <thead>
             <tr>
                 <th>No.</th>
+                <th>Título Convocatoria</th> 
                 <th>Descripción</th>
                 <th>Url convocatoria</th>
                 <th>Descripción larga</th>
@@ -16,6 +17,7 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ entity.tituloConvocatoria }}</td>
                 <td>{{ entity.descripcion }}</td>
                 <td>{{ entity.urlConvocatoria }}</td>
                 <td>{{ entity.descripcionLarga }}</td>
