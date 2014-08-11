@@ -20,6 +20,7 @@ class Builder extends ContainerAware
         $menu->addChild('Servicios', array('route' => 'servicios_homepage'))->setLabel('Servicios')->setAttribute('icon','fa fa-dashboard');              
         $menu->addChild('Ofertas', array('route' => 'oferta_homepage'))->setAttribute('icon','fa fa-th');
         $menu->addChild('Oficinas', array('route' => 'oficinas_homepage'))->setLabel('Oficinas')->setAttribute('icon','fa fa-dashboard');              
+        $menu->addChild('Admin', array('route' => 'admin_homepage'))->setLabel('Administrador')->setAttribute('icon','fa fa-dashboard');   
         $menu->addChild('Super Admin', array('route' => 'tp_user'))->setLabel('Super Admin')->setAttribute('icon','fa fa-dashboard');   
         
        /* $menu->addChild('Tipo Usuario', array('route' => 'tipousuario'))->setAttribute('icon','icon-bar-chart');
