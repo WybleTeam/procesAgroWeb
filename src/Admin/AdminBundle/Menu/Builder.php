@@ -12,10 +12,10 @@ class Builder extends ContainerAware
      public function frontenedMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'sidebar-menu');
+        $menu->setChildrenAttribute('class', 'nav nav-collapse pull-right');
        
         //$menu->setLabelAttribute('class', 'span');
-        $menu->addChild('Inicio', array('route' => 'web_homepage'))->setLabel('Inicio')->setAttribute('icon','fa fa-dashboard');                     
+        $menu->addChild('Inicio', array('route' => 'web_homepage'))->setLabel('Inicio')->setAttribute('icon','icon-user');                     
         $menu->addChild('Convocatorias', array('route' => 'convocatorias_homepage'))->setAttribute('icon','fa fa-th');
         $menu->addChild('Servicios', array('route' => 'servicios_homepage'))->setLabel('Servicios')->setAttribute('icon','fa fa-dashboard');              
         $menu->addChild('Ofertas', array('route' => 'oferta_homepage'))->setAttribute('icon','fa fa-th');

@@ -3,11 +3,23 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Bienvenidos!{% endblock %}</title>
+        <!-- styles -->
+    <link href="{{ asset('bundles/themes/frontened/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/themes/frontened/css/bootstrap-responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/themes/frontened/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/themes/frontened/font/css/fontello.css') }}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block content %}{% endblock %}
+        
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="{{ asset('bundles/themes/frontened/js/bootstrap.min.js') }}"></script>
+    <script>
+                $('#myModal').modal('hidden')
+        </script>    
         {% block javascripts %}{% endblock %}
     </body>
 </html>

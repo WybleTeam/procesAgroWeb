@@ -1,8 +1,18 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-
-     {{ knp_menu_render('AdminBundle:Builder:frontenedMenu') }}
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#l"><img src="{{ asset('bundles/themes/frontened/img/user.jpg') }}"/></a>
+          {{ knp_menu_render('AdminBundle:Builder:frontenedMenu') }}
+            <ul class="nav nav-collapse pull-right">
+          <div class="nav-collapse collapse">
+            <!-- .nav, .navbar-search, .navbar-form, etc -->
+          </div>
+        </div>
+      </div>
+    </div>
+     
 
 {% block body %}
     
