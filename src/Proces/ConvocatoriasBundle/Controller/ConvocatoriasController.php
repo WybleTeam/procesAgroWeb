@@ -35,7 +35,10 @@ class ConvocatoriasController extends Controller
      */
     public function createAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $usuarioActivo = $this->get('security.context')->getToken()->getUser();
         $entity = new Convocatorias();
+        $entity->setUsuario($usuarioActivo);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -67,7 +70,7 @@ class ConvocatoriasController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear'));
 
         return $form;
     }
@@ -147,7 +150,7 @@ class ConvocatoriasController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -217,7 +220,7 @@ class ConvocatoriasController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('convocatorias_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Borrar'))
             ->getForm()
         ;
     }

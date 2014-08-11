@@ -10,15 +10,15 @@
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Nombreoficina</th>
+                <th>Nombre oficina</th>
                 <td>{{ entity.nombreOficina }}</td>
             </tr>
             <tr>
-                <th>Direccionoficina</th>
+                <th>Dirección oficina</th>
                 <td>{{ entity.direccionOficina }}</td>
             </tr>
             <tr>
-                <th>Descripcionoficina</th>
+                <th>Descripción oficina</th>
                 <td>{{ entity.descripcionOficina }}</td>
             </tr>
         </tbody>
@@ -27,12 +27,12 @@
         <ul class="record_actions">
     <li>
         <a href="{{ path('oficinas_admin') }}">
-            Back to the list
+            Volver al Listado
         </a>
     </li>
     <li>
         <a href="{{ path('oficinas_edit', { 'id': entity.id }) }}">
-            Edit
+            Editar
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>

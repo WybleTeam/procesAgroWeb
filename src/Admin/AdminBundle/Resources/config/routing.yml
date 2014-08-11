@@ -19,3 +19,8 @@ Admin_OficinasBundle_oficinas:
 convocatorias:
     resource: "@ConvocatoriasBundle/Resources/config/routing.yml"
     prefix:   /convocatorias
+
+
+WebBundle_solmantenimientoidentificacion:
+    resource: "@WebBundle/Resources/config/routing/solmantenimientoidentificacion.yml"
+    prefix:   /solmantenimiento

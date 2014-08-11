@@ -1,11 +1,11 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 {% block body -%}
-    <h1>Oficinas list</h1>
+    <h1>Listado de Oficinas</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>No.</th>
                 <th>Nombreoficina</th>
                 <th>Direccionoficina</th>
                 <th>Descripcionoficina</th>
@@ -15,17 +15,17 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('oficinas_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('oficinas_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.nombreOficina }}</td>
                 <td>{{ entity.direccionOficina }}</td>
                 <td>{{ entity.descripcionOficina }}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('oficinas_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('oficinas_show', { 'id': entity.id }) }}">Ver</a>
                     </li>
                     <li>
-                        <a href="{{ path('oficinas_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('oficinas_edit', { 'id': entity.id }) }}">Editar</a>
                     </li>
                 </ul>
                 </td>
@@ -37,7 +37,7 @@
         <ul>
         <li>
             <a href="{{ path('oficinas_new') }}">
-                Create a new entry
+                Crear nueva
             </a>
         </li>
     </ul>

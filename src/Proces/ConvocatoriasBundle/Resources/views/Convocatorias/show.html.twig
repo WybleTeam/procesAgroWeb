@@ -14,11 +14,11 @@
                 <td>{{ entity.descripcion }}</td>
             </tr>
             <tr>
-                <th>Urlconvocatoria</th>
+                <th>Url convocatoria</th>
                 <td>{{ entity.urlConvocatoria }}</td>
             </tr>
             <tr>
-                <th>Descripcionlarga</th>
+                <th>Descripcion larga</th>
                 <td>{{ entity.descripcionLarga }}</td>
             </tr>
         </tbody>
@@ -27,12 +27,12 @@
         <ul class="record_actions">
     <li>
         <a href="{{ path('convocatorias') }}">
-            Back to the list
+            Volver al listado
         </a>
     </li>
     <li>
         <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}">
-            Edit
+            Editar
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>

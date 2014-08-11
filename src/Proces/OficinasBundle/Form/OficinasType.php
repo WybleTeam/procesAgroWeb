@@ -15,11 +15,27 @@ class OficinasType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nombreOficina')
-            ->add('direccionOficina')
-            ->add('descripcionOficina')
-            ->add('usuario')
-            ->add('municipio')
+            ->add('nombreOficina','text',array(
+                    'attr'=>array('class'=>'form-control'),
+                    'label'=>'Nombre Oficina'
+                
+            ))
+            ->add('direccionOficina','text',array(
+                    'attr'=>array('class'=>'form-control'),
+                    'label'=>'Dirección Oficina'
+                
+            ))
+            ->add('descripcionOficina','textarea',array(
+                    'attr'=>array('class'=>'form-control'),
+                    'label'=>'Descripción Oficina'
+                
+            ))
+            //->add('usuario')
+            ->add('municipio',null,array(
+                    'attr'=>array('class'=>'form-control'),
+                    'label'=>'Municipio'
+                
+            ))
         ;
     }
     

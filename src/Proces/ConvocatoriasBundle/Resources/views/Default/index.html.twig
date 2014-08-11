@@ -5,17 +5,17 @@
   <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>No. </th>
                 <th>Descripcion</th>
-                <th>Urlconvocatoria</th>
-                <th>Descripcionlarga</th>
+                <th>Url convocatoria</th>
+                <th>Descripcion larga</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.descripcion }}</td>
                 <td>{{ entity.urlConvocatoria }}</td>
                 <td>{{ entity.descripcionLarga }}</td>

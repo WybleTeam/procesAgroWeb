@@ -55,7 +55,7 @@ class Builder extends ContainerAware
             
                
         $menu->addChild('Oficinas', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
-          $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');  
+        $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');  
        /* $menu->addChild('Tipo Usuario', array('route' => 'tipousuario'))->setAttribute('icon','icon-bar-chart');
         $menu->addChild('Tipo Identificación', array('route' => 'tipoidentificacion'))->setAttribute('icon','icon-list-alt');
        
@@ -107,6 +107,91 @@ class Builder extends ContainerAware
         $menu['SocioEconómico']->addChild('Municipio', array('route'=>'municipio'));
         $menu->addChild('Tipo calificación', array('route' => 'tipocalificacion'))->setAttribute('icon','icon-bar-chart');*/
 
+        return $menu;
+    }
+    
+    public function serviciosMenu(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'sidebar-menu');
+       
+        //$menu->setLabelAttribute('class', 'span');
+
+        $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
+        ->setAttribute('icon','fa fa-dashboard');
+            
+               
+        $menu->addChild('Servicios', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Otros', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');  
+       
+        return $menu;
+    }
+   
+    public function convocatoriasMenu(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'sidebar-menu');
+       
+        //$menu->setLabelAttribute('class', 'span');
+
+        $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
+        ->setAttribute('icon','fa fa-dashboard');
+            
+               
+        $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Otros', array('uri' => '#'))->setAttribute('icon','fa fa-th');  
+       
+        return $menu;
+    }
+    
+    public function tramitesMenu(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'sidebar-menu');
+       
+        //$menu->setLabelAttribute('class', 'span');
+
+        $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
+        ->setAttribute('icon','fa fa-dashboard');
+            
+               
+        $menu->addChild('Solicitudes', array('route' => 'solmantenimientoidentificacion'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Otros', array('uri' => '#'))->setAttribute('icon','fa fa-th');  
+       
+        return $menu;
+    }
+    
+        public function AdminMenu(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'sidebar-menu');
+       
+        //$menu->setLabelAttribute('class', 'span');
+
+        $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
+        ->setAttribute('icon','fa fa-dashboard');
+            
+        $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');       
+        $menu->addChild('Administrador', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Otros', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');  
+       
+        return $menu;
+    }
+    
+    public function superAdminMenu(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'sidebar-menu');
+       
+        //$menu->setLabelAttribute('class', 'span');
+
+        $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
+        ->setAttribute('icon','fa fa-dashboard');
+            
+               
+        $menu->addChild('SuperAdmin', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Otros', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');  
+       
         return $menu;
     }
 }

@@ -1,31 +1,31 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 {% block body -%}
-    <h1>Convocatorias list</h1>
+    <h1>Listado de Convocatorias</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Descripcion</th>
-                <th>Urlconvocatoria</th>
-                <th>Descripcionlarga</th>
+                <th>No.</th>
+                <th>Descripción</th>
+                <th>Url convocatoria</th>
+                <th>Descripción larga</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.descripcion }}</td>
                 <td>{{ entity.urlConvocatoria }}</td>
                 <td>{{ entity.descripcionLarga }}</td>
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">Mostrar</a>
                     </li>
                     <li>
-                        <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}">Editar</a>
                     </li>
                 </ul>
                 </td>
@@ -37,7 +37,7 @@
         <ul>
         <li>
             <a href="{{ path('convocatorias_new') }}">
-                Create a new entry
+                Crear nueva
             </a>
         </li>
     </ul>
