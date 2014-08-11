@@ -192,8 +192,8 @@ class Builder extends ContainerAware
         ->setAttribute('icon','fa fa-dashboard');
             
                
-        $menu->addChild('SuperAdmin', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Otros', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');  
+        $menu->addChild('Usuarios', array('route' => 'tp_user'))->setAttribute('icon','fa fa-th');
+        $menu->addChild('Otros', array('route' => 'usuarios_homepage'))->setAttribute('icon','fa fa-th');  
        
         return $menu;
     }
