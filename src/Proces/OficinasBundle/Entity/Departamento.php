@@ -61,4 +61,9 @@ class Departamento
     {
         return $this->nombreDepartamento;
     }
+    
+    public function __toString() 
+    {
+        return $this->getNombreDepartamento();
+    }
 }

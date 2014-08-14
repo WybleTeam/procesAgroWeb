@@ -1,0 +1,41 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <h1>Listado Rango Edades</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Nombrerango</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('rangoedades_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ entity.nombreRango }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('rangoedades_show', { 'id': entity.id }) }}">Ver</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('rangoedades_edit', { 'id': entity.id }) }}">Editar</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('rangoedades_new') }}">
+                Crear nuevo
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

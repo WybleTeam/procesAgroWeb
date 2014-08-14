@@ -36,3 +36,27 @@ oferta_ofertasinstitucionales:
 proces_cursos_cursosvirtuales:
     resource: "@ProcesCursosBundle/Resources/config/routing/cursosvirtuales.yml"
     prefix:   /cursosvirtuales
+
+ICATramiteBundle_seccionales:
+    resource: "@ICATramiteBundle/Resources/config/routing/seccionales.yml"
+    prefix:   /seccionales
+
+ICATramiteBundle_especieanimal:
+    resource: "@ICATramiteBundle/Resources/config/routing/especieanimal.yml"
+    prefix:   /especieanimal
+
+ICATramiteBundle_rangoedades:
+    resource: "@ICATramiteBundle/Resources/config/routing/rangoedades.yml"
+    prefix:   /rangoedades
+
+OficinasBundle_departamento:
+    resource: "@OficinasBundle/Resources/config/routing/departamento.yml"
+    prefix:   /departamento
+
+OficinasBundle_municipio:
+    resource: "@OficinasBundle/Resources/config/routing/municipio.yml"
+    prefix:   /municipio
+
+oferta_pasosoferta:
+    resource: "@OfertaBundle/Resources/config/routing/pasosoferta.yml"
+    prefix:   /pasosoferta

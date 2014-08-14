@@ -1,0 +1,30 @@
+rangoedades:
+    path:     /
+    defaults: { _controller: "ICATramiteBundle:RangoEdades:index" }
+
+rangoedades_show:
+    path:     /{id}/show
+    defaults: { _controller: "ICATramiteBundle:RangoEdades:show" }
+
+rangoedades_new:
+    path:     /new
+    defaults: { _controller: "ICATramiteBundle:RangoEdades:new" }
+
+rangoedades_create:
+    path:     /create
+    defaults: { _controller: "ICATramiteBundle:RangoEdades:create" }
+    requirements: { _method: post }
+
+rangoedades_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ICATramiteBundle:RangoEdades:edit" }
+
+rangoedades_update:
+    path:     /{id}/update
+    defaults: { _controller: "ICATramiteBundle:RangoEdades:update" }
+    requirements: { _method: post|put }
+
+rangoedades_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ICATramiteBundle:RangoEdades:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,15 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <h1>Crear Especie Animal</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('especieanimal') }}">
+           Volver al listado
+        </a>
+    </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+pasosoferta:
+    path:     /
+    defaults: { _controller: "OfertaBundle:PasosOferta:index" }
+
+pasosoferta_show:
+    path:     /{id}/show
+    defaults: { _controller: "OfertaBundle:PasosOferta:show" }
+
+pasosoferta_new:
+    path:     /new
+    defaults: { _controller: "OfertaBundle:PasosOferta:new" }
+
+pasosoferta_create:
+    path:     /create
+    defaults: { _controller: "OfertaBundle:PasosOferta:create" }
+    requirements: { _method: post }
+
+pasosoferta_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "OfertaBundle:PasosOferta:edit" }
+
+pasosoferta_update:
+    path:     /{id}/update
+    defaults: { _controller: "OfertaBundle:PasosOferta:update" }
+    requirements: { _method: post|put }
+
+pasosoferta_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "OfertaBundle:PasosOferta:delete" }
+    requirements: { _method: post|delete }

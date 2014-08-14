@@ -1,0 +1,30 @@
+especieanimal:
+    path:     /
+    defaults: { _controller: "ICATramiteBundle:EspecieAnimal:index" }
+
+especieanimal_show:
+    path:     /{id}/show
+    defaults: { _controller: "ICATramiteBundle:EspecieAnimal:show" }
+
+especieanimal_new:
+    path:     /new
+    defaults: { _controller: "ICATramiteBundle:EspecieAnimal:new" }
+
+especieanimal_create:
+    path:     /create
+    defaults: { _controller: "ICATramiteBundle:EspecieAnimal:create" }
+    requirements: { _method: post }
+
+especieanimal_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ICATramiteBundle:EspecieAnimal:edit" }
+
+especieanimal_update:
+    path:     /{id}/update
+    defaults: { _controller: "ICATramiteBundle:EspecieAnimal:update" }
+    requirements: { _method: post|put }
+
+especieanimal_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ICATramiteBundle:EspecieAnimal:delete" }
+    requirements: { _method: post|delete }

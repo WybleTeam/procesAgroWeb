@@ -1,0 +1,32 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <h1>Rango Edades</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombrerango</th>
+                <td>{{ entity.nombreRango }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('rangoedades') }}">
+            Volver al listado
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('rangoedades_edit', { 'id': entity.id }) }}">
+            Editar
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

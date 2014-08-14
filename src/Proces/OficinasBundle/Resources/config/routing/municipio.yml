@@ -1,0 +1,30 @@
+municipio:
+    path:     /
+    defaults: { _controller: "OficinasBundle:Municipio:index" }
+
+municipio_show:
+    path:     /{id}/show
+    defaults: { _controller: "OficinasBundle:Municipio:show" }
+
+municipio_new:
+    path:     /new
+    defaults: { _controller: "OficinasBundle:Municipio:new" }
+
+municipio_create:
+    path:     /create
+    defaults: { _controller: "OficinasBundle:Municipio:create" }
+    requirements: { _method: post }
+
+municipio_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "OficinasBundle:Municipio:edit" }
+
+municipio_update:
+    path:     /{id}/update
+    defaults: { _controller: "OficinasBundle:Municipio:update" }
+    requirements: { _method: post|put }
+
+municipio_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "OficinasBundle:Municipio:delete" }
+    requirements: { _method: post|delete }

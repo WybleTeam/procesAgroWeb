@@ -1,0 +1,15 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <h1>Crear Pasos Oferta</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('pasosoferta') }}">
+            Volver al listado
+        </a>
+    </li>
+</ul>
+{% endblock %}

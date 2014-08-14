@@ -1,0 +1,30 @@
+seccionales:
+    path:     /
+    defaults: { _controller: "ICATramiteBundle:Seccionales:index" }
+
+seccionales_show:
+    path:     /{id}/show
+    defaults: { _controller: "ICATramiteBundle:Seccionales:show" }
+
+seccionales_new:
+    path:     /new
+    defaults: { _controller: "ICATramiteBundle:Seccionales:new" }
+
+seccionales_create:
+    path:     /create
+    defaults: { _controller: "ICATramiteBundle:Seccionales:create" }
+    requirements: { _method: post }
+
+seccionales_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ICATramiteBundle:Seccionales:edit" }
+
+seccionales_update:
+    path:     /{id}/update
+    defaults: { _controller: "ICATramiteBundle:Seccionales:update" }
+    requirements: { _method: post|put }
+
+seccionales_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ICATramiteBundle:Seccionales:delete" }
+    requirements: { _method: post|delete }

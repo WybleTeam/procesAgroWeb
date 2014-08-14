@@ -181,4 +181,9 @@ class OfertasInstitucionales
     {
         return $this->usuario;
     }
+    
+    public function __toString() 
+    {
+        return $this->getTituloOferta();
+    }
 }

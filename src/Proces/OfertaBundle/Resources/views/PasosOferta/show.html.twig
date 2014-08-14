@@ -1,0 +1,40 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <h1>Pasos Oferta</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Titulopasos</th>
+                <td>{{ entity.tituloPasos }}</td>
+            </tr>
+            <tr>
+                <th>Descripcionpaso</th>
+                <td>{{ entity.descripcionPaso }}</td>
+            </tr>
+            <tr>
+                <th>Urlpaso</th>
+                <td>{{ entity.urlPaso }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('pasosoferta') }}">
+            Volver al listado
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('pasosoferta_edit', { 'id': entity.id }) }}">
+            Editar
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

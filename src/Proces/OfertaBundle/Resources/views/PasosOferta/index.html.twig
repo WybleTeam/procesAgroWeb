@@ -1,0 +1,44 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+{% block body -%}
+    <h1>Listado Pasos Oferta</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Titulopasos</th>
+                <th>Descripcionpaso</th>
+                <th>Urlpaso</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('pasosoferta_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ entity.tituloPasos }}</td>
+                <td>{{ entity.descripcionPaso }}</td>
+                <td>{{ entity.urlPaso }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('pasosoferta_show', { 'id': entity.id }) }}">Ver</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('pasosoferta_edit', { 'id': entity.id }) }}">editar</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('pasosoferta_new') }}">
+                Crear nuevo
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
