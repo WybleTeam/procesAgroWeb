@@ -61,4 +61,9 @@ class RangoEdades
     {
         return $this->nombreRango;
     }
+    
+    public function __toString() 
+    {
+        return $this->getNombreRango();
+    }
 }

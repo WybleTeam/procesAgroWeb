@@ -61,4 +61,9 @@ class EspecieAnimal
     {
         return $this->nombreEspecie;
     }
+    
+    public function __toString() 
+    {
+        return $this->getNombreEspecie();
+    }
 }

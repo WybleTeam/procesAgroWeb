@@ -181,4 +181,9 @@ class Oficinas
     {
         return $this->municipio;
     }
+    
+    public function __toString() 
+    {
+        return $this->getNombreOficina();
+    }
 }
