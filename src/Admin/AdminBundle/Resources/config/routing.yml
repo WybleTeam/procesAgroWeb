@@ -49,6 +49,11 @@ ICATramiteBundle_rangoedades:
     resource: "@ICATramiteBundle/Resources/config/routing/rangoedades.yml"
     prefix:   /rangoedades
 
+ICATramiteBundle_motivoidentificacion:
+    resource: "@ICATramiteBundle/Resources/config/routing/motivoidentificacion.yml"
+    prefix:   /motivoidentificacion
+
+
 OficinasBundle_departamento:
     resource: "@OficinasBundle/Resources/config/routing/departamento.yml"
     prefix:   /departamento

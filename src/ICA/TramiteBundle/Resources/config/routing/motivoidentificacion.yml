@@ -1,0 +1,30 @@
+motivoidentificacion:
+    path:     /
+    defaults: { _controller: "ICATramiteBundle:MotivoIdentificacion:index" }
+
+motivoidentificacion_show:
+    path:     /{id}/show
+    defaults: { _controller: "ICATramiteBundle:MotivoIdentificacion:show" }
+
+motivoidentificacion_new:
+    path:     /new
+    defaults: { _controller: "ICATramiteBundle:MotivoIdentificacion:new" }
+
+motivoidentificacion_create:
+    path:     /create
+    defaults: { _controller: "ICATramiteBundle:MotivoIdentificacion:create" }
+    requirements: { _method: post }
+
+motivoidentificacion_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ICATramiteBundle:MotivoIdentificacion:edit" }
+
+motivoidentificacion_update:
+    path:     /{id}/update
+    defaults: { _controller: "ICATramiteBundle:MotivoIdentificacion:update" }
+    requirements: { _method: post|put }
+
+motivoidentificacion_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ICATramiteBundle:MotivoIdentificacion:delete" }
+    requirements: { _method: post|delete }

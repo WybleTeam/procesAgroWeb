@@ -162,7 +162,7 @@ class Builder extends ContainerAware
         return $menu;
     }
     
-        public function AdminMenu(FactoryInterface $factory, array $options)
+    public function AdminMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
         $menu->setChildrenAttribute('class', 'sidebar-menu');
@@ -189,6 +189,7 @@ class Builder extends ContainerAware
         $menu['TramiteICA']->addChild('Seccionales', array('route'=>'seccionales'));
         $menu['TramiteICA']->addChild('Especie Animal', array('route'=>'especieanimal'));
         $menu['TramiteICA']->addChild('Rango Edades', array('route'=>'rangoedades'));
+        $menu['TramiteICA']->addChild('Motivo Identificacion', array('route'=>'motivoidentificacion'));
         
         $menu->addChild('Localizacion',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
         $menu['Localizacion']->setChildrenAttribute('class', 'dropdown-menu');
