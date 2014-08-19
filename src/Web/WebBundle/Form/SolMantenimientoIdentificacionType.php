@@ -69,9 +69,9 @@ class SolMantenimientoIdentificacionType extends AbstractType
             ->add('seccional',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
-            ->add('usuario',null,array(
-                'attr'=>array('class'=>'form-control')
-            ))
+            //->add('usuario',null,array(
+            //    'attr'=>array('class'=>'form-control')
+            //))
         ;
     }
     

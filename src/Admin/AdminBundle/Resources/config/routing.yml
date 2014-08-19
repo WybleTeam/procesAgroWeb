@@ -53,6 +53,14 @@ ICATramiteBundle_motivoidentificacion:
     resource: "@ICATramiteBundle/Resources/config/routing/motivoidentificacion.yml"
     prefix:   /motivoidentificacion
 
+WebBundle_solicitudcantidadmotivo:
+    resource: "@WebBundle/Resources/config/routing/solicitudcantidadmotivo.yml"
+    prefix:   /solicitudcantidadmotivo
+
+WebBundle_especierangosolicitud:
+    resource: "@WebBundle/Resources/config/routing/especierangosolicitud.yml"
+    prefix:   /especierangosolicitud
+
 
 OficinasBundle_departamento:
     resource: "@OficinasBundle/Resources/config/routing/departamento.yml"

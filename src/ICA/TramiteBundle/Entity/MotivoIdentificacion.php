@@ -61,4 +61,9 @@ class MotivoIdentificacion
     {
         return $this->nombreMotivo;
     }
+    
+    public function __toString() 
+    {
+        return $this->getNombreMotivo();
+    }
 }

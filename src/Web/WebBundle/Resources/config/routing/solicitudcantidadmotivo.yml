@@ -1,0 +1,30 @@
+solicitudcantidadmotivo:
+    path:     /
+    defaults: { _controller: "WebBundle:SolicitudCantidadMotivo:index" }
+
+solicitudcantidadmotivo_show:
+    path:     /{id}/show
+    defaults: { _controller: "WebBundle:SolicitudCantidadMotivo:show" }
+
+solicitudcantidadmotivo_new:
+    path:     /new
+    defaults: { _controller: "WebBundle:SolicitudCantidadMotivo:new" }
+
+solicitudcantidadmotivo_create:
+    path:     /create
+    defaults: { _controller: "WebBundle:SolicitudCantidadMotivo:create" }
+    requirements: { _method: post }
+
+solicitudcantidadmotivo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WebBundle:SolicitudCantidadMotivo:edit" }
+
+solicitudcantidadmotivo_update:
+    path:     /{id}/update
+    defaults: { _controller: "WebBundle:SolicitudCantidadMotivo:update" }
+    requirements: { _method: post|put }
+
+solicitudcantidadmotivo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WebBundle:SolicitudCantidadMotivo:delete" }
+    requirements: { _method: post|delete }

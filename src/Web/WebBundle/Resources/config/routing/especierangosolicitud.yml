@@ -1,0 +1,30 @@
+especierangosolicitud:
+    path:     /
+    defaults: { _controller: "WebBundle:EspecieRangoSolicitud:index" }
+
+especierangosolicitud_show:
+    path:     /{id}/show
+    defaults: { _controller: "WebBundle:EspecieRangoSolicitud:show" }
+
+especierangosolicitud_new:
+    path:     /new
+    defaults: { _controller: "WebBundle:EspecieRangoSolicitud:new" }
+
+especierangosolicitud_create:
+    path:     /create
+    defaults: { _controller: "WebBundle:EspecieRangoSolicitud:create" }
+    requirements: { _method: post }
+
+especierangosolicitud_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WebBundle:EspecieRangoSolicitud:edit" }
+
+especierangosolicitud_update:
+    path:     /{id}/update
+    defaults: { _controller: "WebBundle:EspecieRangoSolicitud:update" }
+    requirements: { _method: post|put }
+
+especierangosolicitud_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WebBundle:EspecieRangoSolicitud:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,15 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <h1>Creacion Especie Rango Solicitud</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('especierangosolicitud') }}">
+            Volver al listado
+        </a>
+    </li>
+</ul>
+{% endblock %}
