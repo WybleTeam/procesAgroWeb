@@ -21,9 +21,9 @@ class SolicitudCantidadMotivoType extends AbstractType
             ->add('motivoIdentificacion',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
-            ->add('solicitudMantenimiento',null,array(
-                'attr'=>array('class'=>'form-control')
-            ))
+           // ->add('solicitudMantenimiento',null,array(
+           //     'attr'=>array('class'=>'form-control')
+           // ))
         ;
     }
     

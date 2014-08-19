@@ -3,6 +3,7 @@
 namespace Web\WebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * SolMantenimientoIdentificacion
@@ -126,6 +127,13 @@ class SolMantenimientoIdentificacion
      */
     private $telefonoCelularSolicitante;
 
+   
+     /**
+     * @Assert\Type(type="Web\WebBundle\Entity\SolicitudCantidadMotivo")
+     */
+    protected $especierango;
+   
+    
     /**
      * @var \DateTime
      *
@@ -418,6 +426,17 @@ class SolMantenimientoIdentificacion
         return $this->telefonoCelularPropietario;
     }
 
+    public function getEspecierango()
+    {
+        return $this->especierango;
+    }
+ 
+    public function setEspecierango(EspecieRangoSolicitud $especierango = null)
+    {
+        $this->category = $especierango;
+    }
+    
+    
     /**
      * Set nombreSolicitante
      *
