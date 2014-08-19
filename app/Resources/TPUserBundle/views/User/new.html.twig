@@ -1,0 +1,19 @@
+{% extends 'TPUserBundle::base.html.twig' %}
+
+{% block body -%}
+    <div class="well">
+    <h1>Creación de usuario</h1>
+
+    <form action="{{ path('tp_user_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button class="btn btn-success" type="submit">Guardar</button>
+        </p>
+    </form>
+
+    <a  class="btn btn-primary" href="{{ path('tp_user') }}">
+        <i class="icon-list icon-white"></i> Volver al listado
+    </a>
+    </div>
+</ul>
+{% endblock %}

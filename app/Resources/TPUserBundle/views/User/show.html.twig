@@ -1,0 +1,59 @@
+{% extends 'TPUserBundle::base.html.twig' %}
+
+{% block body -%}
+    <h1>Usuario</h1>
+
+    <table class="record_properties table table-striped">
+        <tbody>
+            <tr>
+                <th>Usuario</th>
+                <td>{{ entity.username }}</td>
+            </tr>
+
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+
+            <tr>
+                <th>Estado</th>
+                <td>{{ entity.enabled }}</td>
+            </tr>
+            <tr>
+                <th>Ultimo accesso</th>
+                <td>{{ entity.lastLogin|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Nombres</th>
+                <td>{{ entity.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Apellidos</th>
+                <td>{{ entity.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Creado</th>
+                <td>{{ entity.created|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Acceso</th>
+                <td>{{ entity.updated|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Grupos</th>
+                <td>
+                    {% for group in entity.groups %}
+                    {{ group.name }}
+                    {% endfor%}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+        <a  class="btn btn-primary" href="{{ path('tp_user') }}">
+            <i class="icon-list icon-white"></i> Volver al listado
+        </a>
+    
+{% endblock %}

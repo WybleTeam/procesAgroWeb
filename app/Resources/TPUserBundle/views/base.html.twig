@@ -1,0 +1,39 @@
+{% set currentRoute = app.request.attributes.get('_route') %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}ProcesAgro{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    {% block stylesheets %}
+    {% stylesheets 'bundles/tpuser/bootstrap/css/bootstrap.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>        
+    {% endblock %}    
+  </head>
+  <body>
+    {% block nav %}
+    {% include "TPUserBundle::nav.html.twig" %}      
+    {% endblock %}
+          
+    <div class="container">
+    {% block body %}
+    {% endblock %}
+    </div>     
+          
+    {% block javascript %}
+    {% javascripts
+        '@TPUserBundle/Resources/public/bootstrap/js/bootstrap.min.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}          
+    {% endblock %}
+  </body>
+</html>

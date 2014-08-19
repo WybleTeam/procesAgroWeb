@@ -12,7 +12,7 @@ class Builder extends ContainerAware
      public function frontenedMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav nav-collapse pull-right');
+        $menu->setChildrenAttribute('class', 'nav navbar-nav');
        
         //$menu->setLabelAttribute('class', 'span');
         $menu->addChild('Inicio', array('route' => 'web_homepage'))->setLabel('Inicio')->setAttribute('icon','icon-user');                     
@@ -21,7 +21,7 @@ class Builder extends ContainerAware
         $menu->addChild('Ofertas', array('route' => 'oferta_homepage'))->setAttribute('icon','fa fa-th');
         $menu->addChild('Oficinas', array('route' => 'oficinas_homepage'))->setLabel('Oficinas')->setAttribute('icon','icon-doc-text');              
         $menu->addChild('Admin', array('route' => 'admin_homepage'))->setLabel('Administrador')->setAttribute('icon','fa fa-dashboard');   
-        $menu->addChild('Super Admin', array('route' => 'tp_user'))->setLabel('Super Admin')->setAttribute('icon','fa fa-dashboard');   
+        //$menu->addChild('Super Admin', array('route' => 'tp_user'))->setLabel('Super Admin')->setAttribute('icon','fa fa-dashboard');   
         
        /* $menu->addChild('Tipo Usuario', array('route' => 'tipousuario'))->setAttribute('icon','icon-bar-chart');
         $menu->addChild('Tipo Identificación', array('route' => 'tipoidentificacion'))->setAttribute('icon','icon-list-alt');

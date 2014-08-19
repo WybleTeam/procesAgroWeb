@@ -1,0 +1,20 @@
+{% extends 'TPUserBundle::base.html.twig' %}
+
+{% block body -%}
+    <h1>Crear Grupo de Usuario</h1>
+
+    <form action="{{ path('tp_usergroup_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit">Crear</button>
+        </p>
+    </form>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('tp_usergroup') }}">
+            Volver al listado
+        </a>
+    </li>
+</ul>
+{% endblock %}
