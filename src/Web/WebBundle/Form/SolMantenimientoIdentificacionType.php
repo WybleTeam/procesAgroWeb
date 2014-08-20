@@ -61,7 +61,7 @@ class SolMantenimientoIdentificacionType extends AbstractType
             ->add('fechaProgramadaIdentificacion',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
-            ->add('observacionesRevision',null,array(
+            ->add('observacionesRevision','textarea',array(
                 'attr'=>array('class'=>'form-control')
             ))
             ->add('estadoSolicitud',null,array(

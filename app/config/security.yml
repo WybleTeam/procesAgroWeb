@@ -22,6 +22,9 @@ security:
                     admin: { password: admin, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
+        entrada:
+            pattern: ^/
+            anonymous:    true
         main:
             pattern: ^/usuarios
             form_login:
@@ -50,7 +53,7 @@ security:
 
 
     access_control:
-        - { path: ^/sol-mantenimiento/*,  role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/*,  role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/login$,  role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/oficinas/*, roles: [ROLE_OFICINA,  ROLE_SERVICIOS,  ROLE_CONVOCATOR,  ROLE_TRAMITES,  ROLE_ADMIN]  }
         - { path: ^/admin, roles: [ROLE_OFICINA,  ROLE_SOLICITUDES,  ROLE_SERVICIOS,  ROLE_CONVOCATOR,  ROLE_TRAMITES,  ROLE_ADMIN]  }        

@@ -63,13 +63,15 @@
       <div class="col-lg-6">{{ form_row(form.especierango.cantidad) }}</div>
       
   </fieldset>
-  <fieldset>
+      {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+  <fieldset disabled>
        <div class="col-lg-12 alert-success center"><hr>4.ESPACIO EXCLUSIVO PARA APROBACIÓN POR PARTE DEL ICA:<hr>
         </div>
-<div class="col-lg-12">{{ form_row(form.fechaProgramadaIdentificacion) }}</div>
-      <div class="col-lg-6">{{ form_row(form.observacionesRevision) }}</div>
-      <div class="col-lg-6">{{ form_row(form.estadoSolicitud) }}</div>
+      <div class="col-lg-12">{{ form_row(form.fechaProgramadaIdentificacion) }}<br></div>
+      <div class="col-lg-12">{{ form_row(form.observacionesRevision) }}</div>
+      <div class="col-lg-12">{{ form_row(form.estadoSolicitud) }}</div>
   </fieldset>    
+      {% endif %}
    </div>
     {{ form_end(form) }}
 
