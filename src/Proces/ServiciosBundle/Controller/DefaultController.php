@@ -8,6 +8,12 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('ServiciosBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('ServiciosBundle:Servicios')->findAll();
+
+        return $this->render('ServiciosBundle:Default:index.html.twig', array(
+            'entities' => $entities,
+        ));
     }
 }

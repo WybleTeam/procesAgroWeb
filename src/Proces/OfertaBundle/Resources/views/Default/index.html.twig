@@ -1,4 +1,29 @@
 {% extends 'ThemesBundle::plantilla2.html.twig' %}
 {% block body %}
-Hello ofertas
+<table class="table">
+        <thead>
+            <tr>
+                <th>No. </th>
+                <th>Titulo</th>
+                <th>Descripción</th>
+                <th>Url audio</th>
+                <th>Url Oferta</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ entity.tituloOferta }}</td>
+                <td>{{ entity.descripcionOferta }}</td>
+                <td>{{ entity.urlAudioOferta }}</td>
+                <td>{{ entity.urlOferta }}</td>
+                <td>
+               
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
