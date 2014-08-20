@@ -35,7 +35,9 @@ class SolMantenimientoController extends Controller
      */
     public function createAction(Request $request)
     {
+        $hoy = new \DateTime("now");
         $entity = new SolMantenimientoIdentificacion();
+        $entity->setFechaSolicitud($hoy);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -67,7 +69,7 @@ class SolMantenimientoController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear'));
 
         return $form;
     }
@@ -147,7 +149,7 @@ class SolMantenimientoController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -217,7 +219,7 @@ class SolMantenimientoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('solmantenimiento_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Borrar'))
             ->getForm()
         ;
     }

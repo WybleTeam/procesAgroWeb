@@ -15,15 +15,15 @@ class SolMantenimientoIdentificacionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fechaSolicitud',null,array(
+            //->add('fechaSolicitud',null,array(
+            //    'attr'=>array('class'=>'form-control')
+            //))
+            ->add('justificacionReidentificacion','textarea',array(
                 'attr'=>array('class'=>'form-control')
             ))
-            ->add('justificacionReidentificacion',null,array(
-                'attr'=>array('class'=>'form-control')
-            ))
-            ->add('solicitudMantenimientoIdentificacion',null,array(
-                'attr'=>array('class'=>'form-control')
-            ))
+            //->add('solicitudMantenimientoIdentificacion',null,array(
+            //    'attr'=>array('class'=>'form-control')
+            //))
             ->add('ica3101',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
@@ -37,7 +37,7 @@ class SolMantenimientoIdentificacionType extends AbstractType
                 'attr'=>array('class'=>'form-control')
             ))
             ->add('telefonoFijoPropietario',null,array(
-                'attr'=>array('class'=>'form-control')
+                  'attr'=>array('class'=>'form-control')
             ))
             ->add('telefonoCelularPropietario',null,array(
                 'attr'=>array('class'=>'form-control')
@@ -54,6 +54,10 @@ class SolMantenimientoIdentificacionType extends AbstractType
             ->add('telefonoCelularSolicitante',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
+             ->add('cantidadrango', new EspecieRangoSolicitudType())    
+            ->add('especierango', new SolicitudCantidadMotivoType())     
+                
+                
             ->add('fechaProgramadaIdentificacion',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
@@ -69,8 +73,7 @@ class SolMantenimientoIdentificacionType extends AbstractType
             ->add('seccional',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
-            ->add('cantidadrango', new EspecieRangoSolicitudType())    
-            ->add('especierango', new SolicitudCantidadMotivoType())    
+              
             //->add('usuario',null,array(
             //    'attr'=>array('class'=>'form-control')
             //))
