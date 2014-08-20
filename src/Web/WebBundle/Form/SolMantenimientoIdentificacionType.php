@@ -5,7 +5,6 @@ namespace Web\WebBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Web\WebBundle\Form\SolicitudCantidadMotivoType;
 
 class SolMantenimientoIdentificacionType extends AbstractType
 {
@@ -70,6 +69,7 @@ class SolMantenimientoIdentificacionType extends AbstractType
             ->add('seccional',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
+            ->add('cantidadrango', new EspecieRangoSolicitudType())    
             ->add('especierango', new SolicitudCantidadMotivoType())    
             //->add('usuario',null,array(
             //    'attr'=>array('class'=>'form-control')

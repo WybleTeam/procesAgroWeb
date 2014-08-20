@@ -24,9 +24,9 @@ class EspecieRangoSolicitudType extends AbstractType
             ->add('especieAnimal',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
-            ->add('solicitudMantenimiento',null,array(
-                'attr'=>array('class'=>'form-control')
-            ))
+            //->add('solicitudMantenimiento',null,array(
+            //    'attr'=>array('class'=>'form-control')
+            //))
         ;
     }
     

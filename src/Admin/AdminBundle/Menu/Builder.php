@@ -21,7 +21,7 @@ class Builder extends ContainerAware
         $menu->addChild('Ofertas', array('route' => 'oferta_homepage'))->setAttribute('icon','fa fa-th');
         $menu->addChild('Oficinas', array('route' => 'oficinas_homepage'))->setLabel('Oficinas')->setAttribute('icon','icon-doc-text');              
         $menu->addChild('Admin', array('route' => 'admin_homepage'))->setLabel('Administrador')->setAttribute('icon','fa fa-dashboard');   
-        //$menu->addChild('Super Admin', array('route' => 'tp_user'))->setLabel('Super Admin')->setAttribute('icon','fa fa-dashboard');   
+        $menu->addChild('tramite', array('route' => 'solmantenimientoidentificacion_new'))->setLabel('Tramite Especial')->setAttribute('icon','fa fa-dashboard');   
         
        /* $menu->addChild('Tipo Usuario', array('route' => 'tipousuario'))->setAttribute('icon','icon-bar-chart');
         $menu->addChild('Tipo Identificación', array('route' => 'tipoidentificacion'))->setAttribute('icon','icon-list-alt');
@@ -183,6 +183,7 @@ class Builder extends ContainerAware
         
         
         $menu->addChild('Cursos Virtuales', array('route' => 'cursosvirtuales'))->setAttribute('icon','fa fa-th');
+      
         $menu->addChild('TramiteICA',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
         $menu['TramiteICA']->setChildrenAttribute('class', 'dropdown-menu');
         $menu['TramiteICA']->addChild('Solicitudes', array('route'=>'solmantenimientoidentificacion'));

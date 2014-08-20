@@ -127,7 +127,12 @@ class SolMantenimientoIdentificacion
      */
     private $telefonoCelularSolicitante;
 
-   
+     /**
+     * @Assert\Type(type="Web\WebBundle\Entity\EspecieRangoSolicitud")
+     */
+    protected $cantidadrango;
+    
+    
      /**
      * @Assert\Type(type="Web\WebBundle\Entity\SolicitudCantidadMotivo")
      */
@@ -426,14 +431,25 @@ class SolMantenimientoIdentificacion
         return $this->telefonoCelularPropietario;
     }
 
+    public function getCantidadrango()
+    {
+        return $this->cantidadrango;
+    }
+ 
+    public function setCantidadrango(EspecieRangoSolicitud $cantidadrango = null)
+    {
+        $this->cantidadrango = $cantidadrango;
+    }
+    
+    
     public function getEspecierango()
     {
         return $this->especierango;
     }
  
-    public function setEspecierango(EspecieRangoSolicitud $especierango = null)
+    public function setEspecierango(SolicitudCantidadMotivo $especierango = null)
     {
-        $this->category = $especierango;
+        $this->especierango = $especierango;
     }
     
     

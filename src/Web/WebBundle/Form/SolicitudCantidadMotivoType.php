@@ -15,12 +15,13 @@ class SolicitudCantidadMotivoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('cantidad',null,array(
-                'attr'=>array('class'=>'form-control')
-            ))
             ->add('motivoIdentificacion',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
+            ->add('cantidad',null,array(
+                'attr'=>array('class'=>'form-control')
+            ))
+            
            // ->add('solicitudMantenimiento',null,array(
            //     'attr'=>array('class'=>'form-control')
            // ))
