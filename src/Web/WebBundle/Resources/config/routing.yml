@@ -17,3 +17,7 @@ oferta_homepage:
 servicios_homepage:
     path:     /servicios
     defaults: { _controller: ServiciosBundle:Default:index }
+    
+WebBundle_solManten:
+    resource: "@WebBundle/Resources/config/routing/sol-mantenimientoidentificacion.yml"
+    prefix:   /sol-mantenimiento    

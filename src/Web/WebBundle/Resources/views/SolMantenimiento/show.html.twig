@@ -1,0 +1,92 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <h1>Sol Mantenimiento Identificacion</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Fechasolicitud</th>
+                <td>{{ entity.fechaSolicitud|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Justificacionreidentificacion</th>
+                <td>{{ entity.justificacionReidentificacion }}</td>
+            </tr>
+            <tr>
+                <th>Solicitudmantenimientoidentificacion</th>
+                <td>{{ entity.solicitudMantenimientoIdentificacion }}</td>
+            </tr>
+            <tr>
+                <th>Ica3101</th>
+                <td>{{ entity.ica3101 }}</td>
+            </tr>
+            <tr>
+                <th>Nombrefinca</th>
+                <td>{{ entity.nombreFinca }}</td>
+            </tr>
+            <tr>
+                <th>Nombrepropietariofinca</th>
+                <td>{{ entity.nombrePropietarioFinca }}</td>
+            </tr>
+            <tr>
+                <th>Cedulapropietariofinca</th>
+                <td>{{ entity.cedulaPropietarioFinca }}</td>
+            </tr>
+            <tr>
+                <th>Telefonofijopropietario</th>
+                <td>{{ entity.telefonoFijoPropietario }}</td>
+            </tr>
+            <tr>
+                <th>Telefonocelularpropietario</th>
+                <td>{{ entity.telefonoCelularPropietario }}</td>
+            </tr>
+            <tr>
+                <th>Nombresolicitante</th>
+                <td>{{ entity.nombreSolicitante }}</td>
+            </tr>
+            <tr>
+                <th>Cedulasolicitante</th>
+                <td>{{ entity.cedulaSolicitante }}</td>
+            </tr>
+            <tr>
+                <th>Telefonofijosolicitante</th>
+                <td>{{ entity.telefonoFijoSolicitante }}</td>
+            </tr>
+            <tr>
+                <th>Telefonocelularsolicitante</th>
+                <td>{{ entity.telefonoCelularSolicitante }}</td>
+            </tr>
+            <tr>
+                <th>Fechaprogramadaidentificacion</th>
+                <td>{{ entity.fechaProgramadaIdentificacion|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Observacionesrevision</th>
+                <td>{{ entity.observacionesRevision }}</td>
+            </tr>
+            <tr>
+                <th>Estadosolicitud</th>
+                <td>{{ entity.estadoSolicitud }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('solmantenimientoidentificacion') }}">
+            Volver al listado
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('solmantenimientoidentificacion_edit', { 'id': entity.id }) }}">
+            Editar
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

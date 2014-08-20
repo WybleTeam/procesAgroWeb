@@ -1,9 +1,9 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Crear Sol Mantenimiento Identificacion</h1>
+    <h1>Editar Sol Mantenimiento Identificacion</h1>
 
-    {{ form(form) }}
+    {{ form(edit_form) }}
 
         <ul class="record_actions">
     <li>
@@ -11,5 +11,6 @@
             Volver al listado
         </a>
     </li>
+    <li>{{ form(delete_form) }}</li>
 </ul>
 {% endblock %}

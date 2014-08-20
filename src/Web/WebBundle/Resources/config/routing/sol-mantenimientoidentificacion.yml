@@ -1,0 +1,30 @@
+solmantenimiento:
+    path:     /
+    defaults: { _controller: "WebBundle:SolMantenimiento:index" }
+
+solmantenimiento_show:
+    path:     /{id}/show
+    defaults: { _controller: "WebBundle:SolMantenimiento:show" }
+
+solmantenimiento_new:
+    path:     /new
+    defaults: { _controller: "WebBundle:SolMantenimiento:new" }
+
+solmantenimiento_create:
+    path:     /create
+    defaults: { _controller: "WebBundle:SolMantenimiento:create" }
+    requirements: { _method: post }
+
+solmantenimiento_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WebBundle:SolMantenimiento:edit" }
+
+solmantenimiento_update:
+    path:     /{id}/update
+    defaults: { _controller: "WebBundle:SolMantenimiento:update" }
+    requirements: { _method: post|put }
+
+solmantenimiento_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WebBundle:SolMantenimiento:delete" }
+    requirements: { _method: post|delete }
