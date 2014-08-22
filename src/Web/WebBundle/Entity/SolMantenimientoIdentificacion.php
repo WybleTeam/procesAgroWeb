@@ -142,14 +142,14 @@ class SolMantenimientoIdentificacion
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaProgramadaIdentificacion", type="datetime")
+     * @ORM\Column(name="fechaProgramadaIdentificacion", type="datetime", nullable=true)
      */
     private $fechaProgramadaIdentificacion;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="observacionesRevision", type="string", length=45)
+     * @ORM\Column(name="observacionesRevision", type="string", length=45, nullable=true)
      */
     private $observacionesRevision;
 
@@ -163,7 +163,7 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\Column(name="estadoSolicitud", type="string", length=255)
+     * @ORM\Column(name="estadoSolicitud", type="string", length=255, nullable=true)
      */
     private $estadoSolicitud;
 
@@ -635,5 +635,10 @@ class SolMantenimientoIdentificacion
     public function getEstadoSolicitud()
     {
         return $this->estadoSolicitud;
+    }
+    
+    public function __toString() 
+    {
+        return $this->getCedulaSolicitante()." ".$this->getNombreSolicitante();
     }
 }

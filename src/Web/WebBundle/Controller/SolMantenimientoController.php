@@ -38,6 +38,7 @@ class SolMantenimientoController extends Controller
         $hoy = new \DateTime("now");
         $entity = new SolMantenimientoIdentificacion();
         $entity->setFechaSolicitud($hoy);
+        $entity->setSolicitudMantenimientoIdentificacion("...");
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
