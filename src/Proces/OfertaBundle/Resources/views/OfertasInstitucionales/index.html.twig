@@ -2,7 +2,13 @@
 
 {% block body -%}
     <h1>Listado de Ofertas Institucionales</h1>
-
+<ul>
+        <li>
+            <a href="{{ path('ofertasinstitucionales_new') }}">
+                Crear nueva
+            </a>
+        </li>
+    </ul>
     <table class="table">
         <thead>
             <tr>
@@ -37,11 +43,5 @@
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('ofertasinstitucionales_new') }}">
-                Crear nueva
-            </a>
-        </li>
-    </ul>
+        
     {% endblock %}

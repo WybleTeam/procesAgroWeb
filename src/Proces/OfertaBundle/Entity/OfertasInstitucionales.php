@@ -56,7 +56,11 @@ class OfertasInstitucionales
      */
     private $usuario;
 
-
+    /**
+     * @ORM\OneToMany(targetEntity="Proces\OfertaBundle\Entity\PasosOferta", mappedBy="ofertaInstitucional", cascade={"persist"})
+     */
+    private $pasos;
+    
     /**
      * Get id
      *
@@ -180,6 +184,29 @@ class OfertasInstitucionales
     public function getUsuario()
     {
         return $this->usuario;
+    }
+    
+    /**
+     * Set pasos
+     *
+     * @return \Proces\OfertaBundle\Entity\PasosOferta
+     */
+    public function setPasos($pasos)
+    {
+        $this->pasos = $pasos;
+        foreach ($pasos as $paso) {
+            $paso->setOfertaInstitucional($this);
+        }
+    }
+
+    /**
+     * Get pasos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPasos()
+    {
+        return $this->pasos;
     }
     
     public function __toString() 

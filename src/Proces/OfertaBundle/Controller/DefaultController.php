@@ -10,8 +10,8 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('OfertaBundle:OfertasInstitucionales')->findAll();
-
+        $entities = $em->getRepository('OfertaBundle:OfertasInstitucionales')->findPasos();
+        
         return $this->render('OfertaBundle:Default:index.html.twig', array(
             'entities' => $entities,
         ));

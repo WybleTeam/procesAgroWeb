@@ -45,7 +45,7 @@ class PasosOferta
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Proces\OfertaBundle\Entity\OfertasInstitucionales")
+     * @ORM\ManyToOne(targetEntity="Proces\OfertaBundle\Entity\OfertasInstitucionales", inversedBy="pasos", cascade={"persist"})
      */
     private $ofertaInstitucional;
 

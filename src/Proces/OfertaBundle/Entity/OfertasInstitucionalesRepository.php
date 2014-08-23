@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class OfertasInstitucionalesRepository extends EntityRepository
 {
+    public function findPasos()
+    {
+        
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT o,p FROM OfertaBundle:OfertasInstitucionales o 
+            LEFT JOIN o.pasos p
+            '
+        );
+        
+        $resultado = $consulta->getResult();
+        return $resultado;
+    }
 }

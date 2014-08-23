@@ -8,21 +8,52 @@
                 <th>Descripción</th>
                 <th>Url audio</th>
                 <th>Url Oferta</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ loop.index }}</td>
                 <td>{{ entity.tituloOferta }}</td>
                 <td>{{ entity.descripcionOferta }}</td>
-                <td>{{ entity.urlAudioOferta }}</td>
-                <td>{{ entity.urlOferta }}</td>
+                <td><a href="{{ entity.urlAudioOferta }}" target="_blank">{{ entity.urlAudioOferta }}</a></td>
+                <td><a href="{{ entity.urlOferta }}" target="_blank">{{ entity.urlOferta }}</a></td>
                 <td>
-               
+                    <button class="btn btn-warning" data-toggle="modal" data-target="#myModal{{ entity.id }}">
+  Ver pasos
+</button>
                 </td>
             </tr>
+            <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal{{ entity.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">PASOS DE {{ entity.tituloOferta|upper }}</h4>
+      </div>
+      <div class="modal-body">
+          {% for pasos in entity.pasos %}
+              <strong>Título</strong>: {{ pasos.tituloPasos|capitalize }} <br>
+              <strong>Descripción</strong>: {{ pasos.descripcionPaso|capitalize }} <br>
+              <strong>url</strong>: <a href="{{ pasos.urlPaso }}" target="_blank">{{ pasos.urlPaso }}</a>
+              
+              <hr>
+          {% endfor %}    
+         {#Título: {{ entity.tituloPasos }} <br>
+          Descripción: {{ entity.descripcionPaso }} <hr>#}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
         {% endfor %}
         </tbody>
     </table>
