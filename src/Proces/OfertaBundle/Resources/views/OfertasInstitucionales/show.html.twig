@@ -1,6 +1,7 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
+    <div class="col-lg-6">
     <h1>Ofertas Institucionales</h1>
 
     <table class="table">
@@ -41,4 +42,58 @@
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
+    </div>
+    <div class="col-lg-6">
+        
+        <div class="panel panel-default">
+            
+            
+            <div class="panel-heading"><h3 class="panel-title">PASOS DE {{ entity.tituloOferta|upper }}</h3></div>
+            
+        <div class="panel-body"> 
+            
+              <ul>
+        <li>
+            <a href="{{ path('pasosoferta_new') }}">
+                Crear nuevo
+            </a>
+        </li>
+    </ul>
+            <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Titulopasos</th>
+                <th>Descripcionpaso</th>
+                <th>Urlpaso</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in pasos %}
+            <tr>
+                <td><a href="{{ path('pasosoferta_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ entity.tituloPasos }}</td>
+                <td>{{ entity.descripcionPaso }}</td>
+                <td>{{ entity.urlPaso }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('pasosoferta_show', { 'id': entity.id }) }}">Ver</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('pasosoferta_edit', { 'id': entity.id }) }}">editar</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+      
+        </div>
+        </div>
+        
+    </div>
 {% endblock %}

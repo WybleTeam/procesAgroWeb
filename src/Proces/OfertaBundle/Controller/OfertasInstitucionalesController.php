@@ -103,12 +103,15 @@ class OfertasInstitucionalesController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find OfertasInstitucionales entity.');
         }
-
+        
+        $pasos = $em->getRepository('OfertaBundle:PasosOferta')->findByOfertaInstitucional($id);
+        
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('OfertaBundle:OfertasInstitucionales:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
+            'pasos'       => $pasos,
         ));
     }
 
