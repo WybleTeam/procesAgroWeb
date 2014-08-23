@@ -7,8 +7,8 @@ pasosoferta_show:
     defaults: { _controller: "OfertaBundle:PasosOferta:show" }
 
 pasosoferta_new:
-    path:     /new
-    defaults: { _controller: "OfertaBundle:PasosOferta:new" }
+    path:     /new/{oferta}
+    defaults: { _controller: "OfertaBundle:PasosOferta:new", oferta:null }
 
 pasosoferta_create:
     path:     /create

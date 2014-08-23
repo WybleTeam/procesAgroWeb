@@ -60,14 +60,14 @@ class PasosOfertaController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(PasosOferta $entity)
+    private function createCreateForm(PasosOferta $entity, $oferta)
     {
         $form = $this->createForm(new PasosOfertaType(), $entity, array(
             'action' => $this->generateUrl('pasosoferta_create'),
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Crear'));
 
         return $form;
     }
@@ -76,14 +76,19 @@ class PasosOfertaController extends Controller
      * Displays a form to create a new PasosOferta entity.
      *
      */
-    public function newAction()
+    public function newAction($oferta)
     {
+        $em = $this->getDoctrine()->getManager();
+        $ofertaIns = $em->getRepository('OfertaBundle:OfertasInstitucionales')->find($oferta);
         $entity = new PasosOferta();
-        $form   = $this->createCreateForm($entity);
+        $entity->setOfertaInstitucional($ofertaIns);
+        $form   = $this->createCreateForm($entity,$oferta);
 
         return $this->render('OfertaBundle:PasosOferta:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'oferta' => $oferta,
+            'ofertaIns'=> $ofertaIns,
         ));
     }
 
@@ -147,7 +152,7 @@ class PasosOfertaController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar'));
 
         return $form;
     }
@@ -217,7 +222,7 @@ class PasosOfertaController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('pasosoferta_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Borrar'))
             ->getForm()
         ;
     }
