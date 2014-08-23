@@ -17,8 +17,8 @@
             <tr>
                 <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.descripcion }}</td>
-                <td>{{ entity.urlConvocatoria }}</td>
-                <td>{{ entity.descripcionLarga }}</td>
+                <td><a href="{{ entity.urlConvocatoria }}" target="_blank">{{ entity.urlConvocatoria }}</a></td>
+                <td><a href="{{ entity.descripcionLarga }}" target="_blank">{{ entity.descripcionLarga }}</a></td>
                 <td>
                 <ul>
                     <li>
