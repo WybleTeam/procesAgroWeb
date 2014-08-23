@@ -46,7 +46,9 @@ class ServiciosController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Servicio creado');
             return $this->redirect($this->generateUrl('servicios_show', array('id' => $entity->getId())));
         }
 
@@ -174,7 +176,9 @@ class ServiciosController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
-
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Servicio actualizado');
             return $this->redirect($this->generateUrl('servicios_edit', array('id' => $id)));
         }
 
@@ -203,6 +207,9 @@ class ServiciosController extends Controller
 
             $em->remove($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Borrado');
         }
 
         return $this->redirect($this->generateUrl('servicios'));

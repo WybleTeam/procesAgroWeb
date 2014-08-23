@@ -46,6 +46,9 @@ class ConvocatoriasController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Has creado una nueva convocatoria!');
 
             return $this->redirect($this->generateUrl('convocatorias_show', array('id' => $entity->getId())));
         }
@@ -174,7 +177,9 @@ class ConvocatoriasController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
-
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Actualizado correctamente!');
             return $this->redirect($this->generateUrl('convocatorias_edit', array('id' => $id)));
         }
 
@@ -203,6 +208,9 @@ class ConvocatoriasController extends Controller
 
             $em->remove($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Borrado!');
         }
 
         return $this->redirect($this->generateUrl('convocatorias'));

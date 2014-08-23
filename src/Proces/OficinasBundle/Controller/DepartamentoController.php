@@ -43,7 +43,9 @@ class DepartamentoController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'OK');
             return $this->redirect($this->generateUrl('departamento_show', array('id' => $entity->getId())));
         }
 
@@ -171,7 +173,9 @@ class DepartamentoController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
-
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'OK');
             return $this->redirect($this->generateUrl('departamento_edit', array('id' => $id)));
         }
 
@@ -200,6 +204,9 @@ class DepartamentoController extends Controller
 
             $em->remove($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'OK');
         }
 
         return $this->redirect($this->generateUrl('departamento'));
