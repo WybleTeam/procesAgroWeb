@@ -46,12 +46,13 @@ class PasosOfertaController extends Controller
              $this->get('session')->getFlashBag()->add(
             'notice',
             'Has creado un nuevo paso!');
-            return $this->redirect($this->generateUrl('pasosoferta_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('pasosoferta_show', array('id' => $entity->getId(), 'oferta' => $oferta)));
         }
 
         return $this->render('OfertaBundle:PasosOferta:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'oferta' => $oferta,
         ));
     }
 
@@ -65,7 +66,7 @@ class PasosOfertaController extends Controller
     private function createCreateForm(PasosOferta $entity, $oferta)
     {
         $form = $this->createForm(new PasosOfertaType(), $entity, array(
-            'action' => $this->generateUrl('pasosoferta_create'),
+            'action' => $this->generateUrl('pasosoferta_create', array('oferta'=>$oferta)),
             'method' => 'POST',
         ));
 
@@ -98,7 +99,7 @@ class PasosOfertaController extends Controller
      * Finds and displays a PasosOferta entity.
      *
      */
-    public function showAction($id)
+    public function showAction($id, $oferta)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -108,11 +109,12 @@ class PasosOfertaController extends Controller
             throw $this->createNotFoundException('Unable to find PasosOferta entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
+        $deleteForm = $this->createDeleteForm($id, $oferta);
 
         return $this->render('OfertaBundle:PasosOferta:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
+            'oferta'      => $oferta,
         ));
     }
 
@@ -130,8 +132,8 @@ class PasosOfertaController extends Controller
             throw $this->createNotFoundException('Unable to find PasosOferta entity.');
         }
 
-        $editForm = $this->createEditForm($entity);
-        $deleteForm = $this->createDeleteForm($id);
+        $editForm = $this->createEditForm($entity,$oferta);
+        $deleteForm = $this->createDeleteForm($id, $oferta);
 
         return $this->render('OfertaBundle:PasosOferta:edit.html.twig', array(
             'entity'      => $entity,
@@ -148,10 +150,10 @@ class PasosOfertaController extends Controller
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(PasosOferta $entity)
+    private function createEditForm(PasosOferta $entity, $oferta)
     {
         $form = $this->createForm(new PasosOfertaType(), $entity, array(
-            'action' => $this->generateUrl('pasosoferta_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('pasosoferta_update', array('id' => $entity->getId(), 'oferta' => $oferta)),
             'method' => 'PUT',
         ));
 
@@ -163,7 +165,7 @@ class PasosOfertaController extends Controller
      * Edits an existing PasosOferta entity.
      *
      */
-    public function updateAction(Request $request, $id)
+    public function updateAction(Request $request, $id, $oferta)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -173,29 +175,32 @@ class PasosOfertaController extends Controller
             throw $this->createNotFoundException('Unable to find PasosOferta entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
-        $editForm = $this->createEditForm($entity);
+        $deleteForm = $this->createDeleteForm($id, $oferta);
+        $editForm = $this->createEditForm($entity, $oferta);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
             $em->flush();
-
-            return $this->redirect($this->generateUrl('pasosoferta_edit', array('id' => $id)));
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Actualizado correctamente!');
+            return $this->redirect($this->generateUrl('pasosoferta_edit', array('id' => $id, 'oferta' => $oferta)));
         }
 
         return $this->render('OfertaBundle:PasosOferta:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            
         ));
     }
     /**
      * Deletes a PasosOferta entity.
      *
      */
-    public function deleteAction(Request $request, $id)
+    public function deleteAction(Request $request, $id, $oferta)
     {
-        $form = $this->createDeleteForm($id);
+        $form = $this->createDeleteForm($id, $oferta);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
@@ -208,9 +213,12 @@ class PasosOfertaController extends Controller
 
             $em->remove($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Eliminado el  paso!');
         }
 
-        return $this->redirect($this->generateUrl('pasosoferta'));
+        return $this->redirect($this->generateUrl('ofertasinstitucionales_show', array('id' => $oferta) ));
     }
 
     /**
@@ -220,10 +228,10 @@ class PasosOfertaController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm($id)
+    private function createDeleteForm($id, $oferta)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('pasosoferta_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('pasosoferta_delete', array('id' => $id, 'oferta' => $oferta )))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Borrar'))
             ->getForm()

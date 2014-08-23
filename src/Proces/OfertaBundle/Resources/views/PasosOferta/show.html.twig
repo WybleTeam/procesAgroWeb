@@ -1,7 +1,7 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Pasos Oferta</h1>
+    <h1>Pasos Oferta {{ entity.ofertaInstitucional.tituloOferta }}</h1>
 
     <table class="table">
         <tbody>
@@ -26,9 +26,7 @@
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('pasosoferta') }}">
-            Volver al listado
-        </a>
+        <a href="{{ path('ofertasinstitucionales_show', { 'id': oferta }) }}">Volver</a>
     </li>
     <li>
         <a href="{{ path('pasosoferta_edit', { 'id': entity.id }) }}">

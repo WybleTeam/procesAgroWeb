@@ -176,10 +176,8 @@ class Builder extends ContainerAware
         $menu->addChild('Oficinas', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
         $menu->addChild('Servicios', array('route' => 'servicios'))->setAttribute('icon','fa fa-th');
        
-        $menu->addChild('Oferta Institucional',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
-        $menu['Oferta Institucional']->setChildrenAttribute('class', 'dropdown-menu');
-        $menu['Oferta Institucional']->addChild('Oferta', array('route'=>'ofertasinstitucionales'));
-        $menu['Oferta Institucional']->addChild('Pasos Oferta', array('route'=>'pasosoferta'));
+        $menu->addChild('Oferta Institucional',array('route'=>'ofertasinstitucionales'));
+
         
         
         $menu->addChild('Cursos Virtuales', array('route' => 'cursosvirtuales'))->setAttribute('icon','fa fa-th');

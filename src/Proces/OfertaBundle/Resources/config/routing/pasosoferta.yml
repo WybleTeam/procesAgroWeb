@@ -3,12 +3,12 @@ pasosoferta:
     defaults: { _controller: "OfertaBundle:PasosOferta:index" }
 
 pasosoferta_show:
-    path:     /{id}/show
-    defaults: { _controller: "OfertaBundle:PasosOferta:show" }
+    path:     /{id}/show/{oferta}
+    defaults: { _controller: "OfertaBundle:PasosOferta:show", oferta: null }
 
 pasosoferta_new:
     path:     /new/{oferta}
-    defaults: { _controller: "OfertaBundle:PasosOferta:new", oferta:null }
+    defaults: { _controller: "OfertaBundle:PasosOferta:new", oferta: null }
 
 pasosoferta_create:
     path:     /create/{oferta}
@@ -20,11 +20,11 @@ pasosoferta_edit:
     defaults: { _controller: "OfertaBundle:PasosOferta:edit", oferta: null }
 
 pasosoferta_update:
-    path:     /{id}/update
-    defaults: { _controller: "OfertaBundle:PasosOferta:update" }
+    path:     /{id}/update/{oferta}
+    defaults: { _controller: "OfertaBundle:PasosOferta:update", oferta: null }
     requirements: { _method: post|put }
 
 pasosoferta_delete:
-    path:     /{id}/delete
-    defaults: { _controller: "OfertaBundle:PasosOferta:delete" }
+    path:     /{id}/delete/{oferta}
+    defaults: { _controller: "OfertaBundle:PasosOferta:delete", oferta: null }
     requirements: { _method: post|delete }

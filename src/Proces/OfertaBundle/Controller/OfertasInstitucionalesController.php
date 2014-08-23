@@ -46,6 +46,9 @@ class OfertasInstitucionalesController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Has creado una nueva oferta!');
 
             return $this->redirect($this->generateUrl('ofertasinstitucionales_show', array('id' => $entity->getId())));
         }
@@ -177,7 +180,9 @@ class OfertasInstitucionalesController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
-
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Actualizada la oferta!');
             return $this->redirect($this->generateUrl('ofertasinstitucionales_edit', array('id' => $id)));
         }
 
@@ -206,6 +211,9 @@ class OfertasInstitucionalesController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Borrada!');
         }
 
         return $this->redirect($this->generateUrl('ofertasinstitucionales'));
