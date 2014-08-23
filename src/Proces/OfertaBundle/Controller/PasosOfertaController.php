@@ -33,17 +33,19 @@ class PasosOfertaController extends Controller
      * Creates a new PasosOferta entity.
      *
      */
-    public function createAction(Request $request)
+    public function createAction(Request $request,$oferta)
     {
         $entity = new PasosOferta();
-        $form = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity,$oferta);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Has creado un nuevo paso!');
             return $this->redirect($this->generateUrl('pasosoferta_show', array('id' => $entity->getId())));
         }
 
@@ -118,7 +120,7 @@ class PasosOfertaController extends Controller
      * Displays a form to edit an existing PasosOferta entity.
      *
      */
-    public function editAction($id)
+    public function editAction($id, $oferta)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -135,6 +137,7 @@ class PasosOfertaController extends Controller
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'oferta'      => $oferta,
         ));
     }
 

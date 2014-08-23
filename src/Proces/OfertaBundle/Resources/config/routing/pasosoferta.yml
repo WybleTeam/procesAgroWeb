@@ -11,13 +11,13 @@ pasosoferta_new:
     defaults: { _controller: "OfertaBundle:PasosOferta:new", oferta:null }
 
 pasosoferta_create:
-    path:     /create
-    defaults: { _controller: "OfertaBundle:PasosOferta:create" }
+    path:     /create/{oferta}
+    defaults: { _controller: "OfertaBundle:PasosOferta:create", oferta: null }
     requirements: { _method: post }
 
 pasosoferta_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "OfertaBundle:PasosOferta:edit" }
+    path:     /{id}/edit/{oferta}
+    defaults: { _controller: "OfertaBundle:PasosOferta:edit", oferta: null }
 
 pasosoferta_update:
     path:     /{id}/update

@@ -230,6 +230,9 @@
                 
                 <!-- Main content -->
                 <section class="content">
+                    {% for flashMessage in app.session.flashbag.get('notice') %}                  
+                  <div class="alert alert-info"><strong>{{ flashMessage }}</strong></div>
+                    {% endfor %}
                     {% block body %}
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
