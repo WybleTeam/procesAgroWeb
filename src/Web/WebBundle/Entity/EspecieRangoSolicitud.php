@@ -45,7 +45,7 @@ class EspecieRangoSolicitud
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Web\WebBundle\Entity\SolMantenimientoIdentificacion", inversedBy="especieRango")
+     * @ORM\ManyToOne(targetEntity="Web\WebBundle\Entity\SolMantenimientoIdentificacion", inversedBy="especieRango", cascade={"persist"})
      */
     private $solicitudMantenimiento;
 

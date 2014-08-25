@@ -57,10 +57,11 @@ class SolMantenimientoIdentificacionType extends AbstractType
             ))
              ->add('especieRango', 'collection', array(
                 'type' => new EspecieRangoSolicitudType(),
-                'by_reference'   => false,
+                
                 //'prototype_data' => new SolicitudCantidadMotivo(),
                 'allow_delete'   => true,
                 'allow_add'      => true,
+                'by_reference'   => false,
 
             ))    
             ->add('cantidadMotivo', 'collection', array(

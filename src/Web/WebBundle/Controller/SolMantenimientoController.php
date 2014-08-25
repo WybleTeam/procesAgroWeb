@@ -73,7 +73,7 @@ class SolMantenimientoController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Crear'));
+        $form->add('submit', 'submit', array('label' => 'Crear', 'attr'=>array('class' => 'btn btn-primary btn-lg btn-block')));
 
         return $form;
     }

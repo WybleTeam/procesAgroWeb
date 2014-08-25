@@ -179,6 +179,7 @@ class SolMantenimientoIdentificacion
     public function __construct()
     {
         $this->cantidadMotivo = new ArrayCollection();
+        $this->especieRango = new ArrayCollection();
        
     }
     
@@ -635,7 +636,7 @@ class SolMantenimientoIdentificacion
      *
      * @return \Web\WebBundle\Entity\EspecieRangoSolicitud
      */ 
-    public function setEspecieRango(\Doctrine\Common\Collections\Collection $especieRango)
+    public function setEspecieRango(ArrayCollection $especieRango)
     {
         $this->especieRango = $especieRango;
         foreach ($especieRango as $especiesRangos){
