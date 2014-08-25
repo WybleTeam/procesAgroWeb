@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Web\WebBundle\Entity\SolMantenimientoIdentificacion;
 use Web\WebBundle\Form\SolMantenimientoIdentificacionType;
+use Web\WebBundle\Entity\SolicitudCantidadMotivo;
 
 /**
  * SolMantenimiento controller.
@@ -41,7 +42,9 @@ class SolMantenimientoController extends Controller
         $entity->setSolicitudMantenimientoIdentificacion("...");
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-
+        
+       
+        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);

@@ -22,6 +22,8 @@
 </div>
     <br>
     <br>
+      <div class="panel panel-default">
+               <div class="panel-body">
     {{ form_start(form) }}
    <div class="row">
        <fieldset>
@@ -50,18 +52,32 @@
   <fieldset>
         <div class="col-lg-12 alert-success center"><hr>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)<hr>
         </div>
-
-      <div class="col-lg-4">{{ form_row(form.cantidadrango.cantidad) }}</div>
-      <div class="col-lg-4">{{ form_row(form.cantidadrango.rangoEdades) }}</div>
-      <div class="col-lg-4">{{ form_row(form.cantidadrango.especieAnimal) }}</div>
+      {% for especies in form.especieRango %}
+      <div class="col-lg-4">{{ form_row(especies.cantidad) }}</div>
+      <div class="col-lg-4">{{ form_row(especies.rangoEdades) }}</div>
+      <div class="col-lg-4">{{ form_row(especies.especieAnimal) }}</div>
+      {% endfor %}
   </fieldset>
   <fieldset>
       <div class="col-lg-12 alert-success center"><hr>3.MOTIVO DE LA SOLICITUD DE IDENTIFICACIÓN<hr>
         </div>
-      <div class="col-lg-12">{{ form_row(form.justificacionReidentificacion) }}</div>
-      <div class="col-lg-6">{{ form_row(form.especierango.motivoIdentificacion) }}</div>
-      <div class="col-lg-6">{{ form_row(form.especierango.cantidad) }}</div>
-      
+     
+                <div class="col-lg-12">{{ form_row(form.justificacionReidentificacion) }}</div>
+           {#% for cantidades in form.cantidadMotivo %}
+                <div class="col-lg-6">{{ form_row(cantidades.motivoIdentificacion) }}</div>
+                <div class="col-lg-6">{{ form_row(cantidades.cantidad) }}</div>
+           {% endfor %#}
+           <br>
+           <div class="panel panel-default">
+               <div class="panel-body">
+                   <br>
+                    <div class="col-lg-4"> 
+                     <ul class="tags" data-prototype="{{ form_widget(form.cantidadMotivo.vars.prototype)|e }}">
+
+                     </ul>
+                    </div>
+               </div>      
+           </div>
   </fieldset>
       {% if is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
   <fieldset disabled>
@@ -74,12 +90,62 @@
       {% endif %}
    </div>
     {{ form_end(form) }}
-
-        <ul class="record_actions">
+               </div>
+      </div>
+      {#  <ul class="record_actions">
     <li>
         <a href="{{ path('solmantenimientoidentificacion') }}">
             Volver al listado
         </a>
     </li>
-</ul>
+</ul>#}
 {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>  
+        var $collectionHolder;
+
+        // setup an "add a tag" link
+        var $addTagLink = $('<a href="#" class="add_tag_link btn btn-warning btn-sm">Añadir motivo</a>');
+        var $newLinkLi = $('<li></li>').append($addTagLink);
+
+        jQuery(document).ready(function() {
+            // Get the ul that holds the collection of tags
+            $collectionHolder = $('ul.tags');
+
+            // add the "add a tag" anchor and li to the tags ul
+            $collectionHolder.append($newLinkLi);
+
+            // count the current form inputs we have (e.g. 2), use that as the new
+            // index when inserting a new item (e.g. 2)
+            $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+            $addTagLink.on('click', function(e) {
+                // prevent the link from creating a "#" on the URL
+                e.preventDefault();
+
+                // add a new tag form (see next code block)
+                addTagForm($collectionHolder, $newLinkLi);
+            });
+        });
+        
+        function addTagForm($collectionHolder, $newLinkLi) {
+    // Get the data-prototype explained earlier
+    var prototype = $collectionHolder.data('prototype');
+
+    // get the new index
+    var index = $collectionHolder.data('index');
+
+    // Replace '__name__' in the prototype's HTML to
+    // instead be a number based on how many items we have
+    var newForm = prototype.replace(/__name__/g, index);
+
+    // increase the index with one for the next item
+    $collectionHolder.data('index', index + 1);
+
+    // Display the form in the page in an li, before the "Add a tag" link li
+    var $newFormLi = $('<li></li>').append(newForm);
+    $newLinkLi.before($newFormLi);
+}
+</script>
+{% endblock %}    

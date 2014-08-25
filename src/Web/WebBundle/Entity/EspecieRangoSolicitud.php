@@ -45,7 +45,7 @@ class EspecieRangoSolicitud
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Web\WebBundle\Entity\SolMantenimientoIdentificacion")
+     * @ORM\ManyToOne(targetEntity="Web\WebBundle\Entity\SolMantenimientoIdentificacion", inversedBy="especieRango")
      */
     private $solicitudMantenimiento;
 

@@ -4,6 +4,7 @@ namespace Web\WebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * SolMantenimientoIdentificacion
@@ -127,18 +128,6 @@ class SolMantenimientoIdentificacion
      */
     private $telefonoCelularSolicitante;
 
-     /**
-     * @Assert\Type(type="Web\WebBundle\Entity\EspecieRangoSolicitud")
-     */
-    protected $cantidadrango;
-    
-    
-     /**
-     * @Assert\Type(type="Web\WebBundle\Entity\SolicitudCantidadMotivo")
-     */
-    protected $especierango;
-   
-    
     /**
      * @var \DateTime
      *
@@ -167,7 +156,33 @@ class SolMantenimientoIdentificacion
      */
     private $estadoSolicitud;
 
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\SolicitudCantidadMotivo", mappedBy="solicitudMantenimiento", cascade={"persist"})
+     * @Assert\Valid
+     */
+    private $cantidadMotivo;
 
+    /**
+     * @var string
+     *
+     * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\EspecieRangoSolicitud", mappedBy="solicitudMantenimiento", cascade={"persist"})
+     * @Assert\Valid
+     */
+    private $especieRango;
+    
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->cantidadMotivo = new ArrayCollection();
+       
+    }
+    
+    
     /**
      * Get id
      *
@@ -431,28 +446,6 @@ class SolMantenimientoIdentificacion
         return $this->telefonoCelularPropietario;
     }
 
-    public function getCantidadrango()
-    {
-        return $this->cantidadrango;
-    }
- 
-    public function setCantidadrango(EspecieRangoSolicitud $cantidadrango = null)
-    {
-        $this->cantidadrango = $cantidadrango;
-    }
-    
-    
-    public function getEspecierango()
-    {
-        return $this->especierango;
-    }
- 
-    public function setEspecierango(SolicitudCantidadMotivo $especierango = null)
-    {
-        $this->especierango = $especierango;
-    }
-    
-    
     /**
      * Set nombreSolicitante
      *
@@ -635,6 +628,52 @@ class SolMantenimientoIdentificacion
     public function getEstadoSolicitud()
     {
         return $this->estadoSolicitud;
+    }
+    
+    /**
+     * Set especieRango
+     *
+     * @return \Web\WebBundle\Entity\EspecieRangoSolicitud
+     */ 
+    public function setEspecieRango(\Doctrine\Common\Collections\Collection $especieRango)
+    {
+        $this->especieRango = $especieRango;
+        foreach ($especieRango as $especiesRangos){
+            $especiesRangos->setSolicitudMantenimiento($this);
+        }
+    }
+
+    /**
+     * Get especieRango
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEspecieRango()
+    {
+        return $this->especieRango;
+    }
+    
+    /**
+     * Set cantidadMotivo
+     *
+     * @return \Web\WebBundle\Entity\SolicitudCantidadMotivo
+     */
+    public function setCantidadMotivo(\Doctrine\Common\Collections\Collection $cantidadMotivo)
+    {
+        $this->cantidadMotivo = $cantidadMotivo;
+        foreach ($cantidadMotivo as $cantidades) {
+            $cantidades->setSolicitudMantenimiento($this);
+        }
+    }
+
+    /**
+     * Get cantidadMotivo
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCantidadMotivo()
+    {
+        return $this->cantidadMotivo;
     }
     
     public function __toString() 

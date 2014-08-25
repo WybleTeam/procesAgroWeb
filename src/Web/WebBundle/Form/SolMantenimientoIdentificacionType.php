@@ -5,6 +5,7 @@ namespace Web\WebBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Web\WebBundle\Entity\SolicitudCantidadMotivo;
 
 class SolMantenimientoIdentificacionType extends AbstractType
 {
@@ -54,10 +55,17 @@ class SolMantenimientoIdentificacionType extends AbstractType
             ->add('telefonoCelularSolicitante',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
-             ->add('cantidadrango', new EspecieRangoSolicitudType())    
-            ->add('especierango', new SolicitudCantidadMotivoType())     
-                
-                
+             ->add('especieRango', 'collection', array(
+                'type' => new EspecieRangoSolicitudType(),
+
+            ))    
+            ->add('cantidadMotivo', 'collection', array(
+                'type'           =>  new SolicitudCantidadMotivoType(),
+                'by_reference'   => false,
+                //'prototype_data' => new SolicitudCantidadMotivo(),
+                'allow_delete'   => true,
+                'allow_add'      => true,
+            ))    
             ->add('fechaProgramadaIdentificacion',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
@@ -86,7 +94,8 @@ class SolMantenimientoIdentificacionType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Web\WebBundle\Entity\SolMantenimientoIdentificacion'
+            'data_class' => 'Web\WebBundle\Entity\SolMantenimientoIdentificacion',
+            
         ));
     }
 

@@ -31,7 +31,7 @@ class SolicitudCantidadMotivo
     /**
      * @var string
      *
-     * @ORM\ManyToOne(targetEntity="Web\WebBundle\Entity\SolMantenimientoIdentificacion")
+     * @ORM\ManyToOne(targetEntity="Web\WebBundle\Entity\SolMantenimientoIdentificacion",inversedBy="cantidadMotivo", cascade={"persist"})
      */
     private $solicitudMantenimiento;
 
