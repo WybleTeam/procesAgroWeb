@@ -159,17 +159,47 @@ class SolMantenimientoIdentificacionController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        
         $entity = $em->getRepository('WebBundle:SolMantenimientoIdentificacion')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find SolMantenimientoIdentificacion entity.');
         }
 
+        $originalAddresses = array();
+
+        // Create an array of the current Address objects in the database
+        foreach ($entity->getEspecieRango() as $address) {
+            $originalAddresses[] = $address;
+        }
+        
+        
+        
+        
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            // filter $originalAddresses to contain adressess no longer present
+                foreach ($entity->getEspecieRango() as $address) {
+                    foreach ($originalAddresses as $key => $toDel) {
+                        if ($toDel->getId() === $address->getId()) {
+                            unset($originalAddresses[$key]);
+                        }
+                    }
+                }
+            
+             // remove the relationship between the address and the Task
+                foreach ($originalAddresses as $address) {
+                    // remove the Address from the User
+                    $user->getAddresses()->removeElement($address);
+
+                    // if you wanted to delete the Address entirely, you can also do that
+                    $em->remove($address);
+                }
+    
+            
             $em->flush();
 
             return $this->redirect($this->generateUrl('solmantenimientoidentificacion_edit', array('id' => $id)));

@@ -636,7 +636,7 @@ class SolMantenimientoIdentificacion
      *
      * @return \Web\WebBundle\Entity\EspecieRangoSolicitud
      */ 
-    public function setEspecieRango(ArrayCollection $especieRango)
+    public function setEspecieRango(\Doctrine\Common\Collections\Collection $especieRango)
     {
         $this->especieRango = $especieRango;
         foreach ($especieRango as $especiesRangos){

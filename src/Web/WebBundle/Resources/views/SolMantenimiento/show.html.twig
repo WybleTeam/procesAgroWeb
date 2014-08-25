@@ -1,75 +1,109 @@
 {% extends 'ThemesBundle::plantilla2.html.twig' %}
 
 {% block body -%}
-    <h1>Sol Mantenimiento Identificacion</h1>
-
+      <div class="row">
+         
+    
+        <div class="col-md-4"><img src="http://www.sanipets.com/wp-content/uploads/2013/09/ica.jpg" class="img-responsive" alt="Responsive image" width="150px" height="80px">
+        </div>
+    
+    <div class="col-md-4"><img src="https://www.minagricultura.gov.co/imgLayout/logo-min-agricultura.png" class="img-responsive" alt="Responsive image" width="200px" height="80px">
+        </div>
+    
+    <div class="col-md-4"><img src="http://wsp.presidencia.gov.co/portal/descargas/PublishingImages/Logo-Prosperidad.jpg" class="img-responsive" alt="Responsive image" width="200px" height="80px">
+        </div>
+    </div>
+   
+    
+    <div class="text-left">
+    <p class="text-center">SISTEMA NACIONAL DE IDENTIFICACIÓN E INFORMACIÓN DEL GANADO BOVINO.</p>
+    <p class="text-center">    PLAN NACIONAL DE IDENTIFICACIÓN </p>
+    <p class="text-center">FORMATO UNICO DE SOLICITUD DE IDENTIFICACIÒN O MANTENIMIENTO.</p>
+</div>
+       <div class="panel panel-default">
+               <div class="panel-body">
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
+          
+             <tr class="col-lg-6">
+                <th>Municipio</th>
+                <td>{{ entity.municipio }}</td>
             </tr>
-            <tr>
-                <th>Fechasolicitud</th>
-                <td>{{ entity.fechaSolicitud|date('Y-m-d H:i:s') }}</td>
+            <tr class="col-lg-6">
+                <th>Seccional</th>
+                <td>{{ entity.seccional }}</td>
             </tr>
-            <tr>
-                <th>Justificacionreidentificacion</th>
-                <td>{{ entity.justificacionReidentificacion }}</td>
+            <tr class="col-lg-12 alert-success center">
+                <th>1.REGISTRO SANITARIO DE PREDIOS PECUARIOS</th>
+                <td></td>
             </tr>
-            <tr>
-                <th>Solicitudmantenimientoidentificacion</th>
-                <td>{{ entity.solicitudMantenimientoIdentificacion }}</td>
-            </tr>
-            <tr>
+             <tr class="col-lg-6">
                 <th>Ica3101</th>
                 <td>{{ entity.ica3101 }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Nombrefinca</th>
                 <td>{{ entity.nombreFinca }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Nombrepropietariofinca</th>
                 <td>{{ entity.nombrePropietarioFinca }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Cedulapropietariofinca</th>
                 <td>{{ entity.cedulaPropietarioFinca }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Telefonofijopropietario</th>
                 <td>{{ entity.telefonoFijoPropietario }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Telefonocelularpropietario</th>
                 <td>{{ entity.telefonoCelularPropietario }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Nombresolicitante</th>
                 <td>{{ entity.nombreSolicitante }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Cedulasolicitante</th>
                 <td>{{ entity.cedulaSolicitante }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Telefonofijosolicitante</th>
                 <td>{{ entity.telefonoFijoSolicitante }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Telefonocelularsolicitante</th>
                 <td>{{ entity.telefonoCelularSolicitante }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
+                <th>Fechasolicitud</th>
+                <td>{{ entity.fechaSolicitud|date('d, M-Y H:i:s') }}</td>
+            </tr>
+             <tr class="col-lg-12 alert-success center">
+                <th>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)</th>
+                <td></td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Justificacionreidentificacion</th>
+                <td>{{ entity.justificacionReidentificacion }}</td>
+            </tr>
+       
+            <tr class="col-lg-6">
+                <th>Solicitudmantenimientoidentificacion</th>
+                <td>{{ entity.solicitudMantenimientoIdentificacion }}</td>
+            </tr>
+            
+            <tr class="col-lg-6">
                 <th>Fechaprogramadaidentificacion</th>
                 <td>{{ entity.fechaProgramadaIdentificacion|date('Y-m-d H:i:s') }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Observacionesrevision</th>
                 <td>{{ entity.observacionesRevision }}</td>
             </tr>
-            <tr>
+            <tr class="col-lg-6">
                 <th>Estadosolicitud</th>
                 <td>{{ entity.estadoSolicitud }}</td>
             </tr>
@@ -88,5 +122,8 @@
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>
+    
 </ul>
+               </div>
+</div>
 {% endblock %}
