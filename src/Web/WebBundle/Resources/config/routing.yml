@@ -2,10 +2,6 @@ web_homepage:
     path:     /
     defaults: { _controller: WebBundle:Default:index }
 
-web_ofertasPasos:
-    path:     /pasos
-    defaults: { _controller: WebBundle:Default:Ofertas }
-
 convocatorias_homepage:
     path:     /convocatorias
     defaults: { _controller: ConvocatoriasBundle:Default:index }
@@ -25,3 +21,20 @@ servicios_homepage:
 WebBundle_solManten:
     resource: "@WebBundle/Resources/config/routing/sol-mantenimientoidentificacion.yml"
     prefix:   /sol-mantenimiento    
+
+#Web services
+web_ofertasPasos:
+    path:     /pasos
+    defaults: { _controller: WebBundle:Default:Ofertas }
+
+web_ofertasTotal:
+    path:     /ofertastotal
+    defaults: { _controller: WebBundle:Default:Ofertastotal }  
+
+# formulario ICA
+
+web_icaformulario:
+    path:     /crearFormulario/{municipio}/{seccional}/{justificacion}/{ica3101}/{nombrefinca}/{nombrePropietarioFinca}/{cedulaPropietarioFinca}/{telefonoFijoPropietario}/{telefonoCelularPropietario}/{nombreSolicitante}/{cedulaSolicitante}/{telefonoFijoSolicitante}/{telefonoCelularSolicitante}
+    defaults: { _controller: "WebBundle:Default:crearFormulario", municipio: null, seccional: null, justificacion: null, ica3101: null, nombrefinca: null, nombrePropietarioFinca: null, cedulaPropietarioFinca: null, telefonoFijoPropietario: null , telefonoCelularPropietario: null, nombreSolicitante: null, cedulaSolicitante: null, telefonoFijoSolicitante: null, telefonoCelularSolicitante: null }
+    requirements: { _method: get }
+    

@@ -24,4 +24,14 @@ class OfertasInstitucionalesRepository extends EntityRepository
         $resultado = $consulta->getArrayResult();
         return $resultado;
     }
+    
+    public function findOfertastotal()
+    {
+        
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT o FROM OfertaBundle:OfertasInstitucionales o');
+        
+        $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
 }
