@@ -21,7 +21,7 @@ class OfertasInstitucionalesRepository extends EntityRepository
             '
         );
         
-        $resultado = $consulta->getResult();
+        $resultado = $consulta->getArrayResult();
         return $resultado;
     }
 }

@@ -20,6 +20,8 @@ framework:
     session:         ~
     fragments:       ~
     http_method_override: true
+    serializer:
+        enabled: true
 
 # Twig Configuration
 twig:
@@ -87,4 +89,11 @@ knp_menu:
     twig: 
         template: knp_menu.html.twig
     templating: false 
-    default_renderer: twig 
+    default_renderer: twig
+
+services:
+    object_normalizer:
+        class: Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer
+        tags:
+        # помечаем к чему относится этот сервис, это оч. важно, т.к. иначе работать не будет
+          - { name: serializer.normalizer }    
