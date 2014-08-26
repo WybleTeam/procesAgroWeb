@@ -193,7 +193,7 @@ class SolMantenimientoIdentificacionController extends Controller
              // remove the relationship between the address and the Task
                 foreach ($originalAddresses as $address) {
                     // remove the Address from the User
-                    $user->getAddresses()->removeElement($address);
+                    $entity->getAddresses()->removeElement($address);
 
                     // if you wanted to delete the Address entirely, you can also do that
                     $em->remove($address);
