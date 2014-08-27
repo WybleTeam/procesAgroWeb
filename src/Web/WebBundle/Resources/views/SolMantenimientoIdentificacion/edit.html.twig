@@ -1,18 +1,8 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Editar Sol Mantenimiento Identificacion</h1>
+     <h1>Editar</h1>
 
-    
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('solmantenimientoidentificacion') }}">
-            Volver al listado
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-    
  <div class="text-left">
     <p class="text-center">SISTEMA NACIONAL DE IDENTIFICACIÓN E INFORMACIÓN DEL GANADO BOVINO.</p>
     <p class="text-center">    PLAN NACIONAL DE IDENTIFICACIÓN </p>
@@ -24,14 +14,14 @@
                <div class="panel-body">
     {{ form_start(edit_form) }}
    <div class="row">
-       <fieldset disabled>
+       <fieldset>
     <div class="col-lg-12">
      <div class="col-md-6">{{ form_row(edit_form.municipio) }}</div>
     <div class="col-md-6">{{ form_row(edit_form.seccional) }}</div> 
    </div>
        </fieldset>
    
-   <fieldset disabled>
+   <fieldset>
         <div class="col-md-12">
             <hr>1.REGISTRO SANITARIO DE PREDIOS PECUARIOS<hr>
         </div>
@@ -47,36 +37,37 @@
         <div class="col-lg-6">{{ form_row(edit_form.telefonoCelularSolicitante) }}</div>
   </fieldset>
    
-  <fieldset disabled>
+  <fieldset>
         <div class="col-lg-12"><hr>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)<hr>
         </div>
-       <div class="especie col-lg-12" data-prototype="{{ form_widget(edit_form.especieRango.vars.prototype)|e }}">
+       
+       {#<div class="especie col-lg-12" data-prototype="{{ form_widget(edit_form.especieRango.vars.prototype)|e }}">
                           
-       </div>
+       </div>#}
                    
-      {#% for especies in edit_form.especieRango %}
+      {% for especies in edit_form.especieRango %}
       <div class="col-lg-4">{{ form_row(especies.cantidad) }}</div>
       <div class="col-lg-4">{{ form_row(especies.rangoEdades) }}</div>
       <div class="col-lg-4">{{ form_row(especies.especieAnimal) }}</div>
-      {% endfor %#}
+      {% endfor %}
   </fieldset>
-  <fieldset disabled>
+  <fieldset>
       <div class="col-lg-12"><hr>3.MOTIVO DE LA SOLICITUD DE IDENTIFICACIÓN<hr>
         </div>
      
-                <div class="col-lg-12">{{ form_row(edit_form.justificacionReidentificacion) }}</div>
-           {#% for cantidades in edit_form.cantidadMotivo %}
+               <div class="col-lg-12">{{ form_row(edit_form.justificacionReidentificacion) }}</div>
+           {% for cantidades in edit_form.cantidadMotivo %}
                 <div class="col-lg-6">{{ form_row(cantidades.motivoIdentificacion) }}</div>
                 <div class="col-lg-6">{{ form_row(cantidades.cantidad) }}</div>
-           {% endfor %#}
+           {% endfor %}
            <br>
            <div class="panel panel-default">
                <div class="panel-body">
                    <br>
                   
-                     <div class="tags col-lg-12" data-prototype="{{ form_widget(edit_form.cantidadMotivo.vars.prototype)|e }}">
+                    {# <div class="tags col-lg-12" data-prototype="{{ form_widget(edit_form.cantidadMotivo.vars.prototype)|e }}">
                           
-                     </div>
+                     </div>#}
                    
                </div>      
            </div>
@@ -102,6 +93,15 @@
         </a>
     </li>
 </ul>#}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('solmantenimientoidentificacion') }}">
+            Volver al listado
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

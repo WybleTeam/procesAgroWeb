@@ -7,6 +7,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Web\WebBundle\Entity\SolMantenimientoIdentificacion;
 use Web\WebBundle\Form\SolMantenimientoIdentificacionType;
+use Web\WebBundle\Form\SolMantenimientoType;
+
 
 /**
  * SolMantenimientoIdentificacion controller.
@@ -88,6 +90,7 @@ class SolMantenimientoIdentificacionController extends Controller
     }
 
     /**
+     * 
      * Finds and displays a SolMantenimientoIdentificacion entity.
      *
      */
@@ -142,7 +145,7 @@ class SolMantenimientoIdentificacionController extends Controller
     */
     private function createEditForm(SolMantenimientoIdentificacion $entity)
     {
-        $form = $this->createForm(new SolMantenimientoIdentificacionType(), $entity, array(
+        $form = $this->createForm(new SolMantenimientoType(), $entity, array(
             'action' => $this->generateUrl('solmantenimientoidentificacion_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
@@ -201,7 +204,9 @@ class SolMantenimientoIdentificacionController extends Controller
     
             
             $em->flush();
-
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Actualizado');
             return $this->redirect($this->generateUrl('solmantenimientoidentificacion_edit', array('id' => $id)));
         }
 
