@@ -9,7 +9,7 @@
 				</div>
 				
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				 {{ knp_menu_render('AdminBundle:Builder:frontenedMenu') }}	
+				 {{ knp_menu_render('AdminBundle:Builder:frontenedMenu', {'currentClass': 'active'}) }}	
                                  
 				</div>
 				
@@ -25,4 +25,8 @@
                                   </div>
                                 </div>
 </div>    
+{% endblock %}    
+{% block javascripts %}
+    {{ parent() }}
+
 {% endblock %}    

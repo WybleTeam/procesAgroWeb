@@ -104,19 +104,19 @@
                     </form>
                     
                       {% if is_granted('ROLE_SUPER_ADMIN') %}
-                              {{ knp_menu_render('AdminBundle:Builder:superAdminMenu') }} 
+                              {{ knp_menu_render('AdminBundle:Builder:superAdminMenu',  {'currentClass': 'active'}) }} 
                       {% elseif is_granted('ROLE_ADMIN')  %}   
-                              {{ knp_menu_render('AdminBundle:Builder:adminMenu') }}        
+                              {{ knp_menu_render('AdminBundle:Builder:adminMenu',  {'currentClass': 'active'}) }}        
                       {% elseif is_granted('ROLE_OFICINA') %}
-                             {{ knp_menu_render('AdminBundle:Builder:oficinasMenu') }}
+                             {{ knp_menu_render('AdminBundle:Builder:oficinasMenu',  {'currentClass': 'active'}) }}
                       {% elseif is_granted('ROLE_SOLICITUDES') %}
-                             {{ knp_menu_render('AdminBundle:Builder:solicitudesMenu') }}
+                             {{ knp_menu_render('AdminBundle:Builder:solicitudesMenu',  {'currentClass': 'active'}) }}
                       {% elseif is_granted('ROLE_SERVICIOS') %}
-                             {{ knp_menu_render('AdminBundle:Builder:serviciosMenu') }}
+                             {{ knp_menu_render('AdminBundle:Builder:serviciosMenu',  {'currentClass': 'active'}) }}
                       {% elseif is_granted('ROLE_CONVOCATOR') %}
-                            {{ knp_menu_render('AdminBundle:Builder:convocatoriasMenu') }}
+                            {{ knp_menu_render('AdminBundle:Builder:convocatoriasMenu',  {'currentClass': 'active'}) }}
                       {% elseif is_granted('ROLE_TRAMITES') %}
-                              {{ knp_menu_render('AdminBundle:Builder:tramitesMenu') }}
+                              {{ knp_menu_render('AdminBundle:Builder:tramitesMenu',  {'currentClass': 'active'}) }}
                       
                       {% endif %}   
                           <!-- /.search form -->
