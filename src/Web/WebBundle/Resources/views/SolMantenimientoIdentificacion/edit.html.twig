@@ -3,7 +3,7 @@
 {% block body -%}
     <h1>Editar Sol Mantenimiento Identificacion</h1>
 
-    {{ form(edit_form) }}
+    
 
         <ul class="record_actions">
     <li>
@@ -12,5 +12,204 @@
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>
-</ul>
+    
+ <div class="text-left">
+    <p class="text-center">SISTEMA NACIONAL DE IDENTIFICACIÓN E INFORMACIÓN DEL GANADO BOVINO.</p>
+    <p class="text-center">    PLAN NACIONAL DE IDENTIFICACIÓN </p>
+    <p class="text-center">FORMATO UNICO DE SOLICITUD DE IDENTIFICACIÒN O MANTENIMIENTO.</p>
+</div>
+    <br>
+    <br>
+      <div class="panel panel-default">
+               <div class="panel-body">
+    {{ form_start(edit_form) }}
+   <div class="row">
+       <fieldset disabled>
+    <div class="col-lg-12">
+     <div class="col-md-6">{{ form_row(edit_form.municipio) }}</div>
+    <div class="col-md-6">{{ form_row(edit_form.seccional) }}</div> 
+   </div>
+       </fieldset>
+   
+   <fieldset disabled>
+        <div class="col-md-12">
+            <hr>1.REGISTRO SANITARIO DE PREDIOS PECUARIOS<hr>
+        </div>
+       <div class="col-lg-4">{{ form_row(edit_form.ica3101) }}</div>
+        <div class="col-lg-8">{{ form_row(edit_form.nombreFinca) }}</div>
+        <div class="col-lg-8">{{ form_row(edit_form.nombrePropietarioFinca) }}</div>
+        <div class="col-lg-4">{{ form_row(edit_form.cedulaPropietarioFinca) }}</div>
+        <div class="col-lg-6">{{ form_row(edit_form.telefonoFijoPropietario) }}</div>
+        <div class="col-lg-6">{{ form_row(edit_form.telefonoCelularPropietario) }}</div>
+        <div class="col-lg-8">{{ form_row(edit_form.nombreSolicitante) }}</div>
+        <div class="col-lg-4">{{ form_row(edit_form.cedulaSolicitante) }}</div>
+        <div class="col-lg-6">{{ form_row(edit_form.telefonoFijoSolicitante) }}</div>
+        <div class="col-lg-6">{{ form_row(edit_form.telefonoCelularSolicitante) }}</div>
+  </fieldset>
+   
+  <fieldset disabled>
+        <div class="col-lg-12"><hr>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)<hr>
+        </div>
+       <div class="especie col-lg-12" data-prototype="{{ form_widget(edit_form.especieRango.vars.prototype)|e }}">
+                          
+       </div>
+                   
+      {#% for especies in edit_form.especieRango %}
+      <div class="col-lg-4">{{ form_row(especies.cantidad) }}</div>
+      <div class="col-lg-4">{{ form_row(especies.rangoEdades) }}</div>
+      <div class="col-lg-4">{{ form_row(especies.especieAnimal) }}</div>
+      {% endfor %#}
+  </fieldset>
+  <fieldset disabled>
+      <div class="col-lg-12"><hr>3.MOTIVO DE LA SOLICITUD DE IDENTIFICACIÓN<hr>
+        </div>
+     
+                <div class="col-lg-12">{{ form_row(edit_form.justificacionReidentificacion) }}</div>
+           {#% for cantidades in edit_form.cantidadMotivo %}
+                <div class="col-lg-6">{{ form_row(cantidades.motivoIdentificacion) }}</div>
+                <div class="col-lg-6">{{ form_row(cantidades.cantidad) }}</div>
+           {% endfor %#}
+           <br>
+           <div class="panel panel-default">
+               <div class="panel-body">
+                   <br>
+                  
+                     <div class="tags col-lg-12" data-prototype="{{ form_widget(edit_form.cantidadMotivo.vars.prototype)|e }}">
+                          
+                     </div>
+                   
+               </div>      
+           </div>
+  </fieldset>
+
+  <fieldset>
+       <div class="col-lg-12"><hr>4.ESPACIO EXCLUSIVO PARA APROBACIÓN POR PARTE DEL ICA:<hr>
+        </div>
+      <div class="col-lg-12">{{ form_row(edit_form.fechaProgramadaIdentificacion) }}<br></div>
+      <div class="col-lg-12">{{ form_row(edit_form.observacionesRevision) }}</div>
+      <div class="col-lg-12">{{ form_row(edit_form.estadoSolicitud) }}</div>
+  </fieldset>  
+  
+
+   </div>
+    {{ form_end(edit_form) }}
+               </div>
+      </div>
+      {#  <ul class="record_actions">
+    <li>
+        <a href="{{ path('solmantenimientoidentificacion') }}">
+            Volver al listado
+        </a>
+    </li>
+</ul>#}
 {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>  
+        var $collectionHolder;
+
+        // setup an "add a tag" link
+        var $addTagLink = $('<a href="#" class="add_tag_link btn btn-warning btn-sm">Añadir motivo</a>');
+        var $newLinkLi = $('<div class="col-lg-12"></div>').append($addTagLink);
+
+        jQuery(document).ready(function() {
+            // Get the ul that holds the collection of tags
+            $collectionHolder = $('div.tags');
+            
+            // add the "add a tag" anchor and li to the tags ul
+            $collectionHolder.append($newLinkLi);
+
+            // count the current form inputs we have (e.g. 2), use that as the new
+            // index when inserting a new item (e.g. 2)
+            $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+            $addTagLink.on('click', function(e) {
+                // prevent the link from creating a "#" on the URL
+                e.preventDefault();
+
+                // add a new tag form (see next code block)
+                addTagForm($collectionHolder, $newLinkLi);
+            });
+        });
+        
+        function addTagForm($collectionHolder, $newLinkLi) {
+            // Get the data-prototype explained earlier
+            var prototype = $collectionHolder.data('prototype');
+
+            // get the new index
+            var index = $collectionHolder.data('index');
+
+            // Replace '__name__' in the prototype's HTML to
+            // instead be a number based on how many items we have
+            var newForm = prototype.replace(/__name__/g, index);
+
+            // increase the index with one for the next item
+            $collectionHolder.data('index', index + 1);
+
+            // Display the form in the page in an li, before the "Add a tag" link li
+            var $newFormLi = $('<div class="thumbnail col-lg-3"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>').append(newForm);
+            $newLinkLi.before($newFormLi);
+            addTagFormDeleteLink($newFormLi);
+        }
+        function addTagFormDeleteLink($tagFormLi) {
+            var $removeFormA = $('<hr><a class="btn btn-danger btn-sm" href="#">Borrar</a>');
+            $tagFormLi.append($removeFormA);
+
+            $removeFormA.on('click', function(e) {
+                // evita crear el enlace con una "#" en la URL
+                e.preventDefault();
+
+                // quita el li de la etiqueta del formulario
+                $tagFormLi.remove();
+            });
+        }
+</script>
+
+
+<script>  
+        var $collectionHolder2;
+
+        // setup an "add a tag" link
+        var $addTagLink2 = $('<a href="#" class="add_tag_link2 btn btn-warning btn-sm">Añadir motivo</a>');
+        var $newLinkLi2 = $('<div class="col-lg-12"></div>').append($addTagLink2);
+
+        jQuery(document).ready(function() {
+            // Get the ul that holds the collection of tags
+            $collectionHolder2 = $('div.especie');
+
+            // add the "add a tag" anchor and li to the tags ul
+            $collectionHolder2.append($newLinkLi2);
+
+            // count the current form inputs we have (e.g. 2), use that as the new
+            // index when inserting a new item (e.g. 2)
+            $collectionHolder2.data('index', $collectionHolder2.find(':input').length);
+
+            $addTagLink2.on('click', function(e) {
+                // prevent the link from creating a "#" on the URL
+                e.preventDefault();
+
+                // add a new tag form (see next code block)
+                addTagForm($collectionHolder2, $newLinkLi2);
+            });
+        });
+        
+        function addTagForm2($collectionHolder2, $newLinkLi2) {
+            // Get the data-prototype explained earlier
+            var prototype = $collectionHolder2.data('prototype');
+
+            // get the new index
+            var index = $collectionHolder2.data('index');
+
+            // Replace '__name__' in the prototype's HTML to
+            // instead be a number based on how many items we have
+            var newForm2 = prototype.replace(/__name__/g, index);
+
+            // increase the index with one for the next item
+            $collectionHolder2.data('index', index + 1);
+
+            // Display the form in the page in an li, before the "Add a tag" link li
+            var $newFormLi2 = $('<div class="thumbnail col-lg-3"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button></div>').append(newForm2);
+            $newLinkLi2.before($newFormLi2);
+        }
+</script>
+{% endblock %}   

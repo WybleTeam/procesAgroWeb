@@ -147,7 +147,7 @@ class SolicitudCantidadMotivoController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Actualizar'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar', 'attr'=>array('class'=>'btn btn-primary btn-lg btn-block')));
 
         return $form;
     }

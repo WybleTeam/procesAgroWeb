@@ -40,6 +40,7 @@ class SolMantenimientoController extends Controller
         $entity = new SolMantenimientoIdentificacion();
         $entity->setFechaSolicitud($hoy);
         $entity->setSolicitudMantenimientoIdentificacion("...");
+        $entity->setEstadoSolicitud('Pendiente');
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
         

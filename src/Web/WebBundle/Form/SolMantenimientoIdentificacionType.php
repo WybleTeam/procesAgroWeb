@@ -71,13 +71,16 @@ class SolMantenimientoIdentificacionType extends AbstractType
                 'allow_delete'   => true,
                 'allow_add'      => true,
             ))    
-            ->add('fechaProgramadaIdentificacion',null,array(
-                'attr'=>array('class'=>'form-control')
-            ))
+            ->add('fechaProgramadaIdentificacion')
             ->add('observacionesRevision','textarea',array(
                 'attr'=>array('class'=>'form-control')
             ))
-            ->add('estadoSolicitud',null,array(
+            ->add('estadoSolicitud','choice',array(
+                'choices'=>array(
+                    'pendiente'=>'Pendiente',
+                    'Aprobado' => 'Aprobado',
+                    'Realizado'=> 'Realizado',
+                ),
                 'attr'=>array('class'=>'form-control')
             ))
             ->add('municipio',null,array(

@@ -147,7 +147,7 @@ class SolMantenimientoIdentificacionController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Actualizar', 'attr'=>array('class'=>'btn btn-primary btn-lg btn-block')));
 
         return $form;
     }
