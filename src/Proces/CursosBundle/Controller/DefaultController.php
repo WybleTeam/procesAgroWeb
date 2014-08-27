@@ -8,6 +8,12 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('ProcesCursosBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('ProcesCursosBundle:CursosVirtuales')->findAll();
+        
+        return $this->render('ProcesCursosBundle:Default:index.html.twig', array(
+            'entities' => $entities,
+        ));
     }
 }

@@ -1,1 +1,31 @@
-Hello 
+{% extends 'ThemesBundle::plantilla2.html.twig' %}
+{% block body %}
+      <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Nombre curso</th>
+                <th>Descripcion curso</th>
+                <th>Url audio</th>
+                <th>Url curso</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ entity.nombreCurso }}</td>
+                <td>{{ entity.descripcionCurso }}</td>
+                <td><a href="{{ entity.urlAudio }}" target="_blank">{{ entity.urlAudio }}</a></td>
+                <td><a href="{{ entity.urlCurso }}" target="_blank">{{ entity.urlCurso }}</a></td>
+                <td>{% if(entity.estado == 1) %}Activo{% else %}Inactivo{% endif %}</td>
+                <td>
+                
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}    
