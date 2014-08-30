@@ -79,10 +79,12 @@ class SolMantenimientoType extends AbstractType
                 'attr'=>array('class'=>'form-control')
             ))
             ->add('municipio',null,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control'),
+                'empty_value'=>'Escoge un Municipio'
             ))
             ->add('seccional',null,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control'),
+                'empty_value'=>'Escoge una Seccional'
             ))
               
             //->add('usuario',null,array(
@@ -98,6 +100,7 @@ class SolMantenimientoType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'Web\WebBundle\Entity\SolMantenimientoIdentificacion',
+            'cascade_validation' => true,
             
         ));
     }

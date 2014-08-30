@@ -34,6 +34,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="Proces\OficinasBundle\Entity\Municipio")
+     * @Assert\NotBlank(message="Escoge un Municipio")
      */
     private $municipio;
 
@@ -41,6 +42,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="ICA\TramiteBundle\Entity\Seccionales")
+     * @Assert\NotBlank(message="Escoge una seccional")
      */
     private $seccional;
 
@@ -48,6 +50,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="justificacionReidentificacion", type="string", length=45)
+     * @Assert\NotBlank(message="Escribe una Justificación")
      */
     private $justificacionReidentificacion;
 
@@ -62,6 +65,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="ica_3_101", type="string", length=45)
+     * @Assert\NotBlank(message="Falta ICA3101")
      */
     private $ica3101;
 
@@ -69,6 +73,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="nombreFinca", type="string", length=45)
+     * @Assert\NotBlank(message="Nombre Finca")
      */
     private $nombreFinca;
 
@@ -76,6 +81,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="nombrePropietarioFinca", type="string", length=45)
+     * @Assert\NotBlank(message="Nombre del Propietario")
      */
     private $nombrePropietarioFinca;
 
@@ -83,6 +89,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="cedulaPropietarioFinca", type="string", length=45)
+     * @Assert\NotBlank(message="Cédula Propietario")
      */
     private $cedulaPropietarioFinca;
 
@@ -90,6 +97,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="telefonoFijoPropietario", type="string", length=45)
+     * @Assert\NotBlank(message="Teléfono Fijo del Propietario")
      */
     private $telefonoFijoPropietario;
 
@@ -97,6 +105,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="telefonoCelularPropietario", type="string", length=45)
+     * @Assert\NotBlank(message="Celular del propietario")
      */
     private $telefonoCelularPropietario;
 
@@ -104,6 +113,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="nombreSolicitante", type="string", length=45)
+     * @Assert\NotBlank(message="Nombre del solicitante")
      */
     private $nombreSolicitante;
 
@@ -111,6 +121,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="cedulaSolicitante", type="string", length=45)
+     * @Assert\NotBlank(message="Cédula del solicitante")
      */
     private $cedulaSolicitante;
 
@@ -118,6 +129,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="telefonoFijoSolicitante", type="string", length=45)
+     * @Assert\NotBlank(message="Teléfono fijo solicitante")
      */
     private $telefonoFijoSolicitante;
 
@@ -125,6 +137,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="telefonoCelularSolicitante", type="string", length=45)
+     * @Assert\NotBlank(message="Teléfono Celular del solicitante")
      */
     private $telefonoCelularSolicitante;
 
@@ -161,6 +174,7 @@ class SolMantenimientoIdentificacion
      *
      * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\SolicitudCantidadMotivo", mappedBy="solicitudMantenimiento", cascade={"persist"})
      * @Assert\Valid
+     * @Assert\NotBlank(message="Escoge una cantidad")
      */
     private $cantidadMotivo;
 
@@ -169,6 +183,7 @@ class SolMantenimientoIdentificacion
      *
      * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\EspecieRangoSolicitud", mappedBy="solicitudMantenimiento", cascade={"persist"})
      * @Assert\Valid
+     * @Assert\NotBlank(message="Escoge una especie")
      */
     private $especieRango;
     

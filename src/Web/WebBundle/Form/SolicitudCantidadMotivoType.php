@@ -16,7 +16,8 @@ class SolicitudCantidadMotivoType extends AbstractType
     {
         $builder
             ->add('motivoIdentificacion',null,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control'),
+                'empty_value'=>'Escoge un motivo'
             ))
             ->add('cantidad',null,array(
                 'attr'=>array('class'=>'form-control')

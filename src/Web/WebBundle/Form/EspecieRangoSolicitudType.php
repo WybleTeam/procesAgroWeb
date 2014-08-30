@@ -19,10 +19,12 @@ class EspecieRangoSolicitudType extends AbstractType
                 'attr'=>array('class'=>'form-control')
             ))
             ->add('rangoEdades',null,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control'),
+                'empty_value'=>'Escoge un rango'
             ))
             ->add('especieAnimal',null,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control'),
+                'empty_value'=>'Escoge especie'
             ))
             //->add('solicitudMantenimiento',null,array(
             //    'attr'=>array('class'=>'form-control')

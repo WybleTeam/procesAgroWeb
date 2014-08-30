@@ -3,6 +3,7 @@
 namespace Web\WebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * SolicitudCantidadMotivo
@@ -25,6 +26,7 @@ class SolicitudCantidadMotivo
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="ICA\TramiteBundle\Entity\MotivoIdentificacion")
+     * @Assert\NotBlank(message="Escoge")
      */
     private $motivoIdentificacion;
 
@@ -32,6 +34,7 @@ class SolicitudCantidadMotivo
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="Web\WebBundle\Entity\SolMantenimientoIdentificacion",inversedBy="cantidadMotivo", cascade={"persist"})
+     * @Assert\NotBlank()
      */
     private $solicitudMantenimiento;
 
@@ -39,6 +42,8 @@ class SolicitudCantidadMotivo
      * @var integer
      *
      * @ORM\Column(name="cantidad", type="integer")
+     * @Assert\NotBlank(message="Escribe un valor")
+     * @Assert\Type(type="integer")
      */
     private $cantidad;
 

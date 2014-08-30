@@ -3,6 +3,7 @@
 namespace Web\WebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * EspecieRangoSolicitud
@@ -25,6 +26,8 @@ class EspecieRangoSolicitud
      * @var integer
      *
      * @ORM\Column(name="cantidad", type="integer")
+     * @Assert\NotBlank(message="Cantidad de animales")
+     * @Assert\Type(type="integer")
      */
     private $cantidad;
 
@@ -32,6 +35,7 @@ class EspecieRangoSolicitud
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="ICA\TramiteBundle\Entity\RangoEdades")
+     * @Assert\NotBlank(message="Escoge un rango")
      */
     private $rangoEdades;
 
@@ -39,6 +43,7 @@ class EspecieRangoSolicitud
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="ICA\TramiteBundle\Entity\EspecieAnimal")
+     * @Assert\NotBlank(message="Escoge una Especie")
      */
     private $especieAnimal;
 

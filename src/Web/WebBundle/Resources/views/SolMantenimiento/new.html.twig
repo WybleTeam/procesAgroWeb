@@ -53,7 +53,7 @@
         <div class="col-lg-12 alert-success center"><hr>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)<hr>
         </div>
        <div class="especie col-lg-12" data-prototype="{{ form_widget(form.especieRango.vars.prototype)|e }}">
-                          
+                <div class="col-lg-3">{{ form_row(form.especieRango) }}</div>          
        </div>
                    
       {#% for especies in form.especieRango %}
@@ -77,7 +77,7 @@
                    <br>
                   
                      <div class="tags col-lg-12" data-prototype="{{ form_widget(form.cantidadMotivo.vars.prototype)|e }}">
-                          
+                          <div class="col-lg-3">{{ form_row(form.cantidadMotivo) }}</div> 
                      </div>
                    
                </div>      
