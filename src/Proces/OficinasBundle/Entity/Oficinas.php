@@ -3,6 +3,7 @@
 namespace Proces\OficinasBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Oficinas
@@ -25,6 +26,7 @@ class Oficinas
      * @var string
      *
      * @ORM\Column(name="nombreOficina", type="string", length=45)
+     * @Assert\NotBlank(message="Falta el nombre")
      */
     private $nombreOficina;
 
@@ -32,6 +34,7 @@ class Oficinas
      * @var string
      *
      * @ORM\Column(name="direccionOficina", type="string", length=45)
+     * @Assert\NotBlank(message="Dirección")
      */
     private $direccionOficina;
 
@@ -39,6 +42,7 @@ class Oficinas
      * @var string
      *
      * @ORM\Column(name="descripcionOficina", type="string", length=45)
+     * @Assert\NotBlank(message="Descripción faltante")
      */
     private $descripcionOficina;
 
@@ -53,6 +57,7 @@ class Oficinas
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="Proces\OficinasBundle\Entity\Municipio")
+     * @Assert\NotBlank(message="Escoge un Municipio")
      */
     private $municipio;
 

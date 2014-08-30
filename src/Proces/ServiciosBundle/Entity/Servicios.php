@@ -3,6 +3,7 @@
 namespace Proces\ServiciosBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Servicios
@@ -25,6 +26,7 @@ class Servicios
      * @var string
      *
      * @ORM\Column(name="tituloServicio", type="string", length=45)
+     * @Assert\NotBlank(message="Debes ponerle un Título")
      */
     private $tituloServicio;
 
@@ -32,6 +34,7 @@ class Servicios
      * @var string
      *
      * @ORM\Column(name="descripcionServicio", type="string", length=45)
+     * @Assert\NotBlank(message="Debes poner una descripción")
      */
     private $descripcionServicio;
 
@@ -39,6 +42,8 @@ class Servicios
      * @var string
      *
      * @ORM\Column(name="urlAudioServicio", type="string", length=45)
+     * @Assert\NotBlank(message="Falta la Url")
+     * @Assert\Url(message="Url inválida")
      */
     private $urlAudioServicio;
 
@@ -46,6 +51,8 @@ class Servicios
      * @var string
      *
      * @ORM\Column(name="urlServicio", type="string", length=45)
+     * @Assert\NotBlank(message="Falta la Url")
+     * @Assert\Url(message="Url inválida")
      */
     private $urlServicio;
 
