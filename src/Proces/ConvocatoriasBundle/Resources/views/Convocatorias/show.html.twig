@@ -28,17 +28,15 @@
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('convocatorias') }}">
-            Volver al listado
+      
+        <a href="{{ path('convocatorias') }}" class="btn btn-success">
+            <span class="glyphicon glyphicon-arrow-left"></span> Volver al listado
         </a>
-    </li>
-    <li>
-        <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}">
-            Editar
+    
+        <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}" class="btn btn-warning">
+            <span class="glyphicon glyphicon-edit"></span> Editar
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    
+    {{ form(delete_form) }}
+
 {% endblock %}

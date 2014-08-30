@@ -92,6 +92,7 @@ class DefaultController extends Controller
         $entity->setMunicipioVereda($municipioVereda);
         $entity->setDepartamento($departamento);
         $entity->setEstadoSolicitud("Pendiente");
+        
         $entity->setJustificacionReidentificacion($justificacion);
         //$entity->setCantidadMotivo($motivoUno);
         
@@ -167,6 +168,8 @@ class DefaultController extends Controller
        // $form = $this->createCreateForm($entity);
         //$form->handleRequest($request);
         
+         
+         
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             if($jusPrimera > 0){
@@ -206,6 +209,7 @@ class DefaultController extends Controller
             if($tresMayorBufalino > 0){
             $em->persist($especieRangoOcho);
             }
+            
             
             $em->flush();
             

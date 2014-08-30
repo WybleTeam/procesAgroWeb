@@ -4,13 +4,11 @@
     <h1>Editar Convocatoria</h1>
 
     {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('convocatorias') }}">
+    <hr>
+      
+        <a href="{{ path('convocatorias') }}" class="btn btn-success">
+            <span class="glyphicon glyphicon-arrow-left"></span>
            Volver al listado
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    {{ form(delete_form) }}
 {% endblock %}

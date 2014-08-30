@@ -1,7 +1,13 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 {% block body -%}
     <h1>Listado de Convocatorias</h1>
-
+  <ul>
+        <li>
+            <a href="{{ path('convocatorias_new') }}" class="btn btn-info btn-sm">
+                Crear nueva
+            </a>
+        </li>
+    </ul>
     <table class="table">
         <thead>
             <tr>
@@ -10,7 +16,7 @@
                 <th>Descripción</th>
                 <th>Url convocatoria</th>
                 <th>Descripción larga</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -22,25 +28,16 @@
                 <td><a href="{{ entity.urlConvocatoria }}" target="_blank">{{ entity.urlConvocatoria }}</a></td>
                 <td>{{ entity.descripcionLarga }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">Mostrar</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}">Editar</a>
-                    </li>
-                </ul>
+                
+                        <a href="{{ path('convocatorias_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
+                    
+                        <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
+                    
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('convocatorias_new') }}">
-                Crear nueva
-            </a>
-        </li>
-    </ul>
+      
     {% endblock %}
