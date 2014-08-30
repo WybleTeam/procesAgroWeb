@@ -165,14 +165,14 @@ class Builder extends ContainerAware
     public function AdminMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'nav navbar-nav side-nav');
+        $menu->setChildrenAttribute('class', 'sidebar-menu');
        
         //$menu->setLabelAttribute('class', 'span');
 
         $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
         ->setAttribute('icon','fa fa-dashboard');
             
-        $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');       
+        $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setLinkAttribute('icon','fa fa-th');       
         $menu->addChild('Oficinas', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
         $menu->addChild('Servicios', array('route' => 'servicios'))->setAttribute('icon','fa fa-th');
        
@@ -182,8 +182,8 @@ class Builder extends ContainerAware
         
         $menu->addChild('Cursos Virtuales', array('route' => 'cursosvirtuales'))->setAttribute('icon','fa fa-th');
       
-        $menu->addChild('TramiteICA',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
-        $menu['TramiteICA']->setChildrenAttribute('class', 'dropdown-menu');
+        $menu->addChild('TramiteICA',array('uri'=>'#'))->setAttribute('class', 'treeview')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
+        $menu['TramiteICA']->setChildrenAttribute('class', 'treeview-menu');
         $menu['TramiteICA']->addChild('Solicitudes', array('route'=>'solmantenimientoidentificacion'));
         $menu['TramiteICA']->addChild('Seccionales', array('route'=>'seccionales'));
         $menu['TramiteICA']->addChild('Especie Animal', array('route'=>'especieanimal'));
@@ -192,8 +192,8 @@ class Builder extends ContainerAware
         $menu['TramiteICA']->addChild('Solicitud Cantidad Motivo', array('route'=>'solicitudcantidadmotivo'));
         $menu['TramiteICA']->addChild('Especie Rango Solicitud', array('route'=>'especierangosolicitud')); 
         
-        $menu->addChild('Localizacion',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
-        $menu['Localizacion']->setChildrenAttribute('class', 'dropdown-menu');
+        $menu->addChild('Localizacion',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('class','treeview')->setLinkAttribute('icon','fa fa-table');
+        $menu['Localizacion']->setChildrenAttribute('class', 'treeview-menu');
         $menu['Localizacion']->addChild('Departamentos', array('route'=>'departamento'));
         $menu['Localizacion']->addChild('Municipios', array('route'=>'municipio'));
         $menu->addChild('Otros', array('uri' => '#'))->setAttribute('icon','fa fa-th');  
