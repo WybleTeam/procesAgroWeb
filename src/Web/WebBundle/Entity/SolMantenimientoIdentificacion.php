@@ -34,7 +34,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="Proces\OficinasBundle\Entity\Municipio")
-     * @Assert\NotBlank(message="Escoge un Municipio")
+     * 
      */
     private $municipio;
 
@@ -42,7 +42,7 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\ManyToOne(targetEntity="ICA\TramiteBundle\Entity\Seccionales")
-     * @Assert\NotBlank(message="Escoge una seccional")
+     * 
      */
     private $seccional;
 
@@ -187,6 +187,22 @@ class SolMantenimientoIdentificacion
      */
     private $especieRango;
     
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="municipioVereda", type="string", length=45, nullable=true)
+     * 
+     */
+    private $municipioVereda;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="departamento", type="string", length=45, nullable=true)
+     * 
+     */
+    private $departamento;    
     
     /**
      * Constructor
@@ -691,6 +707,56 @@ class SolMantenimientoIdentificacion
     {
         return $this->cantidadMotivo;
     }
+    
+    
+
+    /**
+     * Set municipioVereda
+     *
+     * @param string $municipioVereda
+     * @return SolMantenimientoIdentificacion
+     */
+    public function setMunicipioVereda($municipioVereda)
+    {
+        $this->municipioVereda = $municipioVereda;
+
+        return $this;
+    }
+    
+    /**
+     * Get municipioVereda
+     *
+     * @return string 
+     */
+    public function getMunicipioVereda()
+    {
+        return $this->municipioVereda;
+    }
+
+     /**
+     * Set departamento
+     *
+     * @param string $departamento
+     * @return SolMantenimientoIdentificacion
+     */
+    public function setDepartamento($departamento)
+    {
+        $this->departamento = $departamento;
+
+        return $this;
+    }
+    
+    /**
+     * Get departamento
+     *
+     * @return string 
+     */
+    public function getDepartamento()
+    {
+        return $this->departamento;
+    }
+    
+    
     
     public function __toString() 
     {

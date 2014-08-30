@@ -34,7 +34,7 @@ web_ofertasTotal:
 # formulario ICA
 
 web_icaformulario:
-    path:     /crearFormulario/{municipio}/{seccional}/{justificacion}/{ica3101}/{nombreFinca}/{nombrePropietarioFinca}/{cedulaPropietarioFinca}/{telefonoFijoPropietario}/{telefonoCelularPropietario}/{nombreSolicitante}/{cedulaSolicitante}/{telefonoFijoSolicitante}/{telefonoCelularSolicitante}
-    defaults: { _controller: "WebBundle:Default:crearFormulario", municipio: null, seccional: null, justificacion: null, ica3101: null, nombreFinca: null, nombrePropietarioFinca: null, cedulaPropietarioFinca: null, telefonoFijoPropietario: null , telefonoCelularPropietario: null, nombreSolicitante: null, cedulaSolicitante: null, telefonoFijoSolicitante: null, telefonoCelularSolicitante: null }
+    path:     /crearFormulario/{ica3101}/{nombreFinca}/{nombrePropietarioFinca}/{cedulaPropietarioFinca}/{telefonoFijoPropietario}/{telefonoCelularPropietario}/{municipioVereda}/{departamento}/{nombreSolicitante}/{cedulaSolicitante}/{telefonoFijoSolicitante}/{telefonoCelularSolicitante}/{menUnoBovino}/{unoDosBovino}/{dosTresBovino}/{tresMayorBovino}/{menUnoBufalino}/{unoDosBufalino}/{dosTresBufalino}/{tresMayorBufalino}/{jusPrimera}/{jusNacimiento}/{jusCompraAnimales}/{jusPerdidaDin}/{justificacion}/
+    defaults: { _controller: "WebBundle:Default:crearFormulario",  ica3101: null, nombreFinca: null,  nombrePropietarioFinca: null, cedulaPropietarioFinca: null, telefonoFijoPropietario: null , telefonoCelularPropietario: null, municipioVereda: null, departamento: null, nombreSolicitante: null, cedulaSolicitante: null, telefonoFijoSolicitante: null, telefonoCelularSolicitante: null, menUnoBovino: null, unoDosBovino: null, dosTresBovino: null, tresMayorBovino: null, menUnoBufalino: null, unoDosBufalino: null, dosTresBufalino: null, tresMayorBufalino: null, jusPrimera: null, jusNacimiento: null, jusCompraAnimales: null, jusPerdidaDin: null, justificacion: null }
     requirements: { _method: get }
     

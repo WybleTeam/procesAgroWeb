@@ -72,7 +72,7 @@ class SolMantenimientoType extends AbstractType
             ))
             ->add('estadoSolicitud','choice',array(
                 'choices'=>array(
-                    'pendiente'=>'Pendiente',
+                    'Pendiente'=>'Pendiente',
                     'Aprobado' => 'Aprobado',
                     'Realizado'=> 'Realizado',
                 ),

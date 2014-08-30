@@ -43,8 +43,8 @@ class DefaultController extends Controller
      /*
      * metodo de insersion de datos desde el celular
      */
-    public function crearFormularioAction($municipio,$seccional,$justificacion,$ica3101,$nombreFinca,$nombrePropietarioFinca,$cedulaPropietarioFinca,$telefonoFijoPropietario,$telefonoCelularPropietario,$nombreSolicitante,$cedulaSolicitante,$telefonoFijoSolicitante,$telefonoCelularSolicitante)
-    {                 ///crearFormulario/{municipio}/{seccional}/{justificacion}/{ica3101}/{nombrefinca}/{nombrePropietarioFinca}/{cedulaPropietarioFinca}/{telefonoFijoPropietario}/{telefonoCelularPropietario}/{nombreSolicitante}/{cedulaSolicitante}/{telefonoFijoSolicitante}/{telefonoCelularSolicitante}
+    public function crearFormularioAction($ica3101, $nombreFinca, $nombrePropietarioFinca, $cedulaPropietarioFinca, $telefonoFijoPropietario, $telefonoCelularPropietario, $municipioVereda, $departamento, $nombreSolicitante, $cedulaSolicitante, $telefonoFijoSolicitante, $telefonoCelularSolicitante, $menUnoBovino, $unoDosBovino, $dosTresBovino, $tresMayorBovino, $menUnoBufalino, $unoDosBufalino, $dosTresBufalino, $tresMayorBufalino, $jusPrimera, $jusNacimiento, $jusCompraAnimales, $jusPerdidaDin, $justificacion)
+    {                                   
         $em = $this->getDoctrine()->getManager();
         $hoy = new \DateTime("now");
         $entity = new SolMantenimientoIdentificacion();
@@ -53,12 +53,12 @@ class DefaultController extends Controller
         
         // convertir los id a objetos
         
-        $municipioF = $em->getRepository('OficinasBundle:Municipio')->find($municipio);
-        $seccionalF = $em->getRepository('ICATramiteBundle:Seccionales')->find($seccional);
+        //  $municipioF = $em->getRepository('OficinasBundle:Municipio')->find($municipio);
+        //  $seccionalF = $em->getRepository('ICATramiteBundle:Seccionales')->find($seccional);
         /////////////////////////////
-        $entity->setMunicipio($municipioF);
+        //$entity->setMunicipio($municipioF);
         $entity->setJustificacionReidentificacion($justificacion);
-        $entity->setSeccional($seccionalF);
+        //$entity->setSeccional($seccionalF);
         $entity->setIca3101($ica3101);
         $entity->setNombreFinca($nombreFinca);
         $entity->setNombrePropietarioFinca($nombrePropietarioFinca);
@@ -69,6 +69,9 @@ class DefaultController extends Controller
         $entity->setCedulaSolicitante($cedulaSolicitante);
         $entity->setTelefonoFijoSolicitante($telefonoFijoSolicitante);
         $entity->setTelefonoCelularSolicitante($telefonoCelularSolicitante);
+        $entity->setMunicipioVereda($municipioVereda);
+        $entity->setDepartamento($departamento);
+        $entity->setEstadoSolicitud("Pendiente");
         
         
        // $form = $this->createCreateForm($entity);
