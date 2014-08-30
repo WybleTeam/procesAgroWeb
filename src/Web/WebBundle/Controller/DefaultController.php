@@ -169,18 +169,43 @@ class DefaultController extends Controller
         
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
-            $em->persist($motivoUno);
+            if($jusPrimera > 0){
+                $em->persist($motivoUno);
+            }
+            if($jusNacimiento > 0){
             $em->persist($motivoDos);
+            }
+             if($jusCompraAnimales > 0){
             $em->persist($motivoTres);
+            }
+             if($jusPerdidaDin > 0){
             $em->persist($motivoCuatro);
+            }
+            
+            if($menUnoBovino > 0){
             $em->persist($especieRangoUno);
+            }
+            if($unoDosBovino > 0){
             $em->persist($especieRangoDos);
+            }
+            if($dosTresBovino > 0){
             $em->persist($especieRangoTres);
+            }
+            if($tresMayorBovino > 0){
             $em->persist($especieRangoCuatro);
+            }
+            if($menUnoBufalino > 0){
             $em->persist($especieRangoCinco);
+            }
+            if($unoDosBufalino > 0){
             $em->persist($especieRangoSeis);
+            }
+             if($dosTresBufalino > 0){
             $em->persist($especieRangoSiete);
-            $em->persist($especieRangoOcho);            
+            }
+            if($tresMayorBufalino > 0){
+            $em->persist($especieRangoOcho);
+            }
             
             $em->flush();
             
