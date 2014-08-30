@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Web\WebBundle\Entity\SolMantenimientoIdentificacion;
 use Web\WebBundle\Form\SolMantenimientoIdentificacionType;
 use Web\WebBundle\Entity\SolicitudCantidadMotivo;
+use Web\WebBundle\Entity\EspecieRangoSolicitud;
 
 class DefaultController extends Controller
 {
@@ -56,6 +57,20 @@ class DefaultController extends Controller
         $motivoDos = new SolicitudCantidadMotivo();
         $motivoTres = new SolicitudCantidadMotivo();
         $motivoCuatro = new SolicitudCantidadMotivo();
+        
+        
+        /// Bovina
+        $especieRangoUno = new EspecieRangoSolicitud(); 
+        $especieRangoDos = new EspecieRangoSolicitud();
+        $especieRangoTres = new EspecieRangoSolicitud();
+        $especieRangoCuatro = new EspecieRangoSolicitud();
+        /// Bufalina
+        $especieRangoCinco = new EspecieRangoSolicitud();
+        $especieRangoSeis = new EspecieRangoSolicitud();
+        $especieRangoSiete = new EspecieRangoSolicitud();
+        $especieRangoOcho = new EspecieRangoSolicitud();
+        
+        
         // convertir los id a objetos
         
         //  $municipioF = $em->getRepository('OficinasBundle:Municipio')->find($municipio);
@@ -101,7 +116,54 @@ class DefaultController extends Controller
          $motivoCuatro->setMotivoIdentificacion($tipoMotivoCuatro);
          $motivoCuatro->setSolicitudMantenimiento($entity);
          
+         $rangoEdadesUno    = $em->getRepository('ICATramiteBundle:RangoEdades')->findOneByCodigoMotivo(1);
+         $rangoEdadesDos    = $em->getRepository('ICATramiteBundle:RangoEdades')->findOneByCodigoMotivo(2);
+         $rangoEdadesTres   = $em->getRepository('ICATramiteBundle:RangoEdades')->findOneByCodigoMotivo(3);
+         $rangoEdadesCuatro = $em->getRepository('ICATramiteBundle:RangoEdades')->findOneByCodigoMotivo(4);
          
+         $especieBovina   = $em->getRepository('ICATramiteBundle:EspecieAnimal')->findOneByCodigoMotivo(1);
+         $especieBufalina = $em->getRepository('ICATramiteBundle:EspecieAnimal')->findOneByCodigoMotivo(2);
+         
+         /// Combinaciones con bovino
+         $especieRangoUno->setCantidad($menUnoBovino);
+         $especieRangoUno->setEspecieAnimal($especieBovina);
+         $especieRangoUno->setRangoEdades($rangoEdadesUno);
+         $especieRangoUno->setSolicitudMantenimiento($entity);
+         
+         $especieRangoDos->setCantidad($unoDosBovino);
+         $especieRangoDos->setEspecieAnimal($especieBovina);
+         $especieRangoDos->setRangoEdades($rangoEdadesDos);
+         $especieRangoDos->setSolicitudMantenimiento($entity);
+         
+         $especieRangoTres->setCantidad($dosTresBovino);
+         $especieRangoTres->setEspecieAnimal($especieBovina);
+         $especieRangoTres->setRangoEdades($rangoEdadesTres);
+         $especieRangoTres->setSolicitudMantenimiento($entity);
+         
+         $especieRangoCuatro->setCantidad($tresMayorBovino);
+         $especieRangoCuatro->setEspecieAnimal($especieBovina);
+         $especieRangoCuatro->setRangoEdades($rangoEdadesCuatro);
+         $especieRangoCuatro->setSolicitudMantenimiento($entity);
+         //////////////////////// con bufalino
+         $especieRangoCinco->setCantidad($menUnoBufalino);
+         $especieRangoCinco->setEspecieAnimal($especieBufalina);
+         $especieRangoCinco->setRangoEdades($rangoEdadesUno);
+         $especieRangoCinco->setSolicitudMantenimiento($entity);
+         
+         $especieRangoSeis->setCantidad($unoDosBufalino);
+         $especieRangoSeis->setEspecieAnimal($especieBufalina);
+         $especieRangoSeis->setRangoEdades($rangoEdadesDos);
+         $especieRangoSeis->setSolicitudMantenimiento($entity);
+         
+         $especieRangoSiete->setCantidad($dosTresBufalino);
+         $especieRangoSiete->setEspecieAnimal($especieBufalina);
+         $especieRangoSiete->setRangoEdades($rangoEdadesTres);
+         $especieRangoSiete->setSolicitudMantenimiento($entity);
+         
+         $especieRangoOcho->setCantidad($tresMayorBufalino);
+         $especieRangoOcho->setEspecieAnimal($especieBufalina);
+         $especieRangoOcho->setRangoEdades($rangoEdadesCuatro);
+         $especieRangoOcho->setSolicitudMantenimiento($entity); 
        // $form = $this->createCreateForm($entity);
         //$form->handleRequest($request);
         
@@ -111,6 +173,14 @@ class DefaultController extends Controller
             $em->persist($motivoDos);
             $em->persist($motivoTres);
             $em->persist($motivoCuatro);
+            $em->persist($especieRangoUno);
+            $em->persist($especieRangoDos);
+            $em->persist($especieRangoTres);
+            $em->persist($especieRangoCuatro);
+            $em->persist($especieRangoCinco);
+            $em->persist($especieRangoSeis);
+            $em->persist($especieRangoSiete);
+            $em->persist($especieRangoOcho);            
             
             $em->flush();
             

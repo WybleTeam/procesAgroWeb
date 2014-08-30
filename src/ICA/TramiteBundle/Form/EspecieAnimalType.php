@@ -18,6 +18,9 @@ class EspecieAnimalType extends AbstractType
             ->add('nombreEspecie','text',array(
                 'attr'=>array('class'=>'form-control'),
             ))
+            ->add('codigoMotivo','text',array(
+                'attr'=>array('class'=>'form-control'),
+            ))    
         ;
     }
     

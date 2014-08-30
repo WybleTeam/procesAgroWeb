@@ -30,6 +30,13 @@ class RangoEdades
      */
     private $nombreRango;
 
+     /**
+     * @var string
+     *
+     * @ORM\Column(name="codigoMotivo", type="string", length=45)
+     * @Assert\NotBlank(message="Falta el codigo del Motivo")
+     */
+    private $codigoMotivo;
 
     /**
      * Get id
@@ -62,6 +69,29 @@ class RangoEdades
     public function getNombreRango()
     {
         return $this->nombreRango;
+    }
+    
+     /**
+     * Set codigoMotivo
+     *
+     * @param string $codigoMotivo
+     * @return MotivoIdentificacion
+     */
+    public function setCodigoMotivo($codigoMotivo)
+    {
+        $this->codigoMotivo = $codigoMotivo;
+
+        return $this;
+    }
+    
+     /**
+     * Get codigoMotivo
+     *
+     * @return string 
+     */
+    public function getCodigoMotivo()
+    {
+        return $this->codigoMotivo;
     }
     
     public function __toString() 

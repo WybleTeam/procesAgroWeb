@@ -18,6 +18,9 @@ class RangoEdadesType extends AbstractType
             ->add('nombreRango','text',array(
                 'attr'=>array('class'=>'form-control'),
             ))
+            ->add('codigoMotivo','text',array(
+                'attr'=>array('class'=>'form-control'),
+            ))   
         ;
     }
     
