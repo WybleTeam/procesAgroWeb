@@ -196,7 +196,7 @@ class Builder extends ContainerAware
         $menu['Localizacion']->setChildrenAttribute('class', 'treeview-menu');
         $menu['Localizacion']->addChild('Departamentos', array('route'=>'departamento'));
         $menu['Localizacion']->addChild('Municipios', array('route'=>'municipio'));
-        $menu->addChild('Otros', array('uri' => '#'))->setAttribute('icon','fa fa-th');  
+        $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');  
        
         return $menu;
     }

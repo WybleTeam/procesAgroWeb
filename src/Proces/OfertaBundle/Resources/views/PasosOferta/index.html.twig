@@ -18,7 +18,7 @@
                 <td><a href="{{ path('pasosoferta_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.tituloPasos }}</td>
                 <td>{{ entity.descripcionPaso }}</td>
-                <td>{{ entity.urlPaso }}</td>
+                <td><a href="{{ otro.urlPaso }}" target="_blank">{{ otro.urlPaso }}</a></td>
                 <td>
                 <ul>
                     <li>

@@ -20,11 +20,11 @@
             </tr>
             <tr>
                 <th>Urlaudiooferta</th>
-                <td>{{ entity.urlAudioOferta }}</td>
+                <td>{{ entity.urlAudioOferta }}" target="_blank">{{ entity.urlAudioOferta }}</td>
             </tr>
             <tr>
                 <th>Urloferta</th>
-                <td>{{ entity.urlOferta }}</td>
+                <td><a href="{{ entity.urlOferta }}" target="_blank">{{ entity.urlOferta }}</td>
             </tr>
         </tbody>
     </table>
@@ -75,7 +75,7 @@
                 <td><a href="{{ path('pasosoferta_show', { 'id': otro.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ otro.tituloPasos }}</td>
                 <td>{{ otro.descripcionPaso }}</td>
-                <td>{{ otro.urlPaso }}</td>
+                <td><a href="{{ otro.urlPaso }}" target="_blank">{{ otro.urlPaso }}</a></td>
                 <td>
                 <ul>
                     

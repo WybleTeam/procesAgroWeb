@@ -19,7 +19,7 @@
                 <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.tituloConvocatoria }}</td>
                 <td>{{ entity.descripcion }}</td>
-                <td>{{ entity.urlConvocatoria }}</td>
+                <td><a href="{{ entity.urlConvocatoria }}" target="_blank">{{ entity.urlConvocatoria }}</a></td>
                 <td>{{ entity.descripcionLarga }}</td>
                 <td>
                 <ul>

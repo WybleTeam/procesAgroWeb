@@ -20,8 +20,8 @@
                 <td><a href="{{ path('servicios_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.tituloServicio }}</td>
                 <td>{{ entity.descripcionServicio }}</td>
-                <td>{{ entity.urlAudioServicio }}</td>
-                <td>{{ entity.urlServicio }}</td>
+                 <td><a href="{{ entity.urlAudioServicio }}" target="_blank">{{ entity.urlAudioServicio }}</a></td>
+                <td><a href="{{ entity.urlServicio }}" target="_blank">{{ entity.urlServicio }}</a></td>
                 <td>
                 <ul>
                     <li>
