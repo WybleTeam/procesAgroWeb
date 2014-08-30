@@ -43,8 +43,8 @@ class DefaultController extends Controller
      /*
      * metodo de insersion de datos desde el celular
      */
-    public function crearFormularioAction($municipio,$seccional,$justificacion,$ica3101,$nombrefinca,$nombrePropietarioFinca,$cedulaPropietarioFinca,$telefonoFijoPropietario,$telefonoCelularPropietario,$nombreSolicitante,$cedulaSolicitante,$telefonoFijoSolicitante,$telefonoCelularSolicitante)
-    {
+    public function crearFormularioAction($municipio,$seccional,$justificacion,$ica3101,$nombreFinca,$nombrePropietarioFinca,$cedulaPropietarioFinca,$telefonoFijoPropietario,$telefonoCelularPropietario,$nombreSolicitante,$cedulaSolicitante,$telefonoFijoSolicitante,$telefonoCelularSolicitante)
+    {                 ///crearFormulario/{municipio}/{seccional}/{justificacion}/{ica3101}/{nombrefinca}/{nombrePropietarioFinca}/{cedulaPropietarioFinca}/{telefonoFijoPropietario}/{telefonoCelularPropietario}/{nombreSolicitante}/{cedulaSolicitante}/{telefonoFijoSolicitante}/{telefonoCelularSolicitante}
         $em = $this->getDoctrine()->getManager();
         $hoy = new \DateTime("now");
         $entity = new SolMantenimientoIdentificacion();
@@ -54,10 +54,11 @@ class DefaultController extends Controller
         // convertir los id a objetos
         
         $municipioF = $em->getRepository('OficinasBundle:Municipio')->find($municipio);
-        
+        $seccionalF = $em->getRepository('ICATramiteBundle:Seccionales')->find($seccional);
+        /////////////////////////////
         $entity->setMunicipio($municipioF);
         $entity->setJustificacionReidentificacion($justificacion);
-        $entity->setSeccional($seccional);
+        $entity->setSeccional($seccionalF);
         $entity->setIca3101($ica3101);
         $entity->setNombreFinca($nombreFinca);
         $entity->setNombrePropietarioFinca($nombrePropietarioFinca);
@@ -70,20 +71,17 @@ class DefaultController extends Controller
         $entity->setTelefonoCelularSolicitante($telefonoCelularSolicitante);
         
         
-        $form = $this->createCreateForm($entity);
+       // $form = $this->createCreateForm($entity);
         //$form->handleRequest($request);
         
-       
-        
-        if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-
+            $respuesta = "Insertado";
+            $response = new Response($respuesta);
+            return $response;
             //return $this->redirect($this->generateUrl('solmantenimiento_show', array('id' => $entity->getId())));
-        }
-          $response = new Response('Hemos recibido tus datos');
-          return $response;
+       
         //return "hola";
         //return $this->render('WebBundle:SolMantenimiento:new.html.twig', array(
         //    'entity' => $entity,

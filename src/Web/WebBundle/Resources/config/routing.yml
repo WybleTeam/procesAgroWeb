@@ -34,7 +34,7 @@ web_ofertasTotal:
 # formulario ICA
 
 web_icaformulario:
-    path:     /crearFormulario/{municipio}/{seccional}/{justificacion}/{ica3101}/{nombrefinca}/{nombrePropietarioFinca}/{cedulaPropietarioFinca}/{telefonoFijoPropietario}/{telefonoCelularPropietario}/{nombreSolicitante}/{cedulaSolicitante}/{telefonoFijoSolicitante}/{telefonoCelularSolicitante}
-    defaults: { _controller: "WebBundle:Default:crearFormulario", municipio: null, seccional: null, justificacion: null, ica3101: null, nombrefinca: null, nombrePropietarioFinca: null, cedulaPropietarioFinca: null, telefonoFijoPropietario: null , telefonoCelularPropietario: null, nombreSolicitante: null, cedulaSolicitante: null, telefonoFijoSolicitante: null, telefonoCelularSolicitante: null }
+    path:     /crearFormulario/{municipio}/{seccional}/{justificacion}/{ica3101}/{nombreFinca}/{nombrePropietarioFinca}/{cedulaPropietarioFinca}/{telefonoFijoPropietario}/{telefonoCelularPropietario}/{nombreSolicitante}/{cedulaSolicitante}/{telefonoFijoSolicitante}/{telefonoCelularSolicitante}
+    defaults: { _controller: "WebBundle:Default:crearFormulario", municipio: null, seccional: null, justificacion: null, ica3101: null, nombreFinca: null, nombrePropietarioFinca: null, cedulaPropietarioFinca: null, telefonoFijoPropietario: null , telefonoCelularPropietario: null, nombreSolicitante: null, cedulaSolicitante: null, telefonoFijoSolicitante: null, telefonoCelularSolicitante: null }
     requirements: { _method: get }
     
