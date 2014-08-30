@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class SolMantenimientoIdentificacionRepository extends EntityRepository
 {
+    public function findPendientes()
+    {
+        $estado = "Pendiente";
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT COUNT(o) AS Cuenta FROM WebBundle:SolMantenimientoIdentificacion o 
+            WHERE o.estadoSolicitud = :estado ORDER BY o.fechaSolicitud DESC
+            '
+        );
+        $consulta->setParameter('estado', $estado);
+        $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
 }

@@ -10,8 +10,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  */
 class AdminController extends Controller
 {
-     public function indexAction()
+    public function indexAction()
     {
-        return $this->render('AdminBundle:Default:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $solicitudes = $em->getRepository('WebBundle:SolMantenimientoIdentificacion')->findPendientes();
+        return $this->render('AdminBundle:Default:index.html.twig', array(
+            'pendientes'=>$solicitudes,
+        ));
     }
 }
