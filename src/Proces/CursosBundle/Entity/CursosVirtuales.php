@@ -3,6 +3,7 @@
 namespace Proces\CursosBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * CursosVirtuales
@@ -32,6 +33,7 @@ class CursosVirtuales
      * @var string
      *
      * @ORM\Column(name="nombreCurso", type="string", length=45)
+     * @Assert\NotBlank(message="Falta el nombre del Curso")
      */
     private $nombreCurso;
 
@@ -39,6 +41,7 @@ class CursosVirtuales
      * @var string
      *
      * @ORM\Column(name="descripcionCurso", type="string", length=45)
+     * @Assert\NotBlank(message="Descripcion del Curso")
      */
     private $descripcionCurso;
 
@@ -46,6 +49,8 @@ class CursosVirtuales
      * @var string
      *
      * @ORM\Column(name="urlAudio", type="string", length=45)
+     * @Assert\NotBlank(message="Enlace al audio convocatoria")
+     * @Assert\Url(message="Formato inválido")
      */
     private $urlAudio;
 
@@ -53,13 +58,15 @@ class CursosVirtuales
      * @var string
      *
      * @ORM\Column(name="urlCurso", type="string", length=45)
+     * @Assert\NotBlank(message="Enlace a la convocatoria")
+     * @Assert\Url(message="Formato inválido")
      */
     private $urlCurso;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="estado", type="boolean")
+     * @ORM\Column(name="estado", type="boolean", nullable=true)
      */
     private $estado;
 

@@ -3,6 +3,7 @@
 namespace Proces\ConvocatoriasBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Convocatorias
@@ -25,6 +26,7 @@ class Convocatorias
      * @var string
      *
      * @ORM\Column(name="tituloConvocatoria", type="string", length=45)
+     * @Assert\NotBlank(message="Debes ponerle un Título a la convocatoria")
      */
     private $tituloConvocatoria;
     
@@ -32,6 +34,7 @@ class Convocatorias
      * @var string
      *
      * @ORM\Column(name="descripcion", type="string", length=45)
+     * @Assert\NotBlank(message="Describe brevemente la convocatoria")
      */
     private $descripcion;
 
@@ -39,6 +42,8 @@ class Convocatorias
      * @var string
      *
      * @ORM\Column(name="urlConvocatoria", type="string", length=45)
+     * @Assert\NotBlank(message="Hey la Url!!")
+     * @Assert\Url(message="Pon una url por ejemplo, http://tuurl.com")
      */
     private $urlConvocatoria;
 
@@ -46,6 +51,7 @@ class Convocatorias
      * @var string
      *
      * @ORM\Column(name="descripcionLarga", type="string", length=45)
+     * @Assert\NotBlank(message="La descripción larga falta")
      */
     private $descripcionLarga;
 

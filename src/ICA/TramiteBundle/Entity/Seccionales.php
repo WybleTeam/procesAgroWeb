@@ -3,6 +3,7 @@
 namespace ICA\TramiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Seccionales
@@ -25,13 +26,14 @@ class Seccionales
      * @var string
      *
      * @ORM\Column(name="nombreSeccional", type="string", length=45)
+     * @Assert\NotBlank(message="Falta el nombre de la seccional")
      */
     private $nombreSeccional;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="estado", type="boolean")
+     * @ORM\Column(name="estado", type="boolean", nullable=true)
      */
     private $estado;
 

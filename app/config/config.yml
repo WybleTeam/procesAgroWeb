@@ -29,9 +29,9 @@ twig:
     strict_variables: "%kernel.debug%"
     form:
         resources:
-            # - 'ThemesBundle:Form:fields.html.twig'
-            #- 'ThemesBundle:Form:form_errors.html.twig'
-            #- 'ThemesBundle:Form:form_div_layout.html.twig'
+              - 'ThemesBundle:Form:fields.html.twig'
+            # - 'ThemesBundle:Form:form_errors.html.twig'
+              - 'ThemesBundle:Form:form_div_layout.html.twig'
             #- 'ColegioDocenteBundle:Form:fields.html.twig'
             #- 'ColegioDocenteBundle:Form:form_errors.html.twig'
             #- 'ColegioDocenteBundle:Form:form_div_layout.html.twig'

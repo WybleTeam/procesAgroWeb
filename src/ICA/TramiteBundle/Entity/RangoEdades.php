@@ -3,6 +3,7 @@
 namespace ICA\TramiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * RangoEdades
@@ -25,6 +26,7 @@ class RangoEdades
      * @var string
      *
      * @ORM\Column(name="nombreRango", type="string", length=45)
+     * @Assert\NotBlank(message="Falta el nombre del Rango")
      */
     private $nombreRango;
 

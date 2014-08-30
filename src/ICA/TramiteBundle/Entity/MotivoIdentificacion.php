@@ -3,6 +3,7 @@
 namespace ICA\TramiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * MotivoIdentificacion
@@ -25,6 +26,7 @@ class MotivoIdentificacion
      * @var string
      *
      * @ORM\Column(name="nombreMotivo", type="string", length=45)
+     * @Assert\NotBlank(message="Falta el nombre del Motivo")
      */
     private $nombreMotivo;
 

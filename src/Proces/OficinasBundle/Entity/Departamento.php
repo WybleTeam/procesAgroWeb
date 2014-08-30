@@ -3,6 +3,7 @@
 namespace Proces\OficinasBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Departamento
@@ -25,6 +26,7 @@ class Departamento
      * @var string
      *
      * @ORM\Column(name="nombreDepartamento", type="string", length=45)
+     * @Assert\NotBlank(message="Debes ponerle un nombre")
      */
     private $nombreDepartamento;
 

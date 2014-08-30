@@ -227,7 +227,7 @@
         {% set label = name|humanize %}
     {% endif %}
 <div class="form-actions">
-    
+    <hr>
     <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{{ label|trans({}, translation_domain) }}</button>
 
 </div>    
@@ -346,7 +346,7 @@
 {% block form_errors %}
 {% spaceless %}
     {% if errors|length > 0 %}
-    <ul>
+    <ul class="alert alert-danger" role="alert">
         {% for error in errors %}
             <li>{{ error.message }}</li>
         {% endfor %}
@@ -390,8 +390,9 @@
 {% endblock widget_container_attributes %}
 
 {% block button_attributes %}
+   
 {% spaceless %}
-    class="btn btn-primary"
+    class="btn btn-primary btn-lg btn-block"
     id="{{ id }}" name="{{ full_name }}"{% if disabled %} disabled="disabled"{% endif %}
     {% for attrname, attrvalue in attr %}{{ attrname }}="{{ attrvalue }}" {% endfor %}
 {% endspaceless %}

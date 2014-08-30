@@ -165,7 +165,7 @@ class Builder extends ContainerAware
     public function AdminMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'sidebar-menu');
+        $menu->setChildrenAttribute('class', 'nav navbar-nav side-nav');
        
         //$menu->setLabelAttribute('class', 'span');
 

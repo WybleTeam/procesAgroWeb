@@ -3,6 +3,7 @@
 namespace Proces\OfertaBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * OfertasInstitucionales
@@ -25,6 +26,7 @@ class OfertasInstitucionales
      * @var string
      *
      * @ORM\Column(name="tituloOferta", type="string", length=45)
+     * @Assert\NotBlank(message="Debes ponerle un Título a la Oferta")
      */
     private $tituloOferta;
 
@@ -32,6 +34,7 @@ class OfertasInstitucionales
      * @var string
      *
      * @ORM\Column(name="descripcionOferta", type="string", length=45)
+     * @Assert\NotBlank(message="Debes ponerle una descripción")
      */
     private $descripcionOferta;
 
@@ -39,6 +42,8 @@ class OfertasInstitucionales
      * @var string
      *
      * @ORM\Column(name="urlAudioOferta", type="string", length=45)
+     * @Assert\NotBlank(message="Debes ponerle una enlace")
+     * @Assert\Url()
      */
     private $urlAudioOferta;
 
@@ -46,6 +51,8 @@ class OfertasInstitucionales
      * @var string
      *
      * @ORM\Column(name="urlOferta", type="string", length=45)
+     * @Assert\NotBlank(message="Debes ponerle una enlace")
+     * @Assert\Url()
      */
     private $urlOferta;
 

@@ -3,6 +3,7 @@
 namespace ICA\TramiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * EspecieAnimal
@@ -25,6 +26,7 @@ class EspecieAnimal
      * @var string
      *
      * @ORM\Column(name="nombreEspecie", type="string", length=45)
+     * @Assert\NotBlank(message="Debes ponerle un nombre a la Especie por favor")
      */
     private $nombreEspecie;
 
