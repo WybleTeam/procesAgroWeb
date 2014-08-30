@@ -43,6 +43,9 @@ class SeccionalesController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'OK');
 
             return $this->redirect($this->generateUrl('seccionales_show', array('id' => $entity->getId())));
         }
@@ -171,6 +174,9 @@ class SeccionalesController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'OK');
 
             return $this->redirect($this->generateUrl('seccionales_edit', array('id' => $id)));
         }
@@ -200,6 +206,9 @@ class SeccionalesController extends Controller
 
             $em->remove($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'OK');
         }
 
         return $this->redirect($this->generateUrl('seccionales'));

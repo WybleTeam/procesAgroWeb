@@ -50,7 +50,9 @@ class SolMantenimientoController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
-
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'OK');
             return $this->redirect($this->generateUrl('solmantenimiento_show', array('id' => $entity->getId())));
         }
 
@@ -178,6 +180,9 @@ class SolMantenimientoController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'OK');
 
             return $this->redirect($this->generateUrl('solmantenimiento_edit', array('id' => $id)));
         }
@@ -207,6 +212,9 @@ class SolMantenimientoController extends Controller
 
             $em->remove($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'OK');
         }
 
         return $this->redirect($this->generateUrl('solmantenimiento'));

@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Web\WebBundle\Entity\SolMantenimientoIdentificacion;
 use Web\WebBundle\Form\SolMantenimientoIdentificacionType;
+use Web\WebBundle\Entity\SolicitudCantidadMotivo;
 
 class DefaultController extends Controller
 {
@@ -51,6 +52,10 @@ class DefaultController extends Controller
         $entity->setFechaSolicitud($hoy);
         $entity->setSolicitudMantenimientoIdentificacion("...");
         
+        $motivoUno = new SolicitudCantidadMotivo();
+        $motivoDos = new SolicitudCantidadMotivo();
+        $motivoTres = new SolicitudCantidadMotivo();
+        $motivoCuatro = new SolicitudCantidadMotivo();
         // convertir los id a objetos
         
         //  $municipioF = $em->getRepository('OficinasBundle:Municipio')->find($municipio);
@@ -72,14 +77,44 @@ class DefaultController extends Controller
         $entity->setMunicipioVereda($municipioVereda);
         $entity->setDepartamento($departamento);
         $entity->setEstadoSolicitud("Pendiente");
+        $entity->setJustificacionReidentificacion($justificacion);
+        //$entity->setCantidadMotivo($motivoUno);
         
-        
+         
+         $tipoMotivoUno = $em->getRepository('ICATramiteBundle:MotivoIdentificacion')->findOneByCodigoMotivo(1);
+         $motivoUno->setCantidad($jusPrimera);  
+         $motivoUno->setMotivoIdentificacion($tipoMotivoUno);
+         $motivoUno->setSolicitudMantenimiento($entity);
+         
+         $tipoMotivoDos = $em->getRepository('ICATramiteBundle:MotivoIdentificacion')->findOneByCodigoMotivo(2);
+         $motivoDos->setCantidad($jusNacimiento);  
+         $motivoDos->setMotivoIdentificacion($tipoMotivoDos);
+         $motivoDos->setSolicitudMantenimiento($entity);
+         
+         $tipoMotivoTres = $em->getRepository('ICATramiteBundle:MotivoIdentificacion')->findOneByCodigoMotivo(3);
+         $motivoTres->setCantidad($jusCompraAnimales);  
+         $motivoTres->setMotivoIdentificacion($tipoMotivoTres);
+         $motivoTres->setSolicitudMantenimiento($entity);
+         
+         $tipoMotivoCuatro = $em->getRepository('ICATramiteBundle:MotivoIdentificacion')->findOneByCodigoMotivo(4);
+         $motivoCuatro->setCantidad($jusPerdidaDin);  
+         $motivoCuatro->setMotivoIdentificacion($tipoMotivoCuatro);
+         $motivoCuatro->setSolicitudMantenimiento($entity);
+         
+         
        // $form = $this->createCreateForm($entity);
         //$form->handleRequest($request);
         
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
+            $em->persist($motivoUno);
+            $em->persist($motivoDos);
+            $em->persist($motivoTres);
+            $em->persist($motivoCuatro);
+            
             $em->flush();
+            
+            
             $respuesta = "Insertado";
             $response = new Response($respuesta);
             return $response;

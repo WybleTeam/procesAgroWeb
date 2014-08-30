@@ -18,6 +18,9 @@ class MotivoIdentificacionType extends AbstractType
             ->add('nombreMotivo','text',array(
                 'attr'=>array('class'=>'form-control'),
             ))
+            ->add('codigoMotivo','text',array(
+                'attr'=>array('class'=>'form-control'),
+            ))
         ;
     }
     

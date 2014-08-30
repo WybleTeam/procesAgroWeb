@@ -30,6 +30,13 @@ class MotivoIdentificacion
      */
     private $nombreMotivo;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codigoMotivo", type="string", length=45)
+     * @Assert\NotBlank(message="Falta el codigo del Motivo")
+     */
+    private $codigoMotivo;
 
     /**
      * Get id
@@ -50,6 +57,29 @@ class MotivoIdentificacion
     public function setNombreMotivo($nombreMotivo)
     {
         $this->nombreMotivo = $nombreMotivo;
+
+        return $this;
+    }
+
+    /**
+     * Get codigoMotivo
+     *
+     * @return string 
+     */
+    public function getCodigoMotivo()
+    {
+        return $this->codigoMotivo;
+    }
+    
+     /**
+     * Set codigoMotivo
+     *
+     * @param string $codigoMotivo
+     * @return MotivoIdentificacion
+     */
+    public function setCodigoMotivo($codigoMotivo)
+    {
+        $this->codigoMotivo = $codigoMotivo;
 
         return $this;
     }
