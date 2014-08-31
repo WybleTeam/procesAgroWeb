@@ -1,8 +1,9 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Seccionales</h1>
-
+      <div class="panel panel-default">
+          <div class="panel-heading"><h3 class="panel-title">Seccionales</h3></div>
+<div class="panel-body">
     <table class="table">
         <tbody>
             <tr>
@@ -20,17 +21,13 @@
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('seccionales') }}">
+        <a href="{{ path('seccionales') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             Volver al listado
         </a>
-    </li>
-    <li>
-        <a href="{{ path('seccionales_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('seccionales_edit', { 'id': entity.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>
             Editar
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        </a>    
+        {{ form(delete_form) }}
+</div>
+      </div>
 {% endblock %}

@@ -1,15 +1,16 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Creación de Servicios</h1>
+           <div class="panel panel-default">
+               <div class="panel-heading"><h3 class="panel-title">Creación de Servicios</h3></div>
+                   <div class="panel-body">
 
     {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('servicios') }}">
+    <hr>
+        <a href="{{ path('servicios') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             Volver al Listado
         </a>
-    </li>
-</ul>
+    
+                   </div>
+           </div>
 {% endblock %}

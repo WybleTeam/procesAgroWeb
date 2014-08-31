@@ -1,7 +1,9 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Municipio</h1>
+  <div class="panel panel-default">
+      <div class="panel-heading"><h3 class="panel-title">Municipio</h3></div>
+      <div class="panel-body"> 
 
     <table class="table">
         <tbody>
@@ -10,27 +12,24 @@
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Nombremunicipio</th>
+                <th>Nombre municipio</th>
                 <td>{{ entity.nombreMunicipio }}</td>
             </tr>
             <tr>
-                <th>Tipomunicipio</th>
+                <th>Tipo municipio</th>
                 <td>{{ entity.tipoMunicipio }}</td>
             </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('municipio') }}">
+        <a href="{{ path('municipio') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
            Volver al listado
         </a>
-    </li>
-    <li>
-        <a href="{{ path('municipio_edit', { 'id': entity.id }) }}">
+
+        <a href="{{ path('municipio_edit', { 'id': entity.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>
             Editar
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    {{ form(delete_form) }}
+      </div>
+  </div>
 {% endblock %}

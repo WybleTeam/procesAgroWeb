@@ -2,8 +2,13 @@
 
 {% block body -%}
     <div class="col-lg-6">
-    <h1>Ofertas Institucionales</h1>
-
+    <div class="panel panel-default">
+            
+            
+        <div class="panel-heading"><h3 class="panel-title">Ofertas Institucionales</h3></div>
+  
+        <div class="panel-body"> 
+          
     <table class="table">
         <tbody>
             <tr>
@@ -29,19 +34,15 @@
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('ofertasinstitucionales') }}">
+        <a href="{{ path('ofertasinstitucionales') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             Volver al listado
         </a>
-    </li>
-    <li>
-        <a href="{{ path('ofertasinstitucionales_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('ofertasinstitucionales_edit', { 'id': entity.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>
             Editar
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        {{ form(delete_form) }}
+        </div>
+    </div>
     </div>
     <div class="col-lg-6">
         
@@ -52,21 +53,18 @@
             
         <div class="panel-body"> 
             
-              <ul>
-        <li>
-            <a href="{{ path('pasosoferta_new', { 'oferta': entity.id }) }}">
+            <a href="{{ path('pasosoferta_new', { 'oferta': entity.id }) }}" class="btn btn-info"><span class="glyphicon glyphicon-ok"></span>
                 Crear nuevo
             </a>
-        </li>
-    </ul>
-            <table class="table">
+       
+     <table class="table">
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Titulopasos</th>
-                <th>Descripcionpaso</th>
-                <th>Urlpaso</th>
-                <th>Actions</th>
+                <th>Título pasos</th>
+                <th>Descripción paso</th>
+                <th>Url paso</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -77,12 +75,7 @@
                 <td>{{ otro.descripcionPaso }}</td>
                 <td><a href="{{ otro.urlPaso }}" target="_blank">{{ otro.urlPaso }}</a></td>
                 <td>
-                <ul>
-                    
-                    <li>
-                        <a href="{{ path('pasosoferta_edit', { 'id': otro.id, 'oferta': entity.id }) }}">editar</a>
-                    </li>
-                </ul>
+                   <a href="{{ path('pasosoferta_edit', { 'id': otro.id, 'oferta': entity.id }) }}"  class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
                 </td>
             </tr>
         {% endfor %}

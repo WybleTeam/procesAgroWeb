@@ -1,13 +1,16 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Crear Oficinas</h1>
-
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Crear Oficinas</h3></div>
+    <div class="panel-body">
     {{ form(form) }}
     <hr>
     <a href="{{ path('oficinas_admin') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             
            Volver al listado
         </a>
-
+    </div>
+    </div>
+    
 {% endblock %}

@@ -1,15 +1,16 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Crear Ofertas Institucionales</h1>
-
+           <div class="panel panel-default">
+               <div class="panel-heading"><h3 class="panel-title">Crear Ofertas Institucionales</h3></div>
+<div class="panel-body">
     {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('ofertasinstitucionales') }}">
+    <hr>
+        <a href="{{ path('ofertasinstitucionales') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             Volver al listado
         </a>
-    </li>
-</ul>
+    
+</div>
+           </div>
+        
 {% endblock %}

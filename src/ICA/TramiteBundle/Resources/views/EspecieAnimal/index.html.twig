@@ -1,14 +1,19 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Listado Especie Animal</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Listado Especie Animal</h3></div>
+        <div class="panel-body">
 
+            <a href="{{ path('especieanimal_new') }}" class="btn btn-info"><span class="glyphicon glyphicon-ok"></span>
+                Crear nueva
+            </a>
     <table class="table">
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Nombreespecie</th>
-                <th>Actions</th>
+                <th>Nombre Especie</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -17,25 +22,16 @@
                 <td><a href="{{ path('especieanimal_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.nombreEspecie }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('especieanimal_show', { 'id': entity.id }) }}">Ver</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('especieanimal_edit', { 'id': entity.id }) }}">Editar</a>
-                    </li>
-                </ul>
+                        <a href="{{ path('especieanimal_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
+                        <a href="{{ path('especieanimal_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('especieanimal_new') }}">
-                Crear nueva
-            </a>
-        </li>
-    </ul>
+        
+        </div>
+    </div>
+                
     {% endblock %}

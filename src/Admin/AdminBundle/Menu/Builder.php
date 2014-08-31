@@ -189,8 +189,8 @@ class Builder extends ContainerAware
         $menu['TramiteICA']->addChild('Especie Animal', array('route'=>'especieanimal'));
         $menu['TramiteICA']->addChild('Rango Edades', array('route'=>'rangoedades'));
         $menu['TramiteICA']->addChild('Motivo Identificacion', array('route'=>'motivoidentificacion'));
-        $menu['TramiteICA']->addChild('Solicitud Cantidad Motivo', array('route'=>'solicitudcantidadmotivo'));
-        $menu['TramiteICA']->addChild('Especie Rango Solicitud', array('route'=>'especierangosolicitud')); 
+        //$menu['TramiteICA']->addChild('Solicitud Cantidad Motivo', array('route'=>'solicitudcantidadmotivo'));
+        //$menu['TramiteICA']->addChild('Especie Rango Solicitud', array('route'=>'especierangosolicitud')); 
         
         $menu->addChild('Localizacion',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('class','treeview')->setLinkAttribute('icon','fa fa-table');
         $menu['Localizacion']->setChildrenAttribute('class', 'treeview-menu');

@@ -1,8 +1,13 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Listado Motivo Identificación</h1>
-
+ <div class="panel panel-default">
+     <div class="panel-heading"><h3 class="panel-title">Listado Motivo Identificación</h3></div>
+          <div class="panel-body">
+               <a href="{{ path('motivoidentificacion_new') }}" class="btn btn-info"><span class="glyphicon glyphicon-ok"></span>
+                Crear nuevo
+            </a>
+        
     <table class="table">
         <thead>
             <tr>
@@ -17,25 +22,15 @@
                 <td><a href="{{ path('motivoidentificacion_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.nombreMotivo }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('motivoidentificacion_show', { 'id': entity.id }) }}">Ver</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('motivoidentificacion_edit', { 'id': entity.id }) }}">Editar</a>
-                    </li>
-                </ul>
+
+                        <a href="{{ path('motivoidentificacion_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
+                        <a href="{{ path('motivoidentificacion_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('motivoidentificacion_new') }}">
-                Crear nuevo
-            </a>
-        </li>
-    </ul>
+          </div>
+ </div>
     {% endblock %}

@@ -1,7 +1,10 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 {% block body -%}
-    <h1>Listado de Convocatorias</h1>
-  
+            <div class="panel panel-default">
+            
+            
+                <div class="panel-heading"><h3 class="panel-title">Listado de Convocatorias</h3></div>
+  	        <div class="panel-body"> 
             <a href="{{ path('convocatorias_new') }}" class="btn btn-info"><span class="glyphicon glyphicon-ok"></span>
                 Crear nueva
             </a>
@@ -35,6 +38,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+                </div>
+            </div>
       
     {% endblock %}

@@ -1,15 +1,21 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Municipio list</h1>
+   <div class="panel panel-default">
+       <div class="panel-heading"><h3 class="panel-title">Municipio list</h3></div>
 
+       <div class="panel-body"> 
+           
+              <a href="{{ path('municipio_new') }}" class="btn btn-info"><span class="glyphicon glyphicon-ok"></span>
+                Crear nuevo
+            </a>
     <table class="table">
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Nombremunicipio</th>
-                <th>Tipomunicipio</th>
-                <th>Actions</th>
+                <th>Nombre municipio</th>
+                <th>Tipo municipio</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -19,25 +25,14 @@
                 <td>{{ entity.nombreMunicipio }}</td>
                 <td>{{ entity.tipoMunicipio }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('municipio_show', { 'id': entity.id }) }}">Ver</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('municipio_edit', { 'id': entity.id }) }}">Editar</a>
-                    </li>
-                </ul>
+                       <a href="{{ path('municipio_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
+                        <a href="{{ path('municipio_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('municipio_new') }}">
-                Crear nuevo
-            </a>
-        </li>
-    </ul>
+       </div>
+   </div>
     {% endblock %}

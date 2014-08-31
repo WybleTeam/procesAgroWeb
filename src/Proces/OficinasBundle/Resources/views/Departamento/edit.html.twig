@@ -1,16 +1,16 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Editar Departamento</h1>
-
+   <div class="panel panel-default">
+       <div class="panel-heading"><h3 class="panel-title">Editar Departamento</h3></div>
+    <div class="panel-body">
     {{ form(edit_form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('departamento') }}">
+    <hr>
+    <a href="{{ path('departamento') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             Volver al listado
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    {{ form(delete_form) }}
+    </div>
+   </div>
 {% endblock %}

@@ -1,12 +1,14 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Crear Convocatorias</h1>
-
+<div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Crear Convocatorias</h3></div>
+<div class="panel-body">
     {{ form(form) }}
     <hr>
         <a href="{{ path('convocatorias') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
            Volver al listado
         </a>
-    
+</div>
+     </div>
 {% endblock %}

@@ -1,8 +1,12 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Convocatorias</h1>
-
+        <div class="panel panel-default">
+            
+            
+            <div class="panel-heading"><h3 class="panel-title">Convocatorias</h3></div>
+        <div class="panel-body"> 
+       
     <table class="table">
         <tbody>
             <tr>
@@ -38,5 +42,6 @@
         </a>
     
     {{ form(delete_form) }}
-
+        </div>
+        </div>
 {% endblock %}
