@@ -210,9 +210,7 @@ class DefaultController extends Controller
             $em->persist($especieRangoOcho);
             }
             
-            
             $em->flush();
-            
             
             $respuesta = "Insertado";
             $response = new Response($respuesta);

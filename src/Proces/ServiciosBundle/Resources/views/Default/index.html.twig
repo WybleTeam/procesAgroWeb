@@ -1,5 +1,9 @@
 {% extends 'ThemesBundle::plantilla2.html.twig' %}
 {% block body %}
+    
+ <div class="panel panel-default">
+     <div class="panel-heading"><h3 class="panel-title">Servicios</h3></div>
+            <div class="panel-body">
 <table class="table">
         <thead>
             <tr>
@@ -8,7 +12,7 @@
                 <th>Descripción</th>
                 <th>Url audio</th>
                 <th>Url Servicio</th>
-                <th>Actions</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -19,12 +23,11 @@
                 <td>{{ entity.descripcionServicio }}</td>
                 <td><a href="{{ entity.urlAudioServicio }}" target="_blank">{{ entity.urlAudioServicio }}</a></td>
                 <td><a href="{{ entity.urlServicio }}" target="_blank">{{ entity.urlServicio }}</a></td>
-                <td>
-               
-                </td>
+                
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
+            </div>
+ </div>
 {% endblock %}

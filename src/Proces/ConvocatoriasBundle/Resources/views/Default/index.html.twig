@@ -1,37 +1,31 @@
 {% extends 'ThemesBundle::plantilla2.html.twig' %}
 {% block body %}
 
-
-  <table class="table">
+ <div class="panel panel-default">
+     <div class="panel-heading"><h3 class="panel-title">Convocatorias</h3></div>
+            <div class="panel-body">
+  <table class="table table-responsive">
         <thead>
             <tr>
                 <th>No. </th>
                 <th>Descripcion</th>
                 <th>Url convocatoria</th>
                 <th>Descripcion larga</th>
-                <th>Actions</th>
+                
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ loop.index }}</td>
                 <td>{{ entity.descripcion }}</td>
                 <td><a href="{{ entity.urlConvocatoria }}" target="_blank">{{ entity.urlConvocatoria }}</a></td>
                 <td>{{ entity.descripcionLarga }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('convocatorias_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
+               
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
+            </div>
+ </div>
 {% endblock %}
