@@ -4,13 +4,15 @@
  <div class="panel panel-default">
      <div class="panel-heading"><h3 class="panel-title">Convocatorias</h3></div>
             <div class="panel-body">
+                <div class="table-responsive">
   <table class="table table-responsive">
         <thead>
             <tr>
                 <th>No. </th>
-                <th>Descripcion</th>
+                 <th>Título</th>
+                <th>Descripción</th>
                 <th>Url convocatoria</th>
-                <th>Descripcion larga</th>
+                <th>Descripción larga</th>
                 
             </tr>
         </thead>
@@ -18,14 +20,16 @@
         {% for entity in entities %}
             <tr>
                 <td>{{ loop.index }}</td>
+                <td>{{ entity.tituloConvocatoria }}</td>                
                 <td>{{ entity.descripcion }}</td>
-                <td><a href="{{ entity.urlConvocatoria }}" target="_blank">{{ entity.urlConvocatoria }}</a></td>
+                <td align="center"><a href="{{ entity.urlConvocatoria }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
                 <td>{{ entity.descripcionLarga }}</td>
                
             </tr>
         {% endfor %}
         </tbody>
     </table>
+        </div>
             </div>
  </div>
 {% endblock %}

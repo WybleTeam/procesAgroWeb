@@ -4,6 +4,7 @@
  <div class="panel panel-default">
      <div class="panel-heading"><h3 class="panel-title">Servicios</h3></div>
             <div class="panel-body">
+<div class="table-responsive">                
 <table class="table">
         <thead>
             <tr>
@@ -18,16 +19,17 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('convocatorias_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ loop.index }}</td>
                 <td>{{ entity.tituloServicio }}</td>
                 <td>{{ entity.descripcionServicio }}</td>
-                <td><a href="{{ entity.urlAudioServicio }}" target="_blank">{{ entity.urlAudioServicio }}</a></td>
-                <td><a href="{{ entity.urlServicio }}" target="_blank">{{ entity.urlServicio }}</a></td>
+                <td><a href="{{ entity.urlAudioServicio }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></a></td>
+                <td><a href="{{ entity.urlServicio }}" target="_blank"class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
                 
             </tr>
         {% endfor %}
         </tbody>
     </table>
+</div>
             </div>
  </div>
 {% endblock %}
