@@ -41,6 +41,15 @@ class DefaultController extends Controller
        return $jsonp;
     }
     
+    public function convocatoriastotalAction()
+    {
+       $em = $this->getDoctrine()->getManager();
+       $entity = $em->getRepository('ConvocatoriasBundle:Convocatorias')->findConvocatoriastotal();
+       
+       $jsonp = new JsonResponse($entity);
+       //$jsonp->setCallback('myCallback');
+       return $jsonp;
+    }
     
      /*
      * metodo de insersion de datos desde el celular
@@ -70,15 +79,8 @@ class DefaultController extends Controller
         $especieRangoSiete = new EspecieRangoSolicitud();
         $especieRangoOcho = new EspecieRangoSolicitud();
         
-        
-        // convertir los id a objetos
-        
-        //  $municipioF = $em->getRepository('OficinasBundle:Municipio')->find($municipio);
-        //  $seccionalF = $em->getRepository('ICATramiteBundle:Seccionales')->find($seccional);
-        /////////////////////////////
-        //$entity->setMunicipio($municipioF);
+
         $entity->setJustificacionReidentificacion($justificacion);
-        //$entity->setSeccional($seccionalF);
         $entity->setIca3101($ica3101);
         $entity->setNombreFinca($nombreFinca);
         $entity->setNombrePropietarioFinca($nombrePropietarioFinca);

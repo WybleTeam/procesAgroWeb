@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class ConvocatoriasRepository extends EntityRepository
 {
+    public function findConvocatoriastotal()
+    {
+        
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT o.id, u.id AS usuario_id, o.descripcion, o.urlConvocatoria, o.descripcionLarga, o.tituloConvocatoria FROM ConvocatoriasBundle:Convocatorias o JOIN o.usuario u');
+        
+        $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
 }
