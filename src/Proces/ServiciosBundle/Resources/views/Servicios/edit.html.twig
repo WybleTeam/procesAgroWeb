@@ -4,13 +4,9 @@
     <h1>Editar Servicios</h1>
 
     {{ form(edit_form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('servicios') }}">
+    <hr>
+        <a href="{{ path('servicios') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             Volver al listado
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    {{ form(delete_form) }}
 {% endblock %}

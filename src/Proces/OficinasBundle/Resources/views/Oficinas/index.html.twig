@@ -2,6 +2,11 @@
 {% block body -%}
     <h1>Listado de Oficinas</h1>
 
+    
+        <a href="{{ path('oficinas_new') }}" class="btn btn-info">
+            <span class="glyphicon glyphicon-ok"></span> Crear nueva
+        </a>
+    
     <table class="table">
         <thead>
             <tr>
@@ -20,25 +25,15 @@
                 <td>{{ entity.direccionOficina }}</td>
                 <td>{{ entity.descripcionOficina }}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('oficinas_show', { 'id': entity.id }) }}">Ver</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('oficinas_edit', { 'id': entity.id }) }}">Editar</a>
-                    </li>
-                </ul>
+               
+                        <a href="{{ path('oficinas_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
+                    
+                        <a href="{{ path('oficinas_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
+                    
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('oficinas_new') }}">
-                Crear nueva
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+{% endblock %}

@@ -4,12 +4,9 @@
     <h1>Crear Convocatorias</h1>
 
     {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('convocatorias') }}">
+    <hr>
+        <a href="{{ path('convocatorias') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
            Volver al listado
         </a>
-    </li>
-</ul>
+    
 {% endblock %}

@@ -24,17 +24,13 @@
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('oficinas_admin') }}">
+        
+        <a href="{{ path('oficinas_admin') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             Volver al Listado
         </a>
-    </li>
-    <li>
-        <a href="{{ path('oficinas_edit', { 'id': entity.id }) }}">
+   
+        <a href="{{ path('oficinas_edit', { 'id': entity.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>
             Editar
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    {{ form(delete_form) }}
 {% endblock %}

@@ -1,14 +1,11 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 {% block body -%}
     <h1>Listado de Convocatorias</h1>
-  <ul>
-        <li>
-            <a href="{{ path('convocatorias_new') }}" class="btn btn-info btn-sm">
+  
+            <a href="{{ path('convocatorias_new') }}" class="btn btn-info"><span class="glyphicon glyphicon-ok"></span>
                 Crear nueva
             </a>
-        </li>
-    </ul>
-    <table class="table">
+     <table class="table">
         <thead>
             <tr>
                 <th>No.</th>

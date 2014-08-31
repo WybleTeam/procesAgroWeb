@@ -3,15 +3,18 @@
 {% block body -%}
     <h1>Listado de Servicios</h1>
 
+      <a href="{{ path('servicios_new') }}" class="btn btn-info"><span class="glyphicon glyphicon-ok"></span>
+                Crear nuevo
+            </a>
     <table class="table">
         <thead>
             <tr>
                 <th>No.</th>
-                <th>Tituloservicio</th>
-                <th>Descripcionservicio</th>
-                <th>Urlaudioservicio</th>
-                <th>Urlservicio</th>
-                <th>Actions</th>
+                <th>Titulo Servicio</th>
+                <th>Descripcion Servicio</th>
+                <th>Url audio servicio</th>
+                <th>Url servicio</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -23,25 +26,16 @@
                  <td><a href="{{ entity.urlAudioServicio }}" target="_blank">{{ entity.urlAudioServicio }}</a></td>
                 <td><a href="{{ entity.urlServicio }}" target="_blank">{{ entity.urlServicio }}</a></td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('servicios_show', { 'id': entity.id }) }}">Ver</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('servicios_edit', { 'id': entity.id }) }}">Editar</a>
-                    </li>
-                </ul>
+               
+                        <a href="{{ path('servicios_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
+                   
+                        <a href="{{ path('servicios_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
+                    
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('servicios_new') }}">
-                Crear nuevo
-            </a>
-        </li>
-    </ul>
+     
     {% endblock %}

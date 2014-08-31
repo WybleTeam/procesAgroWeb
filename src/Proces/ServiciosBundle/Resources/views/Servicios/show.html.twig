@@ -9,35 +9,30 @@
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Tituloservicio</th>
+                <th>Titulo Servicio</th>
                 <td>{{ entity.tituloServicio }}</td>
             </tr>
             <tr>
-                <th>Descripcionservicio</th>
+                <th>Descripción Servicio</th>
                 <td>{{ entity.descripcionServicio }}</td>
             </tr>
             <tr>
-                <th>Urlaudioservicio</th>
+                <th>Url audio Servicio</th>
                 <td><a href="{{ entity.urlAudioServicio }}" target="_blank">{{ entity.urlAudioServicio }}</a></td>
             </tr>
             <tr>
-                <th>Urlservicio</th>
+                <th>Url servicio</th>
                 <td><a href="{{ entity.urlServicio }}" target="_blank">{{ entity.urlServicio }}</td>
             </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('servicios') }}">
+        <a href="{{ path('servicios') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             Volver al Listado
         </a>
-    </li>
-    <li>
-        <a href="{{ path('servicios_edit', { 'id': entity.id }) }}">
+    
+        <a href="{{ path('servicios_edit', { 'id': entity.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>
             Editar
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        {{ form(delete_form) }}
 {% endblock %}

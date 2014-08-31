@@ -4,12 +4,10 @@
     <h1>Crear Oficinas</h1>
 
     {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('oficinas_admin') }}">
+    <hr>
+    <a href="{{ path('oficinas_admin') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
+            
            Volver al listado
         </a>
-    </li>
-</ul>
+
 {% endblock %}
