@@ -50,7 +50,7 @@ class Convocatorias
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcionLarga", type="string", length=45)
+     * @ORM\Column(name="descripcionLarga", type="string", length=150)
      * @Assert\NotBlank(message="La descripción larga falta")
      */
     private $descripcionLarga;

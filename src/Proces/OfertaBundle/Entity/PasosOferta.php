@@ -33,7 +33,7 @@ class PasosOferta
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcionPaso", type="string", length=45)
+     * @ORM\Column(name="descripcionPaso", type="string", length=150)
      * @Assert\NotBlank(message="Debes ponerle una Descripción")
      */
     private $descripcionPaso;

@@ -33,7 +33,7 @@ class OfertasInstitucionales
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcionOferta", type="string", length=45)
+     * @ORM\Column(name="descripcionOferta", type="string", length=150)
      * @Assert\NotBlank(message="Debes ponerle una descripción")
      */
     private $descripcionOferta;
