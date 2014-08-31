@@ -33,7 +33,15 @@ web_ofertasTotal:
 
 web_convocatoriasTotal:
     path:     /convocatoriastotal
-    defaults: { _controller: WebBundle:Default:convocatoriastotal }      
+    defaults: { _controller: WebBundle:Default:convocatoriastotal }    
+
+web_cursosTotal:
+    path:     /cursostotal
+    defaults: { _controller: WebBundle:Default:cursostotal }      
+
+web_serviciosTotal:
+    path:     /serviciostotal
+    defaults: { _controller: WebBundle:Default:serviciostotal } 
 
 # formulario ICA
 

@@ -12,4 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class ServiciosRepository extends EntityRepository
 {
+    public function findServiciostotal()
+    {
+        
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT o.id, u.id AS usuario_id, o.tituloServicio, '
+                . 'o.descripcionServicio, o.urlAudioServicio, o.urlServicio '
+                . 'FROM ServiciosBundle:Servicios o JOIN o.usuario u');
+        
+        $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
 }

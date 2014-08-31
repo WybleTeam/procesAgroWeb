@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class CursosVirtualesRepository extends EntityRepository
 {
+    public function findCursostotal()
+    {
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT o.id, u.id AS usuario_id, '
+                . 'o.nombreCurso, o.descripcionCurso, o.urlAudio, o.urlCurso, o.estado '
+                . 'FROM ProcesCursosBundle:CursosVirtuales o JOIN o.usuario u');
+        
+        $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
 }

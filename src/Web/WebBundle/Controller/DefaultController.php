@@ -51,6 +51,26 @@ class DefaultController extends Controller
        return $jsonp;
     }
     
+    public function cursostotalAction()
+    {
+       $em = $this->getDoctrine()->getManager();
+       $entity = $em->getRepository('ProcesCursosBundle:CursosVirtuales')->findCursostotal();
+       
+       $jsonp = new JsonResponse($entity);
+       //$jsonp->setCallback('myCallback');
+       return $jsonp;
+    }
+    
+    public function serviciostotalAction()
+    {
+       $em = $this->getDoctrine()->getManager();
+       $entity = $em->getRepository('ServiciosBundle:Servicios')->findServiciostotal();
+       
+       $jsonp = new JsonResponse($entity);
+       //$jsonp->setCallback('myCallback');
+       return $jsonp;
+    }
+    
      /*
      * metodo de insersion de datos desde el celular
      */
