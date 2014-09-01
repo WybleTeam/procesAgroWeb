@@ -22,7 +22,11 @@
                 <td>{{ loop.index }}</td>
                 <td>{{ entity.tituloConvocatoria }}</td>                
                 <td>{{ entity.descripcion }}</td>
-                <td align="center"><a href="{{ entity.urlConvocatoria }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
+                <td align="center">
+                    <form method="post" action="{{ path('web_paginas') }}">
+                        <input type="hidden" name="pagina" value="{{  entity.urlConvocatoria }}" /><button class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></button>
+                    </form>
+                  
                 <td>{{ entity.descripcionLarga }}</td>
                
             </tr>

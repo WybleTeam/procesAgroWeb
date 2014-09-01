@@ -1,0 +1,15 @@
+{% extends 'ThemesBundle::plantilla2.html.twig' %}
+{% block body %}
+    <a href="javascript:history.go(-1)" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left"></span> Atrás </a>
+     {#<a href="javascript:history.go(1)" class="btn btn-success">Adelante</a>#}
+     <hr>
+          <div class="panel panel-default">
+              <div class="panel-heading"><h3 class="panel-title"><a href="{{ pagina }}" class="btn btn-info" target="_blank"><span class="glyphicon glyphicon-eye-open"></span> {{ pagina }}</a></h3></div>
+            <div class="panel-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item col-lg-12" src="{{ pagina }}" allowfullscreen height="800px"></iframe>
+                </div>
+            </div>
+          </div>
+    
+{% endblock %}    

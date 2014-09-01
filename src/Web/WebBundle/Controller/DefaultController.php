@@ -10,6 +10,10 @@ use Web\WebBundle\Form\SolMantenimientoIdentificacionType;
 use Web\WebBundle\Entity\SolicitudCantidadMotivo;
 use Web\WebBundle\Entity\EspecieRangoSolicitud;
 
+
+use Symfony\Component\HttpFoundation\Request;
+
+
 class DefaultController extends Controller
 {
     public function indexAction()
@@ -17,6 +21,15 @@ class DefaultController extends Controller
         return $this->render('WebBundle:Default:index.html.twig');
     }
  
+    public function paginasAction(Request $peticion)
+    {   
+       $pagina = $peticion->get('pagina');
+        
+        return $this->render('WebBundle:Default:vista.html.twig', array(
+            'pagina'=>$pagina,
+        ));
+    }
+    
     /**
     * Fetch something as JSON
     * @return JsonResponse
