@@ -8,7 +8,7 @@
         <div class="panel-heading"><h3 class="panel-title">Ofertas Institucionales</h3></div>
   
         <div class="panel-body"> 
-          
+     <div class="table-responsive">     
     <table class="table">
         <tbody>
             <tr>
@@ -25,7 +25,7 @@
             </tr>
             <tr>
                 <th>Urlaudiooferta</th>
-                <td>{{ entity.urlAudioOferta }}" target="_blank">{{ entity.urlAudioOferta }}</td>
+                <td><a href="{{ entity.urlAudioOferta }}" target="_blank">{{ entity.urlAudioOferta }}</td>
             </tr>
             <tr>
                 <th>Urloferta</th>
@@ -33,7 +33,7 @@
             </tr>
         </tbody>
     </table>
-
+     </div>
         <a href="{{ path('ofertasinstitucionales') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             Volver al listado
         </a>
@@ -56,7 +56,7 @@
             <a href="{{ path('pasosoferta_new', { 'oferta': entity.id }) }}" class="btn btn-info"><span class="glyphicon glyphicon-ok"></span>
                 Crear nuevo
             </a>
-       
+       <div class="table-responsive">
      <table class="table">
         <thead>
             <tr>
@@ -81,7 +81,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+       </div>
       
         </div>
         </div>
