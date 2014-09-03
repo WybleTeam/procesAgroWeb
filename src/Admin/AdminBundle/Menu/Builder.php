@@ -185,6 +185,7 @@ class Builder extends ContainerAware
         $menu->addChild('TramiteICA',array('uri'=>'#'))->setAttribute('class', 'treeview')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
         $menu['TramiteICA']->setChildrenAttribute('class', 'treeview-menu');
         $menu['TramiteICA']->addChild('Solicitudes', array('route'=>'solmantenimientoidentificacion'));
+        $menu['TramiteICA']->addChild('Estados', array('route'=>'estado'));
         $menu['TramiteICA']->addChild('Seccionales', array('route'=>'seccionales'));
         $menu['TramiteICA']->addChild('Especie Animal', array('route'=>'especieanimal'));
         $menu['TramiteICA']->addChild('Rango Edades', array('route'=>'rangoedades'));

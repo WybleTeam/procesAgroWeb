@@ -73,3 +73,7 @@ OficinasBundle_municipio:
 oferta_pasosoferta:
     resource: "@OfertaBundle/Resources/config/routing/pasosoferta.yml"
     prefix:   /pasosoferta
+    
+WebBundle_estado:
+    resource: "@WebBundle/Resources/config/routing/estado.yml"
+    prefix:   /estado

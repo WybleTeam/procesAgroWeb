@@ -9287,7 +9287,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Mostrando _START_ a _END_ de _TOTAL_ Registros",
 		
 		
 			/**
@@ -9481,7 +9481,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "Buscar:",
 		
 		
 			/**
@@ -11441,10 +11441,10 @@
 		"sPageButton": "paginate_button",
 		"sPageButtonActive": "paginate_active",
 		"sPageButtonStaticDisabled": "paginate_button paginate_button_disabled",
-		"sPageFirst": "first",
-		"sPagePrevious": "previous",
-		"sPageNext": "next",
-		"sPageLast": "last",
+		"sPageFirst": "Primero",
+		"sPagePrevious": "Anterior",
+		"sPageNext": "siguiente",
+		"sPageLast": "último",
 		
 		/* Striping classes */
 		"sStripeOdd": "odd",
@@ -11580,8 +11580,8 @@
 				var nPrevious = els[0],
 					nNext = els[1];
 				
-				oSettings.oApi._fnBindAction( nPrevious, {action: "previous"}, fnClickHandler );
-				oSettings.oApi._fnBindAction( nNext,     {action: "next"},     fnClickHandler );
+				oSettings.oApi._fnBindAction( nPrevious, {action: "Anterior"}, fnClickHandler );
+				oSettings.oApi._fnBindAction( nNext,     {action: "Siguiente"},     fnClickHandler );
 				
 				/* ID the first elements only */
 				if ( !oSettings.aanFeatures.p )
@@ -11678,10 +11678,10 @@
 					nNext = els[2],
 					nLast = els[3];
 				
-				oSettings.oApi._fnBindAction( nFirst, {action: "first"},    fnClickHandler );
-				oSettings.oApi._fnBindAction( nPrev,  {action: "previous"}, fnClickHandler );
-				oSettings.oApi._fnBindAction( nNext,  {action: "next"},     fnClickHandler );
-				oSettings.oApi._fnBindAction( nLast,  {action: "last"},     fnClickHandler );
+				oSettings.oApi._fnBindAction( nFirst, {action: "Primero"},    fnClickHandler );
+				oSettings.oApi._fnBindAction( nPrev,  {action: "anterior"}, fnClickHandler );
+				oSettings.oApi._fnBindAction( nNext,  {action: "siguiente"},     fnClickHandler );
+				oSettings.oApi._fnBindAction( nLast,  {action: "ultimo"},     fnClickHandler );
 				
 				/* ID the first elements only */
 				if ( !oSettings.aanFeatures.p )

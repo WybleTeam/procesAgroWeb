@@ -165,7 +165,7 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\Column(name="estadoSolicitud", type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="Web\WebBundle\Entity\Estado")
      */
     private $estadoSolicitud;
 

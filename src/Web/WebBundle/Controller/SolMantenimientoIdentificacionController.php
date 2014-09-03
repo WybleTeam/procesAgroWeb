@@ -25,7 +25,7 @@ class SolMantenimientoIdentificacionController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('WebBundle:SolMantenimientoIdentificacion')->findAll();
+        $entities = $em->getRepository('WebBundle:SolMantenimientoIdentificacion')->findOrden();
 
         return $this->render('WebBundle:SolMantenimientoIdentificacion:index.html.twig', array(
             'entities' => $entities,

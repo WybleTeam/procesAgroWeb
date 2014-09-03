@@ -36,11 +36,14 @@ class SolMantenimientoController extends Controller
      */
     public function createAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
         $hoy = new \DateTime("now");
         $entity = new SolMantenimientoIdentificacion();
         $entity->setFechaSolicitud($hoy);
         $entity->setSolicitudMantenimientoIdentificacion("...");
-        $entity->setEstadoSolicitud('Pendiente');
+        $orden = $em->getRepository('WebBundle:Estado')->findOneByCodigo(1); //Encontrar el primer estado, Pendiente
+        
+        $entity->setEstadoSolicitud($orden);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
         

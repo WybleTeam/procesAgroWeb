@@ -1,0 +1,18 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+        <div class="panel panel-default">
+            
+            
+            <div class="panel-heading"><h3 class="panel-title">Editar Estado</h3></div>
+<div class="panel-body">
+    {{ form(edit_form) }}
+    <hr>
+        
+        <a href="{{ path('estado') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
+            Volver al listado
+        </a>
+    {{ form(delete_form) }}
+</div>
+        </div>
+{% endblock %}

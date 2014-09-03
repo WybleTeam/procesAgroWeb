@@ -1,0 +1,44 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+    <div class="panel panel-default">
+            
+            
+        <div class="panel-heading"><h3 class="panel-title">Listado de Estado</h3></div>
+<div class="panel-body">
+    
+       
+            <a href="{{ path('estado_new') }}" class="btn btn-info"><span class="glyphicon glyphicon-ok"></span>
+                Crear nuevo
+            </a>
+                <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Orden</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('estado_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ entity.codigo }}</td>
+                <td>{{ entity.descripcion }}</td>
+                <td>{{ entity.status }}</td>
+                <td>
+                  <a href="{{ path('estado_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
+                  <a href="{{ path('estado_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   
+</div>
+    </div>
+    {% endblock %}

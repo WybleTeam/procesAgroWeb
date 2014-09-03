@@ -1,0 +1,30 @@
+estado:
+    path:     /
+    defaults: { _controller: "WebBundle:Estado:index" }
+
+estado_show:
+    path:     /{id}/show
+    defaults: { _controller: "WebBundle:Estado:show" }
+
+estado_new:
+    path:     /new
+    defaults: { _controller: "WebBundle:Estado:new" }
+
+estado_create:
+    path:     /create
+    defaults: { _controller: "WebBundle:Estado:create" }
+    requirements: { _method: post }
+
+estado_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WebBundle:Estado:edit" }
+
+estado_update:
+    path:     /{id}/update
+    defaults: { _controller: "WebBundle:Estado:update" }
+    requirements: { _method: post|put }
+
+estado_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WebBundle:Estado:delete" }
+    requirements: { _method: post|delete }

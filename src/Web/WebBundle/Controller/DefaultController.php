@@ -126,7 +126,10 @@ class DefaultController extends Controller
         $entity->setTelefonoCelularSolicitante($telefonoCelularSolicitante);
         $entity->setMunicipioVereda($municipioVereda);
         $entity->setDepartamento($departamento);
-        $entity->setEstadoSolicitud("Pendiente");
+        
+        $orden = $em->getRepository('WebBundle:Estado')->findOneByCodigo(1); //Encontrar el primer estado, Pendiente
+        
+        $entity->setEstadoSolicitud($orden);
         
         $entity->setJustificacionReidentificacion($justificacion);
         //$entity->setCantidadMotivo($motivoUno);

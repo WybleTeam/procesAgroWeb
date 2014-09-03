@@ -1,8 +1,11 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
 
 {% block body -%}
-    <h1>Editar Solicitud Cantidad Motivo</h1>
-
+   <div class="panel panel-default">
+            
+            
+       <div class="panel-heading"><h3 class="panel-title">Editar Solicitud Cantidad Motivo</h3></div>
+<div class="panel-body"> 
     {{ form(edit_form) }}
 
         <ul class="record_actions">
@@ -13,4 +16,6 @@
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
+</div>
+   </div>
 {% endblock %}

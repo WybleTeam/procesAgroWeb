@@ -70,12 +70,7 @@ class SolMantenimientoType extends AbstractType
             ->add('observacionesRevision','textarea',array(
                 'attr'=>array('class'=>'form-control')
             ))
-            ->add('estadoSolicitud','choice',array(
-                'choices'=>array(
-                    'Pendiente'=>'Pendiente',
-                    'Aprobado' => 'Aprobado',
-                    'Realizado'=> 'Realizado',
-                ),
+            ->add('estadoSolicitud',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
             ->add('municipio',null,array(

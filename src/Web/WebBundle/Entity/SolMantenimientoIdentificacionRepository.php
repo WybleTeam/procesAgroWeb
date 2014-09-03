@@ -14,14 +14,24 @@ class SolMantenimientoIdentificacionRepository extends EntityRepository
 {
     public function findPendientes()
     {
-        $estado = "Pendiente";
+        //$estado = "Pendiente";
         $em = $this->getEntityManager();
+        $estado = $em->getRepository('WebBundle:Estado')->findOneByCodigo(1); //Encontrar el primer estado, Pendiente
+        
         $consulta = $em->createQuery('SELECT COUNT(o) AS Cuenta FROM WebBundle:SolMantenimientoIdentificacion o 
             WHERE o.estadoSolicitud = :estado ORDER BY o.fechaSolicitud DESC
             '
         );
         $consulta->setParameter('estado', $estado);
         $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
+    public function findOrden()
+    {
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT o,c FROM WebBundle:SolMantenimientoIdentificacion o JOIN o.estadoSolicitud c ORDER BY c.codigo ASC');
+        $resultado = $consulta->getArrayResult();
+        
         return $resultado;
     }
 }

@@ -1,0 +1,41 @@
+{% extends 'ThemesBundle::backend.html.twig' %}
+
+{% block body -%}
+       <div class="panel panel-default">
+            
+            
+           <div class="panel-heading"><h3 class="panel-title">Estado</h3></div>
+<div class="panel-body">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Orden</th>
+                <td>{{ entity.codigo }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ entity.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ entity.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+        <a href="{{ path('estado') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
+           Volver al listado
+        </a>
+  
+        <a href="{{ path('estado_edit', { 'id': entity.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>
+            Editar
+        </a>
+    {{ form(delete_form) }}
+</div>
+       </div>
+{% endblock %}

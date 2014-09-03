@@ -75,14 +75,9 @@ class SolMantenimientoIdentificacionType extends AbstractType
             ->add('observacionesRevision','textarea',array(
                 'attr'=>array('class'=>'form-control')
             ))
-            ->add('estadoSolicitud','choice',array(
-                'choices'=>array(
-                    'pendiente'=>'Pendiente',
-                    'Aprobado' => 'Aprobado',
-                    'Realizado'=> 'Realizado',
-                ),
-                'attr'=>array('class'=>'form-control')
-            ))
+           // ->add('estadoSolicitud',null,array(
+            //    'attr'=>array('class'=>'form-control')
+           // ))
             ->add('municipio',null,array(
                 'attr'=>array('class'=>'form-control'),
                 'empty_value'=>'Escoge un Municipio'

@@ -9,7 +9,7 @@
         <thead>
             <tr>
                
-                <th>Fechasolicitud</th>
+                <th>Estado solicitud</th>
                 {#<th>Justificacionreidentificacion</th>#}
                 
                 <th>Ica3101</th>
@@ -24,7 +24,8 @@
                 <th>Telefono celular solicitante</th>
                 {#<th>Fechaprogramadaidentificacion</th>#}
                 {#<th>Observacionesrevision</th>#}
-                <th>Estadosolicitud</th>
+                <th>Fecha solicitud</th>
+                <th>Acciones</th>
                
             </tr>
         </thead>
@@ -32,7 +33,7 @@
         {% for entity in entities %}
             <tr>
                 {#<td><a href="{{ path('solmantenimientoidentificacion_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>#}
-                <td>{% if entity.fechaSolicitud %}{{ entity.fechaSolicitud|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.estadoSolicitud.descripcion }}</td>
                 {#<td>{{ entity.justificacionReidentificacion }}</td>#}
                
                 <td>{{ entity.ica3101 }}</td>
@@ -47,23 +48,15 @@
                 <td>{{ entity.telefonoCelularSolicitante }}</td>
                {# <td>{% if entity.fechaProgramadaIdentificacion %}{{ entity.fechaProgramadaIdentificacion|date('Y-m-d H:i:s') }}{% endif %}</td> #}
                {# <td>{{ entity.observacionesRevision }}</td>#}
-                <td>{{ entity.estadoSolicitud }} 
-                        <ul>
-                            <li>
-                                <a href="{{ path('solmantenimientoidentificacion_show', { 'id': entity.id }) }}">Ver</a>
-                            </li>
-                            <li>
-                                <a href="{{ path('solmantenimientoidentificacion_edit', { 'id': entity.id }) }}">Editar</a>
-                            </li>
-                        </ul>
-                </td>
-               
+                <td>{% if entity.fechaSolicitud %}{{ entity.fechaSolicitud|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td><a href="{{ path('solmantenimientoidentificacion_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
+                <a href="{{ path('solmantenimientoidentificacion_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a></td>
             </tr>
         {% endfor %}
         </tbody>
         <tfoot>
                                             <tr>
-                                               <th>Fechasolicitud</th>
+                <th>Estado solicitud</th>
                 {#<th>Justificacionreidentificacion</th>#}
                 
                 <th>Ica3101</th>
@@ -78,7 +71,8 @@
                 <th>Telefono celular solicitante</th>
                 {#<th>Fechaprogramadaidentificacion</th>#}
                 {#<th>Observacionesrevision</th>#}
-                <th>Estadosolicitud</th>
+                <th>Fecha solicitud</th>
+                <th>Acciones</th>
                                             </tr>
                                         </tfoot>
     </table>
@@ -93,13 +87,14 @@
       <script src="{{ asset('bundles/themes/js/bootstrap.min.js') }}" type="text/javascript"></script>
       <script src="{{ asset('bundles/themes/js/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
       <script src="{{ asset('bundles/themes/js/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
-
-     
+      <script src="{{ asset('bundles/themes/js/AdminLTE/app.js') }}" type="text/javascript"></script>
      
     
    <script type="text/javascript">
             $(function() {
-                $("#example1").dataTable();
+                $("#example1").dataTable({
+                    "bSort": false,
+                });
                 $('#example2').dataTable({
                     "bPaginate": true,
                     "bLengthChange": false,
