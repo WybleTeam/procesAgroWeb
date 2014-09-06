@@ -25,8 +25,8 @@
                 <td>{{ entity.nombreFinca }}</td>
                 <td>{{ entity.nombrePropietarioFinca }}</td>
                 <td>{% if entity.fechaSolicitud %}{{ entity.fechaSolicitud|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td><a href="{{ path('solmantenimientoidentificacion_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
-                <a href="{{ path('solmantenimientoidentificacion_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a></td>
+                <td>{#<a href="{{ path('solmantenimientoidentificacion_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>#}
+                <a href="{{ path('solmantenimientoidentificacion_edit', { 'id': entity.id }) }}" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-cog"></span></a></td>
             </tr>
         {% endfor %}
         </tbody>

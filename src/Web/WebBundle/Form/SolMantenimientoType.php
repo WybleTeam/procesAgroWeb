@@ -66,7 +66,9 @@ class SolMantenimientoType extends AbstractType
                 'by_reference'   => false,
                 'attr'=>array('class'=>'form-control','readonly'=>'readonly')                
             ))    
-            ->add('fechaProgramadaIdentificacion')
+            ->add('fechaProgramadaIdentificacion',null,array(
+                'required'=>'required'
+            ))
             ->add('observacionesRevision','textarea',array(
                 'attr'=>array('class'=>'form-control')
             ))
