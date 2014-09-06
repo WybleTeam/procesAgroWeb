@@ -235,7 +235,7 @@ class SolMantenimientoController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('solmantenimiento_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Borrar'))
+            ->add('submit', 'submit', array('label' => 'Borrar','attr'=>array('class'=>'btn btn-danger btn btn-danger btn-lg btn-block')))
             ->getForm()
         ;
     }

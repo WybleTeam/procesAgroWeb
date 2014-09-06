@@ -8,7 +8,9 @@
             <a href="{{ path('especieanimal_new') }}" class="btn btn-info"><span class="glyphicon glyphicon-ok"></span>
                 Crear nueva
             </a>
-    <table class="table">
+   <hr>
+   <div class="table-responsive">
+       <table id="example1" class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>No.</th>
@@ -35,3 +37,22 @@
     </div>
                 
     {% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+   
+   <script type="text/javascript">
+            $(function() {
+                $("#example1").dataTable({
+                    "bSort": false,
+                });
+                $('#example2').dataTable({
+                    "bPaginate": true,
+                    "bLengthChange": false,
+                    "bFilter": false,
+                    "bSort": true,
+                    "bInfo": true,
+                    "bAutoWidth": false
+                });
+            });
+        </script>
+{% endblock %}    

@@ -86,22 +86,12 @@
     {{ form_end(edit_form) }}
                </div>
       </div>
-      {#  <ul class="record_actions">
-    <li>
-        <a href="{{ path('solmantenimientoidentificacion') }}">
+    
+      <hr>
+        <a href="{{ path('solmantenimientoidentificacion') }}" class="btn btn-success">
             Volver al listado
         </a>
-    </li>
-</ul>#}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('solmantenimientoidentificacion') }}">
-            Volver al listado
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+            {{ form(delete_form) }}
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

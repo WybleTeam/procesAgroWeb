@@ -10,44 +10,20 @@
             <tr>
                
                 <th>Estado solicitud</th>
-                {#<th>Justificacionreidentificacion</th>#}
-                
                 <th>Ica3101</th>
                 <th>Nombre finca</th>
                 <th>Nombre propietario finca</th>
-                {# <th>Cedula propietario finca</th>
-                <th>Telefono fijo propietario</th>
-                <th>Telefono celular propietario</th>
-                <th>Nombre solicitante</th>
-                {#<th>Cedula solicitante</th>
-                <th>Telefono fijo solicitante</th>
-                <th>Telefono celular solicitante</th>
-                {#<th>Fechaprogramadaidentificacion</th>#}
-                {#<th>Observacionesrevision</th>#}
                 <th>Fecha solicitud</th>
                 <th>Acciones</th>
-               
             </tr>
         </thead>
         <tbody>
         {% for entity in entities %}
             <tr>
-                {#<td><a href="{{ path('solmantenimientoidentificacion_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>#}
-                <td>{{ entity.estadoSolicitud.descripcion }}</td>
-                {#<td>{{ entity.justificacionReidentificacion }}</td>#}
-               
+                <td><span class="{% if entity.estadoSolicitud.codigo == 1 %}label label-warning{% elseif entity.estadoSolicitud.codigo == 2 %}label label-success{% elseif entity.estadoSolicitud.codigo == 3 %}label label-danger{% endif %}">{{ entity.estadoSolicitud.descripcion }}</span></td>
                 <td>{{ entity.ica3101 }}</td>
                 <td>{{ entity.nombreFinca }}</td>
                 <td>{{ entity.nombrePropietarioFinca }}</td>
-               {# <td>{{ entity.cedulaPropietarioFinca }}</td> 
-                <td>{{ entity.telefonoFijoPropietario }}</td>
-                <td>{{ entity.telefonoCelularPropietario }}</td>
-                <td>{{ entity.nombreSolicitante }}</td>
-               {# <td>{{ entity.cedulaSolicitante }}</td> 
-                <td>{{ entity.telefonoFijoSolicitante }}</td>
-                <td>{{ entity.telefonoCelularSolicitante }}</td>
-               {# <td>{% if entity.fechaProgramadaIdentificacion %}{{ entity.fechaProgramadaIdentificacion|date('Y-m-d H:i:s') }}{% endif %}</td> #}
-               {# <td>{{ entity.observacionesRevision }}</td>#}
                 <td>{% if entity.fechaSolicitud %}{{ entity.fechaSolicitud|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td><a href="{{ path('solmantenimientoidentificacion_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
                 <a href="{{ path('solmantenimientoidentificacion_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a></td>
@@ -55,26 +31,15 @@
         {% endfor %}
         </tbody>
         <tfoot>
-                                            <tr>
+            <tr>
                 <th>Estado solicitud</th>
-                {#<th>Justificacionreidentificacion</th>#}
-                
                 <th>Ica3101</th>
                 <th>Nombre finca</th>
                 <th>Nombre propietario finca</th>
-                {# <th>Cedula propietario finca</th>
-                <th>Telefono fijo propietario</th>
-                <th>Telefono celular propietario</th>
-                <th>Nombre solicitante</th>
-                {#<th>Cedula solicitante</th>
-                <th>Telefono fijo solicitante</th>
-                <th>Telefono celular solicitante</th>
-                {#<th>Fechaprogramadaidentificacion</th>#}
-                {#<th>Observacionesrevision</th>#}
                 <th>Fecha solicitud</th>
                 <th>Acciones</th>
-                                            </tr>
-                                        </tfoot>
+            </tr>
+        </tfoot>
     </table>
                 </div>
                 </div>

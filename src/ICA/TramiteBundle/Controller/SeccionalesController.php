@@ -226,7 +226,7 @@ class SeccionalesController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('seccionales_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Borrar', 'attr'=>array('class' => 'btn btn-warning btn-lg btn-block')))
+            ->add('submit', 'submit', array('label' => 'Borrar','attr'=>array('class'=>'btn btn-danger btn btn-danger btn-lg btn-block')))
             ->getForm()
         ;
     }
