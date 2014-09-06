@@ -3,8 +3,8 @@
       <div class="panel panel-default">
      <div class="panel-heading"><h3 class="panel-title">Oferta Institucional</h3></div>
             <div class="panel-body">
-                <div class="table-responsive">  
-      <table class="table">
+               <div class="table-responsive">
+  <table id="example1" class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>No.</th>
@@ -24,10 +24,11 @@
                  <td><form method="post" action="{{ path('web_paginas') }}">
                         <input type="hidden" name="pagina" value="{{ entity.urlAudio }}" /><button class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></button>
                     </form>
+                 </td>    
                 <td><form method="post" action="{{ path('web_paginas') }}">
                         <input type="hidden" name="pagina" value="{{ entity.urlCurso }}" /><button class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></button>
                     </form>
-                <td>
+                </td>
                
                 <td>{% if(entity.estado == 1) %}<button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>{% else %}<button class="btn btn-success"><span class="glyphicon glyphicon-remove"></span></button>{% endif %}</td>
              </tr>
@@ -38,3 +39,23 @@
             </div>
       </div>
 {% endblock %}    
+{% block javascripts %}
+    {{ parent() }}
+
+      <script src="{{ asset('bundles/themes/js/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
+      <script src="{{ asset('bundles/themes/js/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
+   
+   <script type="text/javascript">
+            $(function() {
+                $("#example1").dataTable();
+                $('#example2').dataTable({
+                    "bPaginate": true,
+                    "bLengthChange": false,
+                    "bFilter": false,
+                    "bSort": true,
+                    "bInfo": true,
+                    "bAutoWidth": false
+                });
+            });
+        </script>
+{% endblock %}
