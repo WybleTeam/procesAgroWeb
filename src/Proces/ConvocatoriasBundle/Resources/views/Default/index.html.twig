@@ -11,6 +11,7 @@
                 <th>No. </th>
                  <th>Título</th>
                 <th>Descripción</th>
+                <th>Url audio</th>
                 <th>Url convocatoria</th>
                 <th>Descripción larga</th>
                 
@@ -23,6 +24,10 @@
                 <td>{{ loop.index }}</td>
                 <td>{{ entity.tituloConvocatoria }}</td>                
                 <td>{{ entity.descripcion }}</td>
+                <td><form method="post" action="{{ path('web_paginas') }}">
+                        <input type="hidden" name="pagina" value="{{ entity.urlAudio }}" /><button class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></button>
+                    </form>
+                </td>
                 <td align="center">
                     <form method="post" action="{{ path('web_paginas') }}">
                         <input type="hidden" name="pagina" value="{{  entity.urlConvocatoria }}" /><button class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></button>

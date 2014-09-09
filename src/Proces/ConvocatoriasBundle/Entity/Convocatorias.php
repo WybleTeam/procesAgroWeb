@@ -41,12 +41,24 @@ class Convocatorias
     /**
      * @var string
      *
+     * @ORM\Column(name="urlAudio", type="string", length=45)
+     * @Assert\NotBlank(message="Hey la Url!!")
+     * @Assert\Url(message="Pon una url por ejemplo, http://tuurl.com")
+     */
+    private $urlAudio;
+
+    
+    /**
+     * @var string
+     *
      * @ORM\Column(name="urlConvocatoria", type="string", length=45)
      * @Assert\NotBlank(message="Hey la Url!!")
      * @Assert\Url(message="Pon una url por ejemplo, http://tuurl.com")
      */
     private $urlConvocatoria;
 
+    
+    
     /**
      * @var string
      *
@@ -118,6 +130,29 @@ class Convocatorias
     {
         return $this->descripcion;
     }
+     /**
+     * Set urlAudio
+     *
+     * @param string $urlAudio
+     * @return Convocatorias
+     */
+    public function setUrlAudio($urlAudio)
+    {
+        $this->urlAudio = $urlAudio;
+
+        return $this;
+    }
+
+    /**
+     * Get urlAudio
+     *
+     * @return string 
+     */
+    public function getUrlAudio()
+    {
+        return $this->urlAudio;
+    }
+    
     
     /**
      * Set urlConvocatoria
