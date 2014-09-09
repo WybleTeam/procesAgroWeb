@@ -23,93 +23,10 @@ class Builder extends ContainerAware
         $menu->addChild('Admin', array('route' => 'admin_homepage'))->setLabel('Administrador')->setAttribute('icon','fa fa-dashboard');   
         $menu->addChild('tramitePublico', array('route' => 'solmantenimiento_new'))->setLabel('Tramite Especial')->setAttribute('icon','fa fa-dashboard');   
         
-       /* $menu->addChild('Tipo Usuario', array('route' => 'tipousuario'))->setAttribute('icon','icon-bar-chart');
-        $menu->addChild('Tipo Identificación', array('route' => 'tipoidentificacion'))->setAttribute('icon','icon-list-alt');
        
-        
-        $menu->addChild('Colegio',array('uri'=>'#'))->setAttribute('class','dropdown')->setAttribute('icon','icon-folder-open')->setLinkAttribute('class','dropdown-toggle')->setLinkAttribute('data-toggle','dropdown');
-        $menu['Colegio']->setChildrenAttribute('class', 'dropdown-menu');
-        $menu['Colegio']->addChild('Crear', array('route'=>'colegio'));
-        $menu['Colegio']->addChild('Tipo Colegio', array('route'=>'tipocolegio'));
-        $menu['Colegio']->addChild('Niveles', array('route'=>'nivel'));
-
-        $menu->addChild('SocioEconómico',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('icon','icon-folder-open')->setLinkAttribute('class','dropdown-toggle')->setLinkAttribute('data-toggle','dropdown');
-        $menu['SocioEconómico']->setChildrenAttribute('class', 'dropdown-menu');
-        $menu['SocioEconómico']->addChild('Estrato', array('route'=>'estrato'));
-        $menu['SocioEconómico']->addChild('Departamento', array('route'=>'departamento'));
-        $menu['SocioEconómico']->addChild('Localidad', array('route'=>'localidad'));
-        $menu['SocioEconómico']->addChild('Municipio', array('route'=>'municipio'));
-        $menu->addChild('Tipo calificación', array('route' => 'tipocalificacion'))->setAttribute('icon','icon-bar-chart');*/
-
         return $menu;
     }
     
-   public function oficinasMenu(FactoryInterface $factory, array $options)
-    {
-        $menu = $factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'sidebar-menu');
-       
-        //$menu->setLabelAttribute('class', 'span');
-
-        $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
-        ->setAttribute('icon','fa fa-dashboard');
-            
-               
-        $menu->addChild('Oficinas', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');  
-       /* $menu->addChild('Tipo Usuario', array('route' => 'tipousuario'))->setAttribute('icon','icon-bar-chart');
-        $menu->addChild('Tipo Identificación', array('route' => 'tipoidentificacion'))->setAttribute('icon','icon-list-alt');
-       
-        
-        $menu->addChild('Colegio',array('uri'=>'#'))->setAttribute('class','dropdown')->setAttribute('icon','icon-folder-open')->setLinkAttribute('class','dropdown-toggle')->setLinkAttribute('data-toggle','dropdown');
-        $menu['Colegio']->setChildrenAttribute('class', 'dropdown-menu');
-        $menu['Colegio']->addChild('Crear', array('route'=>'colegio'));
-        $menu['Colegio']->addChild('Tipo Colegio', array('route'=>'tipocolegio'));
-        $menu['Colegio']->addChild('Niveles', array('route'=>'nivel'));
-
-        $menu->addChild('SocioEconómico',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('icon','icon-folder-open')->setLinkAttribute('class','dropdown-toggle')->setLinkAttribute('data-toggle','dropdown');
-        $menu['SocioEconómico']->setChildrenAttribute('class', 'dropdown-menu');
-        $menu['SocioEconómico']->addChild('Estrato', array('route'=>'estrato'));
-        $menu['SocioEconómico']->addChild('Departamento', array('route'=>'departamento'));
-        $menu['SocioEconómico']->addChild('Localidad', array('route'=>'localidad'));
-        $menu['SocioEconómico']->addChild('Municipio', array('route'=>'municipio'));
-        $menu->addChild('Tipo calificación', array('route' => 'tipocalificacion'))->setAttribute('icon','icon-bar-chart');*/
-
-        return $menu;
-    }
-
-    
-     public function solicitudesMenu(FactoryInterface $factory, array $options)
-    {
-        $menu = $factory->createItem('root');
-        $menu->setChildrenAttribute('class', 'sidebar-menu');
-       
-        //$menu->setLabelAttribute('class', 'span');
-
-        $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
-        ->setAttribute('icon','fa fa-dashboard');              
-        $menu->addChild('Solicitudes', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
-        
-       /* $menu->addChild('Tipo Usuario', array('route' => 'tipousuario'))->setAttribute('icon','icon-bar-chart');
-        $menu->addChild('Tipo Identificación', array('route' => 'tipoidentificacion'))->setAttribute('icon','icon-list-alt');
-       
-        
-        $menu->addChild('Colegio',array('uri'=>'#'))->setAttribute('class','dropdown')->setAttribute('icon','icon-folder-open')->setLinkAttribute('class','dropdown-toggle')->setLinkAttribute('data-toggle','dropdown');
-        $menu['Colegio']->setChildrenAttribute('class', 'dropdown-menu');
-        $menu['Colegio']->addChild('Crear', array('route'=>'colegio'));
-        $menu['Colegio']->addChild('Tipo Colegio', array('route'=>'tipocolegio'));
-        $menu['Colegio']->addChild('Niveles', array('route'=>'nivel'));
-
-        $menu->addChild('SocioEconómico',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('icon','icon-folder-open')->setLinkAttribute('class','dropdown-toggle')->setLinkAttribute('data-toggle','dropdown');
-        $menu['SocioEconómico']->setChildrenAttribute('class', 'dropdown-menu');
-        $menu['SocioEconómico']->addChild('Estrato', array('route'=>'estrato'));
-        $menu['SocioEconómico']->addChild('Departamento', array('route'=>'departamento'));
-        $menu['SocioEconómico']->addChild('Localidad', array('route'=>'localidad'));
-        $menu['SocioEconómico']->addChild('Municipio', array('route'=>'municipio'));
-        $menu->addChild('Tipo calificación', array('route' => 'tipocalificacion'))->setAttribute('icon','icon-bar-chart');*/
-
-        return $menu;
-    }
     
     public function serviciosMenu(FactoryInterface $factory, array $options)
     {
@@ -120,10 +37,9 @@ class Builder extends ContainerAware
 
         $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
         ->setAttribute('icon','fa fa-dashboard');
-            
+        $menu->addChild('Servicios', array('route' => 'servicios'))->setAttribute('icon','fa fa-th');     
                
-        $menu->addChild('Servicios', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Otros', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');  
+        $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th'); 
        
         return $menu;
     }
@@ -138,13 +54,74 @@ class Builder extends ContainerAware
         $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
         ->setAttribute('icon','fa fa-dashboard');
             
-               
-        $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Otros', array('uri' => '#'))->setAttribute('icon','fa fa-th');  
+        $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setLinkAttribute('icon','fa fa-th');       
+        
+        $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');
+        
+        return $menu;
+    }
+
+
+    public function ofertasMenu(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'sidebar-menu');
        
+        //$menu->setLabelAttribute('class', 'span');
+
+        $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
+        ->setAttribute('icon','fa fa-dashboard');
+            
+               
+        $menu->addChild('Oferta Institucional',array('route'=>'ofertasinstitucionales')); 
+        $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');
+
         return $menu;
     }
     
+    public function oficinasMenu(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'sidebar-menu');
+       
+        //$menu->setLabelAttribute('class', 'span');
+
+        $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
+        ->setAttribute('icon','fa fa-dashboard');
+            
+               
+        $menu->addChild('Oficinas', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th'); 
+        $menu->addChild('Localizacion',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('class','treeview')->setLinkAttribute('icon','fa fa-table');
+        $menu['Localizacion']->setChildrenAttribute('class', 'treeview-menu');
+        $menu['Localizacion']->addChild('Departamentos', array('route'=>'departamento'));
+        $menu['Localizacion']->addChild('Municipios', array('route'=>'municipio'));
+        $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');  
+       
+        return $menu;
+    }
+
+    public function solicitudesMenu(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'sidebar-menu');
+       
+        //$menu->setLabelAttribute('class', 'span');
+
+        $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
+        ->setAttribute('icon','fa fa-dashboard');              
+        $menu->addChild('TramiteICA',array('uri'=>'#'))->setAttribute('class', 'treeview')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
+        $menu['TramiteICA']->setChildrenAttribute('class', 'treeview-menu');
+        $menu['TramiteICA']->addChild('Solicitudes', array('route'=>'solmantenimientoidentificacion'));
+        $menu['TramiteICA']->addChild('Estados', array('route'=>'estado'));
+        $menu['TramiteICA']->addChild('Seccionales', array('route'=>'seccionales'));
+        $menu['TramiteICA']->addChild('Especie Animal', array('route'=>'especieanimal'));
+        $menu['TramiteICA']->addChild('Rango Edades', array('route'=>'rangoedades'));
+        $menu['TramiteICA']->addChild('Motivo Identificacion', array('route'=>'motivoidentificacion'));
+        $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');  
+
+        return $menu;
+    }
+
     public function tramitesMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
@@ -190,8 +167,6 @@ class Builder extends ContainerAware
         $menu['TramiteICA']->addChild('Especie Animal', array('route'=>'especieanimal'));
         $menu['TramiteICA']->addChild('Rango Edades', array('route'=>'rangoedades'));
         $menu['TramiteICA']->addChild('Motivo Identificacion', array('route'=>'motivoidentificacion'));
-        //$menu['TramiteICA']->addChild('Solicitud Cantidad Motivo', array('route'=>'solicitudcantidadmotivo'));
-        //$menu['TramiteICA']->addChild('Especie Rango Solicitud', array('route'=>'especierangosolicitud')); 
         
         $menu->addChild('Localizacion',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('class','treeview')->setLinkAttribute('icon','fa fa-table');
         $menu['Localizacion']->setChildrenAttribute('class', 'treeview-menu');

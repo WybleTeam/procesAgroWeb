@@ -116,7 +116,7 @@
                       {% elseif is_granted('ROLE_CONVOCATOR') %}
                             {{ knp_menu_render('AdminBundle:Builder:convocatoriasMenu',  {'currentClass': 'active'}) }}
                       {% elseif is_granted('ROLE_TRAMITES') %}
-                              {{ knp_menu_render('AdminBundle:Builder:tramitesMenu',  {'currentClass': 'active'}) }}
+                              {{ knp_menu_render('AdminBundle:Builder:solicitudesMenu',  {'currentClass': 'active'}) }}
                       
                       {% endif %}   
                           <!-- /.search form -->
