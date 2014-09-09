@@ -8,9 +8,10 @@ security:
         ROLE_SOLICITUDES: [ROLE_USER]
         ROLE_SERVICIOS:   [ROLE_USER]
         ROLE_CONVOCATOR:  [ROLE_USER]  
-        ROLE_TRAMITES:    [ROLE_USER]  
-        ROLE_ADMIN:       [ROLE_USER, ROLE_OFICINA, ROLE_SOLICITUDES, ROLE_CONVOCATOR, ROLE_SERVICIOS, ROLE_TRAMITES]
-        ROLE_SUPER_ADMIN: [ROLE_USER,ROLE_OFICINA, ROLE_SOLICITUDES, ROLE_CONVOCATOR, ROLE_SERVICIOS, ROLE_TRAMITES, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_TRAMITES:    [ROLE_USER]
+        ROLE_OFERTAS:     [ROLE_OFERTAS]  
+        ROLE_ADMIN:       [ROLE_USER, ROLE_OFICINA, ROLE_SOLICITUDES, ROLE_CONVOCATOR, ROLE_SERVICIOS, ROLE_TRAMITES, ROLE_OFERTAS]
+        ROLE_SUPER_ADMIN: [ROLE_USER,ROLE_OFICINA, ROLE_SOLICITUDES, ROLE_CONVOCATOR, ROLE_SERVICIOS, ROLE_TRAMITES, ROLE_OFERTAS, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
         fos_userbundle:
@@ -56,7 +57,17 @@ security:
     access_control:
         
         - { path: ^/admin/login$,  role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/oficinas/*, roles: [ROLE_OFICINA,  ROLE_SERVICIOS,  ROLE_CONVOCATOR,  ROLE_TRAMITES,  ROLE_ADMIN]  }
+        - { path: ^/admin/servicios/*, role: [ROLE_SERVICIOS, ROLE_ADMIN] }
+        - { path: ^/admin/convocatorias/*, role: [ROLE_OFICINA, ROLE_ADMIN] }        
+        - { path: ^/admin/ofertas-institucionales/*, role: [ROLE_OFERTAS, ROLE_ADMIN] }
+        - { path: ^/admin/departamento/*, role: [ROLE_OFICINA, ROLE_ADMIN] }
+        - { path: ^/admin/municipio/*, role: [ROLE_OFICINA, ROLE_ADMIN] } 
+        - { path: ^/admin/solmantenimiento/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }
+        - { path: ^/admin/estado/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }
+        - { path: ^/admin/seccionales/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }
+        - { path: ^/admin/especieanimal/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }
+        - { path: ^/admin/rangoedades/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }  
+        - { path: ^/admin/motivoidentificacion/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }                         
         - { path: ^/admin, roles: [ROLE_OFICINA,  ROLE_SOLICITUDES,  ROLE_SERVICIOS,  ROLE_CONVOCATOR,  ROLE_TRAMITES,  ROLE_ADMIN]  }        
         - { path: ^/usuarios/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/usuarios/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
