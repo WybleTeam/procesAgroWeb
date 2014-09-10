@@ -29,4 +29,12 @@ class CursosVirtualesRepository extends EntityRepository
         $resultado = $consulta->getArrayResult();
         return $resultado;
     }
+    
+    public function findCursos()
+    {
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT o FROM ProcesCursosBundle:CursosVirtuales o WHERE o.estado = true');
+        $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
 }

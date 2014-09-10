@@ -10,7 +10,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('ProcesCursosBundle:CursosVirtuales')->findAll();
+        $entities = $em->getRepository('ProcesCursosBundle:CursosVirtuales')->findCursos();
         
         return $this->render('ProcesCursosBundle:Default:index.html.twig', array(
             'entities' => $entities,
