@@ -14,8 +14,15 @@ class AdminController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $solicitudes = $em->getRepository('WebBundle:SolMantenimientoIdentificacion')->findPendientes();
+        $cursosActivos = $em->getRepository('ProcesCursosBundle:CursosVirtuales')->findCursosActivos();
+        $convocatorias = $em->getRepository('ConvocatoriasBundle:Convocatorias')->findConvocatorias();
+        $ofertas = $em->getRepository('OfertaBundle:OfertasInstitucionales')->findConvocatoriasConteo();
         return $this->render('AdminBundle:Default:index.html.twig', array(
-            'pendientes'=>$solicitudes,
+            'pendientes'    => $solicitudes,
+            'cursosActivos' => $cursosActivos,
+            'convocatorias' => $convocatorias,
+            'ofertas'       => $ofertas,
         ));
     }
 }
+

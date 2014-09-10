@@ -21,4 +21,12 @@ class ConvocatoriasRepository extends EntityRepository
         $resultado = $consulta->getArrayResult();
         return $resultado;
     }
+    
+    public function findConvocatorias()
+    {
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT COUNT(o) AS Cuenta FROM ConvocatoriasBundle:Convocatorias o');
+        $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
 }

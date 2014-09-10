@@ -34,4 +34,12 @@ class OfertasInstitucionalesRepository extends EntityRepository
         $resultado = $consulta->getArrayResult();
         return $resultado;
     }
+    
+    public function findConvocatoriasConteo()
+    {
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT COUNT(o) AS Cuenta FROM OfertaBundle:OfertasInstitucionales o');
+        $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
 }

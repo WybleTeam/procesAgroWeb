@@ -27,10 +27,13 @@
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        53<sup style="font-size: 20px">%</sup>
+                                        {% for cursos in cursosActivos %}
+                                            {{ cursos.Cuenta }}
+                                        {% endfor %}    
+                                        
                                     </h3>
                                     <p>
-                                        Visitas
+                                        Cursos Activos
                                     </p>
                                 </div>
                                 <div class="icon">
@@ -46,10 +49,12 @@
                             <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
-                                        44
+                                         {% for convocatoria in convocatorias %}
+                                            {{ convocatoria.Cuenta }}
+                                        {% endfor %} 
                                     </h3>
                                     <p>
-                                        Usuarios
+                                        Convocatorias
                                     </p>
                                 </div>
                                 <div class="icon">
@@ -65,10 +70,12 @@
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3>
-                                        65
+                                        {% for oferta in ofertas %}
+                                            {{ oferta.Cuenta }}
+                                        {% endfor %} 
                                     </h3>
                                     <p>
-                                        Oferta Institucional
+                                        Ofertas Institucionales
                                     </p>
                                 </div>
                                 <div class="icon">
