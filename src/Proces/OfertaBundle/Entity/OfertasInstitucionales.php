@@ -25,7 +25,7 @@ class OfertasInstitucionales
     /**
      * @var string
      *
-     * @ORM\Column(name="tituloOferta", type="string", length=45)
+     * @ORM\Column(name="tituloOferta", type="string", length=100)
      * @Assert\NotBlank(message="Debes ponerle un Título a la Oferta")
      */
     private $tituloOferta;

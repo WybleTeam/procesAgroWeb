@@ -25,7 +25,7 @@ class Servicios
     /**
      * @var string
      *
-     * @ORM\Column(name="tituloServicio", type="string", length=45)
+     * @ORM\Column(name="tituloServicio", type="string", length=100)
      * @Assert\NotBlank(message="Debes ponerle un Título")
      */
     private $tituloServicio;
