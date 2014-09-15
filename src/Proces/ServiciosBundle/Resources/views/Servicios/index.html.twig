@@ -26,8 +26,8 @@
                 <td><a href="{{ path('servicios_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.tituloServicio }}</td>
                 <td>{{ entity.descripcionServicio }}</td>
-                 <td><a href="{{ entity.urlAudioServicio }}" target="_blank">{{ entity.urlAudioServicio }}</a></td>
-                <td><a href="{{ entity.urlServicio }}" target="_blank">{{ entity.urlServicio }}</a></td>
+                 <td><a href="{{ entity.urlAudioServicio }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></a></td>
+                <td><a href="{{ entity.urlServicio }}" target="_blank"  class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
                 <td>
                
                         <a href="{{ path('servicios_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>

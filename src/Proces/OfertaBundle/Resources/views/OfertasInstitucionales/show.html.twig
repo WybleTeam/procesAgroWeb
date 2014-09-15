@@ -73,7 +73,7 @@
                 <td><a href="{{ path('pasosoferta_show', { 'id': otro.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ otro.tituloPasos }}</td>
                 <td>{{ otro.descripcionPaso }}</td>
-                <td><a href="{{ otro.urlPaso }}" target="_blank">{{ otro.urlPaso }}</a></td>
+                <td><a href="{{ otro.urlPaso }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
                 <td>
                    <a href="{{ path('pasosoferta_edit', { 'id': otro.id, 'oferta': entity.id }) }}"  class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
                 </td>

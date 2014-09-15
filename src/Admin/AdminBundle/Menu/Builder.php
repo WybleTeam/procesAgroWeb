@@ -189,7 +189,7 @@ class Builder extends ContainerAware
             
                
         $menu->addChild('Usuarios', array('route' => 'tp_user'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Otros', array('route' => 'usuarios_homepage'))->setAttribute('icon','fa fa-th');  
+        $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th'); 
        
         return $menu;
     }

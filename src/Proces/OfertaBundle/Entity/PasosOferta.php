@@ -41,7 +41,7 @@ class PasosOferta
     /**
      * @var string
      *
-     * @ORM\Column(name="urlPaso", type="string", length=45)
+     * @ORM\Column(name="urlPaso", type="string", length=300)
      * @Assert\NotBlank(message="Falta la url")
      * @Assert\Url(message="Enlace inválido")
      */

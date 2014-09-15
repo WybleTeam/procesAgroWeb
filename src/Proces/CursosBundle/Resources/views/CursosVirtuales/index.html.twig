@@ -27,8 +27,8 @@
                 <td><a href="{{ path('cursosvirtuales_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.nombreCurso }}</td>
                 <td>{{ entity.descripcionCurso }}</td>
-               <td><a href="{{ entity.urlAudio }}" target="_blank">{{ entity.urlAudio }}</a></td>
-                <td><a href="{{ entity.urlCurso }}" target="_blank">{{ entity.urlCurso }}</a></td>
+               <td><a href="{{ entity.urlAudio }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></a></td>
+                <td><a href="{{ entity.urlCurso }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
                 <td>{{ entity.estado }}</td>
                 <td>
 
