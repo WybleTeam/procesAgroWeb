@@ -32,7 +32,7 @@ class CursosVirtuales
     /**
      * @var string
      *
-     * @ORM\Column(name="nombreCurso", type="string", length=100)
+     * @ORM\Column(name="nombreCurso", type="string", length=45)
      * @Assert\NotBlank(message="Falta el nombre del Curso")
      */
     private $nombreCurso;
@@ -48,7 +48,7 @@ class CursosVirtuales
     /**
      * @var string
      *
-     * @ORM\Column(name="urlAudio", type="string", length=300)
+     * @ORM\Column(name="urlAudio", type="string", length=45)
      * @Assert\NotBlank(message="Enlace al audio convocatoria")
      * @Assert\Url(message="Formato inválido")
      */
@@ -57,7 +57,7 @@ class CursosVirtuales
     /**
      * @var string
      *
-     * @ORM\Column(name="urlCurso", type="string", length=300)
+     * @ORM\Column(name="urlCurso", type="string", length=45)
      * @Assert\NotBlank(message="Enlace a la convocatoria")
      * @Assert\Url(message="Formato inválido")
      */
