@@ -41,7 +41,7 @@ class Servicios
     /**
      * @var string
      *
-     * @ORM\Column(name="urlAudioServicio", type="string", length=45)
+     * @ORM\Column(name="urlAudioServicio", type="string", length=300)
      * @Assert\NotBlank(message="Falta la Url")
      * @Assert\Url(message="Url inválida")
      */
@@ -50,7 +50,7 @@ class Servicios
     /**
      * @var string
      *
-     * @ORM\Column(name="urlServicio", type="string", length=45)
+     * @ORM\Column(name="urlServicio", type="string", length=300)
      * @Assert\NotBlank(message="Falta la Url")
      * @Assert\Url(message="Url inválida")
      */

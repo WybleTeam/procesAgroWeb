@@ -25,7 +25,7 @@ class Convocatorias
      /**
      * @var string
      *
-     * @ORM\Column(name="tituloConvocatoria", type="string", length=45)
+     * @ORM\Column(name="tituloConvocatoria", type="string", length=100)
      * @Assert\NotBlank(message="Debes ponerle un Título a la convocatoria")
      */
     private $tituloConvocatoria;
@@ -33,7 +33,7 @@ class Convocatorias
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=45)
+     * @ORM\Column(name="descripcion", type="string", length=40)
      * @Assert\NotBlank(message="Describe brevemente la convocatoria")
      */
     private $descripcion;
@@ -41,7 +41,7 @@ class Convocatorias
     /**
      * @var string
      *
-     * @ORM\Column(name="urlAudio", type="string", length=45)
+     * @ORM\Column(name="urlAudio", type="string", length=300)
      * @Assert\NotBlank(message="Hey la Url!!")
      * @Assert\Url(message="Pon una url por ejemplo, http://tuurl.com")
      */
@@ -51,7 +51,7 @@ class Convocatorias
     /**
      * @var string
      *
-     * @ORM\Column(name="urlConvocatoria", type="string", length=45)
+     * @ORM\Column(name="urlConvocatoria", type="string", length=300)
      * @Assert\NotBlank(message="Hey la Url!!")
      * @Assert\Url(message="Pon una url por ejemplo, http://tuurl.com")
      */
