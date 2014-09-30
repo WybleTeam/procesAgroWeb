@@ -41,9 +41,9 @@ class Convocatorias
     /**
      * @var string
      *
-     * @ORM\Column(name="urlAudio", type="string", length=300)
-     * @Assert\NotBlank(message="Hey la Url!!")
-     * @Assert\Url(message="Pon una url por ejemplo, http://tuurl.com")
+     * @ORM\Column(name="urlAudio", type="string", length=300, nullable=true)
+     *
+     *
      */
     private $urlAudio;
 

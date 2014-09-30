@@ -41,9 +41,7 @@ class Servicios
     /**
      * @var string
      *
-     * @ORM\Column(name="urlAudioServicio", type="string", length=300)
-     * @Assert\NotBlank(message="Falta la Url")
-     * @Assert\Url(message="Url inválida")
+     * @ORM\Column(name="urlAudioServicio", type="string", length=300, nullable=true)
      */
     private $urlAudioServicio;
 

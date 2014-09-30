@@ -10,19 +10,19 @@
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Nombrecurso</th>
+                <th>Nombre curso</th>
                 <td>{{ entity.nombreCurso }}</td>
             </tr>
             <tr>
-                <th>Descripcioncurso</th>
+                <th>Descripción curso</th>
                 <td>{{ entity.descripcionCurso }}</td>
             </tr>
             <tr>
-                <th>Urlaudio</th>
+                <th>Url audio</th>
                 <td><a href="{{ entity.urlAudio }}" target="_blank">{{ entity.urlAudio }}</td>
             </tr>
             <tr>
-                <th>Urlcurso</th>
+                <th>Url curso</th>
                 <td><a href="{{ entity.urlCurso }}" target="_blank">{{ entity.urlCurso }}</a></td>
             </tr>
             <tr>
@@ -31,18 +31,12 @@
             </tr>
         </tbody>
     </table>
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('cursosvirtuales') }}">
+            <hr>
+        <a href="{{ path('cursosvirtuales') }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
             Volver al listado
         </a>
-    </li>
-    <li>
-        <a href="{{ path('cursosvirtuales_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('cursosvirtuales_edit', { 'id': entity.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>
             Editar
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    {{ form(delete_form) }}
 {% endblock %}

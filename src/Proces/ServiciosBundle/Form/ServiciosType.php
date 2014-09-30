@@ -23,6 +23,7 @@ class ServiciosType extends AbstractType
             ))
             ->add('urlAudioServicio','url',array(
                 'attr'=>array('class'=>'form-control'),
+                'required'=>false
             ))
             ->add('urlServicio','url',array(
                 'attr'=>array('class'=>'form-control'),

@@ -10,29 +10,27 @@
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
-                <th>Titulopasos</th>
+                <th>Titulo pasos</th>
                 <td>{{ entity.tituloPasos }}</td>
             </tr>
             <tr>
-                <th>Descripcionpaso</th>
+                <th>Descripción paso</th>
                 <td>{{ entity.descripcionPaso }}</td>
             </tr>
             <tr>
-                <th>Urlpaso</th>
-                <td><a href="{{ otro.urlPaso }}" target="_blank">{{ otro.urlPaso }}</a><</td>
+                <th>Url paso</th>
+                <td><a href="{{ entity.urlPaso }}" target="_blank">{{ entity.urlPaso }}</a></td>
             </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('ofertasinstitucionales_show', { 'id': oferta }) }}">Volver</a>
-    </li>
-    <li>
-        <a href="{{ path('pasosoferta_edit', { 'id': entity.id }) }}">
+           <hr>
+        <a href="{{ path('ofertasinstitucionales_show', { 'id': oferta }) }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
+            Volver al listado
+        </a>
+    
+        <a href="{{ path('pasosoferta_edit', { 'id': entity.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span>
             Editar
         </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    {{ form(delete_form) }}
 {% endblock %}

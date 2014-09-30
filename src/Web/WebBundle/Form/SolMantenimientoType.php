@@ -73,7 +73,8 @@ class SolMantenimientoType extends AbstractType
                 'attr'=>array('class'=>'form-control')
             ))
             ->add('estadoSolicitud',null,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control'),
+                'empty_value'=>false
             ))
             ->add('municipio',null,array(
                 'attr'=>array('class'=>'form-control','readonly'=>'readonly'),
@@ -81,7 +82,7 @@ class SolMantenimientoType extends AbstractType
                 
             ))
             ->add('seccional',null,array(
-                'attr'=>array('class'=>'form-control','readonly'=>'readonly'),
+                'attr'=>array('class'=>'form-control'),
                 'empty_value'=>'Escoge una Seccional'
             ))
               

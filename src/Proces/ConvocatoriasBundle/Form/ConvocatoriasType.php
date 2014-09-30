@@ -27,7 +27,8 @@ class ConvocatoriasType extends AbstractType
             ))
              ->add('urlAudio','url', array(
                     'attr'=>array('class'=>'form-control'),
-                    'label'=>'Url del audio'
+                    'label'=>'Url del audio',
+                    'required'=>false,
                 
             ))    
             ->add('urlConvocatoria','url', array(

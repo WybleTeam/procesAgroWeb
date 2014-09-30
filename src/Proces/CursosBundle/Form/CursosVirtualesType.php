@@ -22,7 +22,8 @@ class CursosVirtualesType extends AbstractType
                 'attr'=>array('class'=>'form-control')
             ))
             ->add('urlAudio','url',array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control'),
+                'required'=>false
             ))
             ->add('urlCurso','url',array(
                 'attr'=>array('class'=>'form-control')

@@ -41,9 +41,7 @@ class OfertasInstitucionales
     /**
      * @var string
      *
-     * @ORM\Column(name="urlAudioOferta", type="string", length=300)
-     * @Assert\NotBlank(message="Debes ponerle una enlace")
-     * @Assert\Url()
+     * @ORM\Column(name="urlAudioOferta", type="string", length=300, nullable=true)
      */
     private $urlAudioOferta;
 

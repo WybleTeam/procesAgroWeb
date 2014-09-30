@@ -5,10 +5,9 @@
 
     {{ form(edit_form) }}
 
-        <ul class="record_actions">
-    <li>
-         <a href="{{ path('ofertasinstitucionales_show', { 'id': oferta }) }}">Volver</a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <hr>
+         <a href="{{ path('ofertasinstitucionales_show', { 'id': oferta }) }}" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>
+            Volver al listado
+         </a>
+    {{ form(delete_form) }}
 {% endblock %}

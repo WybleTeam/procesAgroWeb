@@ -11,25 +11,22 @@
      <div class="table-responsive">     
     <table class="table">
         <tbody>
+            
             <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Titulooferta</th>
+                <th>Titulo oferta</th>
                 <td>{{ entity.tituloOferta }}</td>
             </tr>
             <tr>
-                <th>Descripcionoferta</th>
+                <th>Descripción Oferta</th>
                 <td>{{ entity.descripcionOferta }}</td>
             </tr>
             <tr>
-                <th>Urlaudiooferta</th>
-                <td><a href="{{ entity.urlAudioOferta }}" target="_blank">{{ entity.urlAudioOferta }}</td>
+                <th>Url audio oferta</th>
+                <td><a href="{{ entity.urlAudioOferta }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></td>
             </tr>
             <tr>
-                <th>Urloferta</th>
-                <td><a href="{{ entity.urlOferta }}" target="_blank">{{ entity.urlOferta }}</td>
+                <th>Url oferta</th>
+                <td><a href="{{ entity.urlOferta }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></td>
             </tr>
         </tbody>
     </table>
@@ -70,7 +67,7 @@
         <tbody>
         {% for otro in pasos %}
             <tr>
-                <td><a href="{{ path('pasosoferta_show', { 'id': otro.id }) }}">{{ loop.index }}</a></td>
+                <td>{#<a href="{{ path('pasosoferta_show', { 'id': otro.id }) }}">{{ loop.index }}</a>#}{{ loop.index }}</td>
                 <td>{{ otro.tituloPasos }}</td>
                 <td>{{ otro.descripcionPaso }}</td>
                 <td><a href="{{ otro.urlPaso }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
