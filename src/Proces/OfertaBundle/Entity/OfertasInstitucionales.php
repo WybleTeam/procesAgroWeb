@@ -62,7 +62,7 @@ class OfertasInstitucionales
     private $usuario;
 
     /**
-     * @ORM\OneToMany(targetEntity="Proces\OfertaBundle\Entity\PasosOferta", mappedBy="ofertaInstitucional", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Proces\OfertaBundle\Entity\PasosOferta", mappedBy="ofertaInstitucional", cascade={"persist","remove"})
      */
     private $pasos;
     
