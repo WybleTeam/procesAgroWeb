@@ -19,7 +19,7 @@ class Builder extends ContainerAware
         $menu->addChild('Convocatorias', array('route' => 'convocatorias_homepage'))->setAttribute('icon','icon-trophy');
         $menu->addChild('Servicios', array('route' => 'servicios_homepage'))->setLabel('Servicios')->setAttribute('icon','icon-picture');              
         $menu->addChild('Ofertas', array('route' => 'oferta_homepage'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Cursos', array('route' => 'proces_cursos_homepage'))->setLabel('Cursos Virtuales')->setAttribute('icon','icon-doc-text');              
+        $menu->addChild('Cursos', array('route' => 'proces_cursosvirtuales_homepage'))->setLabel('Cursos Virtuales')->setAttribute('icon','icon-doc-text');              
         $menu->addChild('Admin', array('route' => 'admin_homepage'))->setLabel('Administrador')->setAttribute('icon','fa fa-dashboard');   
         $menu->addChild('tramitePublico', array('route' => 'solmantenimiento_new'))->setLabel('Tramite Especial')->setAttribute('icon','fa fa-dashboard');   
         

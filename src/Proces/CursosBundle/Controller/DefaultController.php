@@ -16,4 +16,15 @@ class DefaultController extends Controller
             'entities' => $entities,
         ));
     }
+    
+    public function cursosAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('ProcesCursosBundle:CursosVirtuales')->findCursos();
+        
+        return $this->render('ProcesCursosBundle:Default:cursos.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
 }

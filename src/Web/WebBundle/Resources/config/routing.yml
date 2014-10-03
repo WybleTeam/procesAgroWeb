@@ -9,6 +9,10 @@ convocatorias_homepage:
 proces_cursos_homepage:
     path:     /cursos
     defaults: { _controller: ProcesCursosBundle:Default:index }
+
+proces_cursosvirtuales_homepage:
+    path:     /cursos-virtuales
+    defaults: { _controller: ProcesCursosBundle:Default:cursos }
     
 oferta_homepage:
     path:     /ofertas
