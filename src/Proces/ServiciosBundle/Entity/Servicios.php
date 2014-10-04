@@ -27,14 +27,26 @@ class Servicios
      *
      * @ORM\Column(name="tituloServicio", type="string", length=100)
      * @Assert\NotBlank(message="Debes ponerle un Título")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "100",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * ) 
      */
     private $tituloServicio;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcionServicio", type="string", length=45)
+     * @ORM\Column(name="descripcionServicio", type="string", length=150)
      * @Assert\NotBlank(message="Debes poner una descripción")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "150",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $descripcionServicio;
 
@@ -42,7 +54,13 @@ class Servicios
      * @var string
      *
      * @ORM\Column(name="urlAudioServicio", type="string", length=300, nullable=true)
+     * @Assert\Length(
+     *      max = "300",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
+    
     private $urlAudioServicio;
 
     /**
@@ -51,6 +69,12 @@ class Servicios
      * @ORM\Column(name="urlServicio", type="string", length=300)
      * @Assert\NotBlank(message="Falta la Url")
      * @Assert\Url(message="Url inválida")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "300",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )     
      */
     private $urlServicio;
 

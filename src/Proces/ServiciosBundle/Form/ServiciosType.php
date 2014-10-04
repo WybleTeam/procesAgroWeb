@@ -16,17 +16,17 @@ class ServiciosType extends AbstractType
     {
         $builder
             ->add('tituloServicio',null,array(
-                'attr'=>array('class'=>'form-control'),
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'100'),
             ))
             ->add('descripcionServicio','textarea',array(
-                'attr'=>array('class'=>'form-control'),
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'150'),
             ))
             ->add('urlAudioServicio','url',array(
-                'attr'=>array('class'=>'form-control'),
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'300'),
                 'required'=>false
             ))
             ->add('urlServicio','url',array(
-                'attr'=>array('class'=>'form-control'),
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'300'),
             ))
             //->add('usuario',null,array(
             //    'attr'=>array('class'=>'form-control'),

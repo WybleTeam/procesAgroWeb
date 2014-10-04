@@ -27,6 +27,12 @@ class Convocatorias
      *
      * @ORM\Column(name="tituloConvocatoria", type="string", length=100)
      * @Assert\NotBlank(message="Debes ponerle un Título a la convocatoria")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "100",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $tituloConvocatoria;
     
@@ -35,6 +41,12 @@ class Convocatorias
      *
      * @ORM\Column(name="descripcion", type="string", length=40)
      * @Assert\NotBlank(message="Describe brevemente la convocatoria")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "40",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $descripcion;
 
@@ -54,6 +66,12 @@ class Convocatorias
      * @ORM\Column(name="urlConvocatoria", type="string", length=300)
      * @Assert\NotBlank(message="Hey la Url!!")
      * @Assert\Url(message="Pon una url por ejemplo, http://tuurl.com")
+     *      * @Assert\Length(
+     *      min = "2",
+     *      max = "300",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $urlConvocatoria;
 
@@ -64,6 +82,12 @@ class Convocatorias
      *
      * @ORM\Column(name="descripcionLarga", type="string", length=150)
      * @Assert\NotBlank(message="La descripción larga falta")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "150",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $descripcionLarga;
 

@@ -16,17 +16,17 @@ class OficinasType extends AbstractType
     {
         $builder
             ->add('nombreOficina','text',array(
-                    'attr'=>array('class'=>'form-control'),
+                    'attr'=>array('class'=>'form-control', 'maxlength'=>'45'),
                     'label'=>'Nombre Oficina'
                 
             ))
             ->add('direccionOficina','text',array(
-                    'attr'=>array('class'=>'form-control'),
+                    'attr'=>array('class'=>'form-control', 'maxlength'=>'45'),
                     'label'=>'Dirección Oficina'
                 
             ))
             ->add('descripcionOficina','textarea',array(
-                    'attr'=>array('class'=>'form-control'),
+                    'attr'=>array('class'=>'form-control', 'maxlength'=>'45'),
                     'label'=>'Descripción Oficina'
                 
             ))

@@ -16,28 +16,28 @@ class ConvocatoriasType extends AbstractType
     {
         $builder
             ->add('tituloConvocatoria','text',array(
-                    'attr'=>array('class'=>'form-control'),
-                    'label'=>'Título de Convocatoria'
-                
+                    'attr'=>array('class'=>'form-control', 'maxlength'=>'100'),
+                    'label'=>'Título de Convocatoria',
+                    
             ))
             ->add('descripcion','textarea',array(
-                    'attr'=>array('class'=>'form-control'),
+                    'attr'=>array('class'=>'form-control', 'maxlength'=>'40'),
                     'label'=>'Descripción'
                 
             ))
              ->add('urlAudio','url', array(
-                    'attr'=>array('class'=>'form-control'),
+                    'attr'=>array('class'=>'form-control', 'maxlength'=>'300'),
                     'label'=>'Url del audio',
                     'required'=>false,
                 
             ))    
             ->add('urlConvocatoria','url', array(
-                    'attr'=>array('class'=>'form-control'),
+                    'attr'=>array('class'=>'form-control', 'maxlength'=>'300'),
                     'label'=>'Url de la convocatoria'
                 
             ))
             ->add('descripcionLarga','textarea',array(
-                    'attr'=>array('class'=>'form-control'),
+                    'attr'=>array('class'=>'form-control', 'maxlength'=>'150'),
                     'label'=>'Descripción Larga'
                 
             ))

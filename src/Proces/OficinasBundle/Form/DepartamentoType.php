@@ -16,7 +16,7 @@ class DepartamentoType extends AbstractType
     {
         $builder
             ->add('nombreDepartamento','text',array(
-                'attr'=>array('class'=>'form-control'),
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'45'),
             ))
         ;
     }

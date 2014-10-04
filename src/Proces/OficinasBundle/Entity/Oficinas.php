@@ -27,6 +27,12 @@ class Oficinas
      *
      * @ORM\Column(name="nombreOficina", type="string", length=45)
      * @Assert\NotBlank(message="Falta el nombre")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "45",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $nombreOficina;
 
@@ -35,6 +41,12 @@ class Oficinas
      *
      * @ORM\Column(name="direccionOficina", type="string", length=45)
      * @Assert\NotBlank(message="Dirección")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "45",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $direccionOficina;
 
@@ -43,6 +55,12 @@ class Oficinas
      *
      * @ORM\Column(name="descripcionOficina", type="string", length=45)
      * @Assert\NotBlank(message="Descripción faltante")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "45",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )     
      */
     private $descripcionOficina;
 

@@ -16,17 +16,17 @@ class CursosVirtualesType extends AbstractType
     {
         $builder
             ->add('nombreCurso',null,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'300')
             ))
             ->add('descripcionCurso','textarea',array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'45')
             ))
             ->add('urlAudio','url',array(
                 'attr'=>array('class'=>'form-control'),
                 'required'=>false
             ))
             ->add('urlCurso','url',array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'300')
             ))
             ->add('estado',null,array(
                 'attr'=>array('class'=>'form-control')

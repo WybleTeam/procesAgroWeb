@@ -34,6 +34,12 @@ class CursosVirtuales
      *
      * @ORM\Column(name="nombreCurso", type="string", length=100)
      * @Assert\NotBlank(message="Falta el nombre del Curso")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "100",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $nombreCurso;
 
@@ -42,6 +48,12 @@ class CursosVirtuales
      *
      * @ORM\Column(name="descripcionCurso", type="string", length=45)
      * @Assert\NotBlank(message="Descripcion del Curso")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "45",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $descripcionCurso;
 
@@ -58,6 +70,12 @@ class CursosVirtuales
      * @ORM\Column(name="urlCurso", type="string", length=300)
      * @Assert\NotBlank(message="Enlace a la convocatoria")
      * @Assert\Url(message="Formato inválido")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "300",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $urlCurso;
 

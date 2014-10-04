@@ -27,6 +27,12 @@ class Departamento
      *
      * @ORM\Column(name="nombreDepartamento", type="string", length=45)
      * @Assert\NotBlank(message="Debes ponerle un nombre")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "45",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $nombreDepartamento;
 

@@ -27,6 +27,12 @@ class PasosOferta
      *
      * @ORM\Column(name="tituloPasos", type="string", length=45)
      * @Assert\NotBlank(message="Debes ponerle un Título")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "45",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $tituloPasos;
 
@@ -35,6 +41,12 @@ class PasosOferta
      *
      * @ORM\Column(name="descripcionPaso", type="string", length=150)
      * @Assert\NotBlank(message="Debes ponerle una Descripción")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "150",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $descripcionPaso;
 
@@ -44,6 +56,12 @@ class PasosOferta
      * @ORM\Column(name="urlPaso", type="string", length=300)
      * @Assert\NotBlank(message="Falta la url")
      * @Assert\Url(message="Enlace inválido")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "300",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $urlPaso;
 

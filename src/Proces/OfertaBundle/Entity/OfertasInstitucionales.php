@@ -27,6 +27,12 @@ class OfertasInstitucionales
      *
      * @ORM\Column(name="tituloOferta", type="string", length=100)
      * @Assert\NotBlank(message="Debes ponerle un Título a la Oferta")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "100",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $tituloOferta;
 
@@ -35,6 +41,12 @@ class OfertasInstitucionales
      *
      * @ORM\Column(name="descripcionOferta", type="string", length=150)
      * @Assert\NotBlank(message="Debes ponerle una descripción")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "150",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $descripcionOferta;
 
@@ -42,6 +54,7 @@ class OfertasInstitucionales
      * @var string
      *
      * @ORM\Column(name="urlAudioOferta", type="string", length=300, nullable=true)
+     * 
      */
     private $urlAudioOferta;
 
@@ -50,6 +63,12 @@ class OfertasInstitucionales
      *
      * @ORM\Column(name="urlOferta", type="string", length=300)
      * @Assert\NotBlank(message="Debes ponerle una enlace")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "300",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      * @Assert\Url()
      */
     private $urlOferta;
