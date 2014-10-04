@@ -60,6 +60,7 @@ security:
         - { path: ^/admin/servicios/*, role: [ROLE_SERVICIOS, ROLE_ADMIN] }
         - { path: ^/admin/convocatorias/*, role: [ROLE_CONVOCATOR, ROLE_ADMIN] }        
         - { path: ^/admin/ofertas-institucionales/*, role: [ROLE_OFERTAS, ROLE_ADMIN] }
+        - { path: ^/admin/cursosvirtuales/*, role: [ROLE_OFERTAS, ROLE_ADMIN] }
         - { path: ^/admin/oficinas/*, role: [ROLE_OFICINA, ROLE_ADMIN] }
         - { path: ^/admin/departamento/*, role: [ROLE_OFICINA, ROLE_ADMIN] }
         - { path: ^/admin/municipio/*, role: [ROLE_OFICINA, ROLE_ADMIN] } 
