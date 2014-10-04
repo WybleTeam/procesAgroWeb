@@ -49,14 +49,24 @@
    
    <script type="text/javascript">
             $(function() {
-                $("#example1").dataTable();
+                $("#example1").dataTable({
+                    "bPaginate": true,
+                    "bLengthChange": true,
+                    "bFilter": false,
+                    "sSearch": false,
+                    "bSort": true,
+                    "bInfo": true,
+                    "bAutoWidth": true
+                });
+                
                 $('#example2').dataTable({
                     "bPaginate": true,
                     "bLengthChange": false,
                     "bFilter": false,
+                    "sSearch": false,
                     "bSort": true,
                     "bInfo": true,
-                    "bAutoWidth": false
+                    "bAutoWidth": true
                 });
             });
         </script>
