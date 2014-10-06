@@ -55,8 +55,9 @@ class SolMantenimientoController extends Controller
             $em->flush();
             $this->get('session')->getFlashBag()->add(
             'notice',
-            'OK');
-            return $this->redirect($this->generateUrl('solmantenimiento_show', array('id' => $entity->getId())));
+            'Hemos recibido tu Solicitud correctamente, estaremos en Contacto contigo en el menor tiempo posible');
+            //return $this->redirect($this->generateUrl('solmantenimiento_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('web_homepage'));
         }
 
         return $this->render('WebBundle:SolMantenimiento:new.html.twig', array(

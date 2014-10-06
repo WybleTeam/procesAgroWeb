@@ -91,7 +91,7 @@
             </tr>
        
             <tr class="col-lg-6">
-                <th>Solicitudmantenimientoidentificacion</th>
+                <th>Solicitud mantenimiento identificacion</th>
                 <td>{{ entity.solicitudMantenimientoIdentificacion }}</td>
             </tr>
             
@@ -110,20 +110,20 @@
         </tbody>
     </table>
 
-        <ul class="record_actions">
+    {#     <ul class="record_actions">
     <li>
         <a href="{{ path('solmantenimientoidentificacion') }}">
             Volver al listado
         </a>
     </li>
-    <li>
+   <li>
         <a href="{{ path('solmantenimientoidentificacion_edit', { 'id': entity.id }) }}">
             Editar
         </a>
     </li>
-    <li>{{ form(delete_form) }}</li>
+    <li>{{ form(delete_form) }}</li> 
     
-</ul>
+</ul>#}
                </div>
 </div>
 {% endblock %}

@@ -2,10 +2,13 @@ solmantenimiento:
     path:     /
     defaults: { _controller: "WebBundle:SolMantenimiento:index" }
 
+#solmantenimiento_show:
+#    path:     /{id}/show
+#    defaults: { _controller: "WebBundle:SolMantenimiento:show" }
 solmantenimiento_show:
-    path:     /{id}/show
-    defaults: { _controller: "WebBundle:SolMantenimiento:show" }
-    
+     path:     /creado/
+     defaults: { _controller: "WebBundle:SolMantenimiento:creado" }
+     
 solmantenimiento_new:
     path:     /new
     defaults: { _controller: "WebBundle:SolMantenimiento:new" }
