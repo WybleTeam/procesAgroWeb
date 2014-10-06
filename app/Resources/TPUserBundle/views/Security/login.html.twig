@@ -8,7 +8,7 @@
         <div>{{ error|trans }}</div>
     {% endif %}
     <a class="close-reveal-modal" style="font-size:30px; font-weight:bold; position:absolute;right:10px;top:0px">&#215;</a>
-    <h2>Acceso a Zona de Administración de Usuarios</h2>
+    
     <p class="lead">Debes volver a ingresar tus datos</p>
     <form id="login-form" action="{{ path("fos_user_security_check") }}" method="post">
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />

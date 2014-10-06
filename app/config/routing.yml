@@ -30,8 +30,6 @@ ofertas:
     resource: "@OfertaBundle/Resources/config/routing.yml"
     prefix:   /ofertas
     
-
-
 usuarios:
     resource: "@UsuariosBundle/Resources/config/routing.yml"
     prefix:   /usuarios

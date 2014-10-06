@@ -11,7 +11,10 @@
             </tr>
             <tr>
                 <th>Roles</th>
-                <td>{{ entity.roles }}</td>
+                <td>{% for rol in entity.roles %}
+                        {{ rol }}
+                    {% endfor %}
+                    {#{ entity.roles }#}</td>
             </tr>
             <tr>
                 <th>Id</th>
@@ -23,19 +26,19 @@
         <ul class="record_actions">
     <li>
         <a href="{{ path('tp_usergroup') }}">
-            Back to the list
+            Volver al listado
         </a>
     </li>
     <li>
         <a href="{{ path('tp_usergroup_edit', { 'id': entity.id }) }}">
-            Edit
+            Editar
         </a>
     </li>
     <li>
         <form action="{{ path('tp_usergroup_delete', { 'id': entity.id }) }}" method="post">
             <input type="hidden" name="_method" value="DELETE" />
             {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
+            <button type="submit">Borrar</button>
         </form>
     </li>
 </ul>

@@ -6,14 +6,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="brand" href="{{ path('admin_homepage') }}">ProcesAgro</a>
+      <a class="brand" href="{{ path('fos_user_security_logout') }}">ProcesAgro</a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="{{ currentRoute == 'tp_user' ? 'active' : '' }}"><a href="{{ path('tp_user') }}">Usuarios</a></li>
-          {% if is_granted('ROLE_SUPER_ADMIN') %}<li class="{{ currentRoute == 'tp_usergroup' ? 'active' : '' }}"><a href="{{ path('tp_usergroup') }}">Grupos</a></li>{% endif %}
+           
+         {% if is_granted('ROLE_SUPER_ADMIN') %} <li class="{{ currentRoute == 'tp_user' ? 'active' : '' }}"><a href="{{ path('tp_user') }}">Usuarios</a></li>
+          <li><a href="{{ path("fos_user_profile_show") }}" class="{{ currentRoute == 'tp_user' ? 'active' : '' }}">Perfil</a></li>
+             <li class="{{ currentRoute == 'tp_usergroup' ? 'active' : '' }}"><a href="{{ path('tp_usergroup') }}">Grupos</a></li>
+         {% else %}
+         <li><a href="{{ path("fos_user_profile_show") }}" class="{{ currentRoute == 'tp_user' ? 'active' : '' }}">Perfil</a></li>
+         {% endif %}
         </ul>
           <a class="btn btn-small btn-inverse" style="float:right" href="{{ path('fos_user_security_logout') }}"><i class="icon-white icon-off"></i> Salir</a>
       </div><!--/.nav-collapse -->
     </div>
   </div>
-</div>   
+</div>      
+              <a href="{{ path("fos_user_security_logout") }}" class="btn btn-success">Volver al Menú principal</a>
+    <hr> 

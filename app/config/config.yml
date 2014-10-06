@@ -75,8 +75,10 @@ swiftmailer:
     host:      "%mailer_host%"
     username:  "%mailer_user%"
     password:  "%mailer_password%"
+    encryption: ssl
+    auth_mode:  login
     spool:     { type: memory }
-
+    
 
 fos_user:
     db_driver: orm
@@ -84,7 +86,10 @@ fos_user:
     user_class: Twinpeaks\UserBundle\Entity\User
     group:
         group_class: Twinpeaks\UserBundle\Entity\UserGroup
-        
+    registration:
+        form:
+            type: mi_user_creador
+    
 knp_menu:
     twig: 
         template: knp_menu.html.twig
