@@ -10,7 +10,7 @@ security:
         ROLE_CONVOCATOR:  [ROLE_USER]  
         ROLE_TRAMITES:    [ROLE_USER]
         ROLE_OFERTAS:     [ROLE_OFERTAS]  
-        ROLE_ADMIN:       [ROLE_USER, ROLE_OFICINA, ROLE_SOLICITUDES, ROLE_CONVOCATOR, ROLE_SERVICIOS, ROLE_TRAMITES, ROLE_OFERTAS]
+        ROLE_ADMIN:       [ROLE_USER, ROLE_OFICINA, ROLE_CONVOCATOR, ROLE_SERVICIOS, ROLE_TRAMITES, ROLE_OFERTAS]
         ROLE_SUPER_ADMIN: [ROLE_USER,ROLE_OFICINA, ROLE_SOLICITUDES, ROLE_CONVOCATOR, ROLE_SERVICIOS, ROLE_TRAMITES, ROLE_OFERTAS, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
@@ -65,7 +65,7 @@ security:
         - { path: ^/admin/oficinas/*, role: [ROLE_OFICINA, ROLE_ADMIN] }
         - { path: ^/admin/departamento/*, role: [ROLE_OFICINA, ROLE_ADMIN] }
         - { path: ^/admin/municipio/*, role: [ROLE_OFICINA, ROLE_ADMIN] } 
-        - { path: ^/admin/solmantenimiento/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }
+        - { path: ^/admin/solmantenimiento/*, role: [ROLE_SOLICITUDES] }
         - { path: ^/admin/estado/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }
         - { path: ^/admin/seccionales/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }
         - { path: ^/admin/especieanimal/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }
