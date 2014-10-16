@@ -151,7 +151,7 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\Column(name="observacionesRevision", type="string", length=500, nullable=true)
+     * @ORM\Column(name="observacionesRevision", type="string", length=45, nullable=true)
      */
     private $observacionesRevision;
 
