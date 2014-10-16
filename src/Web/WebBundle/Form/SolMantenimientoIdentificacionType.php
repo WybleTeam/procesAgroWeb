@@ -83,11 +83,17 @@ class SolMantenimientoIdentificacionType extends AbstractType
             //    'empty_value'=>'Escoge un Municipio'
             //))
             ->add('municipioVereda',null,array(
-                'attr'=>array('class'=>'form-control')))    
-            ->add('seccional',null,array(
                 'attr'=>array('class'=>'form-control'),
-                'empty_value'=>'Escoge una Seccional'
-            ))
+                'required'=>'required'
+            ))    
+            ->add('departamento',null,array(
+                'attr'=>array('class'=>'form-control'),
+                'required'=>'required'
+            ))        
+            //->add('seccional',null,array(
+            //    'attr'=>array('class'=>'form-control'),
+            //    'empty_value'=>'Escoge una Seccional'
+            //))
               
             //->add('usuario',null,array(
             //    'attr'=>array('class'=>'form-control')

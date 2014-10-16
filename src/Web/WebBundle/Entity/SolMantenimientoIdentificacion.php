@@ -191,16 +191,30 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\Column(name="municipioVereda", type="string", length=45, nullable=true)
-     * 
+     * @ORM\Column(name="municipioVereda", type="string", length=45)
+     * @Assert\Valid
+     * @Assert\NotBlank(message="Escribe un Municipio")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "45",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $municipioVereda;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="departamento", type="string", length=45, nullable=true)
-     * 
+     * @ORM\Column(name="departamento", type="string", length=45)
+     * @Assert\Valid
+     * @Assert\NotBlank(message="Escribe un departamento")
+     * @Assert\Length(
+     *      min = "2",
+     *      max = "45",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $departamento;    
     
