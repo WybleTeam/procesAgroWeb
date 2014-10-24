@@ -25,11 +25,11 @@ class OfertasInstitucionales
     /**
      * @var string
      *
-     * @ORM\Column(name="tituloOferta", type="string", length=100)
+     * @ORM\Column(name="tituloOferta", type="string", length=200)
      * @Assert\NotBlank(message="Debes ponerle un Título a la Oferta")
      * @Assert\Length(
      *      min = "2",
-     *      max = "100",
+     *      max = "200",
      *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
      *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
      * )
@@ -39,11 +39,11 @@ class OfertasInstitucionales
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcionOferta", type="string", length=150)
+     * @ORM\Column(name="descripcionOferta", type="text", length=400)
      * @Assert\NotBlank(message="Debes ponerle una descripción")
      * @Assert\Length(
      *      min = "2",
-     *      max = "150",
+     *      max = "400",
      *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
      *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
      * )

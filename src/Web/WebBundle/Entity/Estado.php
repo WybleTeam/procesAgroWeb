@@ -38,7 +38,7 @@ class Estado
     /**
      * @var boolean
      *
-     * @ORM\Column(name="status", type="boolean")
+     * @ORM\Column(name="status", type="boolean", nullable=true)
      */
     private $status;
 

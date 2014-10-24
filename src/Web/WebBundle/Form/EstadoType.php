@@ -23,7 +23,9 @@ class EstadoType extends AbstractType
                 'attr'=>array('class'=>'form-control')
             ))
             ->add('status',null,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control'),
+                'label'=>'Estado',
+                'required'=>false,
             ))
         ;
     }

@@ -39,11 +39,11 @@ class Convocatorias
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcion", type="string", length=40)
+     * @ORM\Column(name="descripcion", type="text", length=200)
      * @Assert\NotBlank(message="Describe brevemente la convocatoria")
      * @Assert\Length(
      *      min = "2",
-     *      max = "40",
+     *      max = "200",
      *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
      *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
      * )
@@ -80,11 +80,11 @@ class Convocatorias
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcionLarga", type="string", length=150)
+     * @ORM\Column(name="descripcionLarga", type="string", length=400)
      * @Assert\NotBlank(message="La descripción larga falta")
      * @Assert\Length(
      *      min = "2",
-     *      max = "150",
+     *      max = "400",
      *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
      *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
      * )

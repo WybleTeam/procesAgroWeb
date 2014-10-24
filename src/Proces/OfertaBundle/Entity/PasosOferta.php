@@ -25,11 +25,11 @@ class PasosOferta
     /**
      * @var string
      *
-     * @ORM\Column(name="tituloPasos", type="string", length=45)
+     * @ORM\Column(name="tituloPasos", type="string", length=100)
      * @Assert\NotBlank(message="Debes ponerle un Título")
      * @Assert\Length(
      *      min = "2",
-     *      max = "45",
+     *      max = "100",
      *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
      *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
      * )
@@ -39,11 +39,11 @@ class PasosOferta
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcionPaso", type="string", length=150)
+     * @ORM\Column(name="descripcionPaso", type="text", length=400)
      * @Assert\NotBlank(message="Debes ponerle una Descripción")
      * @Assert\Length(
      *      min = "2",
-     *      max = "150",
+     *      max = "400",
      *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
      *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
      * )

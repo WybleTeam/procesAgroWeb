@@ -43,6 +43,9 @@ class EstadoController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Creado correctamente');
 
             return $this->redirect($this->generateUrl('estado_show', array('id' => $entity->getId())));
         }
@@ -171,7 +174,9 @@ class EstadoController extends Controller
 
         if ($editForm->isValid()) {
             $em->flush();
-
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Actualizado correctamente');
             return $this->redirect($this->generateUrl('estado_edit', array('id' => $id)));
         }
 
@@ -200,6 +205,9 @@ class EstadoController extends Controller
 
             $em->remove($entity);
             $em->flush();
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Borrado');
         }
 
         return $this->redirect($this->generateUrl('estado'));

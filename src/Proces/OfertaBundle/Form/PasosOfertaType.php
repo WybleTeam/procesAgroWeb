@@ -16,10 +16,10 @@ class PasosOfertaType extends AbstractType
     {
         $builder
             ->add('tituloPasos','text',array(
-                'attr'=>array('class'=>'form-control', 'maxlength'=>'45')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'100')
             ))
             ->add('descripcionPaso','textarea',array(
-                'attr'=>array('class'=>'form-control', 'maxlength'=>'150')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'400')
             ))
             ->add('urlPaso','url',array(
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'300')

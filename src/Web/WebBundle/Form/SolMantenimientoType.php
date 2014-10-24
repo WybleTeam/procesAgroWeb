@@ -7,6 +7,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Web\WebBundle\Entity\SolicitudCantidadMotivo;
 
+use Doctrine\ORM\EntityRepository;
+
 class SolMantenimientoType extends AbstractType
 {
         /**
@@ -72,9 +74,15 @@ class SolMantenimientoType extends AbstractType
             ->add('observacionesRevision','textarea',array(
                 'attr'=>array('class'=>'form-control')
             ))
-            ->add('estadoSolicitud',null,array(
+            ->add('estadoSolicitud','entity',array(
+                'class'=>'WebBundle:Estado',
+                'query_builder'=>function(EntityRepository $er){
+                    return $er->CreateQueryBuilder('u')
+                            ->where('u.status = true');
+                },
                 'attr'=>array('class'=>'form-control'),
-                'empty_value'=>false
+                'empty_value'=>false,
+                'label'=>'Estado de la solicitud'
             ))
             //->add('municipio',null,array(
             //    'attr'=>array('class'=>'form-control','readonly'=>'readonly'),

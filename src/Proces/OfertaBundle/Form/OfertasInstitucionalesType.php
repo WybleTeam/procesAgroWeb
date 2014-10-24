@@ -19,7 +19,7 @@ class OfertasInstitucionalesType extends AbstractType
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'100')
             ))
             ->add('descripcionOferta','textarea',array(
-                'attr'=>array('class'=>'form-control', 'maxlength'=>'150')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'400')
             ))
             ->add('urlAudioOferta','url',array(
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'300'),
