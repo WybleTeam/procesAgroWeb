@@ -1,5 +1,7 @@
 {% extends 'ThemesBundle::plantilla2.html.twig' %}
-
+{% block stylesheets %}
+<link href="{{ asset('bundles/themes/js/select/jquery.minimalect.css') }}" rel="stylesheet" type="text/css" media="screen" />
+{% endblock %}    
 {% block body -%}
     <div class="row">
          
@@ -92,6 +94,7 @@
      {# <div class="col-lg-12">{{ form_row(form.estadoSolicitud) }}</div>#}
   </fieldset>    
       {% endif %}
+     
    </div>
     {{ form_end(form) }}
                </div>
@@ -106,6 +109,13 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
+
+<script src="{{ asset('bundles/themes/js/select/jquery.minimalect.min.js') }}" type="text/javascript"></script>
+    <script>
+    $('#web_webbundle_solmantenimientoidentificacion_municipioVereda').minimalect();
+    $('#web_webbundle_solmantenimientoidentificacion_departamento').minimalect();
+    
+</script>
     <script>  
         var $collectionHolder;
 

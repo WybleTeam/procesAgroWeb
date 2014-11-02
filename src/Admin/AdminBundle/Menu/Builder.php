@@ -168,14 +168,14 @@ class Builder extends ContainerAware
         //$menu['TramiteICA']->addChild('Solicitudes', array('route'=>'solmantenimientoidentificacion'));
         $menu['TramiteICA']->addChild('Estados', array('route'=>'estado'));
         $menu['TramiteICA']->addChild('Seccionales', array('route'=>'seccionales'));
-        $menu['TramiteICA']->addChild('Especie Animal', array('route'=>'especieanimal'));
-        $menu['TramiteICA']->addChild('Rango Edades', array('route'=>'rangoedades'));
-        $menu['TramiteICA']->addChild('Motivo Identificacion', array('route'=>'motivoidentificacion'));
+  //      $menu['TramiteICA']->addChild('Especie Animal', array('route'=>'especieanimal'));
+  //      $menu['TramiteICA']->addChild('Rango Edades', array('route'=>'rangoedades'));
+  //      $menu['TramiteICA']->addChild('Motivo Identificacion', array('route'=>'motivoidentificacion'));
         
-        $menu->addChild('Localizacion',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('class','treeview')->setLinkAttribute('icon','fa fa-table');
-        $menu['Localizacion']->setChildrenAttribute('class', 'treeview-menu');
-        $menu['Localizacion']->addChild('Departamentos', array('route'=>'departamento'));
-        $menu['Localizacion']->addChild('Municipios', array('route'=>'municipio'));
+//        $menu->addChild('Localizacion',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('class','treeview')->setLinkAttribute('icon','fa fa-table');
+//        $menu['Localizacion']->setChildrenAttribute('class', 'treeview-menu');
+//        $menu['Localizacion']->addChild('Departamentos', array('route'=>'departamento'));
+//        $menu['Localizacion']->addChild('Municipios', array('route'=>'municipio'));
         $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
         $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');  
        

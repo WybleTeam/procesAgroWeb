@@ -30,14 +30,7 @@ class SolMantenimientoIdentificacion
      */
     private $fechaSolicitud;
 
-    /**
-     * @var string
-     *
-     * @ORM\ManyToOne(targetEntity="Proces\OficinasBundle\Entity\Municipio")
-     * 
-     */
-    private $municipio;
-
+   
     /**
      * @var string
      *
@@ -191,30 +184,16 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\Column(name="municipioVereda", type="string", length=45)
-     * @Assert\Valid
-     * @Assert\NotBlank(message="Escribe un Municipio")
-     * @Assert\Length(
-     *      min = "2",
-     *      max = "45",
-     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
-     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
-     * )
+     * @ORM\Column(name="municipioVereda", type="string", length=45, nullable=false)
+     * @Assert\NotNull()
      */
     private $municipioVereda;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="departamento", type="string", length=45)
-     * @Assert\Valid
-     * @Assert\NotBlank(message="Escribe un departamento")
-     * @Assert\Length(
-     *      min = "2",
-     *      max = "45",
-     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
-     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
-     * )
+     * @ORM\Column(name="departamento", type="string", length=45, nullable=false)
+     * @Assert\NotNull()
      */
     private $departamento;    
     
@@ -260,29 +239,6 @@ class SolMantenimientoIdentificacion
     public function getFechaSolicitud()
     {
         return $this->fechaSolicitud;
-    }
-
-    /**
-     * Set municipio
-     *
-     * @param string $municipio
-     * @return SolMantenimientoIdentificacion
-     */
-    public function setMunicipio(\Proces\OficinasBundle\Entity\Municipio $municipio)
-    {
-        $this->municipio = $municipio;
-
-        return $this;
-    }
-
-    /**
-     * Get municipio
-     *
-     * @return string 
-     */
-    public function getMunicipio()
-    {
-        return $this->municipio;
     }
 
     /**

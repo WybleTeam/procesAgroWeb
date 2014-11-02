@@ -53,15 +53,7 @@ class PasosOferta
     /**
      * @var string
      *
-     * @ORM\Column(name="urlPaso", type="string", length=300)
-     * @Assert\NotBlank(message="Falta la url")
-     * @Assert\Url(message="Enlace inválido")
-     * @Assert\Length(
-     *      min = "2",
-     *      max = "300",
-     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
-     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
-     * )
+     * @ORM\Column(name="urlPaso", type="string", length=300, nullable=true)
      */
     private $urlPaso;
 
