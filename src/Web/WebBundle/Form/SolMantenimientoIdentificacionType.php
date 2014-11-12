@@ -26,7 +26,8 @@ class SolMantenimientoIdentificacionType extends AbstractType
             //    'attr'=>array('class'=>'form-control')
             //))
             ->add('ica3101',null,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control'),
+                'label'=>'ICA 3101'
             ))
             ->add('nombreFinca',null,array(
                 'attr'=>array('class'=>'form-control')
@@ -55,13 +56,17 @@ class SolMantenimientoIdentificacionType extends AbstractType
             ->add('telefonoCelularSolicitante',null,array(
                 'attr'=>array('class'=>'form-control')
             ))
+               
              ->add('especieRango', 'collection', array(
                 'type' => new EspecieRangoSolicitudType(),
-                
+                'required'=>true,
                 //'prototype_data' => new SolicitudCantidadMotivo(),
                 'allow_delete'   => true,
                 'allow_add'      => true,
                 'by_reference'   => false,
+                'options'=>array(
+                    'required'=> true,
+                )
 
             ))    
             ->add('cantidadMotivo', 'collection', array(

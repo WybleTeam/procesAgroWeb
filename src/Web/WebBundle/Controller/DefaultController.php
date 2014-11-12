@@ -88,7 +88,20 @@ class DefaultController extends Controller
      * metodo de insersion de datos desde el celular
      */
     public function crearFormularioAction($ica3101, $nombreFinca, $nombrePropietarioFinca, $cedulaPropietarioFinca, $telefonoFijoPropietario, $telefonoCelularPropietario, $municipioVereda, $departamento, $nombreSolicitante, $cedulaSolicitante, $telefonoFijoSolicitante, $telefonoCelularSolicitante, $menUnoBovino, $unoDosBovino, $dosTresBovino, $tresMayorBovino, $menUnoBufalino, $unoDosBufalino, $dosTresBufalino, $tresMayorBufalino, $jusPrimera, $jusNacimiento, $jusCompraAnimales, $jusPerdidaDin, $justificacion)
-    {                                   
+    {     
+        
+        $totalBovinos   = $menUnoBovino + $unoDosBovino + $dosTresBovino + $tresMayorBovino;
+        $totalBufalinos = $menUnoBufalino + $unoDosBufalino + $dosTresBufalino + $tresMayorBufalino;
+        $total = $totalBovinos + $totalBufalinos;
+        
+        $totalJustificacion = $jusPrimera + $jusNacimiento + $jusCompraAnimales + $jusPerdidaDin;
+        
+        if($total<1){
+            
+            $respuesta = "La suma de Bovinos y bufalinos debe ser mayor o igual a 1";
+            $response = new Response($respuesta);
+        }elseif($total == $totalJustificacion){
+        
         $em = $this->getDoctrine()->getManager();
         $hoy = new \DateTime("now");
         $entity = new SolMantenimientoIdentificacion();
@@ -99,6 +112,7 @@ class DefaultController extends Controller
         $motivoDos = new SolicitudCantidadMotivo();
         $motivoTres = new SolicitudCantidadMotivo();
         $motivoCuatro = new SolicitudCantidadMotivo();
+        
         
         
         /// Bovina
@@ -252,7 +266,12 @@ class DefaultController extends Controller
             
             $respuesta = "Insertado";
             $response = new Response($respuesta);
-            return $response;
+            
+        }else{
+            $respuesta = "La suma de Bovinos y bufalinos debe ser Igual a las sumas de los animales expresadas en el Motivo de la Identificacion";
+            $response = new Response($respuesta);
+        }
+        return $response;
             //return $this->redirect($this->generateUrl('solmantenimiento_show', array('id' => $entity->getId())));
        
         //return "hola";
