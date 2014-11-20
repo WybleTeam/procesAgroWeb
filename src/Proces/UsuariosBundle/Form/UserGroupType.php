@@ -1,6 +1,6 @@
 <?php
 
-namespace Twinpeaks\UserBundle\Form;
+namespace Proces\UsuariosBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -40,7 +40,7 @@ class UserGroupType extends AbstractType
 
     public function getName()
     {
-        return 'Twinpeaks_corebundle_usergrouptype';
+        return 'proces_corebundle_usergrouptype';
     }
     
     private function getRoles() {

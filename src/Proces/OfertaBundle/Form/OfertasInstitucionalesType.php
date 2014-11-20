@@ -16,10 +16,12 @@ class OfertasInstitucionalesType extends AbstractType
     {
         $builder
             ->add('tituloOferta','text',array(
-                'attr'=>array('class'=>'form-control', 'maxlength'=>'100')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'100'),
+                'label'=>'Titulo de la oferta'
             ))
             ->add('descripcionOferta','textarea',array(
-                'attr'=>array('class'=>'form-control', 'maxlength'=>'400')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'400'),
+                'label'=>'Descripción de la oferta'
             ))
             ->add('urlAudioOferta','url',array(
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'300'),

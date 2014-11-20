@@ -1,6 +1,6 @@
 <?php
 
-namespace Twinpeaks\UserBundle\Form;
+namespace Proces\UsuariosBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -30,10 +30,16 @@ class UserType extends AbstractType
                 }
                 
                 $builder
-                    ->add('firstName', null, array('label'=> 'Nombresss'))
+                    ->add('firstName', null, array('label'=> 'Nombres'))
                     ->add('lastName', null, array('label'=> 'Apellidos'))
-                    ->add('groups',  null, array('label'=> 'Grupos'))
-                    ->add('password', 'password');
+                    ->add('groups',  null, array('label'=> 'Grupos','multiple'=>false))
+                    ->add('password', 'repeated',array(
+                        'type'=>'password',
+                        'invalid_message'=>"No coinciden los password",
+                        'required'=>'true',
+                        'first_options'=>array('label'=>'Contraseña'),
+                        'second_options'=>array('label'=>'Repite la contraseña')
+                    ));
                 
                 break;
                 
@@ -66,6 +72,6 @@ class UserType extends AbstractType
 
     public function getName()
     {
-        return 'Twinpeaks_corebundle_usertype';
+        return 'proces_corebundle_usertype';
     }
 }
