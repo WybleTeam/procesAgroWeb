@@ -27,7 +27,9 @@ security:
         main:
             pattern: ^/usuarios
             form_login:
-                login_path: /usuarios/login
+                default_target_path: /usuarios/profile
+                always_use_default_target_path: true
+                login_path: /usuarios/login/digita_de_nuevo_tu_email
                 check_path: /usuarios/login_check
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider

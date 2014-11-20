@@ -4,20 +4,22 @@
 
 {% block body %}
 {% block fos_user_content %}
-    {% if error %}
-        <div>{{ error|trans }}</div>
-    {% endif %}
-    <a class="close-reveal-modal" style="font-size:30px; font-weight:bold; position:absolute;right:10px;top:0px">&#215;</a>
     
-    <p class="lead">Por tu seguridad debes volver a validar tus datos</p>
+    <a class="close-reveal-modal" style="font-size:30px; font-weight:bold; position:absolute;right:10px;top:0px">&#215;</a>
+    <hr>
+    <p class="lead">Por tu seguridad digita tu contraseña nuevamente {% if error %} y tu email{% endif %}</p>
+    <hr>
+    {% if error %}
+        <div class="alert alert-danger"><strong>Deberás volver a digitar tu correo y contraseña, {{ error|trans }}</strong></div>
+    {% endif %}
     <form id="login-form" action="{{ path("fos_user_security_check") }}" method="post">
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"  />
         <div class="row">
             <div class="small-3 columns">
-                <label for="username" class="left inline">{{ 'security.login.username'|trans|upper }}</label>
+                <label for="username" class="left inline">Correo electrónico</label>
             </div>
             <div class="small-9 columns">
-                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Digita tu usuario"/>
+                <input type="text" id="username" name="_username" value="{{ app.request.attributes.get('usuario') }}" required="required" placeholder="Digita tu correo"/>
             </div>
         </div>
         <div class="row">
@@ -25,7 +27,7 @@
                 <label for="password" class="left inline">{{ 'security.login.password'|trans|upper }}</label>
             </div>
             <div class="small-9 columns">
-                <input type="password" id="password" name="_password" required="required"  placeholder="Digita tu password"/>
+                <input type="password" id="password" name="_password" required="required"  placeholder="Digita tu password" autofocus/>
             </div>
         </div>
         <div class="row">

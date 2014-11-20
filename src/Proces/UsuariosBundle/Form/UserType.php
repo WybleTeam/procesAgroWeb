@@ -30,7 +30,7 @@ class UserType extends AbstractType
                 }
                 
                 $builder
-                    ->add('firstName', null, array('label'=> 'Nombres'))
+                    ->add('firstName', null, array('label'=> 'Nombresss'))
                     ->add('lastName', null, array('label'=> 'Apellidos'))
                     ->add('groups',  null, array('label'=> 'Grupos'))
                     ->add('password', 'password');
@@ -40,7 +40,7 @@ class UserType extends AbstractType
             case self::FORM_ADMIN_CONFIRM:
                 $builder
                     ->add('email')
-                    ->add('firstName', null, array('label'=> 'Nombres'))
+                    ->add('firstName', null, array('label'=> 'Nombresss'))
                     ->add('lastName', null, array('label'=> 'Apellidos'))
                     ->add('groups',  null, array('label'=> 'Grupos'));
                 

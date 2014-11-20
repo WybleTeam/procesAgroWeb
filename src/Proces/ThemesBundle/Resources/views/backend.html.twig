@@ -89,8 +89,7 @@
                         </div>
                         <div class="pull-left info">
                             <p>Hola, {{ app.user.firstname  }}</p>
-
-                            <a href="#"><i class="fa fa-circle text-success"></i> Conectado</a>
+                            <a href="{{ path('fos_user_security_login', { 'usuario': app.user.email }) }}"><i class="fa fa-circle text-success"></i> Ver mi Perfil</a>
                         </div>
                     </div>
                     <!-- search form -->

@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Proces\UsuariosBundle;
+namespace Proces\UsuariosBundle\Controller;
 
 use FOS\UserBundle\FOSUserEvents;
 use FOS\UserBundle\Event\FormEvent;

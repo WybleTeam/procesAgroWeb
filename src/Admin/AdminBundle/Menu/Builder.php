@@ -38,7 +38,7 @@ class Builder extends ContainerAware
         $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
         ->setAttribute('icon','fa fa-dashboard');
         $menu->addChild('Servicios', array('route' => 'servicios'))->setAttribute('icon','fa fa-th');     
-        $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th');        
+        //$menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th');        
         $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th'); 
        
         return $menu;
@@ -55,7 +55,7 @@ class Builder extends ContainerAware
         ->setAttribute('icon','fa fa-dashboard');
             
         $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setLinkAttribute('icon','fa fa-th');       
-        $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
+        //$menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
         $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');
         
         return $menu;
@@ -74,7 +74,7 @@ class Builder extends ContainerAware
             
                
         $menu->addChild('Oferta Institucional',array('route'=>'ofertasinstitucionales')); 
-        $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
+        //$menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
         $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');
 
         return $menu;
@@ -96,7 +96,7 @@ class Builder extends ContainerAware
         $menu['Localizacion']->setChildrenAttribute('class', 'treeview-menu');
         $menu['Localizacion']->addChild('Departamentos', array('route'=>'departamento'));
         $menu['Localizacion']->addChild('Municipios', array('route'=>'municipio'));
-        $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
+        //$menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
         $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');  
        
         return $menu;
@@ -119,7 +119,7 @@ class Builder extends ContainerAware
         $menu['TramiteICA']->addChild('Especie Animal', array('route'=>'especieanimal'));
         $menu['TramiteICA']->addChild('Rango Edades', array('route'=>'rangoedades'));
         $menu['TramiteICA']->addChild('Motivo Identificacion', array('route'=>'motivoidentificacion')); */
-        $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
+        //$menu->addChild('Mi perfil', array('route' => 'fos_user_security_login','routeParameters'=>array('usuario'=>'app.user')))->setAttribute('icon','fa fa-th'); 
         $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');  
 
         return $menu;
@@ -137,7 +137,7 @@ class Builder extends ContainerAware
             
                
         $menu->addChild('Solicitudes', array('route' => 'solmantenimientoidentificacion'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
+        //$menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
         $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');  
        
         return $menu;
@@ -176,7 +176,7 @@ class Builder extends ContainerAware
 //        $menu['Localizacion']->setChildrenAttribute('class', 'treeview-menu');
 //        $menu['Localizacion']->addChild('Departamentos', array('route'=>'departamento'));
 //        $menu['Localizacion']->addChild('Municipios', array('route'=>'municipio'));
-        $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
+        //$menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
         $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th');  
        
         return $menu;
@@ -193,8 +193,8 @@ class Builder extends ContainerAware
         ->setAttribute('icon','fa fa-dashboard');
             
                
-        $menu->addChild('Usuarios', array('route' => 'tp_user'))->setAttribute('icon','fa fa-th');
-        $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
+       // $menu->addChild('Usuarios', array('route' => 'tp_user'))->setAttribute('icon','fa fa-th');
+       // $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
         $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th'); 
        
         return $menu;
