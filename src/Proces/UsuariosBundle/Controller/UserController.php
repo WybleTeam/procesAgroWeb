@@ -94,6 +94,9 @@ class UserController extends Controller
             //$em->persist($user);
             $em = $this->getDoctrine()->getManager();
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Creado correctamente!');
             
             return $this->redirect($this->generateUrl('tp_user_show', array('id' => $user->getId())));
         }
@@ -207,7 +210,9 @@ class UserController extends Controller
             $this->get('fos_user.user_manager')->updateUser($entity, false);
             //$em->persist($entity);
             $em->flush();
-
+             $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Actualizado correctamente!');
             return $this->redirect($this->generateUrl('tp_user_edit', array('id' => $id)));
         }
 
@@ -235,6 +240,9 @@ class UserController extends Controller
 
             $em->remove($entity);
             $em->flush();
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Actualizado correctamente!');
         }
 
         return $this->redirect($this->generateUrl('tp_user'));
@@ -261,6 +269,9 @@ class UserController extends Controller
         }
         
         $em->flush();
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Tarea ejecutada correctamente!');
 
         return $this->redirect($this->generateUrl('tp_user'));
 //        $form = $this->createDeleteForm($id);

@@ -26,29 +26,28 @@ class UserType extends AbstractType
                 
                 if(!$user->getId()) {
                     $builder
-                        ->add('password', 'password');
-                }
-                
-                $builder
-                    ->add('firstName', null, array('label'=> 'Nombres'))
-                    ->add('lastName', null, array('label'=> 'Apellidos'))
-                    ->add('groups',  null, array('label'=> 'Grupos','multiple'=>false))
-                    ->add('password', 'repeated',array(
+                        ->add('password', 'repeated',array(
                         'type'=>'password',
                         'invalid_message'=>"No coinciden los password",
                         'required'=>'true',
                         'first_options'=>array('label'=>'Contraseña'),
                         'second_options'=>array('label'=>'Repite la contraseña')
                     ));
+                }
+                
+                $builder
+                    ->add('firstName', null, array('label'=> 'Nombres'))
+                    ->add('lastName', null, array('label'=> 'Apellidos'))
+                    ->add('groups', null, array('label'=> 'Grupo','multiple'=>true));
                 
                 break;
                 
             case self::FORM_ADMIN_CONFIRM:
                 $builder
                     ->add('email')
-                    ->add('firstName', null, array('label'=> 'Nombresss'))
+                    ->add('firstName', null, array('label'=> 'Nombres'))
                     ->add('lastName', null, array('label'=> 'Apellidos'))
-                    ->add('groups',  null, array('label'=> 'Grupos'));
+                    ->add('groups',  null, array('label'=> 'Grupos','multiple'=>true));
                 
                 break;
 
@@ -72,6 +71,6 @@ class UserType extends AbstractType
 
     public function getName()
     {
-        return 'proces_corebundle_usertype';
+        return 'Twinpeaks_corebundle_usertype';
     }
 }

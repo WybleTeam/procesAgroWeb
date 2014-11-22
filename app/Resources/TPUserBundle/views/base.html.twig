@@ -30,6 +30,14 @@
           
      <div class="container-fluid">
                                   <div class="row">
+                                     
+                                          {% for type, messages in app.session.flashbag.all() %}
+                                            {% for message in messages %}
+                                                <div class="alert alert-info">
+                                                    <strong>{{ message }}</strong>
+                                                </div>
+                                            {% endfor %}
+                                          {% endfor %}
     {% block body %}
     {% endblock %}
                                   </div>
