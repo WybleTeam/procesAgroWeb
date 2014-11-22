@@ -24,23 +24,9 @@ security:
 
     firewalls:
        
-        main:
-            pattern: ^/usuarios
-            form_login:
-                default_target_path: /usuarios/profile
-                always_use_default_target_path: true
-                login_path: /usuarios/login/digita_de_nuevo_tu_email
-                check_path: /usuarios/login_check
-                provider: fos_userbundle
-                csrf_provider: form.csrf_provider
-            logout:
-              path:       usuarios_logout
-              target:     /admin
-              invalidate_session: false
-            anonymous:    true
-
         administrador:
             pattern: ^/admin
+            context: primary_auth
             form_login:
                 login_path: /admin/login
                 check_path: /admin/login_check
@@ -49,6 +35,22 @@ security:
             logout:
               path:       admin_logout
               target:     /
+              invalidate_session: false
+            anonymous:    true
+       
+        main:
+            pattern: ^/usuarios
+            context: primary_auth
+            form_login:
+                default_target_path: /usuarios/profile
+                always_use_default_target_path: true
+                login_path: /usuarios/login/
+                check_path: /usuarios/login_check
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+            logout:
+              path:       usuarios_logout
+              target:     /admin
               invalidate_session: false
             anonymous:    true
         

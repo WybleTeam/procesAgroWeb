@@ -22,7 +22,8 @@ class PasosOfertaType extends AbstractType
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'400')
             ))
             ->add('urlPaso','url',array(
-                'attr'=>array('class'=>'form-control', 'maxlength'=>'300')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'300'),
+                'required'=>false
             ))
             ->add('ofertaInstitucional',null,array(
                 'attr'=>array('class'=>'form-control')

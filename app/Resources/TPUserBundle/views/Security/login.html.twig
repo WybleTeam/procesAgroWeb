@@ -15,11 +15,12 @@
     <form id="login-form" action="{{ path("fos_user_security_check") }}" method="post">
         <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"  />
         <div class="row">
-            <div class="small-3 columns">
+            <!--<div class="small-3 columns">
                 <label for="username" class="left inline">Correo electrónico</label>
-            </div>
+            </div>-->
             <div class="small-9 columns">
-                <input type="text" id="username" name="_username" value="{{ app.request.attributes.get('usuario') }}" required="required" placeholder="Digita tu correo"/>
+                
+                <input type="text" id="username" name="_username"  required="required" placeholder="Digita tu correo"/>
             </div>
         </div>
         <div class="row">

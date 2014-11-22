@@ -22,10 +22,12 @@ class SecurityController extends ContainerAware
         
         /** @var $session \Symfony\Component\HttpFoundation\Session\Session */
         $session = $request->getSession();
-        $usuario = $request->attributes->get('usuario');
+        $usuario = $request->request->get('usuariolog');
+        
         // get the error if any (works with forward and redirect -- see below)
         if ($request->attributes->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
             $error = $request->attributes->get(SecurityContextInterface::AUTHENTICATION_ERROR);
+            $usuario = $request->request->get('usuariolog');
         } elseif (null !== $session && $session->has(SecurityContextInterface::AUTHENTICATION_ERROR)) {
             $error = $session->get(SecurityContextInterface::AUTHENTICATION_ERROR);
             $session->remove(SecurityContextInterface::AUTHENTICATION_ERROR);
@@ -36,6 +38,7 @@ class SecurityController extends ContainerAware
         if ($error) {
             // TODO: this is a potential security risk (see http://trac.symfony-project.org/ticket/9523)
             $error = $error->getMessage();
+            
         }
         // last username entered by the user
         $lastUsername = (null === $session) ? '' : $session->get(SecurityContextInterface::LAST_USERNAME);
