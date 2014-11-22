@@ -38,7 +38,10 @@ class UserType extends AbstractType
                 $builder
                     ->add('firstName', null, array('label'=> 'Nombres'))
                     ->add('lastName', null, array('label'=> 'Apellidos'))
-                    ->add('groups', null, array('label'=> 'Grupo','multiple'=>true));
+                    ->add('groups', null, array(
+                        'label'=> 'Grupos','required'=>'required',
+                        'multiple'=>true
+                        ));
                 
                 break;
                 
@@ -47,7 +50,7 @@ class UserType extends AbstractType
                     ->add('email')
                     ->add('firstName', null, array('label'=> 'Nombres'))
                     ->add('lastName', null, array('label'=> 'Apellidos'))
-                    ->add('groups',  null, array('label'=> 'Grupos','multiple'=>true));
+                    ->add('groups',  null, array('label'=> 'Grupos','multiple'=>"false"));
                 
                 break;
 
@@ -71,6 +74,6 @@ class UserType extends AbstractType
 
     public function getName()
     {
-        return 'Twinpeaks_corebundle_usertype';
+        return 'usuarios_usertype';
     }
 }
