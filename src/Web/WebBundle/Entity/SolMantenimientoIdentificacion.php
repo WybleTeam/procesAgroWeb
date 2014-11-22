@@ -145,6 +145,12 @@ class SolMantenimientoIdentificacion
      * @var string
      *
      * @ORM\Column(name="observacionesRevision", type="string", length=500, nullable=true)
+     * @Assert\Length(
+     *      min = "0",
+     *      max = "500",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $observacionesRevision;
 
