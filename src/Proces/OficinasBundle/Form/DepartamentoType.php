@@ -15,6 +15,7 @@ class DepartamentoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('seccional')
             ->add('nombreDepartamento','text',array(
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'45'),
             ))

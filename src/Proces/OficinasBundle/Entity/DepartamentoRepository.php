@@ -15,7 +15,7 @@ class DepartamentoRepository extends EntityRepository
     public function findDepartamentostotal()
     {
         $em = $this->getEntityManager();
-        $consulta = $em->createQuery('SELECT d FROM OficinasBundle:Departamento d');
+        $consulta = $em->createQuery('SELECT d.id, d.nombreDepartamento FROM OficinasBundle:Departamento d');
         
         $resultado = $consulta->getArrayResult();
         return $resultado;
