@@ -13,6 +13,8 @@
            <thead>
             <tr>
                 <th>No.</th>
+                <th>Seccional</th>
+                <th>Código</th>
                 <th>Nombre Departamento</th>
                 <th>Acciones</th>
             </tr>
@@ -21,6 +23,8 @@
         {% for entity in entities %}
             <tr>
                 <td><a href="{{ path('departamento_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
+                <td>{{ entity.seccional }}</td>
+                <td>{{ entity.codigo }}</td>
                 <td>{{ entity.nombreDepartamento }}</td>
                 <td>
                         <a href="{{ path('departamento_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>

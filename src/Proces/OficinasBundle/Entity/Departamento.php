@@ -44,6 +44,14 @@ class Departamento
      */
     private $seccional;
 
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codigo", type="string", length=45)
+     */
+    private $codigo;
+    
     /**
      * Get id
      *
@@ -107,4 +115,27 @@ class Departamento
     }
 
  
+
+    /**
+     * Set codigo
+     *
+     * @param string $codigo
+     * @return Departamento
+     */
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
+
+        return $this;
+    }
+
+    /**
+     * Get codigo
+     *
+     * @return string 
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
 }

@@ -44,6 +44,14 @@ class Departamento
      */
     private $seccional;
 
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codigo", type="string", length=45)
+     */
+    private $codigo;
+    
     /**
      * Get id
      *
@@ -77,10 +85,34 @@ class Departamento
         return $this->nombreDepartamento;
     }
     
+   /**
+     * Set seccional
+     *
+     * @param \ICA\TramiteBundle\Entity\Seccionales $seccional
+     * @return Departamento
+     */
+    public function setSeccional(\ICA\TramiteBundle\Entity\Seccionales $seccional = null)
+    {
+        $this->seccional = $seccional;
+
+        return $this;
+    }
+
+    /**
+     * Get seccional
+     *
+     * @return \ICA\TramiteBundle\Entity\Seccionales 
+     */
+    public function getSeccional()
+    {
+        return $this->seccional;
+    }
     
     
     public function __toString() 
     {
         return $this->getNombreDepartamento();
     }
+
+ 
 }
