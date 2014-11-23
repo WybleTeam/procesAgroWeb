@@ -6,11 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 
+
 /**
  * SolMantenimientoIdentificacion
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Web\WebBundle\Entity\SolMantenimientoIdentificacionRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class SolMantenimientoIdentificacion
 {
@@ -548,17 +550,18 @@ class SolMantenimientoIdentificacion
 
     /**
      * Set fechaProgramadaIdentificacion
-     *
+     * 
      * @param \DateTime $fechaProgramadaIdentificacion
      * @return SolMantenimientoIdentificacion
      */
     public function setFechaProgramadaIdentificacion($fechaProgramadaIdentificacion)
     {
+        
         $this->fechaProgramadaIdentificacion = $fechaProgramadaIdentificacion;
 
         return $this;
     }
-
+    
     /**
      * Get fechaProgramadaIdentificacion
      *
@@ -731,9 +734,7 @@ class SolMantenimientoIdentificacion
     {
         return $this->departamento;
     }
-    
-    
-    
+ 
     public function __toString() 
     {
         return $this->getCedulaSolicitante()." ".$this->getNombreSolicitante();

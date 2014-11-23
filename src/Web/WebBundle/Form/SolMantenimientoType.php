@@ -28,7 +28,8 @@ class SolMantenimientoType extends AbstractType
             //    'attr'=>array('class'=>'form-control')
             //))
             ->add('ica3101',null,array(
-                'attr'=>array('class'=>'form-control','readonly'=>'readonly')
+                
+                'attr'=>array('class'=>'form-control')
             ))
             ->add('nombreFinca',null,array(
                 'attr'=>array('class'=>'form-control','readonly'=>'readonly')
@@ -61,7 +62,7 @@ class SolMantenimientoType extends AbstractType
                 'type' => new EspecieRangoSolType(),
                
                 'by_reference'   => false,
-                'attr'=>array('class'=>'form-control','readonly'=>'readonly')
+                'attr'=>array('class'=>'form-control','disabled'=>'disabled')
             ))    
             ->add('cantidadMotivo', 'collection', array(
                 'type'           =>  new SolicitudCantidadMType(),

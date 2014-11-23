@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Web\WebBundle\Entity\SolMantenimientoIdentificacion;
-use Web\WebBundle\Form\SolMantenimientoIdentificacionType;
+//use Web\WebBundle\Form\SolMantenimientoIdentificacionType;
 use Web\WebBundle\Form\SolMantenimientoType;
 
 
@@ -164,7 +164,7 @@ class SolMantenimientoIdentificacionController extends Controller
 
         
         $entity = $em->getRepository('WebBundle:SolMantenimientoIdentificacion')->find($id);
-
+        
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find SolMantenimientoIdentificacion entity.');
         }
