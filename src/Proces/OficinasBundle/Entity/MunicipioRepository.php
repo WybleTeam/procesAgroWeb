@@ -11,5 +11,15 @@ use Doctrine\ORM\EntityRepository;
  * repository methods below.
  */
 class MunicipioRepository extends EntityRepository
-{
+{                     
+     public function findMunicipiosDepartamento($idDepartamento)
+    {
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT m.id, m.nombreMunicipio FROM OficinasBundle:Municipio m '
+                . 'WHERE m.departamento = :idDepartamento');
+        $consulta->setParameter('idDepartamento', $idDepartamento);
+        
+        $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
 }

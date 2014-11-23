@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class DepartamentoRepository extends EntityRepository
 {
+    public function findDepartamentostotal()
+    {
+        $em = $this->getEntityManager();
+        $consulta = $em->createQuery('SELECT d FROM OficinasBundle:Departamento d');
+        
+        $resultado = $consulta->getArrayResult();
+        return $resultado;
+    }
 }

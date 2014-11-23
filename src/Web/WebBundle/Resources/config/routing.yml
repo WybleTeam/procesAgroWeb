@@ -47,6 +47,14 @@ web_serviciosTotal:
     path:     /serviciostotal
     defaults: { _controller: WebBundle:Default:serviciostotal } 
 
+web_departamentosTotal:
+    path:     /departamentos
+    defaults: { _controller: WebBundle:Default:departamentostotal } 
+
+web_municipiosDepartamentos:
+    path:     /municipios/{id}
+    defaults: { _controller: WebBundle:Default:municipiosDepartamento } 
+
 # formulario ICA
 
 web_icaformulario:

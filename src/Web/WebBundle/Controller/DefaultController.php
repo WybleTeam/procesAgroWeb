@@ -84,6 +84,26 @@ class DefaultController extends Controller
        return $jsonp;
     }
     
+    public function departamentostotalAction()
+    {
+       $em = $this->getDoctrine()->getManager();
+       $entity = $em->getRepository('OficinasBundle:Departamento')->findDepartamentostotal();
+       
+       $jsonp = new JsonResponse($entity);
+       //$jsonp->setCallback('myCallback');
+       return $jsonp;
+    }
+    
+     public function municipiosDepartamentoAction($id)
+    {
+       $em = $this->getDoctrine()->getManager();
+       $entity = $em->getRepository('OficinasBundle:Municipio')->findMunicipiosDepartamento($id);
+       
+       $jsonp = new JsonResponse($entity);
+       //$jsonp->setCallback('myCallback');
+       return $jsonp;
+    }
+    
      /*
      * metodo de insersion de datos desde el celular
      */
