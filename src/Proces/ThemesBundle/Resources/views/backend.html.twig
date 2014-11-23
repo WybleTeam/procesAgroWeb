@@ -117,7 +117,8 @@
                             {{ knp_menu_render('AdminBundle:Builder:convocatoriasMenu',  {'currentClass': 'active'}) }}
                       {% elseif is_granted('ROLE_TRAMITES') %}
                               {{ knp_menu_render('AdminBundle:Builder:solicitudesMenu',  {'currentClass': 'active'}) }}
-                      
+                      {% elseif is_granted('ROLE_ADMIN_ICA') %}
+                              {{ knp_menu_render('AdminBundle:Builder:adminTramiteMenu',  {'currentClass': 'active'}) }}  
                       {% endif %}   
                           <!-- /.search form -->
                     <!-- sidebar menu: : style can be found in sidebar.less -->

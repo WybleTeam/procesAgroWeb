@@ -209,19 +209,17 @@ class Builder extends ContainerAware
 
         $menu->addChild('Panel', array('route' => 'admin_homepage'))->setLabel('Panel')
         ->setAttribute('icon','fa fa-dashboard');
-         $menu->addChild('TramiteICA',array('uri'=>'#'))->setAttribute('class', 'treeview')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
-         $menu['TramiteICA']->setChildrenAttribute('class', 'treeview-menu');
-         //$menu['TramiteICA']->addChild('Solicitudes', array('route'=>'solmantenimientoidentificacion'));
-         $menu['TramiteICA']->addChild('Estados', array('route'=>'estado'));
-         $menu['TramiteICA']->addChild('Seccionales', array('route'=>'seccionales'));    
                
        // $menu->addChild('Usuarios', array('route' => 'tp_user'))->setAttribute('icon','fa fa-th');
        // $menu->addChild('Mi perfil', array('route' => 'fos_user_profile_show'))->setAttribute('icon','fa fa-th'); 
-        $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th'); 
         $menu->addChild('Localizacion',array('uri'=>'#'))->setAttribute('class', 'dropdown')->setAttribute('class','treeview')->setLinkAttribute('icon','fa fa-table');
         $menu['Localizacion']->setChildrenAttribute('class', 'treeview-menu');
+        $menu['Localizacion']->addChild('Seccionales', array('route'=>'seccionales')); 
         $menu['Localizacion']->addChild('Departamentos', array('route'=>'departamento'));
         $menu['Localizacion']->addChild('Municipios', array('route'=>'municipio'));
+        
+        $menu->addChild('Salir', array('route' => 'admin_logout'))->setAttribute('icon','fa fa-th'); 
+        
         return $menu;
     }
 }
