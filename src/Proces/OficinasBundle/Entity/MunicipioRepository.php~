@@ -26,7 +26,7 @@ class MunicipioRepository extends EntityRepository
     public function findMunicipiostotal()
     {
         $em = $this->getEntityManager();
-        $consulta = $em->createQuery('SELECT n.id, n.nombreMunicipio, d.id as departamento FROM OficinasBundle:Municipio n JOIN n.departamento d');
+        $consulta = $em->createQuery('SELECT n.id, n.nombreMunicipio, d.id as codigo FROM OficinasBundle:Municipio n JOIN n.departamento d');
         
         $resultado = $consulta->getArrayResult();
         return $resultado;
