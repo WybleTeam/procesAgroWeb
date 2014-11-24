@@ -56,7 +56,7 @@ web_municipiosDepartamentos:
     defaults: { _controller: WebBundle:Default:municipiosDepartamento } 
 
 web_municipios:
-    path:     /municipios-total/
+    path:     /municipios/
     defaults: { _controller: WebBundle:Default:municipiostotal } 
 
 # formulario ICA
