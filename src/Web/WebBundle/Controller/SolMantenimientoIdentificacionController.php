@@ -204,7 +204,7 @@ class SolMantenimientoIdentificacionController extends Controller
             if($entity->validarFechas()){
                     $this->get('session')->getFlashBag()->add(
                     'notice',
-                    'La Fecha para la identificación debe ser Mayor que la fecha de solicitud, y mayor o igual a Hoy');
+                    'La Fecha para la identificación debe ser Mayor que la fecha de solicitud');
                        $em->flush();
                     $error = true;   
             }else{

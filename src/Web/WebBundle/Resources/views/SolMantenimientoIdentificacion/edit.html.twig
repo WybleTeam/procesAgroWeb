@@ -21,8 +21,8 @@
    <div class="row">
        <fieldset disabled>
     <div class="col-lg-12">
-        <div class="col-md-6">{{ entity.municipioVereda|capitalize }}</div>
-        <div class="col-md-6">{{ entity.departamento|capitalize }}</div> 
+        <div class="col-md-6"><label>MUNICIPIO:</label><br> {{ entity.municipioVereda|upper }}</div>
+        <div class="col-md-6"><label>DEPARTAMENTO:</label><br> {{ entity.departamento|upper }}</div> 
    </div>
        </fieldset>
    
@@ -68,11 +68,18 @@
   <fieldset disabled>
         <div class="col-lg-12"><hr>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)<hr>
         </div>
-       <div class="col-lg-12">
-           {% for especie in entity.especieRango %}
-                    {{ especie.cantidad }} {{ especie.rangoEdades }}
-           {% endfor %}
-         
+      <div class="panel panel-default">
+               <div class="panel-body"> {% for especie in entity.especieRango %}
+                  <div class="col-lg-6">
+                                    <div class="col-lg-8">
+                                        {{ especie.rangoEdades }}
+                                    </div>
+                                    <div class="col-lg-4">
+                                        {{ especie.cantidad }}
+                                    </div>
+                  </div><br>
+                  
+                                        {% endfor %}</div>
        </div>
        {#<div class="especie col-lg-12" data-prototype="{{ form_widget(edit_form.especieRango.vars.prototype)|e }}">
                           
@@ -100,7 +107,17 @@
            <div class="panel panel-default">
                <div class="panel-body">
                    <br>
-                  
+                  {% for especie in entity.cantidadMotivo %}
+                      <div class="col-lg-6">
+                          <div class="col-lg-8">
+                              {{ especie.motivoIdentificacion }}
+                          </div>
+                          <div class="col-lg-4">
+                              {{ especie.cantidad }}
+                          </div>
+                      </div>
+                     <br>
+                  {% endfor %}
                     {# <div class="tags col-lg-12" data-prototype="{{ form_widget(edit_form.cantidadMotivo.vars.prototype)|e }}">
                           
                      </div>#}
@@ -112,16 +129,16 @@
   <fieldset>
        <div class="col-lg-12"><hr>4.ESPACIO EXCLUSIVO PARA APROBACIÓN POR PARTE DEL ICA:<hr>
         </div>{% set hoy =  "now"|date("Y-m-d H:i:s") %}
-{% if error == null %}  
+
     
-{% if entity.fechaProgramadaIdentificacion <=  hoy|date("Y-m-d H:i:s") %}
+{% if entity.fechaProgramadaIdentificacion ==  entity.fechaSolicitud %}
    
       <div class="alert alert-danger" role="alert">
         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-        la Fecha de programación debe ser mayor a la fecha de la Solicitud <strong>({{ entity.fechaSolicitud|date('d ,M-Y H:i:s') }})</strong>, y mayor o igual al día de Hoy {{ hoy|date('d-M') }} 
+        la Fecha de programación debe ser mayor a la fecha de la Solicitud <strong>({{ entity.fechaSolicitud|date('d, M-Y H:i:s') }})</strong>)  
       </div>
 {% endif %}
-{% endif %}
+
       {% set fechaMinima = entity.fechaSolicitud|date('Y-m-d H:i:s') %}  
       <div class="col-lg-12">{{ form_row(edit_form.fechaProgramadaIdentificacion,{ 'attr':{ 'min': fechaMinima, 'type': 'datetime' } }) }}<br></div>
       <div class="col-lg-12">{{ form_row(edit_form.observacionesRevision) }}</div>

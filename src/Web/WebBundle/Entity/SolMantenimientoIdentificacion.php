@@ -740,7 +740,7 @@ class SolMantenimientoIdentificacion
     public function validarFechas()
     {
         $fecha = new \DateTime("now");
-        if($this->getFechaProgramadaIdentificacion() < $fecha){
+        if($this->getFechaProgramadaIdentificacion() < $this->getFechaSolicitud()){
             
             $this->setFechaProgramadaIdentificacion($this->getFechaSolicitud());
             return true;

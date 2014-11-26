@@ -6,7 +6,6 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContextInterface;
 
-
 class DefaultController extends ContainerAware
 {
     
@@ -53,7 +52,7 @@ class DefaultController extends ContainerAware
      */
     protected function renderLogin(array $data)
     {
-        $template = sprintf('ThemesBundle::login.html.twig', $this->container->getParameter('fos_user.template.engine'));
+        $template = sprintf('ThemesBundle::login.html.twig');
 
         return $this->container->get('templating')->renderResponse($template, $data);
     }
