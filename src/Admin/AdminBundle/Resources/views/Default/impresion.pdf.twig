@@ -146,7 +146,7 @@
 	</tr>
 	<tr>
 		<td>IDENTIFICACIÒN POR PRIMERA VEZ</td>
-		<td>Table Cell</td>
+		<td></td>
 	</tr>
 	<tr>
 		<td>IDENTIFICACIÓN POR NACIMIENTO
@@ -167,7 +167,7 @@
  </div>
                 
         <p></p><p><strong>JUSTIFICACIÓN DE LA REIDENTIFICACIÓN:</strong></p>
-     <p>{{ entity.justificacionReidentificacion }}</p>
+        <p>{{ entity.justificacionReidentificacion|upper }}</p>
     
                     
 </div>                    
@@ -188,10 +188,67 @@ dispuesto un lugar para el manejo de los animales en condiciones óptimas y segu
 - El ganadero debe anexar fotocopia del documento de identidad.</td>
 	</tr>
 </table>
+    <p></p>
+    <p></p>
+    <p></p>
+    <table>
+	<tr>
+            <td border.color="white"><p>FIRMA</p></td>
+            <td border.color="white"><p>FIRMA</p></td>
+	</tr>
+	<tr>
+		<td border.color="white">________________________________________________</td>
+		<td border.color="white">___________________________________________________</td>
+	</tr>
+	<tr>
+            <td border.color="white"><strong>NOMBRE DEL SOLICITANTE: </strong></td>
+            <td border.color="white"><strong>NOMBRE DEL FUNCIONARIO ICA:</strong> (QUIEN DILIGENCIA LA SOLICITUD)
+</td>
+	</tr>
+	<tr>
+            <td border.color="white"><strong>C.C.</strong>   {#{ entity.cedulaSolicitante }#} </td>
+		<td border.color="white"><strong>C.C.</strong>    </td>
+	</tr>
+</table>
+
 
     <p></p>        
-</div>   
-    <p></p>   
+</div> 
+                
+                <p></p>
+                <div width="100%" >
+            <stylesheet>
+                <complex-attribute name="border" color="green"  />
+            </stylesheet>
+                    
+    <p><strong>5. ESPACIO EXCLUSIVO PARA APROBACIÓN POR PARTE DEL ICA: Marque con una equis (X)
+:</strong></p>      
+<p></p>
+<table width="30%">
+	<tr>
+            <td>  <strong>APROBADO:(     )</strong></td>
+                <td>  <strong>RECHAZADO:(     )</strong></td>
+	</tr>
+</table><p></p>
+<strong>FECHA PROGRAMADA PARA LA IDENTIFICACIÓN DE SUS ANIMALES: {{ entity.fechaProgramadaIdentificacion|date('Y-m-d H:i:s') }}</strong>
+<p></p>
+<strong>OBSERVACIONES:</strong>
+<p>{{ entity.observacionesRevision|upper }}</p>
+<p></p>
+    <p><strong>FIRMA:</strong></p>
+            <p></p>
+      <p>_____________________________________________________</p>
+      <p><strong>NOMBRE DEL LIDER FUNCIONAL:</strong></p>
+      <p></p>
+      <p>C.C: ____________________________</p>
+     
+</div>
+       
+
+<div text-align="right">
+    <p>LOG.CDC.FORM 005</p>
+    <p>01/08/2013 Versión 1.0</p>   
+</div>
     <table>
              <tr class="col-lg-12 alert-success center">
                 <td>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)</td>
@@ -209,11 +266,11 @@ dispuesto un lugar para el manejo de los animales en condiciones óptimas y segu
             
             <tr class="col-lg-6">
                 <td>Fechaprogramadaidentificacion</td>
-                <td>{{ entity.fechaProgramadaIdentificacion|date('Y-m-d H:i:s') }}</td>
+                <td></td>
             </tr>
             <tr class="col-lg-6">
                 <td>Observacionesrevision</td>
-                <td>{{ entity.observacionesRevision }}</td>
+                <td></td>
             </tr>
             <tr class="col-lg-6">
                 <td>Estadosolicitud</td>
@@ -222,13 +279,7 @@ dispuesto un lugar para el manejo de los animales en condiciones óptimas y segu
        
     </table>
             
-            <p><strong>FIRMA:</strong></p>
-            <p></p>
-      <p>_____________________________________________________</p>
-      <p><strong>NOMBRE DEL LIDER FUNCIONAL:</strong></p>
-      <p></p>
-      <p>C.C: ____________________________</p>
-     
+        
       
      
       
