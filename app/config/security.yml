@@ -70,6 +70,7 @@ security:
         - { path: ^/admin/departamento/*, role: [ROLE_ADMIN_ICA, ROLE_ADMIN] }
         - { path: ^/admin/municipio/*, role: [ROLE_ADMIN_ICA, ROLE_ADMIN] } 
         - { path: ^/admin/solmantenimiento/*, role: [ROLE_SOLICITUDES] }
+        - { path: ^/admin/informe/*, role: [ROLE_SOLICITUDES] }
         - { path: ^/admin/estado/*, role: [ROLE_ADMIN_ICA, ROLE_ADMIN] }
         - { path: ^/admin/seccionales/*, role: [ROLE_ADMIN_ICA, ROLE_ADMIN] }
         - { path: ^/admin/especieanimal/*, role: [ROLE_SOLICITUDES, ROLE_ADMIN] }

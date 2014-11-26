@@ -1,5 +1,10 @@
 {% extends 'ThemesBundle::backend.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
 
+<link href="{{ asset('bundles/themes/js/datepicker/css/datepicker.css') }}" rel="stylesheet" type="text/css" media="screen" />
+ 
+{% endblock %}
 {% block body -%}
      <h1>Editar</h1>
 
@@ -16,8 +21,8 @@
    <div class="row">
        <fieldset disabled>
     <div class="col-lg-12">
-     <div class="col-md-6">{{ form_row(edit_form.municipioVereda) }}</div>
-    <div class="col-md-6">{{ form_row(edit_form.departamento) }}</div> 
+        <div class="col-md-6">{{ entity.municipioVereda|capitalize }}</div>
+        <div class="col-md-6">{{ entity.departamento|capitalize }}</div> 
    </div>
        </fieldset>
    
@@ -25,41 +30,72 @@
         <div class="col-md-12">
             <hr>1.REGISTRO SANITARIO DE PREDIOS PECUARIOS<hr>
         </div>
-       <div class="col-lg-4">{{ form_row(edit_form.ica3101) }}</div>
-        <div class="col-lg-8">{{ form_row(edit_form.nombreFinca) }}</div>
-        <div class="col-lg-8">{{ form_row(edit_form.nombrePropietarioFinca) }}</div>
-        <div class="col-lg-4">{{ form_row(edit_form.cedulaPropietarioFinca) }}</div>
-        <div class="col-lg-6">{{ form_row(edit_form.telefonoFijoPropietario) }}</div>
-        <div class="col-lg-6">{{ form_row(edit_form.telefonoCelularPropietario) }}</div>
-        <div class="col-lg-8">{{ form_row(edit_form.nombreSolicitante) }}</div>
-        <div class="col-lg-4">{{ form_row(edit_form.cedulaSolicitante) }}</div>
-        <div class="col-lg-6">{{ form_row(edit_form.telefonoFijoSolicitante) }}</div>
-        <div class="col-lg-6">{{ form_row(edit_form.telefonoCelularSolicitante) }}</div>
+       <div class="col-lg-4">
+           <label>ICA 3101:</label><br> 
+           {{ entity.ica3101|upper  }}</div>
+        <div class="col-lg-4">
+            <label>NOMBRE FINCA:</label> <br> 
+            {{ entity.nombreFinca|upper  }}</div>
+        <div class="col-lg-4">
+            <label>FECHA SOLICITUD:</label> <br> 
+            {{ entity.fechaSolicitud|date('Y-m-d H:i:s') }}</div>
+        <div class="col-lg-8">
+            <label>NOMBRE PROPIETARIO FINCA:</label> <br> 
+            {{ entity.nombrePropietarioFinca  }}</div>
+        <div class="col-lg-4">
+            <label>DOCUMENTO PROPIETARIO FINCA:</label> <br> 
+            {{ entity.cedulaPropietarioFinca  }}</div>
+        <div class="col-lg-6">
+            <label>TELEFONO FIJO PROPIETARIO FINCA:</label> <br> 
+            {{ entity.telefonoFijoPropietario  }}</div>
+        <div class="col-lg-6">
+            <label>TELEFONO CELULAR PROPIETARIO FINCA:</label> <br> 
+            {{ entity.telefonoCelularPropietario  }}</div>
+        <div class="col-lg-8">
+            <label>NOMBRE SOLICITANTE:</label><br>  
+            {{ entity.nombreSolicitante  }}</div>
+        <div class="col-lg-4">
+            <label>CEDULA SOLICITANTE:</label> <br> 
+            {{ entity.cedulaSolicitante  }}</div>
+        <div class="col-lg-6">
+            <label>TELEFONO FIJO SOLICITANTE:</label> <br> 
+            {{ entity.telefonoFijoSolicitante  }}</div>
+        <div class="col-lg-6">
+            <label>TELEFONO CELULAR SOLICITANTE:</label> <br> 
+            {{ entity.telefonoCelularSolicitante  }}</div>
   </fieldset>
    
   <fieldset disabled>
         <div class="col-lg-12"><hr>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)<hr>
         </div>
-       
+       <div class="col-lg-12">
+           {% for especie in entity.especieRango %}
+                    {{ especie.cantidad }} {{ especie.rangoEdades }}
+           {% endfor %}
+         
+       </div>
        {#<div class="especie col-lg-12" data-prototype="{{ form_widget(edit_form.especieRango.vars.prototype)|e }}">
                           
        </div>#}
                    
-      {% for especies in edit_form.especieRango %}
-      <div class="col-lg-4">{{ form_row(especies.cantidad) }}</div>
-      <div class="col-lg-4">{{ form_row(especies.rangoEdades) }}</div>
-      <div class="col-lg-4">{{ form_row(especies.especieAnimal) }}</div>
-      {% endfor %}
+    {#  {% for especies in edit_form.especieRango %}
+      <div class="col-lg-4">{{ form_row(especies.cantidad  }}</div>
+      <div class="col-lg-4">{{ form_row(especies.rangoEdades  }}</div>
+      <div class="col-lg-4">{{ form_row(especies.especieAnimal  }}</div>
+      {% endfor %}#}
   </fieldset>
   <fieldset disabled>
       <div class="col-lg-12"><hr>3.MOTIVO DE LA SOLICITUD DE IDENTIFICACIÓN<hr>
         </div>
      
-               <div class="col-lg-12">{{ form_row(edit_form.justificacionReidentificacion) }}</div>
-           {% for cantidades in edit_form.cantidadMotivo %}
-                <div class="col-lg-6">{{ form_row(cantidades.motivoIdentificacion) }}</div>
-                <div class="col-lg-6">{{ form_row(cantidades.cantidad) }}</div>
-           {% endfor %}
+               <div class="col-lg-12">
+                   <label>JUSTIFICACION DE LA REIDENTIFICACIÓN</label><br>
+                   {{ entity.justificacionReidentificacion|upper  }}
+               </div>
+           {#{% for cantidades in edit_form.cantidadMotivo %}
+                <div class="col-lg-6">{{ form_row(cantidades.motivoIdentificacion }}</div>
+                <div class="col-lg-6">{{ form_row(cantidades.cantidad }}</div>
+           {% endfor %}#}
            <br>
            <div class="panel panel-default">
                <div class="panel-body">
@@ -75,8 +111,19 @@
 
   <fieldset>
        <div class="col-lg-12"><hr>4.ESPACIO EXCLUSIVO PARA APROBACIÓN POR PARTE DEL ICA:<hr>
-        </div>
-      <div class="col-lg-12">{{ form_row(edit_form.fechaProgramadaIdentificacion) }}<br></div>
+        </div>{% set hoy =  "now"|date("Y-m-d H:i:s") %}
+{% if error == null %}  
+    
+{% if entity.fechaProgramadaIdentificacion <=  hoy|date("Y-m-d H:i:s") %}
+   
+      <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        la Fecha de programación debe ser mayor a la fecha de la Solicitud <strong>({{ entity.fechaSolicitud|date('d ,M-Y H:i:s') }})</strong>, y mayor o igual al día de Hoy {{ hoy|date('d-M') }} 
+      </div>
+{% endif %}
+{% endif %}
+      {% set fechaMinima = entity.fechaSolicitud|date('Y-m-d H:i:s') %}  
+      <div class="col-lg-12">{{ form_row(edit_form.fechaProgramadaIdentificacion,{ 'attr':{ 'min': fechaMinima, 'type': 'datetime' } }) }}<br></div>
       <div class="col-lg-12">{{ form_row(edit_form.observacionesRevision) }}</div>
       <div class="col-lg-12">{{ form_row(edit_form.estadoSolicitud) }}</div>
   </fieldset>  
@@ -103,6 +150,9 @@
       <hr>
         <a href="{{ path('solmantenimientoidentificacion') }}" class="btn btn-success">
             Volver al listado
+        </a>
+        <a href="{{ path('pdf_hola', { 'id': entity.id,'_format': 'pdf' }) }}" target="_blank" class="btn btn-warning">
+           <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Generar PDF
         </a>
            {# {{ form(delete_form) }} #}
 {% endblock %}
@@ -215,4 +265,9 @@
             $newLinkLi2.before($newFormLi2);
         }
 </script>
+
+<script src="{{ asset('bundles/themes/js/datepicker/js/bootstrap-datepicker.js') }}" type="text/javascript"></script>
+    <script>
+    $('#web_webbundle_solmantenimiento_fechaProgramadaIdentificacion').datepicker({format: 'yyyy-mm-dd'});
+     </script>
 {% endblock %}   

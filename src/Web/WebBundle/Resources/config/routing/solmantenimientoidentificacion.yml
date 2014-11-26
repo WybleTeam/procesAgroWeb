@@ -16,8 +16,8 @@ solmantenimientoidentificacion_create:
     requirements: { _method: post }
 
 solmantenimientoidentificacion_edit:
-    path:     /{id}/edit
-    defaults: { _controller: "WebBundle:SolMantenimientoIdentificacion:edit" }
+    path:     /{id}/edit/{error}
+    defaults: { _controller: "WebBundle:SolMantenimientoIdentificacion:edit", error:null }
 
 solmantenimientoidentificacion_update:
     path:     /{id}/update

@@ -2,7 +2,14 @@
 
 namespace Admin\AdminBundle\Controller;
 
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Web\WebBundle\Entity\SolMantenimientoIdentificacion;
+use Ps\PdfBundle\Annotation\Pdf;
+
 /**
  * Description of AdminController
  *
@@ -23,6 +30,29 @@ class AdminController extends Controller
             'convocatorias' => $convocatorias,
             'ofertas'       => $ofertas,
         ));
+    }
+    
+    /**
+     * @Pdf()
+     */
+    public function impresionAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('WebBundle:SolMantenimientoIdentificacion')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find SolMantenimientoIdentificacion entity.');
+        }
+
+        $format = $this->get('request')->get('_format');
+        
+        return $this->render(
+            sprintf('AdminBundle:Default:impresion.%s.twig', $format),
+            array('nombre' => null,
+                  'entity' => $entity
+            )
+        );
     }
 }
 

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pdf SYSTEM "%resources%/dtd/doctype.dtd">
+<pdf>
+    <dynamic-page>
+       <div>
+            <stylesheet>
+                <!-- Top and bootom edges are red, side edges are yellow-gray --> 
+                <complex-attribute name="border" color="red" type="top+bottom" />
+                <complex-attribute id="borderLeftAndRight" name="border" color="yellow" type="left+right" size="4px" />
+                <complex-attribute id="outerBorderLeftAndRight" name="border" color="gray" type="left+right" size="2px" position="1px" />
+                
+            </stylesheet>
+        </div>
+        
+        <div >
+            <img src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/ica/ica.jpg') }}" width="150px" height="100px"/>
+            <img src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/ica/logo-min-agricultura.png') }}" width="150px" height="50px"/>
+            <img src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/ica/Logo-Prosperidad.jpg') }}" width="150px" height="50px"/>
+        </div>
+        
+    
+    
+       
+       
+  {#  <img src="https://www.minagricultura.gov.co/imgLayout/logo-min-agricultura.png"  width="200px" height="80px">
+     
+    
+  <img src="http://wsp.presidencia.gov.co/portal/descargas/PublishingImages/Logo-Prosperidad.jpg"  width="200px" height="80px">
+       #}
+    
+        
+      <table class="table">
+     
+          
+             <tr class="col-lg-6">
+                <td>Municipio</td>
+                
+            </tr>
+            <tr class="col-lg-6">
+                <td>Seccional</td>
+                <td>{{ entity.seccional }}</td>
+            </tr>
+            <tr class="col-lg-12 alert-success center">
+                <td>1.REGISTRO SANITARIO DE PREDIOS PECUARIOS</td>
+                <td></td>
+            </tr>
+             <tr class="col-lg-6">
+                <td>Ica3101</td>
+                <td>{{ entity.ica3101 }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Nombrefinca</td>
+                <td>{{ entity.nombreFinca }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Nombrepropietariofinca</td>
+                <td>{{ entity.nombrePropietarioFinca }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Cedulapropietariofinca</td>
+                <td>{{ entity.cedulaPropietarioFinca }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Telefonofijopropietario</td>
+                <td>{{ entity.telefonoFijoPropietario }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Telefonocelularpropietario</td>
+                <td>{{ entity.telefonoCelularPropietario }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Nombresolicitante</td>
+                <td>{{ entity.nombreSolicitante }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Cedulasolicitante</td>
+                <td>{{ entity.cedulaSolicitante }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Telefonofijosolicitante</td>
+                <td>{{ entity.telefonoFijoSolicitante }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Telefonocelularsolicitante</td>
+                <td>{{ entity.telefonoCelularSolicitante }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Fechasolicitud</td>
+                <td>{{ entity.fechaSolicitud|date('d, M-Y H:i:s') }}</td>
+            </tr>
+             <tr class="col-lg-12 alert-success center">
+                <td>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)</td>
+                <td></td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Justificacionreidentificacion</td>
+                <td>{{ entity.justificacionReidentificacion }}</td>
+            </tr>
+       
+            <tr class="col-lg-6">
+                <td>Solicitud mantenimiento identificacion</td>
+                <td>{{ entity.solicitudMantenimientoIdentificacion }}</td>
+            </tr>
+            
+            <tr class="col-lg-6">
+                <td>Fechaprogramadaidentificacion</td>
+                <td>{{ entity.fechaProgramadaIdentificacion|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Observacionesrevision</td>
+                <td>{{ entity.observacionesRevision }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <td>Estadosolicitud</td>
+                <td>{{ entity.estadoSolicitud }}</td>
+            </tr>
+       
+    </table>
+            
+            <p><strong>FIRMA:</strong></p>
+            <p></p>
+      <p>_____________________________________________________</p>
+      <p><strong>NOMBRE DEL LIDER FUNCIONAL:</strong></p>
+      <p></p>
+      <p>C.C: ____________________________</p>
+     
+   
+ 
+        
+    </dynamic-page>
+</pdf>

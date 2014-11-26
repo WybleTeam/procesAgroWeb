@@ -734,6 +734,18 @@ class SolMantenimientoIdentificacion
     {
         return $this->departamento;
     }
+    /**
+     * @ORM\preUpdate
+     */
+    public function validarFechas()
+    {
+        $fecha = new \DateTime("now");
+        if($this->getFechaProgramadaIdentificacion() < $fecha){
+            
+            $this->setFechaProgramadaIdentificacion($this->getFechaSolicitud());
+            return true;
+        }
+    }
  
     public function __toString() 
     {

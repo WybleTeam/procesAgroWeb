@@ -1,0 +1,91 @@
+HOLA DESDE HTML {{ nombre }}
+
+{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/img/avatar3.png') }}
+<img src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/img/avatar3.png') }}" />
+      <table class="table">
+        <tbody>
+          
+             <tr class="col-lg-6">
+                <th>Municipio</th>
+               
+            </tr>
+            <tr class="col-lg-6">
+                <th>Seccional</th>
+                <td>{{ entity.seccional }}</td>
+            </tr>
+            <tr class="col-lg-12 alert-success center">
+                <th>1.REGISTRO SANITARIO DE PREDIOS PECUARIOS</th>
+                <td></td>
+            </tr>
+             <tr class="col-lg-6">
+                <th>Ica3101</th>
+                <td>{{ entity.ica3101 }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Nombrefinca</th>
+                <td>{{ entity.nombreFinca }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Nombrepropietariofinca</th>
+                <td>{{ entity.nombrePropietarioFinca }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Cedulapropietariofinca</th>
+                <td>{{ entity.cedulaPropietarioFinca }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Telefonofijopropietario</th>
+                <td>{{ entity.telefonoFijoPropietario }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Telefonocelularpropietario</th>
+                <td>{{ entity.telefonoCelularPropietario }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Nombresolicitante</th>
+                <td>{{ entity.nombreSolicitante }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Cedulasolicitante</th>
+                <td>{{ entity.cedulaSolicitante }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Telefonofijosolicitante</th>
+                <td>{{ entity.telefonoFijoSolicitante }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Telefonocelularsolicitante</th>
+                <td>{{ entity.telefonoCelularSolicitante }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Fechasolicitud</th>
+                <td>{{ entity.fechaSolicitud|date('d, M-Y H:i:s') }}</td>
+            </tr>
+             <tr class="col-lg-12 alert-success center">
+                <th>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)</th>
+                <td></td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Justificacionreidentificacion</th>
+                <td>{{ entity.justificacionReidentificacion }}</td>
+            </tr>
+       
+            <tr class="col-lg-6">
+                <th>Solicitud mantenimiento identificacion</th>
+                <td>{{ entity.solicitudMantenimientoIdentificacion }}</td>
+            </tr>
+            
+            <tr class="col-lg-6">
+                <th>Fechaprogramadaidentificacion</th>
+                <td>{{ entity.fechaProgramadaIdentificacion|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Observacionesrevision</th>
+                <td>{{ entity.observacionesRevision }}</td>
+            </tr>
+            <tr class="col-lg-6">
+                <th>Estadosolicitud</th>
+                <td>{{ entity.estadoSolicitud }}</td>
+            </tr>
+        </tbody>
+    </table>

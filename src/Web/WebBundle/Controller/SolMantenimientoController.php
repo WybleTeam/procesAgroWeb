@@ -183,10 +183,18 @@ class SolMantenimientoController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            
+            if($entity->validarFechas()){
+                 $this->get('session')->getFlashBag()->add(
+            'notice',
+            'La fecha debe ser mayor');
+            }else{
             $em->flush();
+            
              $this->get('session')->getFlashBag()->add(
             'notice',
             'OK');
+             }
 
             return $this->redirect($this->generateUrl('solmantenimiento_edit', array('id' => $id)));
         }

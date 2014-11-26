@@ -116,7 +116,7 @@ class SolMantenimientoIdentificacionController extends Controller
      * Displays a form to edit an existing SolMantenimientoIdentificacion entity.
      *
      */
-    public function editAction($id)
+    public function editAction($id, $error=null)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -128,8 +128,10 @@ class SolMantenimientoIdentificacionController extends Controller
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
+        //$error = false;
 
         return $this->render('WebBundle:SolMantenimientoIdentificacion:edit.html.twig', array(
+            'error'       => $error,  
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -158,7 +160,7 @@ class SolMantenimientoIdentificacionController extends Controller
      * Edits an existing SolMantenimientoIdentificacion entity.
      *
      */
-    public function updateAction(Request $request, $id)
+    public function updateAction(Request $request, $id, $error=null)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -175,9 +177,6 @@ class SolMantenimientoIdentificacionController extends Controller
         foreach ($entity->getEspecieRango() as $address) {
             $originalAddresses[] = $address;
         }
-        
-        
-        
         
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
@@ -201,16 +200,27 @@ class SolMantenimientoIdentificacionController extends Controller
                     // if you wanted to delete the Address entirely, you can also do that
                     $em->remove($address);
                 }
-    
+                   
+            if($entity->validarFechas()){
+                    $this->get('session')->getFlashBag()->add(
+                    'notice',
+                    'La Fecha para la identificación debe ser Mayor que la fecha de solicitud, y mayor o igual a Hoy');
+                       $em->flush();
+                    $error = true;   
+            }else{
+                    $em->flush();
+                    $this->get('session')->getFlashBag()->add(
+                    'notice',
+                    'Actualizado');
+                    $error = false;
+            }
             
-            $em->flush();
-            $this->get('session')->getFlashBag()->add(
-            'notice',
-            'Actualizado');
-            return $this->redirect($this->generateUrl('solmantenimientoidentificacion_edit', array('id' => $id)));
+            
+            return $this->redirect($this->generateUrl('solmantenimientoidentificacion_edit', array('id' => $id, 'error'=>$error)));
         }
 
         return $this->render('WebBundle:SolMantenimientoIdentificacion:edit.html.twig', array(
+            'error'       => $error,  
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

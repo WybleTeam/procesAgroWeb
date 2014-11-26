@@ -77,3 +77,10 @@ oferta_pasosoferta:
 WebBundle_estado:
     resource: "@WebBundle/Resources/config/routing/estado.yml"
     prefix:   /estado
+
+
+pdf_hola:
+    pattern: /informe/{id}.{_format}
+    defaults: { _controller: AdminBundle:Admin:impresion,  _format: html}
+    requirements:
+      _format: html|pdf

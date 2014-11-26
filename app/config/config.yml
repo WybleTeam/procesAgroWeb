@@ -39,7 +39,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ "TPUserBundle","ThemesBundle" ]
+    bundles:        [ "TPUserBundle","ThemesBundle","ThemesBundle","AdminBundle" ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -102,3 +102,16 @@ services:
         tags:
         # помечаем к чему относится этот сервис, это оч. важно, т.к. иначе работать не будет
           - { name: serializer.normalizer }    
+          
+ps_pdf:
+    nodes_file: ~
+    fonts_file: ~
+    complex_attributes_file: ~
+    colors_file: ~
+    use_cache_in_stylesheet: ~
+    cache:
+      type: ~
+      options: ~
+    markdown_stylesheet_filepath: ~
+    markdown_document_template_filepath: ~
+    document_parser_type: ~

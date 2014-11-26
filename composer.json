@@ -22,7 +22,8 @@
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "twinpeaks/user-bundle": "dev-master",
         "jms/security-extra-bundle": "1.5.*@dev",
-        "knplabs/knp-menu-bundle": "~2.0"
+        "knplabs/knp-menu-bundle": "~2.0",
+        "psliwa/pdf-bundle": "~1.0"
     },
     "scripts": {
         "post-install-cmd": [
