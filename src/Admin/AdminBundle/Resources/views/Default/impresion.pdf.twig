@@ -11,90 +11,195 @@
                 
             </stylesheet>
         </div>
-        
-        <div align="center" >
-            <img src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/ica/ica.jpg') }}" width="150px" height="100px"/>
-            <img src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/ica/logo-min-agricultura.png') }}" width="150px" height="50px"/>
-            <img src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/ica/Logo-Prosperidad.jpg') }}" width="150px" height="50px"/>
-        </div>
-        
-    
-    
+        <table border.color="white">
+            <tr border.color="white">
+                <td border.color="white"> 
+                    <img float="left" src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/ica/ica.jpg') }}" width="110px" height="70px"/>
+                    
+                </td>
+                <td border.color="white">
+                    <img float="left" src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/ica/logo-min-agricultura.png') }}" width="170px" height="60px"/>
+                </td>
+                <td border.color="white" >
+                    <img float="top" src="{{ app.request.scheme ~'://' ~ app.request.httpHost ~ asset('bundles/themes/ica/Logo-Prosperidad.jpg') }}" width="160px" height="60px"/>
+                </td>     
+            </tr>
+        </table>
        
-       
-  {#  <img src="https://www.minagricultura.gov.co/imgLayout/logo-min-agricultura.png"  width="200px" height="80px">
-     
-    
-  <img src="http://wsp.presidencia.gov.co/portal/descargas/PublishingImages/Logo-Prosperidad.jpg"  width="200px" height="80px">
-       #}
-    
-        
-      <table class="table">
-     
-          
-             <tr class="col-lg-6">
-                <td>Municipio</td>
+                <p></p>
+                 <p text-align="center">SISTEMA NACIONAL DE IDENTIFICACIÓN E INFORMACIÓN DEL GANADO BOVINO.</p>
+    <p text-align="center">    PLAN NACIONAL DE IDENTIFICACIÓN </p>
+    <p text-align="center">FORMATO UNICO DE SOLICITUD DE IDENTIFICACIÒN O MANTENIMIENTO.</p>
+                <p></p>
+               
+                <table>
+                        <tr>
+                                <td border.color="white">SOLICITUD No.:</td>
+                                <td border.color="white">Fecha de Solicitud:   {{ entity.fechaSolicitud|date('Y-m-d H:i:s') }} </td>
+                        </tr>
+                        <tr>
+                                <td border.color="white">Seccional  {{ entity.seccional }}</td>
+                                <td border.color="white">PSG Y/O OFICINA LOCAL</td>
+                        </tr>
+                        <tr>
+                            <td border.color="white">Municipio:  {{ entity.municipioVereda|upper }}</td>
+                                <td border.color="white">Vereda</td>
+                        </tr>
+                </table>
+                <p></p>
+                <p></p>
                 
-            </tr>
-            <tr class="col-lg-6">
-                <td>Seccional</td>
-                <td>{{ entity.seccional }}</td>
-            </tr>
-            <tr class="col-lg-12 alert-success center">
-                <td>1.REGISTRO SANITARIO DE PREDIOS PECUARIOS</td>
-                <td></td>
-            </tr>
-             <tr class="col-lg-6">
-                <td>Ica3101</td>
-                <td>{{ entity.ica3101 }}</td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Nombrefinca</td>
-                <td>{{ entity.nombreFinca }}</td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Nombrepropietariofinca</td>
-                <td>{{ entity.nombrePropietarioFinca }}</td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Cedulapropietariofinca</td>
-                <td>{{ entity.cedulaPropietarioFinca }}</td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Telefonofijopropietario</td>
-                <td>{{ entity.telefonoFijoPropietario }}</td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Telefonocelularpropietario</td>
-                <td>{{ entity.telefonoCelularPropietario }}</td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Nombresolicitante</td>
-                <td>{{ entity.nombreSolicitante }}</td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Cedulasolicitante</td>
-                <td>{{ entity.cedulaSolicitante }}</td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Telefonofijosolicitante</td>
-                <td>{{ entity.telefonoFijoSolicitante }}</td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Telefonocelularsolicitante</td>
-                <td>{{ entity.telefonoCelularSolicitante }}</td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Fechasolicitud</td>
-                <td>{{ entity.fechaSolicitud|date('d, M-Y H:i:s') }}</td>
-            </tr>
+  <div width="100%" >
+            <stylesheet>
+                <complex-attribute name="border" color="green"  />
+            </stylesheet>
+                    
+      <p><strong>1. REGISTRO SANITARIO DE PREDIOS PECUARIOS</strong></p>
+                    <table>
+                            <tr>
+                                <td border.color="white"><strong>ICA 3-101:</strong>        {{ entity.ica3101|upper }}</td>
+                                <td border.color="white"><strong>NOMBRE DE LA FINCA:</strong>   {{ entity.nombreFinca|upper }}</td>
+                            </tr>
+                            <tr>
+                                    <td border.color="white"><strong>NOMBRE COMPLETO DEL PROPIETARIO:  {{ entity.nombrePropietarioFinca }}</strong> </td>
+                                    <td border.color="white"><strong>C.C. {{ entity.cedulaPropietarioFinca }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td border.color="white"><strong>TELEFONO FIJO: {{ entity.telefonoFijoPropietario }}</strong></td>
+                                <td border.color="white"><strong>TELEFONO CELULAR: {{ entity.telefonoCelularPropietario }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td border.color="white"><strong>NOMBRE COMPLETO DEL SOLICITANTE: {{ entity.nombreSolicitante }}</strong></td>
+                                <td border.color="white"><strong>C.C: {{ entity.cedulaSolicitante }} </strong></td>
+                            </tr>  
+                            <tr>
+                                <td border.color="white"><strong>TELEFONO FIJO: {{ entity.telefonoFijoSolicitante }}</strong></td>
+                                <td border.color="white"><strong>TELEFONO CELULAR: {{ entity.telefonoCelularSolicitante }}</strong></td>
+                            </tr>
+                    </table>
+                    <p></p>
+ </div>
+                    
+                <p></p>
+               
+<div width="100%" >
+            <stylesheet>
+                <complex-attribute name="border" color="green"  />
+            </stylesheet>
+                    
+    <p><strong>2. CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)</strong></p>
+     <table>
+	<tr>
+		<td border.color="white"></td>
+                <td colspan="2" text-align="center"><strong >ESPECIE</strong></td>
+		
+	</tr>
+	<tr>
+            <td><strong>RANGO EDADES</strong></td>
+		<td text-align="center"><strong>CANTIDAD DE BOVINOS </strong></td>
+		<td text-align="center"><strong>CANTIDAD DE BUFALINOS</strong></td>
+	</tr>
+	<tr>
+		<td>ANIMALES MENORES DE 1 AÑO</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>ANIMALES ENTRE 1-2 AÑOS</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>ANIMALES ENTRE 2-3 AÑOS</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>ANIMALES MAYORES DE 3 AÑOS</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+            <td text-align="center"><strong>TOTAL</strong></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+                    <p></p>
+                    
+</div>                    
+                <p></p>
+                    
+                
+                
+<div width="100%" >
+            <stylesheet>
+                <complex-attribute name="border" color="green"  />
+            </stylesheet>
+                    
+    <p><strong>3. MOTIVO DE LA SOLICITUD DE IDENTIFICACIÓN.</strong></p>     
+ <div width="80%"  margin-right="50px"  margin-left="100px">               
+  <table>
+	<tr>
+            <td text-align="center"><strong>MOTIVO</strong></td>
+            <td text-align="center"><strong>CANTIDAD</strong></td>
+	</tr>
+	<tr>
+		<td>IDENTIFICACIÒN POR PRIMERA VEZ</td>
+		<td>Table Cell</td>
+	</tr>
+	<tr>
+		<td>IDENTIFICACIÓN POR NACIMIENTO
+</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>IDENTIFICACIÓN POR COMPRA DE ANIMALES</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>REIDENTIFICACIÓN POR PERDIDA DE DIN
+</td>
+		<td></td>
+	</tr>
+</table>
+     
+ </div>
+                
+        <p></p><p><strong>JUSTIFICACIÓN DE LA REIDENTIFICACIÓN:</strong></p>
+     <p>{{ entity.justificacionReidentificacion }}</p>
+    
+                    
+</div>                    
+                <p></p>            
+<div width="100%" >
+            <stylesheet>
+                <complex-attribute name="border" color="green"  />
+            </stylesheet>
+                    
+    <p><strong>4. FIRMAS DE LA SOLICITUD:</strong></p>         
+        
+    <table>
+	<tr>
+		<td>
+                    <p>NOTA: - De acuerdo a la cantidad solicitada y confrontada con ICA 3-101 se realizara la asignación de dispositivos. </p>
+- El Ganadero acepta la fecha coordinada y programada para la identificación con el funcionario ICA y deberá tener 
+dispuesto un lugar para el manejo de los animales en condiciones óptimas y seguras.
+- El ganadero debe anexar fotocopia del documento de identidad.</td>
+	</tr>
+</table>
+
+    <p></p>        
+</div>   
+    <p></p>   
+    <table>
              <tr class="col-lg-12 alert-success center">
                 <td>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)</td>
                 <td></td>
             </tr>
             <tr class="col-lg-6">
                 <td>Justificacionreidentificacion</td>
-                <td>{{ entity.justificacionReidentificacion }}</td>
+                <td></td>
             </tr>
        
             <tr class="col-lg-6">
@@ -124,8 +229,9 @@
       <p></p>
       <p>C.C: ____________________________</p>
      
-   
- 
+      
+     
+      
         
     </dynamic-page>
 </pdf>
