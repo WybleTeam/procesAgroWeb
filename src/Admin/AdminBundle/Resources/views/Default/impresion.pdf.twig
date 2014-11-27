@@ -57,7 +57,7 @@
                         </tr>
                 </table>
                 <p></p>
-                <p></p>
+             
                 
   <div width="100%" >
             <stylesheet>
@@ -99,57 +99,23 @@
                     
     <p><strong>2. CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)</strong></p>
      <table>
-	<tr>
-		<td border.color="white"></td>
-                <td colspan="2" text-align="center"><strong >ESPECIE</strong></td>
-		
-	</tr>
+	
 	<tr>
             <td><strong>RANGO EDADES</strong></td>
-		<td text-align="center"><strong>CANTIDAD DE BOVINOS </strong></td>
-		<td text-align="center"><strong>CANTIDAD DE BUFALINOS</strong></td>
+		<td text-align="center"><strong>CANTIDAD </strong></td>
+		<td text-align="center"><strong>TIPO ANIMAL</strong></td>
 	</tr>
+        {% for especie in entity.especieRango %}
 	<tr>
-		<td>ANIMALES MENORES DE 1 AÑO</td>
-		<td></td>
-		<td></td>
+		<td>{{ especie.rangoEdades }}</td>
+		<td text-align="center">{{ especie.cantidad }}</td>
+		<td>{{ especie.especieAnimal }}</td>
 	</tr>
-	<tr>
-		<td>ANIMALES ENTRE 1-2 AÑOS</td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>ANIMALES ENTRE 2-3 AÑOS</td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td>ANIMALES MAYORES DE 3 AÑOS</td>
-		<td></td>
-		<td></td>
-	</tr>
-	<tr>
-            <td text-align="center"><strong>TOTAL</strong></td>
-		<td></td>
-		<td></td>
-	</tr>
+        {% endfor %}
+	
 </table>
     
-    {% for especie in entity.especieRango %}
-                  <div class="col-lg-6">
-                                    <div class="col-lg-8">
-                                        {{ especie.rangoEdades }}
-                                    </div>
-                                    <div class="col-lg-4">
-                                        {{ especie.cantidad }}
-                                    </div>
-                                    <div class="col-lg-4">
-                                        {{ especie.especieAnimal }}
-                                    </div>
-                  </div>
-                  
-                                        {% endfor %}
+   
                     <p></p>
                     
 </div>                    

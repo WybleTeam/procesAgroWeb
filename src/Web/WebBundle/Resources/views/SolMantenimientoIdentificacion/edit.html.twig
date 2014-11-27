@@ -70,12 +70,15 @@
         </div>
       <div class="panel panel-default">
                <div class="panel-body"> {% for especie in entity.especieRango %}
-                  <div class="col-lg-6">
-                                    <div class="col-lg-8">
+                  <div class="col-lg-12">
+                                    <div class="col-lg-4">
                                         {{ especie.rangoEdades }}
                                     </div>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         {{ especie.cantidad }}
+                                    </div>
+                                    <div class="col-lg-3">
+                                         {{ especie.especieAnimal }}
                                     </div>
                   </div><br>
                   
