@@ -2,6 +2,16 @@
 <!DOCTYPE pdf SYSTEM "%resources%/dtd/doctype.dtd">
 <pdf>
     <dynamic-page>
+        <placeholders>
+            <header>
+                <div height="20px">
+                    <page-info format="Página %s de %s" />
+
+            
+                </div>
+            </header>
+        </placeholders> 
+        
        <div>
             <stylesheet>
                 <!-- Top and bootom edges are red, side edges are yellow-gray --> 
@@ -38,12 +48,12 @@
                                 <td border.color="white">Fecha de Solicitud:   {{ entity.fechaSolicitud|date('Y-m-d H:i:s') }} </td>
                         </tr>
                         <tr>
-                                <td border.color="white">Seccional  {{ entity.seccional }}</td>
+                                <td border.color="white">Seccional  {{ entity.seccional|upper }} {{ entity.departamento|upper }}</td>
                                 <td border.color="white">PSG Y/O OFICINA LOCAL</td>
                         </tr>
                         <tr>
                             <td border.color="white">Municipio:  {{ entity.municipioVereda|upper }}</td>
-                                <td border.color="white">Vereda</td>
+                                <td border.color="white">Vereda: </td>
                         </tr>
                 </table>
                 <p></p>
@@ -125,6 +135,21 @@
 		<td></td>
 	</tr>
 </table>
+    
+    {% for especie in entity.especieRango %}
+                  <div class="col-lg-6">
+                                    <div class="col-lg-8">
+                                        {{ especie.rangoEdades }}
+                                    </div>
+                                    <div class="col-lg-4">
+                                        {{ especie.cantidad }}
+                                    </div>
+                                    <div class="col-lg-4">
+                                        {{ especie.especieAnimal }}
+                                    </div>
+                  </div>
+                  
+                                        {% endfor %}
                     <p></p>
                     
 </div>                    
@@ -144,11 +169,13 @@
             <td text-align="center"><strong>MOTIVO</strong></td>
             <td text-align="center"><strong>CANTIDAD</strong></td>
 	</tr>
-	<tr>
-		<td>IDENTIFICACIÒN POR PRIMERA VEZ</td>
-		<td></td>
+	{% for especie in entity.cantidadMotivo %}
+        <tr>
+		<td >{{ especie.motivoIdentificacion }}</td>
+		<td text-align="center">{{ especie.cantidad }}</td>
 	</tr>
-	<tr>
+        {% endfor %}
+	{#<tr>
 		<td>IDENTIFICACIÓN POR NACIMIENTO
 </td>
 		<td></td>
@@ -161,7 +188,7 @@
 		<td>REIDENTIFICACIÓN POR PERDIDA DE DIN
 </td>
 		<td></td>
-	</tr>
+	</tr>#}
 </table>
      
  </div>
@@ -229,7 +256,7 @@ dispuesto un lugar para el manejo de los animales en condiciones óptimas y segu
             <td>  <strong>APROBADO:(     )</strong></td>
                 <td>  <strong>RECHAZADO:(     )</strong></td>
 	</tr>
-</table><p></p>
+</table><p>{{ entity.estadoSolicitud }}</p>
 <strong>FECHA PROGRAMADA PARA LA IDENTIFICACIÓN DE SUS ANIMALES: {{ entity.fechaProgramadaIdentificacion|date('Y-m-d H:i:s') }}</strong>
 <p></p>
 <strong>OBSERVACIONES:</strong>
@@ -249,40 +276,7 @@ dispuesto un lugar para el manejo de los animales en condiciones óptimas y segu
     <p>LOG.CDC.FORM 005</p>
     <p>01/08/2013 Versión 1.0</p>   
 </div>
-    <table>
-             <tr class="col-lg-12 alert-success center">
-                <td>2.CANTIDAD DE ANIMALES A IDENTIFICAR: (Número de animales por especie y rango de edades.)</td>
-                <td></td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Justificacionreidentificacion</td>
-                <td></td>
-            </tr>
-       
-            <tr class="col-lg-6">
-                <td>Solicitud mantenimiento identificacion</td>
-                <td>{{ entity.solicitudMantenimientoIdentificacion }}</td>
-            </tr>
-            
-            <tr class="col-lg-6">
-                <td>Fechaprogramadaidentificacion</td>
-                <td></td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Observacionesrevision</td>
-                <td></td>
-            </tr>
-            <tr class="col-lg-6">
-                <td>Estadosolicitud</td>
-                <td>{{ entity.estadoSolicitud }}</td>
-            </tr>
-       
-    </table>
-            
-        
-      
-     
-      
-        
+    
+    
     </dynamic-page>
 </pdf>

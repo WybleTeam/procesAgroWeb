@@ -6,11 +6,13 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 
+
 /**
  * SolMantenimientoIdentificacion
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Web\WebBundle\Entity\SolMantenimientoIdentificacionRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class SolMantenimientoIdentificacion
 {
@@ -30,14 +32,7 @@ class SolMantenimientoIdentificacion
      */
     private $fechaSolicitud;
 
-    /**
-     * @var string
-     *
-     * @ORM\ManyToOne(targetEntity="Proces\OficinasBundle\Entity\Municipio")
-     * 
-     */
-    private $municipio;
-
+   
     /**
      * @var string
      *
@@ -151,7 +146,13 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\Column(name="observacionesRevision", type="string", length=45, nullable=true)
+     * @ORM\Column(name="observacionesRevision", type="string", length=500, nullable=true)
+     * @Assert\Length(
+     *      min = "0",
+     *      max = "500",
+     *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
+     *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
+     * )
      */
     private $observacionesRevision;
 
@@ -172,7 +173,7 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\SolicitudCantidadMotivo", mappedBy="solicitudMantenimiento", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\SolicitudCantidadMotivo", mappedBy="solicitudMantenimiento", cascade={"persist","remove"})
      * @Assert\Valid
      * @Assert\NotBlank(message="Escoge una cantidad")
      */
@@ -181,26 +182,33 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\EspecieRangoSolicitud", mappedBy="solicitudMantenimiento", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\EspecieRangoSolicitud", mappedBy="solicitudMantenimiento", cascade={"persist","remove"})
      * @Assert\Valid
      * @Assert\NotBlank(message="Escoge una especie")
      */
     private $especieRango;
     
-    
     /**
      * @var string
      *
-     * @ORM\Column(name="municipioVereda", type="string", length=45, nullable=true)
-     * 
+     * @ORM\Column(name="vereda", type="string", length=45)
+     */
+    private $vereda;
+    
+   
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="municipioVereda", type="string", length=45, nullable=false)
+     * @Assert\NotNull()
      */
     private $municipioVereda;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="departamento", type="string", length=45, nullable=true)
-     * 
+     * @ORM\Column(name="departamento", type="string", length=45, nullable=false)
+     * @Assert\NotNull()
      */
     private $departamento;    
     
@@ -246,29 +254,6 @@ class SolMantenimientoIdentificacion
     public function getFechaSolicitud()
     {
         return $this->fechaSolicitud;
-    }
-
-    /**
-     * Set municipio
-     *
-     * @param string $municipio
-     * @return SolMantenimientoIdentificacion
-     */
-    public function setMunicipio(\Proces\OficinasBundle\Entity\Municipio $municipio)
-    {
-        $this->municipio = $municipio;
-
-        return $this;
-    }
-
-    /**
-     * Get municipio
-     *
-     * @return string 
-     */
-    public function getMunicipio()
-    {
-        return $this->municipio;
     }
 
     /**
@@ -572,17 +557,18 @@ class SolMantenimientoIdentificacion
 
     /**
      * Set fechaProgramadaIdentificacion
-     *
+     * 
      * @param \DateTime $fechaProgramadaIdentificacion
      * @return SolMantenimientoIdentificacion
      */
     public function setFechaProgramadaIdentificacion($fechaProgramadaIdentificacion)
     {
+        
         $this->fechaProgramadaIdentificacion = $fechaProgramadaIdentificacion;
 
         return $this;
     }
-
+    
     /**
      * Get fechaProgramadaIdentificacion
      *
@@ -755,9 +741,19 @@ class SolMantenimientoIdentificacion
     {
         return $this->departamento;
     }
-    
-    
-    
+    /**
+     * @ORM\preUpdate
+     */
+    public function validarFechas()
+    {
+        $fecha = new \DateTime("now");
+        if($this->getFechaProgramadaIdentificacion() < $this->getFechaSolicitud()){
+            
+            $this->setFechaProgramadaIdentificacion($this->getFechaSolicitud());
+            return true;
+        }
+    }
+ 
     public function __toString() 
     {
         return $this->getCedulaSolicitante()." ".$this->getNombreSolicitante();

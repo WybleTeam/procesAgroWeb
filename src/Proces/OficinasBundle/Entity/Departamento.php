@@ -48,7 +48,7 @@ class Departamento
     /**
      * @var string
      *
-     * @ORM\Column(name="codigo", type="string", length=45)
+     * @ORM\Column(name="codigo", type="string", length=45, nullable=true)
      */
     private $codigo;
     

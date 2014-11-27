@@ -18,9 +18,9 @@ class MunicipioType extends AbstractType
             ->add('nombreMunicipio','text',array(
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'45'),
             ))
-            ->add('tipoMunicipio','text',array(
+            /**->add('tipoMunicipio','text',array(
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'45'),
-            ))
+            ))**/
             ->add('departamento',null,array(
                 'attr'=>array('class'=>'form-control'),
             ))

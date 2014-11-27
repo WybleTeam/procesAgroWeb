@@ -154,7 +154,7 @@ class Builder extends ContainerAware
         ->setAttribute('icon','fa fa-dashboard');
             
         $menu->addChild('Convocatorias', array('route' => 'convocatorias'))->setLinkAttribute('icon','fa fa-th');       
-        $menu->addChild('Oficinas', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
+        //$menu->addChild('Oficinas', array('route' => 'oficinas_admin'))->setAttribute('icon','fa fa-th');
         $menu->addChild('Servicios', array('route' => 'servicios'))->setAttribute('icon','fa fa-th');
        
         $menu->addChild('Oferta Institucional',array('route'=>'ofertasinstitucionales'));
@@ -163,11 +163,11 @@ class Builder extends ContainerAware
         
         $menu->addChild('Cursos Virtuales', array('route' => 'cursosvirtuales'))->setAttribute('icon','fa fa-th');
       
-          $menu->addChild('TramiteICA',array('uri'=>'#'))->setAttribute('class', 'treeview')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
-          $menu['TramiteICA']->setChildrenAttribute('class', 'treeview-menu');
+          //$menu->addChild('TramiteICA',array('uri'=>'#'))->setAttribute('class', 'treeview')->setAttribute('icon','fa fa-table')->setLinkAttribute('class','treeview')->setLinkAttribute('data-toggle','dropdown');
+         // $menu['TramiteICA']->setChildrenAttribute('class', 'treeview-menu');
          //$menu['TramiteICA']->addChild('Solicitudes', array('route'=>'solmantenimientoidentificacion'));
-          $menu['TramiteICA']->addChild('Estados', array('route'=>'estado'));
-          $menu['TramiteICA']->addChild('Seccionales', array('route'=>'seccionales'));
+         // $menu['TramiteICA']->addChild('Estados', array('route'=>'estado'));
+         
   //      $menu['TramiteICA']->addChild('Especie Animal', array('route'=>'especieanimal'));
   //      $menu['TramiteICA']->addChild('Rango Edades', array('route'=>'rangoedades'));
   //      $menu['TramiteICA']->addChild('Motivo Identificacion', array('route'=>'motivoidentificacion'));

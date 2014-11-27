@@ -10,9 +10,10 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
            
-         {% if is_granted('ROLE_SUPER_ADMIN') %} <li class="{{ currentRoute == 'tp_user' ? 'active' : '' }}"><a href="{{ path('tp_user') }}">Usuarios</a></li>
-          <li><a href="{{ path("fos_user_profile_show") }}" class="{{ currentRoute == 'tp_user' ? 'active' : '' }}">Perfil</a></li>
-             <li class="{{ currentRoute == 'tp_usergroup' ? 'active' : '' }}"><a href="{{ path('tp_usergroup') }}">Grupos</a></li>
+         {% if is_granted('ROLE_SUPER_ADMIN') %}
+             <li class="{{ currentRoute == 'tp_user' ? 'active' : '' }}"><a href="{{ path('tp_user') }}">Usuarios</a></li>
+             <li><a href="{{ path("fos_user_profile_show") }}" class="{{ currentRoute == 'tp_user' ? 'active' : '' }}">Perfil</a></li>
+             {#<li class="{{ currentRoute == 'tp_usergroup' ? 'active' : '' }}"><a href="{{ path('tp_usergroup') }}">Grupos</a></li>#}
          {% else %}
          <li><a href="{{ path("fos_user_profile_show") }}" class="{{ currentRoute == 'tp_user' ? 'active' : '' }}">Perfil</a></li>
          {% endif %}

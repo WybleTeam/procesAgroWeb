@@ -117,7 +117,7 @@ class DefaultController extends Controller
      /*
      * metodo de insersion de datos desde el celular
      */
-    public function crearFormularioAction($ica3101, $nombreFinca, $nombrePropietarioFinca, $cedulaPropietarioFinca, $telefonoFijoPropietario, $telefonoCelularPropietario, $municipioVereda, $departamento, $nombreSolicitante, $cedulaSolicitante, $telefonoFijoSolicitante, $telefonoCelularSolicitante, $menUnoBovino, $unoDosBovino, $dosTresBovino, $tresMayorBovino, $menUnoBufalino, $unoDosBufalino, $dosTresBufalino, $tresMayorBufalino, $jusPrimera, $jusNacimiento, $jusCompraAnimales, $jusPerdidaDin, $justificacion)
+    public function crearFormularioAction($ica3101, $nombreFinca, $nombrePropietarioFinca, $cedulaPropietarioFinca, $telefonoFijoPropietario, $telefonoCelularPropietario, $municipioVereda, $departamento, $nombreSolicitante, $cedulaSolicitante, $telefonoFijoSolicitante, $telefonoCelularSolicitante, $menUnoBovino, $unoDosBovino, $dosTresBovino, $tresMayorBovino, $menUnoBufalino, $unoDosBufalino, $dosTresBufalino, $tresMayorBufalino, $jusPrimera, $jusNacimiento, $jusCompraAnimales, $jusPerdidaDin, $justificacion, $vereda)
     {     
         
         $totalBovinos   = $menUnoBovino + $unoDosBovino + $dosTresBovino + $tresMayorBovino;
@@ -174,7 +174,7 @@ class DefaultController extends Controller
         $orden = $em->getRepository('WebBundle:Estado')->findOneByCodigo(1); //Encontrar el primer estado, Pendiente
         
         $entity->setEstadoSolicitud($orden);
-        
+        $entity->setVereda($vereda);
         $entity->setJustificacionReidentificacion($justificacion);
         //$entity->setCantidadMotivo($motivoUno);
         
@@ -247,6 +247,7 @@ class DefaultController extends Controller
          $especieRangoOcho->setEspecieAnimal($especieBufalina);
          $especieRangoOcho->setRangoEdades($rangoEdadesCuatro);
          $especieRangoOcho->setSolicitudMantenimiento($entity); 
+         
        // $form = $this->createCreateForm($entity);
         //$form->handleRequest($request);
         

@@ -16,7 +16,7 @@
             <tr>
                 <th>No.</th>
                 <th>Nombre municipio</th>
-                <th>Tipo municipio</th>
+                <th>Departamento</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -25,7 +25,7 @@
             <tr>
                 <td><a href="{{ path('municipio_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.nombreMunicipio }}</td>
-                <td>{{ entity.tipoMunicipio }}</td>
+                <td>{{ entity.departamento }}</td>
                 <td>
                        <a href="{{ path('municipio_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
                         <a href="{{ path('municipio_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>

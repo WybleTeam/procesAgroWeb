@@ -50,10 +50,10 @@ class SecurityController extends ContainerAware
         
 
         return $this->renderLogin(array(
-            'usuario' => $usuario,
+            'usuario'       => $usuario,
             'last_username' => $lastUsername,
             'error'         => $error,
-            'csrf_token' => $csrfToken,
+            'csrf_token'    => $csrfToken,
         ));
     }
 

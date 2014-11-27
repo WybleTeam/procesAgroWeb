@@ -21,7 +21,7 @@ class ConvocatoriasType extends AbstractType
                     
             ))
             ->add('descripcion','textarea',array(
-                    'attr'=>array('class'=>'form-control', 'maxlength'=>'40'),
+                    'attr'=>array('class'=>'form-control', 'maxlength'=>'200'),
                     'label'=>'Descripción'
                 
             ))
@@ -37,7 +37,7 @@ class ConvocatoriasType extends AbstractType
                 
             ))
             ->add('descripcionLarga','textarea',array(
-                    'attr'=>array('class'=>'form-control', 'maxlength'=>'150'),
+                    'attr'=>array('class'=>'form-control', 'maxlength'=>'400'),
                     'label'=>'Descripción Larga'
                 
             ))

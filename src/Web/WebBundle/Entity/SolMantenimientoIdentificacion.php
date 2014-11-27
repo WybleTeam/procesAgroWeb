@@ -173,7 +173,7 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\SolicitudCantidadMotivo", mappedBy="solicitudMantenimiento", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\SolicitudCantidadMotivo", mappedBy="solicitudMantenimiento", cascade={"persist","remove"})
      * @Assert\Valid
      * @Assert\NotBlank(message="Escoge una cantidad")
      */
@@ -182,13 +182,20 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\EspecieRangoSolicitud", mappedBy="solicitudMantenimiento", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Web\WebBundle\Entity\EspecieRangoSolicitud", mappedBy="solicitudMantenimiento", cascade={"persist","remove"})
      * @Assert\Valid
      * @Assert\NotBlank(message="Escoge una especie")
      */
     private $especieRango;
     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vereda", type="string", length=45)
+     */
+    private $vereda;
     
+   
     /**
      * @var string
      *
@@ -750,5 +757,74 @@ class SolMantenimientoIdentificacion
     public function __toString() 
     {
         return $this->getCedulaSolicitante()." ".$this->getNombreSolicitante();
+    }
+
+    /**
+     * Set vereda
+     *
+     * @param string $vereda
+     * @return SolMantenimientoIdentificacion
+     */
+    public function setVereda($vereda)
+    {
+        $this->vereda = $vereda;
+
+        return $this;
+    }
+
+    /**
+     * Get vereda
+     *
+     * @return string 
+     */
+    public function getVereda()
+    {
+        return $this->vereda;
+    }
+
+    /**
+     * Add cantidadMotivo
+     *
+     * @param \Web\WebBundle\Entity\SolicitudCantidadMotivo $cantidadMotivo
+     * @return SolMantenimientoIdentificacion
+     */
+    public function addCantidadMotivo(\Web\WebBundle\Entity\SolicitudCantidadMotivo $cantidadMotivo)
+    {
+        $this->cantidadMotivo[] = $cantidadMotivo;
+
+        return $this;
+    }
+
+    /**
+     * Remove cantidadMotivo
+     *
+     * @param \Web\WebBundle\Entity\SolicitudCantidadMotivo $cantidadMotivo
+     */
+    public function removeCantidadMotivo(\Web\WebBundle\Entity\SolicitudCantidadMotivo $cantidadMotivo)
+    {
+        $this->cantidadMotivo->removeElement($cantidadMotivo);
+    }
+
+    /**
+     * Add especieRango
+     *
+     * @param \Web\WebBundle\Entity\EspecieRangoSolicitud $especieRango
+     * @return SolMantenimientoIdentificacion
+     */
+    public function addEspecieRango(\Web\WebBundle\Entity\EspecieRangoSolicitud $especieRango)
+    {
+        $this->especieRango[] = $especieRango;
+
+        return $this;
+    }
+
+    /**
+     * Remove especieRango
+     *
+     * @param \Web\WebBundle\Entity\EspecieRangoSolicitud $especieRango
+     */
+    public function removeEspecieRango(\Web\WebBundle\Entity\EspecieRangoSolicitud $especieRango)
+    {
+        $this->especieRango->removeElement($especieRango);
     }
 }

@@ -18,9 +18,9 @@ class DepartamentoType extends AbstractType
             ->add('seccional',null,array(
                 'attr'=>array('class'=>'form-control'),
             ))
-            ->add('codigo',null,array(
+            /**->add('codigo',null,array(
                 'attr'=>array('class'=>'form-control'),
-            ))
+            ))**/
             ->add('nombreDepartamento','text',array(
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'45'),
             ))

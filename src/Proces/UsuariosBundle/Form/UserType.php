@@ -40,8 +40,9 @@ class UserType extends AbstractType
                     ->add('lastName', null, array('label'=> 'Apellidos'))
                     ->add('groups', null, array(
                         'label'=> 'Seleccione un tipo de Usuario','required'=>'required',
-                        'multiple'=>true
-                        ));
+                        'attr'=>array(
+                            'size'=>1,
+                        )));
                 
                 break;
                 
@@ -50,7 +51,7 @@ class UserType extends AbstractType
                     ->add('email')
                     ->add('firstName', null, array('label'=> 'Nombres'))
                     ->add('lastName', null, array('label'=> 'Apellidos'))
-                    ->add('groups',  null, array('label'=> 'Seleccione un tipo de Usuario','multiple'=>true));
+                    ->add('groups',  null, array('label'=> 'Seleccione un tipo de Usuario','multiple'=>false));
                 
                 break;
 
