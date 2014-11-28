@@ -44,7 +44,7 @@
                
                 <table>
                         <tr>
-                                <td border.color="white">SOLICITUD No.: _______________________</td>
+                                <td border.color="white">SOLICITUD No.:</td>
                                 <td border.color="white">Fecha de Solicitud:   {{ entity.fechaSolicitud|date('Y-m-d H:i:s') }} </td>
                         </tr>
                         <tr>

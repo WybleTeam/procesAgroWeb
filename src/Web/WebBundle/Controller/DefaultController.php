@@ -137,7 +137,8 @@ class DefaultController extends Controller
         $entity = new SolMantenimientoIdentificacion();
         $entity->setFechaSolicitud($hoy);
         $entity->setSolicitudMantenimientoIdentificacion("...");
-        
+	$entity->setVereda($vereda);        
+
         $motivoUno = new SolicitudCantidadMotivo();
         $motivoDos = new SolicitudCantidadMotivo();
         $motivoTres = new SolicitudCantidadMotivo();
