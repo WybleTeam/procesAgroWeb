@@ -52,6 +52,7 @@ class UserController extends Controller
      */
     public function createAction(Request $request)
     {
+        $i = 0;
         $entity  = new User();
         $userForm = new UserType();
         $params = $this->getRequest()->get($userForm->getName());
@@ -93,12 +94,27 @@ class UserController extends Controller
             
             //$em->persist($user);
             $em = $this->getDoctrine()->getManager();
-            $em->flush();
-            $this->get('session')->getFlashBag()->add(
-            'notice',
-            'Creado correctamente!');
             
-            return $this->redirect($this->generateUrl('tp_user_show', array('id' => $user->getId())));
+             $grupos = $entity->getGroups();
+            
+            foreach ($grupos as $g){
+                $i = $i + 1;
+            } 
+            
+            if($i>1){
+                     $this->get('session')->getFlashBag()->add(
+                        'notice',
+                        'Debe tener un solo Tipo de usuario!'); 
+            }else{
+         
+                    $em->flush();
+                    $this->get('session')->getFlashBag()->add(
+                    'notice',
+                    'Creado correctamente!'); 
+
+                    return $this->redirect($this->generateUrl('tp_user_show', array('id' => $user->getId())));
+            }
+         
         }
 
         return array(
