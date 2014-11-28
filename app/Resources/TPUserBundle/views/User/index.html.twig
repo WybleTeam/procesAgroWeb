@@ -29,7 +29,7 @@
                 <td style="vertical-align:middle"><input type="checkbox" value="{{ entity.id }}" name="batch[]" /></td>
                 <td style="vertical-align:middle">{{ entity.lastName }}</td>
                 <td style="vertical-align:middle">{{ entity.firstName }}</td>
-                <td style="vertical-align:middle"><a href="{{ path('tp_user_show', { 'id': entity.id }) }}">{{ entity.username }}</a></td>
+                <td style="vertical-align:middle"><a href="{{ path('tp_user_show', { 'id': entity.id }) }}">{{ entity.email }}</a></td>
                 {# <td style="vertical-align:middle">{{ entity.email }}</td> #}
                 <td style="vertical-align:middle">{{ entity.enabled }}</td>
                 {#<td>{% if entity.lastLogin %}{{ entity.lastLogin|date('Y-m-d H:i:s') }}{% endif %}</td>#}

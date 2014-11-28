@@ -11,7 +11,7 @@ use Twinpeaks\UserBundle\Entity\User;
 use Proces\UsuariosBundle\Form\UserType;
 //use Twinpeaks\UserBundle\Form\UserType;
 use FOS\UserBundle\Model\UserManager;
-use FOS\UserBundle\Controller\ResettingController;
+use Proces\UsuariosBundle\Controller\ResettingController;
 
 /**
  * User controller.
