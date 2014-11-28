@@ -225,10 +225,10 @@ dispuesto un lugar para el manejo de los animales en condiciones óptimas y segu
 <p></p>
 <table width="30%">
 	<tr>
-            <td>  <strong>APROBADO:(     )</strong></td>
-                <td>  <strong>RECHAZADO:(     )</strong></td>
+            <td>  <strong>APROBADO:( {% if entity.estadoSolicitud|upper == "APROBADO" %}X{% endif %})  </strong></td>
+                <td>  <strong>RECHAZADO:( {% if entity.estadoSolicitud|upper == "RECHAZADO" %}X{% endif %}    )</strong></td>
 	</tr>
-</table><p>{{ entity.estadoSolicitud }}</p>
+</table><p></p>
 <strong>FECHA PROGRAMADA PARA LA IDENTIFICACIÓN DE SUS ANIMALES: {{ entity.fechaProgramadaIdentificacion|date('Y-m-d H:i:s') }}</strong>
 <p></p>
 <strong>OBSERVACIONES:</strong>

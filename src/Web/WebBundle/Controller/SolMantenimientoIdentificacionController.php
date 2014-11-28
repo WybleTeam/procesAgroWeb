@@ -205,14 +205,44 @@ class SolMantenimientoIdentificacionController extends Controller
                     $this->get('session')->getFlashBag()->add(
                     'notice',
                     'La Fecha para la identificación debe ser Mayor que la fecha de solicitud');
-                       $em->flush();
+                    $em->flush();
                     $error = true;   
             }else{
-                    $em->flush();
+               
+                
+                $hoy = new \DateTime();    
+                if($entity->getfechaProgramadaIdentificacion() < $hoy){
+                    
+                        if( $entity->getEstadoSolicitud()->getCodigo() == 2) {
+                        
+                            $em->flush();
+                            $this->get('session')->getFlashBag()->add(
+                            'notice',
+                            'Actualizado correctamente');
+                            $error = false;
+                    
+                         }else{
+                           
+                             $codigoPendiente = 1;
+
+                            $estado = $em->getRepository('WebBundle:Estado')->findOneBy(
+                                                array('codigo'=>'1')
+                                    );
+
+                            $entity->setEstadoSolicitud(null);   
+                            $em->flush();    
+                            $this->get('session')->getFlashBag()->add(
+                            'notice',
+                            'Hay un problema...y hemos reasignado el valor de la fecha programada de la Identificación, por favor corrige');
+                          }
+                          
+                }else{
                     $this->get('session')->getFlashBag()->add(
                     'notice',
-                    'Actualizado');
-                    $error = false;
+                    'Actualizado correctamente');
+                    $em->flush();
+                    $error = true;    
+                }
             }
             
             
