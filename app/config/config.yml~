@@ -89,7 +89,8 @@ fos_user:
     registration:
         form:
             type: mi_user_creador
-
+fos_user.template.engine: 
+    'twig'
 knp_menu:
     twig: 
         template: knp_menu.html.twig
