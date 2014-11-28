@@ -116,7 +116,7 @@ class UserController extends Controller
     {
         $entity = new User();
         $form   = $this->createForm(new UserType(), $entity);
-
+        
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
@@ -201,18 +201,46 @@ class UserController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find User entity.');
         }
+        
+        
 
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createForm(new UserType(), $entity);
         $editForm->bind($request);
-
+        $i = 0;
         if ($editForm->isValid()) {
             $this->get('fos_user.user_manager')->updateUser($entity, false);
             //$em->persist($entity);
-            $em->flush();
+            
+          
+            
+            
+            $grupos = $entity->getGroups();
+            
+            foreach ($grupos as $g){
+                $i = $i + 1;
+            } 
+            
+            if($i>1){
+                
+             //$entity->setGroups();   
+                
+            $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Un usuario no puede tener más de un Tipo Usuario, por favor seleccione solo uno');
+            }else{
+            
+                $em->flush();
+// $contador = 0;
+           // for($i=1,$grupos,$i++){
+                
+           // }
+            
+            
              $this->get('session')->getFlashBag()->add(
             'notice',
             'Actualizado correctamente!');
+            }
             return $this->redirect($this->generateUrl('tp_user_edit', array('id' => $id)));
         }
 
