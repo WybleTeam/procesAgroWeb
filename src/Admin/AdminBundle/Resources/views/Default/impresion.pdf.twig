@@ -37,10 +37,20 @@
         </table>
        
                 <p></p>
-                 <p text-align="center">SISTEMA NACIONAL DE IDENTIFICACIÓN E INFORMACIÓN DEL GANADO BOVINO.</p>
-    <p text-align="center">    PLAN NACIONAL DE IDENTIFICACIÓN </p>
-    <p text-align="center">FORMATO UNICO DE SOLICITUD DE IDENTIFICACIÒN O MANTENIMIENTO.</p>
-                <p></p>
+
+<table>
+	<tr>
+		<td text-align="center" border.color="white">SISTEMA NACIONAL DE IDENTIFICACIÓN E INFORMACIÓN DEL GANADO BOVINO.</td>
+	</tr>
+	<tr>
+		<td text-align="center" border.color="white">PLAN NACIONAL DE IDENTIFICACIÓN</td>
+	</tr>
+	<tr>
+		<td text-align="center" border.color="white">FORMATO UNICO DE SOLICITUD DE IDENTIFICACIÒN O MANTENIMIENTO</td>
+	</tr>
+</table>
+
+         <p></p>
                
                 <table>
                         <tr>
@@ -83,14 +93,14 @@
                                 <td border.color="white"><strong>C.C:</strong>  {{ entity.cedulaSolicitante }} </td>
                             </tr>  
                             <tr>
-                                <td border.color="white"><strong>TELEFONO FIJO: {{ entity.telefonoFijoSolicitante }}</strong></td>
-                                <td border.color="white"><strong>TELEFONO CELULAR: {{ entity.telefonoCelularSolicitante }}</strong></td>
+                                <td border.color="white"><strong>TELEFONO FIJO: </strong>{{ entity.telefonoFijoSolicitante }}</td>
+                                <td border.color="white"><strong>TELEFONO CELULAR: </strong>{{ entity.telefonoCelularSolicitante }}</td>
                             </tr>
                     </table>
                     <p></p>
  </div>
                     
-                <p></p>
+               
                
 <div width="100%" >
             <stylesheet>
@@ -109,7 +119,7 @@
 	<tr>
 		<td>{{ especie.rangoEdades }}</td>
 		<td text-align="center">{{ especie.cantidad }}</td>
-		<td>{{ especie.especieAnimal }}</td>
+		<td text-align="center">{{ especie.especieAnimal }}</td>
 	</tr>
         {% endfor %}
 	
@@ -118,8 +128,7 @@
    
                     <p></p>
                     
-</div>                    
-                <p></p>
+</div>        
                     
                 
                 
@@ -129,7 +138,7 @@
             </stylesheet>
                     
     <p><strong>3. MOTIVO DE LA SOLICITUD DE IDENTIFICACIÓN.</strong></p>     
- <div width="80%"  margin-right="50px"  margin-left="100px">               
+ <div width="80%"  margin-right="40px"  margin-left="50px">               
   <table>
 	<tr>
             <td text-align="center"><strong>MOTIVO</strong></td>
@@ -164,7 +173,7 @@
     
                     
 </div>                    
-                <p></p>            
+                           
 <div width="100%" >
             <stylesheet>
                 <complex-attribute name="border" color="green"  />
@@ -205,9 +214,8 @@ dispuesto un lugar para el manejo de los animales en condiciones óptimas y segu
 
     <p></p>        
 </div> 
-                
-                <p></p>
-                <div width="100%" >
+               
+ <div width="100%" >
             <stylesheet>
                 <complex-attribute name="border" color="green"  />
             </stylesheet>
@@ -235,10 +243,17 @@ dispuesto un lugar para el manejo de los animales en condiciones óptimas y segu
      
 </div>
        
-
+<p></p>
 <div text-align="right">
-    <p>LOG.CDC.FORM 005</p>
-    <p>01/08/2013 Versión 1.0</p>   
+<table>
+	<tr>
+		<td border.color="white">LOG.CDC.FORM 005</td>
+	</tr>
+	<tr>
+		<td border.color="white">01/08/2013 Versión 1.0</td>
+	</tr>
+</table>
+   
 </div>
     
     
