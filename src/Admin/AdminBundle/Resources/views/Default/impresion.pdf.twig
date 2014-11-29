@@ -58,12 +58,12 @@
                                 <td border.color="white">Fecha de Solicitud:   {{ entity.fechaSolicitud|date('Y-m-d H:i:s') }} </td>
                         </tr>
                         <tr>
-                                <td border.color="white">Seccional  {{ entity.seccional|upper }} {{ entity.departamento|upper }}</td>
+                                <td border.color="white">Seccional  {{ entity.seccional|upper }} {{ entity.departamento|upper|replace({'0': '','1':'','2': '','3':'','4': '','5':'','6': '','7':'','8': '','9':'','-': ''}) }}</td>
                                 <td border.color="white">PSG Y/O OFICINA LOCAL</td>
                         </tr>
                         <tr>
-                            <td border.color="white">Municipio:  {{ entity.municipioVereda|upper }}</td>
-                                <td border.color="white">Vereda: {{ entity.vereda|upper }}</td>
+                            <td border.color="white">Municipio:  {{ entity.municipioVereda|upper|replace({'0': '','1':'','2': '','3':'','4': '','5':'','6': '','7':'','8': '','9':'','-': '','_':''}) }}</td>
+                                <td border.color="white">Vereda: {{ entity.vereda|upper|replace({'_':' '}) }}</td>
                         </tr>
                 </table>
                 <p></p>
@@ -77,11 +77,11 @@
       <p><strong>1. REGISTRO SANITARIO DE PREDIOS PECUARIOS</strong></p>
                     <table>
                             <tr>
-                                <td border.color="white"><strong>ICA 3-101:</strong>        {{ entity.ica3101|upper }}</td>
-                                <td border.color="white"><strong>NOMBRE DE LA FINCA:</strong>   {{ entity.nombreFinca|upper }}</td>
+                                <td border.color="white"><strong>ICA 3-101:</strong>        {{ entity.ica3101|upper|replace({'_': ' '}) }}</td>
+                                <td border.color="white"><strong>NOMBRE DE LA FINCA:</strong>   {{ entity.nombreFinca|upper|replace({'_': ' '}) }}</td>
                             </tr>
                             <tr>
-                                    <td border.color="white"><strong>NOMBRE COMPLETO DEL PROPIETARIO: </strong>  {{ entity.nombrePropietarioFinca }}</td>
+                                    <td border.color="white"><strong>NOMBRE COMPLETO DEL PROPIETARIO: </strong>  {{ entity.nombrePropietarioFinca|upper|replace({'_': ' '}) }}</td>
                                     <td border.color="white"><strong>C.C.</strong> {{ entity.cedulaPropietarioFinca }}</td>
                             </tr>
                             <tr>
@@ -89,7 +89,7 @@
                                 <td border.color="white"><strong>TELEFONO CELULAR: </strong> {{ entity.telefonoCelularPropietario }}</td>
                             </tr>
                             <tr>
-                                <td border.color="white"><strong>NOMBRE COMPLETO DEL SOLICITANTE:</strong>  {{ entity.nombreSolicitante }}</td>
+                                <td border.color="white"><strong>NOMBRE COMPLETO DEL SOLICITANTE:</strong>  {{ entity.nombreSolicitante|upper|replace({'_': ' '}) }}</td>
                                 <td border.color="white"><strong>C.C:</strong>  {{ entity.cedulaSolicitante }} </td>
                             </tr>  
                             <tr>
@@ -169,7 +169,7 @@
  </div>
                 
         <p></p><p><strong>JUSTIFICACIÓN DE LA REIDENTIFICACIÓN:</strong></p>
-        <p>{{ entity.justificacionReidentificacion|upper }}</p>
+        <p>{{ entity.justificacionReidentificacion|upper|replace({'_': ' '}) }}</p>
     
                     
 </div>                    
