@@ -124,6 +124,7 @@ class DefaultController extends Controller
         $nombrePropietarioFinca = str_replace('"', '', $nombrePropietarioFinca);
         $nombreSolicitante = str_replace('"', '', $nombreSolicitante);
         $justificacion = str_replace('"', '', $justificacion);
+        $vereda = str_replace('"', '', $vereda);
         
         
         $totalBovinos   = $menUnoBovino + $unoDosBovino + $dosTresBovino + $tresMayorBovino;
