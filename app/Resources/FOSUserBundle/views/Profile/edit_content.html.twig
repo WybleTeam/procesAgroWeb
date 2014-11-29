@@ -1,7 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
-    {{ form_row(form.email) }}
+    
     {{ form_widget(form.username, {'type':'hidden'}) }}
     
     {{ form_rest(form) }}		

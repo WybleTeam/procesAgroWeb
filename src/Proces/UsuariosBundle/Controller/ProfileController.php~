@@ -95,7 +95,8 @@ class ProfileController extends Controller
         //));
 
 
-	 return $this->render('FOSUserBundle:Profile:edit.html.twig',
+	 return $this->container->get('templating')->renderResponse(
+            'FOSUserBundle:Profile:edit.html.'.$this->container->getParameter('fos_user.template.engine'),
             array('form' => $form->createView())
         );
     }
