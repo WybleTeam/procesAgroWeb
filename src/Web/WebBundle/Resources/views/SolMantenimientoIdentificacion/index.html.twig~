@@ -22,8 +22,8 @@
             <tr>
                 <td><span class="{% if entity.estadoSolicitud.codigo == 1 %}label label-warning{% elseif entity.estadoSolicitud.codigo == 2 %}label label-success{% elseif entity.estadoSolicitud.codigo == 3 %}label label-danger{% endif %}">{{ entity.estadoSolicitud.descripcion }}</span></td>
                 <td>{{ entity.ica3101|upper|replace({'_':' '}) }}</td>
-                <td>{{ entity.nombreFinca|upper|replace({'_':' '}) }}</td>
-                <td>{{ entity.nombrePropietarioFinca|upper|replace({'_':' '}) }}</td>
+                <td>{{ entity.nombreFinca|upper }}</td>
+                <td>{{ entity.nombrePropietarioFinca|capitalize|upper }}</td>
                 <td>{% if entity.fechaSolicitud %}{{ entity.fechaSolicitud|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{#<a href="{{ path('solmantenimientoidentificacion_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>#}
                 <a href="{{ path('solmantenimientoidentificacion_edit', { 'id': entity.id }) }}" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-cog"></span></a></td>
