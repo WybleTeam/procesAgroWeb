@@ -119,6 +119,12 @@ class DefaultController extends Controller
      */
     public function crearFormularioAction($ica3101, $nombreFinca, $nombrePropietarioFinca, $cedulaPropietarioFinca, $telefonoFijoPropietario, $telefonoCelularPropietario, $municipioVereda, $departamento, $nombreSolicitante, $cedulaSolicitante, $telefonoFijoSolicitante, $telefonoCelularSolicitante, $menUnoBovino, $unoDosBovino, $dosTresBovino, $tresMayorBovino, $menUnoBufalino, $unoDosBufalino, $dosTresBufalino, $tresMayorBufalino, $jusPrimera, $jusNacimiento, $jusCompraAnimales, $jusPerdidaDin, $justificacion, $vereda)
     {     
+        $ica3101 = str_replace('"', '', $ica3101);
+        $nombreFinca = str_replace('"', '', $nombreFinca);
+        $nombrePropietarioFinca = str_replace('"', '', $nombrePropietarioFinca);
+        $nombreSolicitante = str_replace('"', '', $nombreSolicitante);
+        $justificacion = str_replace('"', '', $justificacion);
+        
         
         $totalBovinos   = $menUnoBovino + $unoDosBovino + $dosTresBovino + $tresMayorBovino;
         $totalBufalinos = $menUnoBufalino + $unoDosBufalino + $dosTresBufalino + $tresMayorBufalino;
