@@ -39,6 +39,20 @@ class PasosOfertaController extends Controller
         $form = $this->createCreateForm($entity,$oferta);
         $form->handleRequest($request);
 
+        
+        $caracteres = array("'",'"');
+        
+        $titulo = str_replace($caracteres, '',$entity->getTituloPasos());
+        $entity->setTituloPasos($titulo);    
+        
+        $descripcion = str_replace($caracteres, '',$entity->getDescripcionPaso());
+        $entity->setDescripcionPaso($descripcion);
+        
+        $urlpaso = str_replace($caracteres, '',$entity->getUrlPaso());
+        $entity->setUrlPaso($urlpaso);    
+        
+      
+        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -175,11 +189,25 @@ class PasosOfertaController extends Controller
             throw $this->createNotFoundException('Unable to find PasosOferta entity.');
         }
 
+        
         $deleteForm = $this->createDeleteForm($id, $oferta);
         $editForm = $this->createEditForm($entity, $oferta);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            
+                    $caracteres = array("'",'"');
+        
+        $titulo = str_replace($caracteres, '',$entity->getTituloPasos());
+        $entity->setTituloPasos($titulo);    
+        
+        $descripcion = str_replace($caracteres, '',$entity->getDescripcionPaso());
+        $entity->setDescripcionPaso($descripcion);
+        
+        $urlpaso = str_replace($caracteres, '',$entity->getUrlPaso());
+        $entity->setUrlPaso($urlpaso);    
+        
+        
             $em->flush();
              $this->get('session')->getFlashBag()->add(
             'notice',

@@ -42,6 +42,21 @@ class OfertasInstitucionalesController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+        $caracteres = array("'",'"');
+        
+        $titulo = str_replace($caracteres, '',$entity->getTituloOferta());
+        $entity->setTituloOferta($titulo);    
+        
+        $descripcion = str_replace($caracteres, '',$entity->getDescripcionOferta());
+        $entity->setDescripcionOferta($descripcion);
+        
+        $urlaudio = str_replace($caracteres, '',$entity->getUrlAudioOferta());
+        $entity->setUrlAudioOferta($urlaudio);    
+        
+        $urloferta = str_replace($caracteres, '',$entity->getUrlOferta());
+        $entity->setUrlOferta($urloferta); 
+        
+        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -179,6 +194,21 @@ class OfertasInstitucionalesController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            
+                    $caracteres = array("'",'"');
+        
+        $titulo = str_replace($caracteres, '',$entity->getTituloOferta());
+        $entity->setTituloOferta($titulo);    
+        
+        $descripcion = str_replace($caracteres, '',$entity->getDescripcionOferta());
+        $entity->setDescripcionOferta($descripcion);
+        
+        $urlaudio = str_replace($caracteres, '',$entity->getUrlAudioOferta());
+        $entity->setUrlAudioOferta($urlaudio);    
+        
+        $urloferta = str_replace($caracteres, '',$entity->getUrlOferta());
+        $entity->setUrlOferta($urloferta); 
+            
             $em->flush();
             $this->get('session')->getFlashBag()->add(
             'notice',

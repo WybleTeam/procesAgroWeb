@@ -42,6 +42,20 @@ class ServiciosController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+        $caracteres = array("'",'"');
+        
+        $titulo = str_replace($caracteres, '',$entity->getTituloServicio());
+        $entity->setTituloServicio($titulo);    
+        
+        $descripcion = str_replace($caracteres, '',$entity->getDescripcionServicio());
+        $entity->setDescripcionServicio($descripcion);
+        
+        $urlaudio = str_replace($caracteres, '',$entity->getUrlAudioServicio());
+        $entity->setUrlAudioServicio($urlaudio);    
+        
+        $urlservicio = str_replace($caracteres, '',$entity->getUrlServicio());
+        $entity->setUrlServicio($urlservicio);    
+        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -175,6 +189,22 @@ class ServiciosController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            
+                    $caracteres = array("'",'"');
+        
+        $titulo = str_replace($caracteres, '',$entity->getTituloServicio());
+        $entity->setTituloServicio($titulo);    
+        
+        $descripcion = str_replace($caracteres, '',$entity->getDescripcionServicio());
+        $entity->setDescripcionServicio($descripcion);
+        
+        $urlaudio = str_replace($caracteres, '',$entity->getUrlAudioServicio());
+        $entity->setUrlAudioServicio($urlaudio);    
+        
+        $urlservicio = str_replace($caracteres, '',$entity->getUrlServicio());
+        $entity->setUrlServicio($urlservicio); 
+            
+            
             $em->flush();
             $this->get('session')->getFlashBag()->add(
             'notice',

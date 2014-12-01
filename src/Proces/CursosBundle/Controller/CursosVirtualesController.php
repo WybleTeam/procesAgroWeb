@@ -42,6 +42,20 @@ class CursosVirtualesController extends Controller
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
+        $caracteres = array("'",'"');
+        
+        $titulo = str_replace($caracteres, '',$entity->getNombreCurso());
+        $entity->setNombreCurso($titulo);    
+        
+        $descripcion = str_replace($caracteres, '',$entity->getDescripcionCurso());
+        $entity->setDescripcionCurso($descripcion);
+        
+        $urlaudio = str_replace($caracteres, '',$entity->getUrlAudio());
+        $entity->setUrlAudio($urlaudio); 
+        
+        $urlcurso = str_replace($caracteres, '',$entity->getUrlCurso());
+        $entity->setUrlCurso($urlcurso); 
+        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -175,6 +189,21 @@ class CursosVirtualesController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            
+                    $caracteres = array("'",'"');
+        
+        $titulo = str_replace($caracteres, '',$entity->getNombreCurso());
+        $entity->setNombreCurso($titulo);    
+        
+        $descripcion = str_replace($caracteres, '',$entity->getDescripcionCurso());
+        $entity->setDescripcionCurso($descripcion);
+        
+        $urlaudio = str_replace($caracteres, '',$entity->getUrlAudio());
+        $entity->setUrlAudio($urlaudio); 
+        
+        $urlcurso = str_replace($caracteres, '',$entity->getUrlCurso());
+        $entity->setUrlCurso($urlcurso); 
+        
             $em->flush();
              $this->get('session')->getFlashBag()->add(
             'notice',

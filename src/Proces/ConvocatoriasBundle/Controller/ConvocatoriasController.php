@@ -41,7 +41,26 @@ class ConvocatoriasController extends Controller
         $entity->setUsuario($usuarioActivo);
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
-
+        
+        $caracteres = array("'",'"');
+        
+        $titulo = str_replace($caracteres, '',$entity->getTituloConvocatoria());
+        $entity->setTituloConvocatoria($titulo);    
+        
+        $descripcion = str_replace($caracteres, '',$entity->getDescripcion());
+        $entity->setDescripcion($descripcion);
+        
+        $urlaudio = str_replace($caracteres, '',$entity->getUrlAudio());
+        $entity->setUrlAudio($urlaudio);    
+        
+        $urlconvo = str_replace($caracteres, '',$entity->getUrlConvocatoria());
+        $entity->setUrlConvocatoria($urlconvo);    
+        
+        $urldescripcionlarga = str_replace($caracteres, '',$entity->getDescripcionLarga());
+        $entity->setDescripcionLarga($urldescripcionlarga); 
+        
+      //  $entity->setTituloConvocatoria() = str_replace('"', '',$entity->getTituloConvocatoria());
+        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -174,8 +193,28 @@ class ConvocatoriasController extends Controller
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
-
+        
+        
+        
         if ($editForm->isValid()) {
+        
+        $caracteres = array("'",'"');
+        
+        $titulo = str_replace($caracteres, '',$entity->getTituloConvocatoria());
+        $entity->setTituloConvocatoria($titulo);    
+        
+        $descripcion = str_replace($caracteres, '',$entity->getDescripcion());
+        $entity->setDescripcion($descripcion);
+        
+        $urlaudio = str_replace($caracteres, '',$entity->getUrlAudio());
+        $entity->setUrlAudio($urlaudio);    
+        
+        $urlconvo = str_replace($caracteres, '',$entity->getUrlConvocatoria());
+        $entity->setUrlConvocatoria($urlconvo);    
+        
+        $urldescripcionlarga = str_replace($caracteres, '',$entity->getDescripcionLarga());
+        $entity->setDescripcionLarga($urldescripcionlarga); 
+        
             $em->flush();
             $this->get('session')->getFlashBag()->add(
             'notice',

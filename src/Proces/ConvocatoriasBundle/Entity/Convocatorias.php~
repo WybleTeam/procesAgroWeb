@@ -27,7 +27,7 @@ class Convocatorias
      *
      * @ORM\Column(name="tituloConvocatoria", type="string", length=100)
      * @Assert\Regex(
-     *     pattern = "[^~t]",
+     *     pattern = "[^*t]",
      *     match = false,
      *     message="Sin comillas"
      * )
