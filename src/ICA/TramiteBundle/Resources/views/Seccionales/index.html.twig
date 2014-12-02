@@ -14,7 +14,7 @@
             <tr>
                 <th>No.</th>
                 <th>Nombreseccional</th>
-                <th>Estado</th>
+               
                 <th>Actions</th>
             </tr>
         </thead>
@@ -23,7 +23,7 @@
             <tr>
                 <td><a href="{{ path('seccionales_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.nombreSeccional }}</td>
-                <td>{{ entity.estado }}</td>
+             
                 <td>
                         <a href="{{ path('seccionales_show', { 'id': entity.id }) }}" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
                         <a href="{{ path('seccionales_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
