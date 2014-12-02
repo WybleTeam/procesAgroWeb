@@ -27,7 +27,12 @@
                 <td><a href="{{ path('ofertasinstitucionales_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.tituloOferta }}</td>
                 <td>{{ entity.descripcionOferta }}</td>
-                <td><a href="{{ entity.urlAudioOferta }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></a></td>
+                <td>
+                    {% if entity.urlAudioOferta == null %}
+                        
+                    {% else %}   
+                    <a href="{{ entity.urlAudioOferta }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></a></td>
+                    {% endif %}
                 <td><a href="{{ entity.urlOferta }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></td>
                 <td>
                 <ul>

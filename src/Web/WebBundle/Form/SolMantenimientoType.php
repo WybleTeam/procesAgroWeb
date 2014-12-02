@@ -18,7 +18,9 @@ class SolMantenimientoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            
+            ->add('oficina',null,array(
+                'attr'=>array('class'=>'form-control','maxlength'=>'255')
+            ))
             ->add('fechaProgramadaIdentificacion','datetime',array(
                 'widget'=>'single_text',
                 'format' => 'yyyy-MM-dd',

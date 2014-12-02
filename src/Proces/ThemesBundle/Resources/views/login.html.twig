@@ -5,7 +5,7 @@
     <br>
     <div class="span4 center-block">
        {% if error %}
-    <div class="alert alert-danger span4">Hubo un error en la Autenticación, el Usuario y/o contraseña están mal...{{ error }}</div>
+    <div class="alert alert-danger span4">Hubo un error en la Autenticación, el Usuario y/o contraseña están mal, por favor verifica tus credenciales</div>
         {% endif %}        
     </div>
     <div class="form-box" id="login-box">
@@ -27,7 +27,7 @@
     <label for="remember_me">Recuérdame</label>#}
 
     <input type="submit" id="_submit" name="_submit" value="Entrar"  class="btn bg-olive btn-block" />
-    <a href="{{ path('fos_user_resetting_request') }}">Olvidaste tu contraseña ?, restablecela aquí</a>
+    <a href="{{ path('fos_user_resetting_request') }}">¿Olvidaste tu contraseña?, Restablecela aquí</a>
      </div>
 </form>
    

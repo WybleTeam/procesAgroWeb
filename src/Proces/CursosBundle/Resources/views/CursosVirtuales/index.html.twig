@@ -27,13 +27,25 @@
                 <td><a href="{{ path('cursosvirtuales_show', { 'id': entity.id }) }}">{{ loop.index }}</a></td>
                 <td>{{ entity.nombreCurso }}</td>
                 <td>{{ entity.descripcionCurso }}</td>
-               <td><a href="{{ entity.urlAudio }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></a></td>
-                <td><a href="{{ entity.urlCurso }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
-                <td>{{ entity.estado }}</td>
+               <td>{% if entity.urlAudio == null %}
+                        
+                    {% else %}
+                                      <a href="{{ entity.urlAudio }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></a></td>
+                    {% endif %}
+                    <td><a href="{{ entity.urlCurso }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
+                <td>
+                    {% if entity.estado == 1 %}
+                    
+                    <a href="#" class="btn btn-info"><span class="glyphicon glyphicon-check"></span></a>
+                    {% else %}
+                       <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-exclamation-sign"></span></a> 
+                    {% endif %}    
+                    </td>
                 <td>
 
                         <a href="{{ path('cursosvirtuales_show', { 'id': entity.id }) }}"  class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
                         <a href="{{ path('cursosvirtuales_edit', { 'id': entity.id }) }}" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
+                
                 </td>
             </tr>
         {% endfor %}

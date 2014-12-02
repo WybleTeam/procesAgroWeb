@@ -18,9 +18,9 @@ class SeccionalesType extends AbstractType
             ->add('nombreSeccional','text',array(
                 'attr'=>array('class'=>'form-control'),
             ))
-            ->add('estado',null,array(
-                'attr'=>array('class'=>'form-control'),
-            ))
+            //->add('estado',null,array(
+            //    'attr'=>array('class'=>'form-control'),
+            //))
         ;
     }
     

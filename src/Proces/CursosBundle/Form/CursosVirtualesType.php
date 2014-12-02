@@ -19,7 +19,7 @@ class CursosVirtualesType extends AbstractType
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'300')
             ))
             ->add('descripcionCurso','textarea',array(
-                'attr'=>array('class'=>'form-control', 'maxlength'=>'45')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'400')
             ))
             ->add('urlAudio','url',array(
                 'attr'=>array('class'=>'form-control'),

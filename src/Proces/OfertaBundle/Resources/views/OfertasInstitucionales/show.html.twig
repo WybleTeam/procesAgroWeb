@@ -22,8 +22,12 @@
             </tr>
             <tr>
                 <th>Url audio oferta</th>
-                <td><a href="{{ entity.urlAudioOferta }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></td>
-            </tr>
+                <td>{% if entity.urlAudioOferta == null %}
+                        
+                    {% else %}
+                    <a href="{{ entity.urlAudioOferta }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></td>
+                    {% endif %}
+                    </tr>
             <tr>
                 <th>Url oferta</th>
                 <td><a href="{{ entity.urlOferta }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></td>
@@ -70,8 +74,13 @@
                 <td>{#<a href="{{ path('pasosoferta_show', { 'id': otro.id }) }}">{{ loop.index }}</a>#}{{ loop.index }}</td>
                 <td>{{ otro.tituloPasos }}</td>
                 <td>{{ otro.descripcionPaso }}</td>
-                <td><a href="{{ otro.urlPaso }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
                 <td>
+                    {% if otro.urlPaso == null %}
+                        
+                    {% else %}
+                    <a href="{{ otro.urlPaso }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
+                    {% endif %}
+                    <td>
                    <a href="{{ path('pasosoferta_edit', { 'id': otro.id, 'oferta': entity.id }) }}"  class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
                 </td>
             </tr>

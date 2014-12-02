@@ -195,7 +195,13 @@ class SolMantenimientoIdentificacion
      */
     private $vereda;
     
-   
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="oficina", type="string", length=45)
+     */
+    private $oficina;
+    
     /**
      * @var string
      *
@@ -783,48 +789,25 @@ class SolMantenimientoIdentificacion
     }
 
     /**
-     * Add cantidadMotivo
+     * Set oficina
      *
-     * @param \Web\WebBundle\Entity\SolicitudCantidadMotivo $cantidadMotivo
+     * @param string $oficina
      * @return SolMantenimientoIdentificacion
      */
-    public function addCantidadMotivo(\Web\WebBundle\Entity\SolicitudCantidadMotivo $cantidadMotivo)
+    public function setOficina($oficina)
     {
-        $this->cantidadMotivo[] = $cantidadMotivo;
+        $this->oficina = $oficina;
 
         return $this;
     }
 
     /**
-     * Remove cantidadMotivo
+     * Get oficina
      *
-     * @param \Web\WebBundle\Entity\SolicitudCantidadMotivo $cantidadMotivo
+     * @return string 
      */
-    public function removeCantidadMotivo(\Web\WebBundle\Entity\SolicitudCantidadMotivo $cantidadMotivo)
+    public function getOficina()
     {
-        $this->cantidadMotivo->removeElement($cantidadMotivo);
-    }
-
-    /**
-     * Add especieRango
-     *
-     * @param \Web\WebBundle\Entity\EspecieRangoSolicitud $especieRango
-     * @return SolMantenimientoIdentificacion
-     */
-    public function addEspecieRango(\Web\WebBundle\Entity\EspecieRangoSolicitud $especieRango)
-    {
-        $this->especieRango[] = $especieRango;
-
-        return $this;
-    }
-
-    /**
-     * Remove especieRango
-     *
-     * @param \Web\WebBundle\Entity\EspecieRangoSolicitud $especieRango
-     */
-    public function removeEspecieRango(\Web\WebBundle\Entity\EspecieRangoSolicitud $especieRango)
-    {
-        $this->especieRango->removeElement($especieRango);
+        return $this->oficina;
     }
 }

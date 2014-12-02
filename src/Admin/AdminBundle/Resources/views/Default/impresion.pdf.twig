@@ -58,8 +58,8 @@
                                 <td border.color="white">Fecha de Solicitud:   {{ entity.fechaSolicitud|date('Y-m-d H:i:s') }} </td>
                         </tr>
                         <tr>
-                                <td border.color="white">Seccional  {{ entity.seccional|upper }} {{ entity.departamento|upper|replace({'0': '','1':'','2': '','3':'','4': '','5':'','6': '','7':'','8': '','9':'','-': ''}) }}</td>
-                                <td border.color="white">PSG Y/O OFICINA LOCAL</td>
+                                <td border.color="white">Seccional:  {{ entity.seccional|upper }} {{ entity.departamento|upper|replace({'0': '','1':'','2': '','3':'','4': '','5':'','6': '','7':'','8': '','9':'','-': ''}) }}</td>
+                                <td border.color="white">PSG Y/O OFICINA LOCAL: {{ entity.oficina|upper }}</td>
                         </tr>
                         <tr>
                             <td border.color="white">Municipio:  {{ entity.municipioVereda|upper|replace({'0': '','1':'','2': '','3':'','4': '','5':'','6': '','7':'','8': '','9':'','-': '','_':''}) }}</td>
