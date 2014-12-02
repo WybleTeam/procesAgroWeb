@@ -12,7 +12,7 @@
                 <th>Descripción curso</th>
                 <th>Url audio</th>
                 <th>Url curso</th>
-                <th>Estado</th>
+              
             </tr>
         </thead>
         <tbody>
@@ -21,16 +21,21 @@
                 <td>{{ loop.index }}</td>
                 <td>{{ entity.nombreCurso }}</td>
                 <td>{{ entity.descripcionCurso }}</td>
-                 <td><form method="post" action="{{ path('web_paginas') }}">
+                 <td>
+                    {% if entity.urlAudio == null %}
+                        
+                    {% else %}  
+                     <form method="post" action="{{ path('web_paginas') }}">
                         <input type="hidden" name="pagina" value="{{ entity.urlAudio }}" /><button class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></button>
                     </form>
+                    {% endif %}
                  </td>    
                 <td><form method="post" action="{{ path('web_paginas') }}">
                         <input type="hidden" name="pagina" value="{{ entity.urlCurso }}" /><button class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></button>
                     </form>
                 </td>
                
-                <td>{% if(entity.estado == 1) %}<button class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>{% else %}<button class="btn btn-success"><span class="glyphicon glyphicon-remove"></span></button>{% endif %}</td>
+               
              </tr>
         {% endfor %}
         </tbody>

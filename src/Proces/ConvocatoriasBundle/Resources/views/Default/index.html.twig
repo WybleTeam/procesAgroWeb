@@ -24,9 +24,15 @@
                 <td>{{ loop.index }}</td>
                 <td>{{ entity.tituloConvocatoria }}</td>                
                 <td>{{ entity.descripcion }}</td>
-                <td><form method="post" action="{{ path('web_paginas') }}">
+                
+                <td>
+                    {% if entity.urlAudio == null %}
+                        
+                    {% else %}    
+                    <form method="post" action="{{ path('web_paginas') }}">
                         <input type="hidden" name="pagina" value="{{ entity.urlAudio }}" /><button class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></button>
                     </form>
+                    {% endif %}
                 </td>
                 <td align="center">
                     <form method="post" action="{{ path('web_paginas') }}">

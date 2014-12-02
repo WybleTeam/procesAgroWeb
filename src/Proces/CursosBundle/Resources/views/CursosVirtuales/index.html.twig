@@ -36,9 +36,9 @@
                 <td>
                     {% if entity.estado == 1 %}
                     
-                    <a href="#" class="btn btn-info"><span class="glyphicon glyphicon-check"></span></a>
+                        <a href="#" class="btn btn-info"><span class="glyphicon glyphicon-check"> ACTIVO</span></a>
                     {% else %}
-                       <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-exclamation-sign"></span></a> 
+                       <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-exclamation-sign"> INACTIVO</span></a> 
                     {% endif %}    
                     </td>
                 <td>
@@ -61,7 +61,7 @@
    <script type="text/javascript">
             $(function() {
                 $("#example1").dataTable({
-                    "bSort": false,
+                    "bSort": true,
                     "bAutoWidth": true
                 });
                 $('#example2').dataTable({

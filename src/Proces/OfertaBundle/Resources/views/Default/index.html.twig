@@ -21,9 +21,14 @@
                 <td>{{ loop.index }}</td>
                 <td>{{ entity.tituloOferta }}</td>
                 <td>{{ entity.descripcionOferta }}</td>
-                <td><form method="post" action="{{ path('web_paginas') }}">
+                <td>
+                    {% if entity.urlAudioOferta == null %}
+                        
+                    {% else %}    
+                    <form method="post" action="{{ path('web_paginas') }}">
                         <input type="hidden" name="pagina" value="{{ entity.urlAudioOferta }}" /><button class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></button>
                     </form>
+                    {% endif %}
                 <td><form method="post" action="{{ path('web_paginas') }}">
                         <input type="hidden" name="pagina" value="{{ entity.urlOferta }}" /><button class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></button>
                     </form>
