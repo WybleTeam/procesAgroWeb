@@ -198,7 +198,7 @@ class SolMantenimientoIdentificacion
     /**
      * @var string
      *
-     * @ORM\Column(name="oficina", type="string", length=45)
+     * @ORM\Column(name="oficina", type="string", length=45, nullable=true)
      */
     private $oficina;
     
