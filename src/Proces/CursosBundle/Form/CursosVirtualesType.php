@@ -28,7 +28,7 @@ class CursosVirtualesType extends AbstractType
             ->add('urlCurso','url',array(
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'300')
             ))
-            ->add('estado',null,array(
+            ->add('estado','hidden',array(
                 'attr'=>array('class'=>'form-control')
             ))
             //->add('usuario')

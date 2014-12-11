@@ -55,7 +55,7 @@ class CursosVirtualesController extends Controller
         
         $urlcurso = str_replace($caracteres, '',$entity->getUrlCurso());
         $entity->setUrlCurso($urlcurso); 
-        
+        $entity->setEstado(true);
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);

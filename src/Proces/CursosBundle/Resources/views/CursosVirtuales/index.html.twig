@@ -17,7 +17,7 @@
                 <th>Descripción curso</th>
                 <th>Url audio</th>
                 <th>Url curso</th>
-                <th>Estado</th>
+                {#<th>Estado</th>#}
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -33,7 +33,7 @@
                                       <a href="{{ entity.urlAudio }}" target="_blank" class="btn btn-info"><span class="glyphicon glyphicon-headphones"></span></a></td>
                     {% endif %}
                     <td><a href="{{ entity.urlCurso }}" target="_blank" class="btn btn-success"><span class="glyphicon glyphicon-globe"></span></a></td>
-                <td>
+               {# <td>
                     {% if entity.estado == 1 %}
                     
                         <a href="#" class="btn btn-info"><span class="glyphicon glyphicon-check"> ACTIVO</span></a>
@@ -41,6 +41,7 @@
                        <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-exclamation-sign"> INACTIVO</span></a> 
                     {% endif %}    
                     </td>
+                    #}
                 <td>
 
                         <a href="{{ path('cursosvirtuales_show', { 'id': entity.id }) }}"  class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
