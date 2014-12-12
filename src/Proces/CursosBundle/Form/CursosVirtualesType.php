@@ -16,7 +16,7 @@ class CursosVirtualesType extends AbstractType
     {
         $builder
             ->add('nombreCurso',null,array(
-                'attr'=>array('class'=>'form-control', 'maxlength'=>'300')
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'80')
             ))
             ->add('descripcionCurso','textarea',array(
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'400')

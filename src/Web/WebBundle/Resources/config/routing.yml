@@ -64,7 +64,7 @@ web_municipios:
 web_icaformulario:
     path:     /crearFormulario/{ica3101}/{nombreFinca}/{nombrePropietarioFinca}/{cedulaPropietarioFinca}/{telefonoFijoPropietario}/{telefonoCelularPropietario}/{municipioVereda}/{departamento}/{nombreSolicitante}/{cedulaSolicitante}/{telefonoFijoSolicitante}/{telefonoCelularSolicitante}/{menUnoBovino}/{unoDosBovino}/{dosTresBovino}/{tresMayorBovino}/{menUnoBufalino}/{unoDosBufalino}/{dosTresBufalino}/{tresMayorBufalino}/{jusPrimera}/{jusNacimiento}/{jusCompraAnimales}/{jusPerdidaDin}/{justificacion}/{vereda}/
     defaults: { _controller: "WebBundle:Default:crearFormulario",  ica3101: null, nombreFinca: null,  nombrePropietarioFinca: null, cedulaPropietarioFinca: null, telefonoFijoPropietario: null , telefonoCelularPropietario: null, municipioVereda: null, departamento: null, nombreSolicitante: null, cedulaSolicitante: null, telefonoFijoSolicitante: null, telefonoCelularSolicitante: null, menUnoBovino: null, unoDosBovino: null, dosTresBovino: null, tresMayorBovino: null, menUnoBufalino: null, unoDosBufalino: null, dosTresBufalino: null, tresMayorBufalino: null, jusPrimera: null, jusNacimiento: null, jusCompraAnimales: null, jusPerdidaDin: null, justificacion: null, vereda: null }
-    requirements: { _method: get }
+    requirements: { _method: get|post }
     
 # Vista web de las páginas    
 web_paginas:

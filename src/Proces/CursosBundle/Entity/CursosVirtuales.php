@@ -32,11 +32,11 @@ class CursosVirtuales
     /**
      * @var string
      *
-     * @ORM\Column(name="nombreCurso", type="string", length=100)
+     * @ORM\Column(name="nombreCurso", type="string", length=80)
      * @Assert\NotBlank(message="Falta el nombre del Curso")
      * @Assert\Length(
      *      min = "2",
-     *      max = "100",
+     *      max = "80",
      *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
      *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
      * )

@@ -201,6 +201,13 @@ class SolMantenimientoIdentificacion
      * @ORM\Column(name="oficina", type="string", length=45, nullable=true)
      */
     private $oficina;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nosolicitud", type="string", length=45, nullable=true)
+     */
+    private $noSolicitud;    
     
     /**
      * @var string
@@ -810,4 +817,28 @@ class SolMantenimientoIdentificacion
     {
         return $this->oficina;
     }
+    
+    /**
+     * Set noSolicitud
+     *
+     * @param string $noSolicitud
+     * @return SolMantenimientoIdentificacion
+     */
+    public function setNoSolicitud($noSolicitud)
+    {
+        $this->noSolicitud = $noSolicitud;
+
+        return $this;
+    }
+
+    /**
+     * Get noSolicitud
+     *
+     * @return string 
+     */
+    public function getNoSolicitud()
+    {
+        return $this->noSolicitud;
+    }
+
 }
