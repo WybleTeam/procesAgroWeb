@@ -16,7 +16,7 @@ class OfertasInstitucionalesType extends AbstractType
     {
         $builder
             ->add('tituloOferta','text',array(
-                'attr'=>array('class'=>'form-control', 'maxlength'=>'100'),
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'80'),
                 'label'=>'Titulo de la oferta'
             ))
             ->add('descripcionOferta','textarea',array(

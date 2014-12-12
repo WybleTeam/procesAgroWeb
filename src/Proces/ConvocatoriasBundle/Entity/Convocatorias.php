@@ -25,7 +25,7 @@ class Convocatorias
      /**
      * @var string
      *
-     * @ORM\Column(name="tituloConvocatoria", type="string", length=100)
+     * @ORM\Column(name="tituloConvocatoria", type="string", length=80)
      * @Assert\Regex(
      *     pattern = "[^~t]",
      *     match = false,
@@ -34,7 +34,7 @@ class Convocatorias
      * @Assert\NotBlank(message="Debes ponerle un Título a la convocatoria")
      * @Assert\Length(
      *      min = "2",
-     *      max = "100",
+     *      max = "80",
      *      minMessage = "El campo debe ser mayor a {{ limit }} caracteres de largo",
      *      maxMessage = "El campo no puede tener más de {{ limit }} caracteres de largo"
      * )

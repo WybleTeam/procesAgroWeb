@@ -16,7 +16,7 @@ class ServiciosType extends AbstractType
     {
         $builder
             ->add('tituloServicio',null,array(
-                'attr'=>array('class'=>'form-control', 'maxlength'=>'100'),
+                'attr'=>array('class'=>'form-control', 'maxlength'=>'80'),
             ))
             ->add('descripcionServicio','textarea',array(
                 'attr'=>array('class'=>'form-control', 'maxlength'=>'150'),
