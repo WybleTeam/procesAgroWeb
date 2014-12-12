@@ -59,7 +59,7 @@ web_municipios:
     path:     /municipios/
     defaults: { _controller: WebBundle:Default:municipiostotal } 
 
-# formulario ICA
+# formulario ICA con post
 
 web_icaformulario:
     path:     /crearFormulario/{ica3101}/{nombreFinca}/{nombrePropietarioFinca}/{cedulaPropietarioFinca}/{telefonoFijoPropietario}/{telefonoCelularPropietario}/{municipioVereda}/{departamento}/{nombreSolicitante}/{cedulaSolicitante}/{telefonoFijoSolicitante}/{telefonoCelularSolicitante}/{menUnoBovino}/{unoDosBovino}/{dosTresBovino}/{tresMayorBovino}/{menUnoBufalino}/{unoDosBufalino}/{dosTresBufalino}/{tresMayorBufalino}/{jusPrimera}/{jusNacimiento}/{jusCompraAnimales}/{jusPerdidaDin}/{justificacion}/{vereda}/
