@@ -46,7 +46,7 @@ class CursosVirtuales
     /**
      * @var string
      *
-     * @ORM\Column(name="descripcionCurso", type="string", length=45)
+     * @ORM\Column(name="descripcionCurso", type="string", length=400)
      * @Assert\NotBlank(message="Descripcion del Curso")
      * @Assert\Length(
      *      min = "2",
